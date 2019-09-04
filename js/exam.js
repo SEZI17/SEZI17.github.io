@@ -3,29 +3,46 @@
 // 3: 한글 연습검정     // 4: 한글 일반검정
 var examMode;           
 var questionList = [];      //문제 보관 변수
-var questionCount = 3;     //전체 문제 수
+var questionCount = 2;      //전체 문제 수
 var nowQuestion = 0;        //현재 문제 번호
 var timeDelay = 1500;       
-var min, sec = 0;
+var min = 0;
+var sec = 0;
+var timerID;                //일반검정일 경우 타이머의 ID
+var lanMode = 0;            //0이면 문제가 일본어 1이면 한국어
 
 $(function(){
 
     examMode = getMode();
     
+    //언어 설정
+    setLanMode();
+
     //문제 만들기
     makeQuestion();
-
+    
     //일반검정일 경우 타이머 작동
     if(2 == examMode || 4 == examMode)
-        startTimer();
+        timerID = startTimer();
 
     showQuestion();
     selectExample();
 });
 
+function setLanMode()
+{
+    if(3 == examMode || 4 == examMode)
+        lanMode = 1;
+}
+
+function endTimer()
+{
+    clearInterval(timerID);
+}
+
 function startTimer()
 {
-    var time = setInterval(function()
+    return setInterval(function()
     {
         if(60 == ++sec)
         {
@@ -44,18 +61,39 @@ function startTimer()
         $("#sec").text(tempSec);
         
     }, 1000)
-
 }
 
 function selectExample()
 {
-    $(".example > .exampleBox").bind("click",function()
+    $(".example > .exampleBox").on("click",function()
     {
+
+        if(questionCount == nowQuestion)
+        {
+            endTimer();
+            return;
+            
+            // 실험중
+            // $.each(questionList, function(index, value)
+            // {
+
+            // });
+        }
+
+        //작업 중 클릭시 리턴
+        if("block" == $("#ox").css("display"))
+            return;
+
         $("#ox").css("display","block");
 
         let answer = questionList[nowQuestion].answer;
 
         let num = $(this).index();
+        questionList[nowQuestion].click = num;
+
+        let str = "<div class='checkDisplay'>v</div>";
+        $(this).html($(this).html() + str);
+
         if(answer == num)
         {
             $("#ox").removeClass("redText");
@@ -76,18 +114,7 @@ function selectExample()
         }
 
         setTimeout(function()
-        {
-            if(questionCount == (nowQuestion + 1))
-            {
-                $(this).unbind();
-                
-                // 실험중
-                // $.each(questionList, function(index, value)
-                // {
-
-                // });
-            }
-                
+        {    
             nowQuestion++;
             showQuestion();
 
@@ -97,17 +124,17 @@ function selectExample()
 
 function showQuestion()
 {
-    $("#persentText").text(questionList[nowQuestion].percentage);
-    $("#allQuestion").text(questionCount);
-    $("#nowQuestion").text(nowQuestion + 1);
+    $("#persentText").html(questionList[nowQuestion].percentage);
+    $("#allQuestion").html(questionCount);
+    $("#nowQuestion").html(nowQuestion + 1);
 
-    $("#Furagana").text(questionList[nowQuestion].example2);
-    $("#hilagana").text(questionList[nowQuestion].example);
-    
-    $(".example > .exampleBox").eq(0).text(questionList[nowQuestion].select1);
-    $(".example > .exampleBox").eq(1).text(questionList[nowQuestion].select2);
-    $(".example > .exampleBox").eq(2).text(questionList[nowQuestion].select3);
-    $(".example > .exampleBox").eq(3).text(questionList[nowQuestion].select4);
+    $("#hilagana").html(questionList[nowQuestion].example[lanMode]);
+    $("#Furagana").html(questionList[nowQuestion].example2[lanMode]);
+
+    $(".example > .exampleBox").eq(0).html(questionList[nowQuestion].select1[lanMode]);
+    $(".example > .exampleBox").eq(1).html(questionList[nowQuestion].select2[lanMode]);
+    $(".example > .exampleBox").eq(2).html(questionList[nowQuestion].select3[lanMode]);
+    $(".example > .exampleBox").eq(3).html(questionList[nowQuestion].select4[lanMode]);
 
     changePersentColor();
     changeFontSize();
@@ -126,10 +153,7 @@ function makeQuestion()
         word.korean = koreanCollection[i];
         word.hiragana = hiraganaCollection[i];
         word.furagana = furaganaCollection[i];
-        word.allCount = questionCount;
 
-        let RandVal = Math.floor(Math.random() * (questionCount + 1));
-        word.correctCount = RandVal;
         wordList.push(word);
     }
 
@@ -159,18 +183,17 @@ function makeQuestion()
         let RandVal = Math.floor(Math.random() * 4);
 
         let question = {};
-        question.example = wordList[tempList[RandVal]].hiragana;
-        question.example2 = wordList[tempList[RandVal]].furagana;
-        question.select1 = wordList[tempList[0]].korean;
-        question.select2 = wordList[tempList[1]].korean;
-        question.select3 = wordList[tempList[2]].korean;
-        question.select4 = wordList[tempList[3]].korean;
+        question.example = [wordList[tempList[RandVal]].hiragana, wordList[tempList[RandVal]].korean];
+        question.example2 = [wordList[tempList[RandVal]].furagana, ""];
+        question.select1 = [wordList[tempList[0]].korean, wordList[tempList[0]].hiragana];
+        question.select2 = [wordList[tempList[1]].korean, wordList[tempList[1]].hiragana];
+        question.select3 = [wordList[tempList[2]].korean, wordList[tempList[2]].hiragana];
+        question.select4 = [wordList[tempList[3]].korean, wordList[tempList[3]].hiragana];
         question.answer = RandVal;
+        question.click = -1;
         question.ox = true;
 
-        let answerCount = wordList[tempList[RandVal]].correctCount;
-        let count = wordList[tempList[RandVal]].allCount;
-        question.percentage = Math.floor((answerCount / count) * 100)
+        question.percentage = Math.floor(Math.random() * 101);
         questionList.push(question);
     }
 }
