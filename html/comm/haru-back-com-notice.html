@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="comm_header">
+            <h3>공지 사항</h3>
+            <span>Home>커뮤니티>공지사항</span>
+
+            <a href="#"><img src="./img/page.png" alt="board_view_icon"></a>
+        </div>
+
+        <!-- 검색기능 -->
+        <div class="search">
+            <form @prevent.action="submit">
+                <select name="search_type" id="search_type">
+                    <option value="article">제목</option>
+                    <option value="contents">글</option>
+                    <option value="art_con">글+제목</option>
+                </select>
+                <input type="search" name="search_input" id="search_input">
+            </form>
+        </div>
+        <!-- //검색기능 -->
+        <!-- 게시판 본체 -->
+        <table>
+            <!-- 게시판 항목 -->
+            <thead>
+                <th>번호</th>
+                <th>글 제목</th>
+                <th>글쓴이</th>
+                <th>조회수</th>
+                <th>작성일</th>
+            </thead>
+            <!-- //게시판 항목 -->
+            <!-- 게시판 글 -->
+            <tbody>
+                <tr>
+                    <td>3</td>
+                    <td class="board_article">홈페이지 일시 중단 안내</td>
+                    <td>관리자</td>
+                    <td>16</td>
+                    <td>2019-09-03</td>
+                </tr>
+            </tbody>
+            <!-- //게시판 글 -->
+        </table>
+        <!-- 페이지네이션 -->
+        <div class="pagination">
+            <button id="left_pagination">&#60;</button>
+            <ul class="pagination_number">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <button id="right_pagination">&#62;</button>
+        </div>
+        <!-- //페이지네이션 -->
+
+        <button id="write_btn">글쓰기</button>
+        <!-- //게시판 본체 -->
+
+
+    </div>
+
+</body>
+
+</html>
