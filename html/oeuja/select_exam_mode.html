@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>검정 모드 선택</title>
+    <link rel="stylesheet" href="./css/select_exam_mode.css">
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/jquery.easing.1.3.js"></script>
+</head>
+    <script type="text/javascript">
+        function click_select_mode(mode) {
+
+            var language = $("#languageMode option:selected").val();
+            location.href="./exam.html?mode=" + mode + "&language=" + language;
+        }
+    </script>
+<body>
+        <div class="bodyborder">
+            <div class="wrap">
+                <select name="language" id="languageMode">
+                    <option value="hiragana" selected="selected">히라가나</option>
+                    <option value="korean">한국어</option>
+                </select>
+            </div>
+
+            <div class="selectButton">
+                <div class="selectMode" onclick="click_select_mode('example');">연습 검정</div>
+                <div class="selectMode" onclick="click_select_mode('normal');">일반 검정</div>
+            </div>
+        </div>
+</body>
+</html>

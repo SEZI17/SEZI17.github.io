@@ -1,0 +1,59 @@
+.bodyborder{
+    border: 3px solid skyblue;
+    margin: 15px;
+    width: 700px; height: 670px;
+}
+
+#languageMode{
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 3px;
+
+    width: 450px;
+}
+
+.wrap{
+    overflow: hidden;
+    text-align: center;
+
+    margin-top: 180px;
+}
+
+.selectButton{
+    overflow: hidden;
+    
+    margin-top: 100px;
+}
+
+.selectButton > .selectMode{
+    width: 280px; height: 280px;
+    text-align: center;
+    line-height: 280px;
+
+    margin: 0 20px;
+    float: left;
+
+    font-size: 30px;
+    color: white;
+
+    border-radius: 15%;
+}
+
+.selectButton > .selectMode:nth-child(1){
+    background-color: rgb(94, 94, 94);   
+
+    margin-left: 50px;
+}
+
+.selectButton > .selectMode:nth-child(2){
+    background-color: rgb(190, 190, 190);
+
+    margin-right: 50px;
+}
+
+.selectButton > .selectMode:hover{
+    background-color: skyblue;
+}
+
