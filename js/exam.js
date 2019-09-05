@@ -3,13 +3,15 @@
 // 3: 한글 연습검정     // 4: 한글 일반검정
 var examMode;           
 var questionList = [];      //문제 보관 변수
-var questionCount = 2;      //전체 문제 수
+var questionCount = 10;     //전체 문제 수
 var nowQuestion = 0;        //현재 문제 번호
-var timeDelay = 1500;       
+var timeDelay = 1200;       
 var min = 0;
 var sec = 0;
 var timerID;                //일반검정일 경우 타이머의 ID
 var lanMode = 0;            //0이면 문제가 일본어 1이면 한국어
+
+var strClass = "<div id='checkDisplay'>v</div>"
 
 $(function(){
 
@@ -21,13 +23,55 @@ $(function(){
     //문제 만들기
     makeQuestion();
     
-    //일반검정일 경우 타이머 작동
+    //일반검정일 경우
     if(2 == examMode || 4 == examMode)
+    {
+        //타이머 작동
         timerID = startTimer();
 
+        timeDelay = 600;
+
+        //왼쪽 오른쪽 화살표 보이도록 변경
+        $("#leftBtn ").css("display","block");
+        $("#rightBtn").css("display","block");
+
+        //왼쪽 오른쪽 화살표 클릭시
+        btnClick();
+    }
+        
     showQuestion();
+
+    //보기중 하나를 선택했을 경우
     selectExample();
 });
+
+function resultExam()
+{
+    // 실험중
+    // $.each(questionList, function(index, value)
+    // {
+
+    // });
+}
+
+function btnClick()
+{
+    $("#leftBtn").on("click", function(){
+        if(0 < nowQuestion)
+        {
+            nowQuestion--;
+            showQuestion();
+        }
+    });
+
+    $("#rightBtn").click(function(){
+        if(-1 != questionList[nowQuestion].click)
+        {
+            nowQuestion++;
+            showQuestion();
+        }
+    });
+}
 
 function setLanMode()
 {
@@ -72,53 +116,57 @@ function selectExample()
         {
             endTimer();
             return;
-            
-            // 실험중
-            // $.each(questionList, function(index, value)
-            // {
-
-            // });
         }
 
         //작업 중 클릭시 리턴
         if("block" == $("#ox").css("display"))
             return;
 
-        $("#ox").css("display","block");
+        //클릭 시 이미 체크되어 있는거 없애버림
+        $("#checkDisplay").remove();
 
         let answer = questionList[nowQuestion].answer;
-
         let num = $(this).index();
         questionList[nowQuestion].click = num;
 
-        let str = "<div class='checkDisplay'>v</div>";
-        $(this).html($(this).html() + str);
+        $(this).append(strClass);
 
-        if(answer == num)
+        //일반검정일 경우
+        if(2 == examMode || 4 == examMode)
         {
-            $("#ox").removeClass("redText");
-            $("#ox").addClass("greenText");
-            $("#ox").html("O");
-            $("#ox").fadeOut(timeDelay);
+            if(answer != num)
+                questionList[nowQuestion].ox = false;
         }
-        else
+        //연습 검정일 경우
+        else if(1 == examMode || 3 == examMode)
         {
-            $(".example > .exampleBox").eq(answer).addClass("redBorder");
-
-            $("#ox").removeClass("greenText");
-            $("#ox").addClass("redText");
-            $("#ox").html("X");
-            $("#ox").fadeOut(timeDelay);
-
-            questionList[nowQuestion].ox = false;
+            $("#ox").css("display","block");
+            if(answer == num)
+            {
+                $("#ox").removeClass("redText");
+                $("#ox").addClass("greenText");
+                $("#ox").html("O");
+                $("#ox").fadeOut(timeDelay);
+            }
+            else
+            {
+                $(".example > .exampleBox").eq(answer).addClass("redBorder");
+    
+                $("#ox").removeClass("greenText");
+                $("#ox").addClass("redText");
+                $("#ox").html("X");
+                $("#ox").fadeOut(timeDelay);
+    
+                questionList[nowQuestion].ox = false;
+            }
         }
 
         setTimeout(function()
-        {    
-            nowQuestion++;
-            showQuestion();
-
-        }, timeDelay);
+            {    
+                nowQuestion++;
+                showQuestion();
+    
+            }, timeDelay - 300);
     });
 }
 
@@ -135,6 +183,9 @@ function showQuestion()
     $(".example > .exampleBox").eq(1).html(questionList[nowQuestion].select2[lanMode]);
     $(".example > .exampleBox").eq(2).html(questionList[nowQuestion].select3[lanMode]);
     $(".example > .exampleBox").eq(3).html(questionList[nowQuestion].select4[lanMode]);
+
+    if(-1 != questionList[nowQuestion].click)
+        $(".example > .exampleBox").eq(questionList[nowQuestion].click).append(strClass);
 
     changePersentColor();
     changeFontSize();

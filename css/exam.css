@@ -54,7 +54,7 @@
 
 .example > .exampleBox:nth-child(2n){
     margin-right: 40px;
-    margin-left: 30px;
+    margin-left: 34px;
 }
 
 .exampleBox{
@@ -63,7 +63,7 @@
     margin: 10px;
     padding: 10px;
 
-    width: 200px;; height: 100px;
+    width: 200px; height: 100px;
     line-height: 100px;
     text-align: center;
     float: left;
@@ -115,11 +115,36 @@
     z-index: 999;
 }
 
-.checkDisplay{
+#checkDisplay{
     position: absolute;
     left: -10px; top: -70px;
 
     color: green;
     font-weight: bold;
     font-size: 100px;
+}
+
+.moveBtn {
+    position: relative;
+}
+
+#leftBtn, #rightBtn{
+    font-size: 70px;
+    color: rgb(94,94,94);
+
+    top: -60px;
+    display: none;
+}
+
+#leftBtn:hover, #rightBtn:hover{
+    color: rgb(190,190,190);
+}
+
+#leftBtn{
+    position: absolute;
+}
+
+#rightBtn{
+    position: absolute;
+    right: 0px;
 }
