@@ -1,0 +1,53 @@
+div.container{
+    width:800px;
+    background-color: #ccc;
+    padding:24px;
+    box-sizing: border-box;
+}
+
+.clfx{
+    clear: both;
+}
+
+
+.comm_header h3{
+    float: left;
+}
+
+.comm_header span{
+    float: right;
+}
+
+.search{
+    padding-bottom:5px;
+}
+
+.search a{
+    float: left;
+}
+
+.search form{
+    float: right;
+}
+
+table{
+    width:100%;
+    height:450px;
+    border: 1px solid black;
+}
+
+table>thead{
+    background-color: #fff;
+}
+
+tbody>tr{
+    height:30px;
+    border-bottom:1px solid black;
+}
+
+
+.board_article{
+    width:400px;
+}
+
+
