@@ -3,7 +3,7 @@
 // 3: 한글 연습검정     // 4: 한글 일반검정
 var examMode;           
 var questionList = [];      //문제 보관 변수
-var questionCount = 10;     //전체 문제 수
+var questionCount = 30;     //전체 문제 수
 var nowQuestion = 0;        //현재 문제 번호
 var timeDelay = 1200;       
 var min = 0;
@@ -16,20 +16,21 @@ var strClass = "<div id='checkDisplay'>v</div>"
 $(function(){
 
     examMode = getMode();
-    
+
     //언어 설정
     setLanMode();
 
     //문제 만들기
     makeQuestion();
     
+    //드래그 방지
+    $("body").addClass("no-drag");
+
     //일반검정일 경우
     if(2 == examMode || 4 == examMode)
     {
         //타이머 작동
         timerID = startTimer();
-
-        timeDelay = 600;
 
         //왼쪽 오른쪽 화살표 보이도록 변경
         $("#leftBtn ").css("display","block");
@@ -38,6 +39,8 @@ $(function(){
         //왼쪽 오른쪽 화살표 클릭시
         btnClick();
     }
+    else
+        $(".timer").css("visibility", "hidden");
         
     showQuestion();
 
@@ -65,11 +68,12 @@ function btnClick()
     });
 
     $("#rightBtn").click(function(){
-        if(-1 != questionList[nowQuestion].click)
+        if(nowQuestion + 1 != questionCount)
         {
             nowQuestion++;
             showQuestion();
         }
+
     });
 }
 
@@ -159,25 +163,49 @@ function selectExample()
     
                 questionList[nowQuestion].ox = false;
             }
-        }
 
-        setTimeout(function()
+            setTimeout(function()
             {    
                 nowQuestion++;
                 showQuestion();
     
-            }, timeDelay - 300);
+            }, timeDelay);
+        }
+
+        
     });
 }
 
 function showQuestion()
 {
+
+    //일반검정일 경우 
+    if(2 == examMode || 4 == examMode)
+    {
+        //첫 문제일시 이전 화살표 제거
+        if(0 == nowQuestion)
+            $("#leftBtn").css("display", "none");
+        else
+            $("#leftBtn").css("display", "block");
+
+        //마지막 문제일시 다음 화살표 제거
+        if(nowQuestion + 1 == questionCount)
+            $("#rightBtn").css("display", "none");
+        else
+            $("#rightBtn").css("display", "block");
+    }
+
     $("#persentText").html(questionList[nowQuestion].percentage);
     $("#allQuestion").html(questionCount);
     $("#nowQuestion").html(nowQuestion + 1);
 
     $("#hilagana").html(questionList[nowQuestion].example[lanMode]);
     $("#Furagana").html(questionList[nowQuestion].example2[lanMode]);
+
+    if(questionList[nowQuestion].example[lanMode] == questionList[nowQuestion].example2[lanMode])
+        $("#Furagana").css("visibility", "hidden");
+    else
+        $("#Furagana").css("visibility", "visible");
 
     $(".example > .exampleBox").eq(0).html(questionList[nowQuestion].select1[lanMode]);
     $(".example > .exampleBox").eq(1).html(questionList[nowQuestion].select2[lanMode]);
@@ -193,9 +221,9 @@ function showQuestion()
 
 function makeQuestion()
 {
-    koreanCollection = ["먹다", "마시다", "놀다", "타다", "가다", "하다", "만나다", "이야기하다", "사다", "팔다", "기다리다", "가리키다", "가르치다", "외우다"];
-    hiraganaCollection = ["食べる", "飲む", "遊ぶ", "乗る", "行く", "する", "会う", "話す", "買う", "売る", "待つ", "指す", "教える", "覚える"];
-    furaganaCollection = ["たべる", "のむ", "あそぶ", "のる", "いく", "する", "あう", "はなす", "かう", "うる", "まつ", "さす", "おしえる", "おぼえる"];
+    koreanCollection = ["먹다", "마시다", "놀다", "타다", "가다", "하다", "만나다", "이야기하다", "사다", "팔다", "기다리다", "가리키다", "가르치다", "외우다", "비싸다", "싸다", "낮다", "맛있다", "맛없다", "크다", "작다", "어렵다", "쉽다", "새롭다", "오래되다", "길다", "짧다", "많다", "적다", "재미있다", "재미없다", "좋다", "나쁘다", "이르다", "빠르다", "가깝다", "멀다", "무겁다", "뜨겁다", "차갑다", "굵다", "가늘다", "밝다", "어둡다", "기쁘다", "슬프다", "깊다", "두껍다", "얇다", "약하다", "아프다", "바쁘다", "위험하다"];
+    hiraganaCollection = ["食べる", "飲む", "遊ぶ", "乗る", "行く", "する", "会う", "話す", "買う", "売る", "待つ", "指す", "教える", "覚える", "高い", "安い", "低い", "おいしい", "まずい", "大きい", "小さい", "難しい", "易しい", "新しい", "古い", "長い", "短い", "多い", "少ない", "おもしろい", "つまらない", "いい", "わるい", "早い", "速い", "近い", "遠い", "重い", "熱い", "冷たい" ,"太い", "細い", "明るい", "暗い", "うれしい", "かなしい", "深い", "厚い", "薄い", "弱い", "痛い", "忙しい", "危ない"];
+    furaganaCollection = ["たべる", "のむ", "あそぶ", "のる", "いく", "する", "あう", "はなす", "かう", "うる", "まつ", "さす", "おしえる", "おぼえる", "たかい", "やすい", "ひくい", "おいしい", "まずい", "おおきい", "ちいさい", "むずかしい", "やさしい", "あたらしい", "ふるい", "ながい", "みじかい", "おおい", "すくない", "おもしろい", "つまらない", "いい", "わるい", "はやい", "はやい", "ちかい", "とおい", "おもい", "あつい", "つめたい", "ふとい", "ほそい", "あかるい", "くらい", "うれしい", "かなしい", "ふかい", "あつい", "うすい", "よわい", "いたい", "いそがしい", "あぶない"];
 
     let wordList = [];
     for(let i = 0; i < koreanCollection.length; i++)
