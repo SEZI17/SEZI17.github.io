@@ -46,7 +46,7 @@ $(function(){
     //보기중 하나를 선택했을 경우
     selectExample();
 
-    //체점하기 버튼 클릭 시
+    //채점하기 버튼 클릭 시
     clickFinishBtn();
 });
 
@@ -69,6 +69,18 @@ function resultExam()
     });
 
     //문제리스트를 examResult.html로 넘긴다.
+    localStorage.setItem("language", lanMode);    
+
+    let tempMin = min;
+    let tempSec = sec;
+    if(min < 10)
+        tempMin = "0" + tempMin;
+    if(sec < 10)
+        tempSec = "0" + tempSec;
+
+    let timer = tempMin + ":" + tempSec;
+    localStorage.setItem("timer", timer);
+
     localStorage.setItem("resultList", JSON.stringify(resultList));
     window.open("./examResult.html", "_self");
 }
@@ -123,8 +135,8 @@ function startTimer()
             min++;
         }
 
-        tempMin = min;
-        tempSec = sec;
+        let tempMin = min;
+        let tempSec = sec;
         if(min < 10)
             tempMin = "0" + tempMin;
         if(sec < 10)
@@ -370,7 +382,7 @@ function changeFontSize(){
 
     if(10 < hilaganaLen)
     {
-        $("#Furagana").removeClass("largeText-2");
+        $("#Furagana").addClass("largeText-2");
         $("#hilagana").addClass("largeText");
     }
     else if(7 < hilaganaLen)
