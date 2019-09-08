@@ -27,3 +27,5 @@ Github, 레퍼런스 사이트 조사
 index 구성
 main_common.css - 헤더 및 푸터 구성
 gnb_dropdown.js - GNB 드롭다운 구성
+INDEX 제목 지정
+// 장세진
