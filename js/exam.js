@@ -1,4 +1,3 @@
-
 // 1: 히라가나 연습검정 // 2: 히라가나 일반검정
 // 3: 한글 연습검정     // 4: 한글 일반검정
 var examMode;           
@@ -29,8 +28,9 @@ $(function(){
     //일반검정일 경우
     if(2 == examMode || 4 == examMode)
     {
-        //타이머 작동
+        //타이머 작동 및 SHOW
         timerID = startTimer();
+        $(".timer").css("visibility", "visible");
 
         //왼쪽 오른쪽 화살표 보이도록 변경
         $("#leftBtn ").css("display","block");
@@ -39,23 +39,49 @@ $(function(){
         //왼쪽 오른쪽 화살표 클릭시
         btnClick();
     }
-    else
-        $(".timer").css("visibility", "hidden");
-        
+
+    //셋팅된 문제 보이게
     showQuestion();
 
     //보기중 하나를 선택했을 경우
     selectExample();
+
+    //체점하기 버튼 클릭 시
+    clickFinishBtn();
 });
 
 function resultExam()
 {
-    // 실험중
-    // $.each(questionList, function(index, value)
-    // {
+    let resultList = questionList.slice();
+    let removeList = [];
 
-    // });
+    $.each(resultList, function(index, value)
+    {
+        if(-1 == value.click)
+            removeList.push(index);
+    });
+
+    //리스트에서 안 푼문제는 삭제
+    removeList.reverse();
+    $.each(removeList, function(index, value)
+    {
+        resultList.splice(value, 1);
+    });
+
+    //문제리스트를 examResult.html로 넘긴다.
+    localStorage.setItem("resultList", JSON.stringify(resultList));
+    window.open("./examResult.html", "_self");
 }
+
+function clickFinishBtn(){
+    $(".finishExam").on("click", function(){
+
+        let result = confirm("채점하시겠습니까?");
+        if(true == result)
+            resultExam();
+    });
+}
+
 
 function btnClick()
 {
@@ -73,7 +99,6 @@ function btnClick()
             nowQuestion++;
             showQuestion();
         }
-
     });
 }
 
@@ -172,7 +197,6 @@ function selectExample()
             }, timeDelay);
         }
 
-        
     });
 }
 
@@ -315,10 +339,6 @@ function getQuerystring(paramName){
         if(_keyValuePair[0] == paramName)
             return _keyValuePair[1];
     }
-}
-
-function changeQuestionNumber(){
-
 }
 
 function changePersentColor(){
