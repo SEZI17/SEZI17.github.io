@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./notice.css">
+    <link rel="stylesheet" href="../../css/comm/notice.css">
 </head>
 
 <body>
@@ -32,50 +32,68 @@
             <div class="clfx"></div>
         </div>
         <!-- //검색기능 -->
+        <div class="board_section">
+            <table>
+                <!-- 게시판 항목 -->
+                <thead>
+                    <th>번호</th>
+                    <th class="board_article">글 제목</th>
+                    <th>글쓴이</th>
+                    <th>조회수</th>
+                    <th>작성일</th>
+                </thead>
+                <!-- //게시판 항목 -->
 
-        <!-- 게시판 본체 -->
-        <table>
-            <!-- 게시판 항목 -->
-            <thead>
-                <th>번호</th>
-                <th class="board_article">글 제목</th>
-                <th>글쓴이</th>
-                <th>조회수</th>
-                <th>작성일</th>
-            </thead>
-            <!-- //게시판 항목 -->
-
-            <!-- 게시판 글 -->
-            <tbody>
-                <tr>
-                    <td>3</td>
-                    <td class="board_article">홈페이지 일시 중단 안내</td>
-                    <td>관리자</td>
-                    <td>16</td>
-                    <td>2019-09-03</td>
-                </tr>
-            </tbody>
-            <!-- //게시판 글 -->
-        </table>
-        <!-- 페이지네이션 -->
-        <!-- <div class = "pagination">
-            <a href="#" >{{p+1}}</a>
-        </div> -->
-        <div class="pagination">
-            <button id="left_pagination">&laquo;</button>
-            <ul class="pagination_number">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-            </ul>
-            <button id="right_pagination">&raquo;</button>
+                <!-- 게시판 글 -->
+                <tbody>
+                    <tr>
+                        <td><a href="#">3</a></td>
+                        <td class="board_article"><a href="#">홈페이지 일시 중단 안내</a></td>
+                        <td><a href="#">관리자</a></td>
+                        <td><a href="#">16</a></td>
+                        <td><a href="#">2019-09-03</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">3</a></td>
+                        <td class="board_article"><a href="#">홈페이지 일시 중단 안내</a></td>
+                        <td><a href="#">관리자</a></td>
+                        <td><a href="#">16</a></td>
+                        <td><a href="#">2019-09-03</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">3</a></td>
+                        <td class="board_article"><a href="#">홈페이지 일시 중단 안내</a></td>
+                        <td><a href="#">관리자</a></td>
+                        <td><a href="#">16</a></td>
+                        <td><a href="#">2019-09-03</a></td>
+                    </tr>
+                </tbody>
+                <!-- //게시판 글 -->
+            </table>
+            <!-- 페이지네이션 -->
+            <!-- <div class = "pagination">
+                <a href="#" >{{p+1}}</a>
+            </div> -->
+            <div class="pagination">
+                <button id="left_pagination">&laquo;</button>
+                <ul class="pagination_number">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+                <button id="right_pagination">&raquo;</button>
+                
+            </div>
+            <!-- //페이지네이션 -->
+            <button id="write_btn">글쓰기</button>
+            
+            <div class="clfx"></div>
+            <!-- //게시판 본체 -->
         </div>
-        <!-- //페이지네이션 -->
+        <!-- 게시판 본체 -->
 
-        <button id="write_btn">글쓰기</button>
-        <!-- //게시판 본체 -->
     </div>
 </body>
 
