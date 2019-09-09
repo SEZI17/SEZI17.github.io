@@ -31,3 +31,11 @@ body>div{
   width: 80px; height: 40px;
   margin: 20px;
 }
+
+/* 푸터!!!! */
+#MEM_footer_wrap {
+  width: 800px;
+  margin: 0 auto;
+  height: 100px;
+  background-color: black;
+}

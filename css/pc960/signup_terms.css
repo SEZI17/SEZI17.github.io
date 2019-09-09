@@ -2,6 +2,18 @@ body{
   width: 960px;
   margin: 0 auto;
 }
+#signup_header {
+  width: 960px;
+  margin: 0 auto;
+  background-color: black;
+  height: 120px;
+}
+#signup_header_title {
+  color: white;
+  line-height: 50px;
+  height: 20px;
+  width: 50px;
+}
 #wrap{
   margin-top: 50px;
 }
@@ -11,10 +23,12 @@ body{
   width: 70%;
   position: relative;
 }
-#terms>div{
+#terms> div{
   border: 1px solid #888;
   padding: 15px;
   margin-bottom: 10px;
+  overflow: scroll;
+  height: 120px;
 }
 #terms>span{
   position: absolute;
