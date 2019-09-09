@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/editInfo_pwChange.js"></script>
+    <link rel="stylesheet" href="./css/editInfo_pwChange.css">
+</head>
+<body>
+    <!-- edit personal information -->
+   <h1>비밀 번호 변경</h1>
+   <div id="editPW">
+       <hr>
+        <div id="password"> 
+            <h3>현재 비밀번호</h3>
+            <div>
+                <input type="password" placeholder="비밀번호">
+            </div>
+        </div>
+        <br>
+        <div id="newPW">
+            <h3>새 비밀번호</h3>
+            <div>
+                <input type="password" placeholder="비밀번호">
+            </div>
+        </div>
+        <div id="newPWCheck">
+            <h3>새 비밀번호 확인</h3>
+            <div>
+                <input type="password" placeholder="비밀번호 확인">
+                <p>*한글로 5글자 이내로 입력해주세요</p>
+            </div>
+        </div>
+        </div>
+        <br>
+        <hr>
+   </div>
+   <!-- bottom button -->
+   <div id="bottomBtn">
+        <button id="confirmBtn">변경</button>
+        <button id="cancelBtn">취소</button>
+    </div>
+</body>
+</html>
