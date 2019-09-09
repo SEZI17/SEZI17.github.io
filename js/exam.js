@@ -2,7 +2,8 @@
 // 3: 한글 연습검정     // 4: 한글 일반검정
 var examMode;           
 var questionList = [];      //문제 보관 변수
-var questionCount = 30;     //전체 문제 수
+var wordList = [];          //단어 모음
+var questionCount = 20;     //전체 문제 수
 var nowQuestion = 0;        //현재 문제 번호
 var timeDelay = 1200;       
 var min = 0;
@@ -85,12 +86,25 @@ function resultExam()
     window.open("./examResult.html", "_self");
 }
 
-function clickFinishBtn(){
-    $(".finishExam").on("click", function(){
-
+function clickFinishBtn()
+{
+    $(".finishExam").on("click", function()
+    {
         let result = confirm("채점하시겠습니까?");
         if(true == result)
-            resultExam();
+        {
+            let listLen = questionList.length;
+            for(let i = 0; i < listLen; i++)
+            {
+                if(-1 != questionList[i].click)
+                {
+                    resultExam();
+                    return;
+                }
+            };
+
+            alert("아직 한 문제도 풀지 않았습니다.");
+        }
     });
 }
 
@@ -255,13 +269,47 @@ function showQuestion()
     changeFontSize();
 }
 
+function overlapCheck(tempList, RandVal)
+{
+    let listLen = questionList.length;
+    for(let i = 0; i < listLen; i++)
+    {
+        if(wordList[tempList[RandVal]].hiragana == questionList[i].example[0])
+        {
+            for(let j = 0; j < 4; j++)
+            {
+                if(j != RandVal)
+                {
+                    if(true == overlapCheck2(tempList, j))
+                        return j;
+                }
+            }
+
+            return -1;
+        }
+    }
+
+    return RandVal;
+}
+
+function overlapCheck2(tempList, RandVal)
+{
+    let listLength = questionList.length;
+    for(let i = 0; i < listLength; i++)
+    {
+        if(wordList[tempList[RandVal]].hiragana == questionList[i].example[0])
+            return false;
+    }
+
+    return true;
+}
+
 function makeQuestion()
 {
-    koreanCollection = ["먹다", "마시다", "놀다", "타다", "가다", "하다", "만나다", "이야기하다", "사다", "팔다", "기다리다", "가리키다", "가르치다", "외우다", "비싸다", "싸다", "낮다", "맛있다", "맛없다", "크다", "작다", "어렵다", "쉽다", "새롭다", "오래되다", "길다", "짧다", "많다", "적다", "재미있다", "재미없다", "좋다", "나쁘다", "이르다", "빠르다", "가깝다", "멀다", "무겁다", "뜨겁다", "차갑다", "굵다", "가늘다", "밝다", "어둡다", "기쁘다", "슬프다", "깊다", "두껍다", "얇다", "약하다", "아프다", "바쁘다", "위험하다"];
-    hiraganaCollection = ["食べる", "飲む", "遊ぶ", "乗る", "行く", "する", "会う", "話す", "買う", "売る", "待つ", "指す", "教える", "覚える", "高い", "安い", "低い", "おいしい", "まずい", "大きい", "小さい", "難しい", "易しい", "新しい", "古い", "長い", "短い", "多い", "少ない", "おもしろい", "つまらない", "いい", "わるい", "早い", "速い", "近い", "遠い", "重い", "熱い", "冷たい" ,"太い", "細い", "明るい", "暗い", "うれしい", "かなしい", "深い", "厚い", "薄い", "弱い", "痛い", "忙しい", "危ない"];
-    furaganaCollection = ["たべる", "のむ", "あそぶ", "のる", "いく", "する", "あう", "はなす", "かう", "うる", "まつ", "さす", "おしえる", "おぼえる", "たかい", "やすい", "ひくい", "おいしい", "まずい", "おおきい", "ちいさい", "むずかしい", "やさしい", "あたらしい", "ふるい", "ながい", "みじかい", "おおい", "すくない", "おもしろい", "つまらない", "いい", "わるい", "はやい", "はやい", "ちかい", "とおい", "おもい", "あつい", "つめたい", "ふとい", "ほそい", "あかるい", "くらい", "うれしい", "かなしい", "ふかい", "あつい", "うすい", "よわい", "いたい", "いそがしい", "あぶない"];
+    let koreanCollection = ["먹다", "마시다", "놀다", "타다", "가다", "하다", "만나다", "이야기하다", "사다", "팔다", "기다리다", "가리키다", "가르치다", "외우다", "비싸다", "싸다", "낮다", "맛있다", "맛없다", "크다", "작다", "어렵다", "쉽다", "새롭다", "오래되다", "길다", "짧다", "많다", "적다", "재미있다", "재미없다", "좋다", "나쁘다", "이르다", "빠르다", "가깝다", "멀다", "무겁다", "뜨겁다", "차갑다", "굵다", "가늘다", "밝다", "어둡다", "기쁘다", "슬프다", "깊다", "두껍다", "얇다", "약하다", "아프다", "바쁘다", "위험하다"];
+    let hiraganaCollection = ["食べる", "飲む", "遊ぶ", "乗る", "行く", "する", "会う", "話す", "買う", "売る", "待つ", "指す", "教える", "覚える", "高い", "安い", "低い", "おいしい", "まずい", "大きい", "小さい", "難しい", "易しい", "新しい", "古い", "長い", "短い", "多い", "少ない", "おもしろい", "つまらない", "いい", "わるい", "早い", "速い", "近い", "遠い", "重い", "熱い", "冷たい" ,"太い", "細い", "明るい", "暗い", "うれしい", "かなしい", "深い", "厚い", "薄い", "弱い", "痛い", "忙しい", "危ない"];
+    let furaganaCollection = ["たべる", "のむ", "あそぶ", "のる", "いく", "する", "あう", "はなす", "かう", "うる", "まつ", "さす", "おしえる", "おぼえる", "たかい", "やすい", "ひくい", "おいしい", "まずい", "おおきい", "ちいさい", "むずかしい", "やさしい", "あたらしい", "ふるい", "ながい", "みじかい", "おおい", "すくない", "おもしろい", "つまらない", "いい", "わるい", "はやい", "はやい", "ちかい", "とおい", "おもい", "あつい", "つめたい", "ふとい", "ほそい", "あかるい", "くらい", "うれしい", "かなしい", "ふかい", "あつい", "うすい", "よわい", "いたい", "いそがしい", "あぶない"];
 
-    let wordList = [];
     for(let i = 0; i < koreanCollection.length; i++)
     {
         let word = {};
@@ -276,6 +324,8 @@ function makeQuestion()
     {
         let len = koreanCollection.length;
         let tempList = [];
+
+        //문제 만들때 보기 4개 중복 체크 
         for(let j = 0; j < 4; j++)
         {
             let RandVal = Math.floor(Math.random() * len);
@@ -296,6 +346,14 @@ function makeQuestion()
         }
         
         let RandVal = Math.floor(Math.random() * 4);
+
+        //문제 중복체크
+        RandVal = overlapCheck(tempList, RandVal)
+        if(-1 == RandVal)
+        {
+            i--;
+            continue;
+        }
 
         let question = {};
         question.example = [wordList[tempList[RandVal]].hiragana, wordList[tempList[RandVal]].korean];

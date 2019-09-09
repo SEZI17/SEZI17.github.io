@@ -12,6 +12,9 @@ $(function(){
     
     //content 셋팅
     getContent();
+
+    //저장하기 버튼 클릭시
+    saveBtnClick()
 });
 
 function getResult()
@@ -74,6 +77,15 @@ function getContent()
         $("#section").append(str);
     });
 }
+
+function saveBtnClick()
+{
+    //저장버튼은 한번만 클릭가능
+    $("#footer > .saveBtn").one("click", function(){
+        alert("저장완료");
+    });
+}
+
 
 function PersentColor(persent)
 {
