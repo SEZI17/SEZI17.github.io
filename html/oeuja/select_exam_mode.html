@@ -11,10 +11,12 @@
     <script src="../../js/jquery.easing.1.3.js"></script>
 </head>
     <script type="text/javascript">
-        function click_select_mode(mode) {
+        function click_select_mode(mode) 
+        {
+            let language = $("#languageMode option:selected").val();
+            let url = "./exam.html?mode=" + mode + "&language=" + language;
 
-            var language = $("#languageMode option:selected").val();
-            location.href="./exam.html?mode=" + mode + "&language=" + language;
+            window.open(url, "_self");
         }
     </script>
 <body>

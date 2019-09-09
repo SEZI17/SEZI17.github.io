@@ -1,0 +1,85 @@
+body{
+  width: 960px;
+  margin: 0 auto;
+}
+#signup_header {
+  width: 960px;
+  margin: 0 auto;
+  background-color: black;
+  height: 120px;
+}
+#signup_header_title {
+  color: white;
+  line-height: 50px;
+  height: 20px;
+  width: 50px;
+}
+#wrap{
+  margin-top: 50px;
+}
+/* terms agreement */
+#terms{
+  float: left;
+  width: 70%;
+  position: relative;
+}
+#terms> div{
+  border: 1px solid #888;
+  padding: 15px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  height: 120px;
+}
+#terms>span{
+  position: absolute;
+  right: 0;
+}
+
+/* registration status side bar */
+#side_status{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  float: right;
+  margin-top: 10px;
+}
+i{
+  margin:20px;
+}
+.dot {
+  height: 100px;
+  width: 100px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+.dot p{
+  display: table-cell;
+  height: 100px;
+  width: 100px;
+  vertical-align: middle;
+}
+.dot + p{
+  display: inline-block;
+  border: 1px solid black;
+  margin: auto;
+}
+.arrow_down {
+  border: solid rgb(68, 67, 67);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/* register / cancel button */
+#bottomBtn{
+  clear: both;
+  text-align: center;
+}
+#bottomBtn button{
+  width: 100px; height: 40px;
+  margin: 20px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/signup.js"></script>
+    <link rel="stylesheet" href="../../css/pc960/signup.css">
+</head>
+<body>
+    <!-- registration form -->
+    <div id="wrap">
+        <div id="registerForm">
+            <h1>하루,단어 가입정보 입력</h1>
+            <hr> <br>
+            <div id="name">
+                <h3>이름*</h3>
+                <div>
+                    <input type="text" placeholder="이름">
+                    <p>*한글로 5글자 이내로 입력해주세요</p>
+                </div>
+            </div>
+            <div id="username">
+                <h3>아이디*</h3>
+                <div>
+                    <input type="text" placeholder="아이디">
+                    <button id="usernameCheck">중복확인</button>
+                    <p>*한글로 5글자 이내로 입력해주세요</p>
+                </div>
+            </div>
+            <div id="nickname">
+                <h3>별명*</h3>
+                <div>
+                    <input type="text" placeholder="별명">
+                    <button id="nicknameCheck">중복확인</button>
+                    <p>*한글로 5글자 이내로 입력해주세요</p>
+                </div>
+            </div>
+            <div id="email">
+                <h3>E-mail*</h3>
+                <div>
+                    <input type="email" placeholder="이메일 주소">
+                    <p>*한글로 5글자 이내로 입력해주세요</p>
+                </div>
+            </div>
+            <div id="password">
+                <h3>비밀번호*</h3>
+                <div>
+                    <input type="password" placeholder="비밀번호">
+                    <p>*한글로 5글자 이내로 입력해주세요</p>
+                </div>
+            </div>
+            <div id="passwordCheck">
+                <h3>비밀번호 확인*</h3>
+                <div>
+                    <input type="password" placeholder="비밀번호 확인">
+                    <p>*한글로 5글자 이내로 입력해주세요</p>
+                </div>
+            </div>
+        </div>
+    
+        <br>
+        <!-- registration status side bar -->
+        <div id="side_status">
+            <span class="dot"><p>약관<br>동의</p></span>
+            <br><i class="arrow_down"></i><br>
+            <span class="dot" style="background-color: #aaa; color: whitesmoke;"><p>정보<br>입력</p></span>
+            <br><i class="arrow_down"></i><br>
+            <span class="dot"><p>가입<br>완료</p></span>
+        </div>
+    </div>
+    <!-- bottom button -->
+    <div id="bottomBtn">
+        <button id="registerBtn">회원가입</button>
+        <button id="cancelBtn">취소</button>
+    </div>
+    
+</body>
+</html>

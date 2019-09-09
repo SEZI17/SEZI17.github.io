@@ -1,11 +1,33 @@
 .wrap{
-    position: relative;
+    width: 740px;
 }
 
-.bodyborder{
+.description{
+    margin-left: 20px;
+
+    color:blue;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.timer{
+    margin-right: 22px;
+
+    color: black;
+    font-size: 22px; 
+    font-weight: bold;
+
+    text-align: right;
+}
+
+.content{
     border: 3px solid skyblue;
     margin: 15px;
-    width: 700px; height: 670px;
+    width: 700px; height: 600px;
+}
+
+.content:first-child{
+    margin-top: 3px;
 }
 
 .redBorder{
@@ -71,10 +93,6 @@
     border-radius: 9%;
 }
 
-.exampleBox:hover{
-    background-color: skyblue;
-}
-
 .largeText-3{font-size: 15px; font-weight: bold;}
 .largeText-2{font-size: 17px; font-weight: bold;}
 .largeText-1{font-size: 20px; font-weight: bold;}
@@ -86,56 +104,10 @@
 .greenText{color: green;}
 .redText{color: red;}
 
-.finishExam{
-    position: absolute;
-    width: 100px; height: 60px;
-    text-align: center;
-    line-height: 60px;
-
-    margin: 7px;
-    margin-left: 9px;
-    
-    background-color: rgb(190, 190, 190);
-    border-radius: 20%;
-
-    color: white;
-    font-weight: bold;
-}
-
-.finishExam:hover{
-    
-    background-color: skyblue;
-}
-
 .correctPercent{
     margin: 5px;
     margin-right: 10px;
     text-align: right;
-}
-
-.timer{
-    margin: 5px;
-    margin-right: 10px;
-    text-align: right;
-
-    visibility: hidden;
-}
-
-#questionNumber{
-    text-align: center;
-}
-
-#ox{
-    display: none;
-    position: absolute;
-
-    font-size: 750px;
-
-    width: 700px; height: 670px;
-    text-align: center;
-    line-height: 580px;
-
-    z-index: 999;
 }
 
 #checkDisplay{
@@ -145,31 +117,6 @@
     color: green;
     font-weight: bold;
     font-size: 100px;
-}
-
-.moveBtn {
-    position: relative;
-}
-
-#leftBtn, #rightBtn{
-    font-size: 70px;
-    color: rgb(94,94,94);
-
-    top: -60px;
-    display: none;
-}
-
-#leftBtn:hover, #rightBtn:hover{
-    color: rgb(190,190,190);
-}
-
-#leftBtn{
-    position: absolute;
-}
-
-#rightBtn{
-    position: absolute;
-    right: 0px;
 }
 
 /* 드래그 방지 클래스 */
