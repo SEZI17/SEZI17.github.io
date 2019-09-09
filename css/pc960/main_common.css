@@ -165,4 +165,4 @@ footer {
 #haru_contactus > p { font-size: 14px; }
 .laws { color: orange; }
 
-#contents { height: 400px;}
+#contents { height: 400px; margin: 0 auto; width: 960px; line-height: 200px;}

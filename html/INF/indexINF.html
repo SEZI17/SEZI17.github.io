@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>::: 하루, 단어 :::</title>
-    <script src="./js/jquery-2.1.1.min.js"></script>
-    <script src="./js/jquery-ui.min.js"></script>
-    <script src="./js/jquery.easing.1.3.js"></script>
-    <script src="./js/gnb_dropdown.js"></script>
-    <link rel="stylesheet" href="./css/pc960/main_common.css">
+    <title>하루, 단어 > 페이지 정보</title>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/jquery.easing.1.3.js"></script>
+    <script src="../../js/gnb_dropdown.js"></script>
+    <link rel="stylesheet" href="../../css/pc960/main_common.css">
+    <link rel="stylesheet" href="../../css/pc960/INF/INF_common.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +18,7 @@
     <header>
         <div id="haru_header_upper">
             <div id="haru_header_upper_wrap">
-                <title id="haru_title">하루, 단어</title>
+                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
             </div>
         </div>
         <div id="haru_header_bottom">
@@ -46,7 +47,7 @@
     <!-- Dropdown Menu -->
     <div id="haru_LRN_dropdown" class="dropdown">
         <ul class="dropLRN">
-            <li><a href="./html/LRN/indexLRN.html">하루단어</a></li>
+            <li><a href="../LRN/indexLRN.html">하루단어</a></li>
             <li><a href="#">단어검정</a></li>
             <li><a href="#">단어 List</a></li>
         </ul>
@@ -57,7 +58,7 @@
     </div>
     <div id="haru_COM_dropdown" class="dropdown">
         <ul class="dropCOM">
-            <li><a href="./html/COM/indexCOM.html">공지사항</a></li>
+            <li><a href="../COM/indexCOM.html">공지사항</a></li>
             <li><a href="#">TIP 게시판</a></li>
             <li><a href="#">단어통계</a></li>
         </ul>
@@ -68,7 +69,7 @@
     </div>
     <div id="haru_MYP_dropdown" class="dropdown">
         <ul class="dropMYP">
-            <li><a href="./html/MYP/indexMYP.html" class="wan">오답노트</a></li>
+            <li><a href="../MYP/indexMYP.html" class="wan">오답노트</a></li>
             <li><a href="#">내 단어장</a></li>
             <li><a href="./html/MEM/editInfo_pwCheck.html">회원정보변경</a></li>
         </ul>
@@ -79,7 +80,7 @@
     </div>
     <div id="haru_INF_dropdown" class="dropdown">
         <ul class="dropINF">
-            <li><a href="./html/INF/indexINF.html" class="aboutus">소개</a></li>
+            <li><a href="../INF/indexINF.html" class="aboutus">소개</a></li>
             <li><a href="#">FAQ</a></li>
         </ul>
         <div class="menu_description">
@@ -88,7 +89,24 @@
         </div>
     </div>
     <!-- //Dropdown Menu -->
-    <div id="contents">메인 페이지 공사중입니다. 각 카테고리의 첫번째 항목은 링크가 구성되어있습니다.</div>
+    <!-- Contents Here -->
+    <div id="haru_INF_header">
+        <h1>페이지 정보</h1>
+        <p>제작자 및 관리자를 소개합니다.</p>
+    </div>
+    <div id="haru_contents_wrap">
+        <aside id="haru_aside">
+            <nav id="haru_snb">
+                <ul>
+                    <li><a href="#">페이지 정보</a></li>
+                    <li><a href="#" class="snb_link">소개</a></li>
+                    <li><a href="#" class="snb_link">FAQ</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="haru_contents_HRD"></div>
+    </div>
+    <!-- //Contents Here -->
     <!-- haru footer -->
     <footer>
         <div id="haru_footer_wrap">

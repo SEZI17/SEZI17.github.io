@@ -1,0 +1,62 @@
+/* 페이지 소개 카테고리 헤더 */
+#haru_INF_header {
+    width: 960px; height: 180px;
+    margin: 0 auto;
+    color: white;
+    background-image: url('../../../img/INF.jpg');
+    position: relative;
+}
+
+#haru_INF_header > h1 {
+    position: absolute;
+    top: 30px;
+    right: 80px;
+}
+#haru_INF_header > p {
+    position: absolute;
+    top: 85px;
+    right: 80px;
+}
+
+/* 컨텐츠 960 */
+#haru_contents_wrap {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+#haru_aside {
+    position: relative;
+    width: 160px;
+}
+/* 외우자 카테고리 GNB 구성 */
+#haru_aside > #haru_snb {
+    width: 130px;
+    left: 0;
+}
+#haru_aside > #haru_snb {
+    border: 1px solid black
+}
+#haru_snb > ul > li > a {
+    display: block;
+    padding: 0 15px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #5d5753;
+}
+.snb_link:hover {
+    transition-duration: 1s;
+    background-color: #EFE5DF;
+}
+#haru_snb > ul > li:first-child > a {
+    font-weight: bold;
+    background-color: #AF8672;
+    color: white;
+    cursor: default;
+}
+#haru_snb > ul > li:last-child > a {
+    border-bottom: 0px;
+}
