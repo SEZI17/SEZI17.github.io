@@ -22,21 +22,22 @@ footer a { color: white; }
     width: 100%;
     height: 100px;
     top: 0;
-    background-color: black;
+    background-color: #5d5753;
     position: relative;
 }
 #haru_header_bottom {
     width: 100%;
     height: 50px;
-    background-color: #7ad6c3;
+    background-color: #AF8672;
 }
 #haru_title {
-    margin: 0 auto; padding: 25px;
+    margin: 0 auto; padding: 20px;
     width: 200px; height: 40px;
     text-align: center;    
     display: block;
     color: white;
-    font-size: 34px;
+    font-size: 45px;
+    font-family: 'Stylish', sans-serif;
 }
 
 /* GNB */
@@ -85,7 +86,7 @@ footer a { color: white; }
     font-weight: bold;
 }
 .menu_description_contents {
-    color: #7ad6c3
+    color: #E6CDBf
 }
 .dropdown > ul { overflow: hidden; }
 .dropdown > ul > li { float: left; }
@@ -129,7 +130,7 @@ footer a { color: white; }
 }
 
 #haru_signup > ul > li > a:hover {
-    background-color: orangered;
+    background-color: #E6CDBf;
     color: white;
     transition-duration: 0.2s;
 }
@@ -140,7 +141,7 @@ footer {
     width: 100%;
     height: 100px;
     top: 0;
-    background-color: #7ad6c3;
+    background-color: #AF8672;
 }
 
 /* FNB */
@@ -161,6 +162,6 @@ footer {
 }
 #haru_contactus { position: absolute; top: 45px; }
 #haru_contactus > p { font-size: 14px; }
-.laws { color: red; }
+.laws { color: orange; }
 
 #contents { height: 400px;}

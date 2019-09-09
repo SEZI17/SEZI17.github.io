@@ -8,7 +8,7 @@ $(function(){
         $('#haru_LRN_dropdown').stop().slideDown();
     });
     $('.dropLRN').mouseout(function(){
-        $('#haru_LRN').css({"background":"#7ad6c3","transition-duration":"0.3s"});
+        $('#haru_LRN').css({"background":"#AF8672","transition-duration":"0.3s"});
         $('#haru_LRN_dropdown').stop().slideUp();
     });
     
@@ -21,7 +21,7 @@ $(function(){
         $('#haru_COM_dropdown').stop().slideDown();
     });
     $('.dropCOM').mouseout(function(){
-        $('#haru_COM').css({"background":"#7ad6c3","transition-duration":"0.3s"});
+        $('#haru_COM').css({"background":"#AF8672","transition-duration":"0.3s"});
         $('#haru_COM_dropdown').stop().slideUp();
     });
 
@@ -35,7 +35,7 @@ $(function(){
         $('#haru_MYP_dropdown').stop().slideDown();
     });
     $('.dropMYP').mouseout(function(){
-        $('#haru_MYP').css({"background":"#7ad6c3","transition-duration":"0.3s"});
+        $('#haru_MYP').css({"background":"#AF8672","transition-duration":"0.3s"});
         $('#haru_MYP_dropdown').stop().slideUp();
     });
 
@@ -49,7 +49,7 @@ $(function(){
         $('#haru_INF_dropdown').stop().slideDown();
     });
     $('.dropINF').mouseout(function(){
-        $('#haru_INF').css({"background":"#7ad6c3","transition-duration":"0.3s"});
+        $('#haru_INF').css({"background":"#AF8672","transition-duration":"0.3s"});
         $('#haru_INF_dropdown').stop().slideUp();
     });
 });
