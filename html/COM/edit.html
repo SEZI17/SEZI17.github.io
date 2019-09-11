@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/pc960/COM/write.css">
+    <script src="../../js/ckeditor/ckeditor.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- 커뮤니티 헤더 -->
+        <div class="comm_header">
+            <h3>공지 사항</h3>
+            <span>Home>커뮤니티>공지사항</span>
+            <div class="clfx"></div>
+        </div>
+        <!-- //커뮤니티 헤더 -->
+        <!-- 글쓰기 모듈 -->
+        <div class="articleEditor">
+            <input type=" text" name="article_title" id="articleTitle" placeholder="글 제목" />
+            <!-- 수정 페이지. 게시글 로드 후 현재 이 부분을 초기화 할것. -->
+            <textarea name="article_content" id="articleContent" cols="30" rows="10">
+                <!-- 글 내용 시작 -->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, ullam aut adipisci facere quisquam inventore accusamus dolores quos enim repudiandae esse unde doloribus, atque necessitatibus, recusandae minus obcaecati! Iste, dolor.
+                <!-- // 글 내용 -->
+            </textarea>
+
+            <div id="articlecancel" class="btn" onclick="cancel()">취소</div>
+            <div id="articleSend" class="btn" onclick="summit()">글쓰기</div>
+            <div class="clfx"></div>
+            
+        </div>
+    </div>
+    <script>
+        function cancel(){
+            let conf = confirm("수정을 취소하고 이전 페이지로 돌아갑니다.")
+            if(conf){
+                history.back();
+            }
+        }
+        function summit(){
+            let conf = confirm("글을 수정 합니다.")
+            if(conf){
+                // 백엔드 호출, 서버사이드로 글을 보냄.
+                // 가능하면 이때 내용 검증 후 String 타입 그대로 HTML 코드를 담을 것.
+                let articleData = CKEDITOR.instances.articleContent.getData();
+                let titleData = document.getElementById("articleTitle").value
+            }
+        }
+        CKEDITOR.replace('articleContent');
+    </script>
+</body>

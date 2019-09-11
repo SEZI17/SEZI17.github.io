@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/comm/notice.css">
+    <link rel="stylesheet" href="../../css/pc960/COM/notice.css">
     
 </head>
 
@@ -90,14 +90,20 @@
                 
             </div>
             <!-- //페이지네이션 -->
-            <button id="write_btn">글쓰기</button>
+            <button id="write_btn" onclick="summit()">글쓰기</button>
             
             <div class="clfx"></div>
             <!-- //게시판 본체 -->
         </div>
         <!-- 게시판 본체 -->
-
+        
     </div>
+    <script>
+        function summit(){
+            confirm("글을 작성 합니다.")
+        }
+
+    </script>
 </body>
 
 </html>
