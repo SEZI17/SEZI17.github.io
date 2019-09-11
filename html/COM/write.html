@@ -23,24 +23,27 @@
         <!-- 글쓰기 모듈 -->
         <div class="articleEditor">
             <input type=" text" name="article_title" id="articleTitle" placeholder="글 제목" />
-            <textarea name="article_content" id="articleContent" cols="30" rows="10"></textarea>
-
-            <div id="articlecancel" class="btn" onclick="cancel()">취소</div>
+            <div id="articleInner">
+                
+                <textarea name="article_content" id="articleContent" cols="30" rows="10"></textarea>
+            </div>
+            <div id="articleCancel" class="btn" onclick="cancel()">취소</div>
             <div id="articleSend" class="btn" onclick="summit()">글쓰기</div>
             <div class="clfx"></div>
-            
+
         </div>
+        <!-- //글쓰기 모듈 -->
     </div>
     <script>
-        function cancel(){
+        function cancel() {
             let conf = confirm("작성을 취소하고 이전 페이지로 돌아갑니다.")
-            if(conf){
+            if (conf) {
                 history.back();
             }
         }
-        function summit(){
+        function summit() {
             let conf = confirm("글을 수정 합니다.")
-            if(conf){
+            if (conf) {
                 // 백엔드 호출, 서버사이드로 글을 보냄.
                 // 가능하면 이때 내용 검증 후 String 타입 그대로 HTML 코드를 담을 것.
                 let articleData = CKEDITOR.instances.articleContent.getData();

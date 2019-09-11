@@ -9,7 +9,13 @@ div.container{
 .clfx{
     clear: both;
 }
+#articleTitle{
+    border: 1px solid #777;
+}
 
+#articleInner{
+    border:1px solid #777;
+}
 
 .comm_header h3{
     float: left;
@@ -33,7 +39,7 @@ div.container{
     float: right;
 }
 
-#articleCancle{
+#articleCancel{
     margin-top: 10px;
     float: right;
 }
