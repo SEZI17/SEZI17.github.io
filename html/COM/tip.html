@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/pc960/COM/notice.css">
+    <link rel="stylesheet" href="../../css/pc960/COM/tip.css">
     
 </head>
 
@@ -14,15 +14,21 @@
     <!-- 커뮤니티 헤더 -->
     <div class="container">
             <div class="comm_header">
-                <h3>공지 사항</h3>
-                <span>Home > 커뮤니티 > 공지사항</span>
+                <h3>TIP 게시판</h3>
+                <span>Home > 커뮤니티 > TIP 게시판</span>
                 <div class="clfx"></div>
             </div>
             <!-- //커뮤니티 헤더 -->
 
         <!-- 검색기능 -->
         <div class="search">
-            <a href="#"><img src="./img/page.png" alt="board_view_icon"></a>
+            <!-- 카테고리 -->
+            <div class="category">
+                <a href="#"><img src="./img/page.png" alt="board_view_icon"></a>
+                <a href="#" class="cate">TIP</a>
+                <a href="#" class="cate">합격수기</a>
+            </div>
+            <!-- //카테고리 -->
             <form @prevent.action="submit">
                 <select name="search_type" id="search_type">
                     <option value="article">제목</option>
