@@ -1,4 +1,5 @@
 /* 초기화 */
+body { background: #E1DAD4 }
 * { font-family: 'Malgun Gothic', sans-serif; margin: 0; padding: 0; }
 ol, ul { list-style: none; }
 a { outline: 0; text-decoration: none; color: black;}
@@ -20,14 +21,14 @@ footer a { color: white; }
 #haru_header_upper {
     padding: 0 auto;
     width: 100%;
-    height: 200px;
+    height: 100px;
     top: 0;
-    /* background-color: #5D5753; */
+    background-color: #5D5753;
     position: relative;
 }
 #haru_header_bottom {
     margin: 0 auto;
-    width: 960px;
+    width: 100%;
     height: 50px;
     background-color: #AF8672;
 }
@@ -64,7 +65,7 @@ footer a { color: white; }
 /* GNB Dropdown 구성 */
 .dropdown {
     position: absolute;
-    top: 250px;
+    top: 150px;
     width: 960px;
     height: 90px;
     margin-left: auto;
@@ -142,6 +143,7 @@ footer a { color: white; }
 }
 /* footer */
 footer {
+    padding: 0 auto;
     bottom: 0;
     width: 100%;
     height: 100px;
