@@ -1,31 +1,207 @@
-
-/* 상위 검색 */
-.check table
-{
-    width: 768px;
+/* 기능 부분 */
+#LRN_HRD_wrap {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 750px;
+    height: 250px;
+    position: relative;
+    clear: both;
+    -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
 }
 
-/* 상위 검색 모양 */
-.check table td
-{
-    margin: 0;
-    padding: 10px;
-    width: 152px;
-    height: 30px;
+#LRN_HRD_card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    float: left;
+}
+#LRN_HRD_card1 {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-image: url("../../../img/card1.png");
+    background-repeat: no-repeat;
+    background-size: 400px 250px;
+}
+#LRN_HRD_card2 {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-image: url("../../../img/card2.png");
+    background-repeat: no-repeat;
+    background-size: 400px 250px;
+}
+#LRN_HRD_card3 {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-image: url("../../../img/card3.jpg");
+    background-repeat: no-repeat;
+    background-size: 400px 250px;
+}
+#LRN_HRD_card h2 {
+    text-align: center;    
+    line-height: 250px;
+}
+.card_active { z-index: 1; }
+#LRN_HRD_next {
+    text-align: center;    
+    line-height: 125px;
+    width: 175px;
+    height: 125px;
+    background: #5E968B;
+    float: left;
+}
+#LRN_HRD_dknow {
+    text-align: center;    
+    line-height: 125px;
+    width: 350px;
+    height: 125px;
+    background: #A74E36;
+    float: left;
+}
+#LRN_HRD_mynote {
+    text-align: center;    
+    line-height: 85px;
+    width: 175px;
+    height: 85px;
+    background: #C8A25B;
+    float: left;
+}
+#LRN_HRD_timer {
+    width: 175px;
+    height: 40px;
+    background: #5D405A;
+    float: left;
+}
+#HRD_timer_visible {
+    width: 175px;   
+    text-align: center;    
+    line-height: 40px;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    color: white;
+    font-family: 'Poor Story',sans-serif;
+    font-weight: bold;
+}
+#HRD_timer {
+    position: absolute;
+    text-align: center;    
+    line-height: 40px;
+    width: 175px;
+    font-size: 12px;
+    color: white;
+    font-family: 'Poor Story',sans-serif;
+    font-weight: bold;
+}
+/* 글씨 가운데 정렬 */
+.HRD_button {
+    font-size: 40px;
+    color: white;
+    font-family: 'Poor Story',sans-serif;
+    font-weight: bold;
+}
+
+.HRD_button:hover {
+    opacity: 0.5;
+    transition-duration: 0.4s;
+}
+
+.HRD_button_small {
+    font-size: 25px;
+    color: white;
+    font-family: 'Poor Story',sans-serif;
+    font-weight: bold;
+}
+
+.HRD_button_small:hover {
+    opacity: 0.5;
+    transition-duration: 0.4s;
+}
+
+/* 모르는 단어 리스트 */
+#LRN_HRD_dknow_title {
+    height: 55px;
+    width: 400px;
+    position:relative;
+    clear: both;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#LRN_HRD_dknow_title h1 {
+    font-family: 'Poor Story',sans-serif;
+    font-weight: bold;
+    height: 55px;
+    width: 300px;
+    line-height: 55px;
+    float: left;
+    margin-right: 40px;
+}
+#LRN_HRD_dknow_UD {
+    width: 55px;
+    float: left;
+}
+#LRN_HRD_dknow_table_wrap {
+    height: 100%;
+    margin-bottom: 50px;
+}
+#LRN_HRD_dknow_title:hover {
+    opacity: 0.5
+}
+#LRN_HRD_dknow_table {    
+    width: 750px;
     border: 1px solid black;
-    border-right: none;
-    border-left: none;
-    border-bottom: none;
+}
+#LRN_HRD_dknow_table th {
+    height: 30px;
+    background: #AF8672;
+    color: white;   
+}
+#LRN_HRD_dknow_table td {
+    height: 30px;
+    text-align: center;
+}
+#LRN_HRD_dknowlist {
+    background: #FFF8E1;
+}
+.table_kanji {
+    width: 200px;
+}
+.table_yomigana {
+    width: 200px;
+}
+.table_korean {
+    width: 200px;
 }
 
-a
-{
-    display: block;
-    text-decoration: none;
-    color: black;
+.delete_list {
+    border: 1px solid #A74E36;
+    background: white;
+    color: #A74E36;
+    font-size: 25px;
+    font-family: 'Poor Story',sans-serif;
+    font-weight: bold;
+    width: 280px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition-duration: 0.4s;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-input
-{
-    display: none;
+.delete_list:hover {
+    border: 1px solid white;
+    background: #A74E36;
+    color: white;
 }

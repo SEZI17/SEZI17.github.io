@@ -1,4 +1,4 @@
-/* Main 폰트 */
+/* 메인 배경 */
 body {
     background-attachment: fixed;
     background-image: url(../../img/main_con1.jpg);
@@ -9,6 +9,8 @@ body {
     min-height: 640px;
     background-repeat: no-repeat;
 }
+
+/* Main 폰트 */
 #MAI_content h1 { font-size: 40px; }
 #MAI_content h2 { font-size: 70px; margin-bottom: 50px;}
 #MAI_content h3 {

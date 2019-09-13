@@ -1,5 +1,5 @@
 /* 초기화 */
-body { background: #E1DAD4 }
+body { background: #EBE4DD }
 * { font-family: 'Malgun Gothic', sans-serif; margin: 0; padding: 0; }
 ol, ul { list-style: none; }
 a { outline: 0; text-decoration: none; color: black;}
@@ -8,6 +8,14 @@ img { border: 0; }
 header a { color: white; }
 footer { color: white; }
 footer a { color: white; }
+
+/* 서브콘텐츠 폰트 */
+#haru_contents_wrap h1 { font-size: 40px; }
+#haru_contents_wrap h2 { font-size: 70px; }
+#haru_contents_wrap h3 { font-size: 20px; }
+#haru_contents_wrap h4 { font-size: 60px; }
+#haru_contents_wrap h5 { font-size: 25px; }
+#haru_contents_wrap p { font-size: 16px; }
 
 /* 960 코드 */
 #haru_header_upper_wrap { margin: 0 auto; width: 960px; height: 100%; 
@@ -170,5 +178,3 @@ footer {
 #haru_contactus { position: absolute; top: 45px; }
 #haru_contactus > p { font-size: 14px; }
 .laws { color: orange; }
-
-#contents { height: 400px; margin: 0 auto; width: 960px; line-height: 200px;}
