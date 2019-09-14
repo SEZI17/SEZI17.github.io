@@ -3,11 +3,15 @@ body {
     background-attachment: fixed;
     background-image: url(../../img/main_con1.jpg);
     background-size: 100%;
-    max-width: 1920px;
+    /* max-width: 1920px;
     min-width: 960px;
     max-height: 1280px;
-    min-height: 640px;
+    min-height: 640px; */
     background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* Main 폰트 */

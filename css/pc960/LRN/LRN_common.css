@@ -47,7 +47,7 @@
     left: 0;
 }
 #haru_aside > #haru_snb {
-    border: 1px solid black
+    border : 1px solid #5d5753;
 }
 #haru_snb > ul > li > a {
     display: block;
@@ -59,8 +59,9 @@
     border-bottom: 1px solid #5d5753;
 }
 .snb_link:hover {
-    transition-duration: 1s;
-    background-color: #EFE5DF;
+    transition-duration: 0.3s;
+    background-color: #512B37;
+    color: white;
 }
 #haru_snb > ul > li:first-child > a {
     font-weight: bold;

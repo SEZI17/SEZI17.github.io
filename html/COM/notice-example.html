@@ -9,60 +9,185 @@
     <link rel="stylesheet" href="../../css/pc960/COM/notice.css">
     <link rel="stylesheet" href="../../css/pc960/COM/article.css">
 </head>
-
 <body>
-    <div class="container">
-        <!-- 커뮤니티 헤더 -->
-        <div class="comm_header">
-            <h3>공지 사항</h3>
-            <span>Home>커뮤니티>공지사항</span>
-            <div class="clfx"></div>
+    <!-- haru header -->
+    <header>
+        <div id="haru_header_upper">
+            <div id="haru_header_upper_wrap">
+                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
+            </div>
         </div>
-        <!-- //커뮤니티 헤더 -->
-        <!-- 게시글 시작 -->
-        <div class="article">
-            <!-- 게시글 헤더 -->
-            <div class="article_head">
-                <h4>{글 제목}</h4>
-                <span>작성일 : {작성날짜}</span>
-                <div class="clfx"></div>
-            </div>
-
-            <div class="article_info">
-                <span>작성자 : {작성자}</span>
-                <span>글주소 :<a href="#">{글 주소}</a></span>
-                <div class="clfx"></div>
-            </div>
-            <hr>
-            <!-- //게시글 헤더 -->
-            <!-- 게시글 내용 -->
-            <div class="article_contents">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam doloribus et impedit molestiae! Amet
-                error distinctio rerum, quaerat cumque ad inventore, debitis omnis itaque adipisci velit placeat quas
-                esse facilis.
-            </div>
-            <!-- //게시글 내용 -->
-            <hr>
-            <!-- 게시글 조작 -->
-            <div class="article_editor">
-                <span>조회수 : {조회수}</span>
-                <button id="delete">삭제</button>
-                <button id="edit">수정</button>
-                <div class="clfx"></div>
-            </div>
-            <hr>
-
-            <div class="article_footer">
-                <div class="footer_list">
-
-                    <span>다음글 : {다음 글제목}</span><br>
-                    <span>이전글 : {이전 글제목}</span>
+        <div id="haru_header_bottom">
+            <div id="haru_header_bottom_wrap">
+                <!-- GNB -->
+                <nav id="haru_gnb">
+                    <ul>
+                        <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
+                        <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
+                        <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
+                        <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
+                    </ul>
+                </nav>                
+                <!-- //GNB -->
+                <!-- Signinupbutton -->
+                <div id="haru_signup">
+                    <ul>
+                        <li class="sign"><a href="#">로그인</a></li>
+                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
+                    </ul>
                 </div>
-                <button>목록</button>
-                <div class="clfx"></div>
-            </div>
-            <hr>
-            <!-- //게시글 조작 -->
+                <!-- //Signinupbutton -->
+            </div>            
+        </div>           
+    </header>
+    <!-- Dropdown Menu -->
+    <div id="haru_LRN_dropdown" class="dropdown">
+        <ul class="dropLRN">
+            <li><a href="../LRN/hrd.html">하루단어</a></li>
+            <li><a href="#">단어검정</a></li>
+            <li><a href="#">단어 List</a></li>
+        </ul>
+        <div class="menu_description">
+            <p class="menu_description_subject">외우자</p>
+            <p class="menu_description_contents">하루, 단어는 외우자의 카테고리 안에서 여러분들에게 스마트한 학습방법을 제공하고자 합니다.</p>
         </div>
     </div>
+    <div id="haru_COM_dropdown" class="dropdown">
+        <ul class="dropCOM">
+            <li><a href="../COM/notice.html">공지사항</a></li>
+            <li><a href="../COM/tip.html">TIP 게시판</a></li>
+            <li><a href="#">단어통계</a></li>
+        </ul>
+        <div class="menu_description">
+            <p class="menu_description_subject">커뮤니티</p>
+            <p class="menu_description_contents">공지사항 및 회원 간 단어 암기 방법을 공유할 수 있습니다.</p>
+        </div>
+    </div>
+    <div id="haru_MYP_dropdown" class="dropdown">
+        <ul class="dropMYP">
+            <li><a href="../MYP/indexMYP.html" class="wan">오답노트</a></li>
+            <li><a href="#">내 단어장</a></li>
+            <li><a href="./html/MEM/editInfo_pwCheck.html">회원정보변경</a></li>
+        </ul>
+        <div class="menu_description">
+            <p class="menu_description_subject">My 페이지</p>
+            <p class="menu_description_contents">학습하면서 틀린 단어, 어려웠던 단어 등을 조회합니다.</p>
+        </div>
+    </div>
+    <div id="haru_INF_dropdown" class="dropdown">
+        <ul class="dropINF">
+            <li><a href="../INF/indexINF.html" class="aboutus">소개</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+        <div class="menu_description">
+            <p class="menu_description_subject">페이지 정보</p>
+            <p class="menu_description_contents">제작자 및 관리자를 소개합니다.</p>
+        </div>
+    </div>
+    <!-- //Dropdown Menu -->
+    <!-- Contents Here -->
+    <div id="haru_COM_header">
+        <h1>커뮤니티</h1>
+        <p>공지사항 및 회원 간 단어 암기 방법을<br> 공유할 수 있습니다.</p>
+    </div>
+    <div id="haru_contents_wrap">
+        <aside id="haru_aside">
+            <nav id="haru_snb">
+                <ul>
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#" class="snb_link">공지사항</a></li>
+                    <li><a href="#" class="snb_link">TIP 게시판</a></li>
+                    <li><a href="#" class="snb_link">단어통계</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section id="haru_subcontents">
+            <header id="haru_subheader">
+                <div id="haru_subtitle">하루단어</div>
+                <div id="haru_cat">
+                    <p>HOME > 외우자 > 하루단어</p>
+                </div>
+            </header>                    
+            <!-- SubContents Here -->
+            <div class="container">
+                <!-- 커뮤니티 헤더 -->
+                <!-- <div class="comm_header">
+                    <h3>공지 사항</h3>
+                    <span>Home>커뮤니티>공지사항</span>
+                    <div class="clfx"></div>
+                </div> -->
+                <!-- //커뮤니티 헤더 -->
+                <!-- 게시글 시작 -->
+                <div class="article">
+                    <!-- 게시글 헤더 -->
+                    <div class="article_head">
+                        <h4>{글 제목}</h4>
+                        <span>작성일 : {작성날짜}</span>
+                        <div class="clfx"></div>
+                    </div>
+        
+                    <div class="article_info">
+                        <span>작성자 : {작성자}</span>
+                        <span>글주소 :<a href="#">{글 주소}</a></span>
+                        <div class="clfx"></div>
+                    </div>
+                    <hr>
+                    <!-- //게시글 헤더 -->
+                    <!-- 게시글 내용 -->
+                    <div class="article_contents">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam doloribus et impedit molestiae! Amet
+                        error distinctio rerum, quaerat cumque ad inventore, debitis omnis itaque adipisci velit placeat quas
+                        esse facilis.
+                    </div>
+                    <!-- //게시글 내용 -->
+                    <hr>
+                    <!-- 게시글 조작 -->
+                    <div class="article_editor">
+                        <span>조회수 : {조회수}</span>
+                        <button id="delete">삭제</button>
+                        <button id="edit">수정</button>
+                        <div class="clfx"></div>
+                    </div>
+                    <hr>
+        
+                    <div class="article_footer">
+                        <div class="footer_list">
+        
+                            <span>다음글 : {다음 글제목}</span><br>
+                            <span>이전글 : {이전 글제목}</span>
+                        </div>
+                        <button>목록</button>
+                        <div class="clfx"></div>
+                    </div>
+                    <hr>
+                    <!-- //게시글 조작 -->
+                </div>
+            </div>
+            <!-- //SubContents Here -->
+        </section>
+    </div>
+    <!-- //Contents Here -->
+    <!-- haru footer -->
+    <footer>
+        <div id="haru_footer_wrap">
+            <!-- FNB -->
+            <nav id="haru_fnb">
+                <ul>
+                    <li><a href="#">페이지소개</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#" class="laws">개인정보처리방침</a></li>
+                    <li><a href="./html/MEM/forgotID_PW.html">ID/PW 찾기</a></li>
+                    <li><a href="#">회원탈퇴</a></li>
+                </ul>
+            </nav>
+            <!-- //FNB -->
+            <div id="haru_contactus">
+                <p class="address">울산광역시 중구 종가로 345(교동) 한국산업인력공단 월드잡플러스 | 1577-9997 | FAX : 052-714-8635 | e-mail : job1@hrdkorea.or.kr</p>
+                <p class="copyright">Copyright 2014 WORLDJOBPLUS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- //haru footer -->
+    
 </body>
+</html>

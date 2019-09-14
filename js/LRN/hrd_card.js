@@ -58,6 +58,7 @@ function dknowlistoutput() {
     koreancell.innerHTML = korean;
     examcell.innerHTML = new Date().toLocaleTimeString();
     }
+    if (kanji==check) { alert("이미 추가되었습니다."); }
 }
 
 
