@@ -42,9 +42,11 @@ function dknowlistoutput() {
     // dknow.innerHTML ="<td>"+kanji+"</td><td>"+yomigana+"</td><td>"+korean+"</td><td>&nbsp;</td><td>&nbsp;</td>";
     // addword.attr('id','dknowlist');
     // prevword.attr('id','');
-    var kanji = $("#LRN_HRD_card1").text()
-    var yomigana = $("#LRN_HRD_card2").text()
-    var korean = $("#LRN_HRD_card3").text()
+    var kanji = $("#LRN_HRD_card1").text();
+    var yomigana = $("#LRN_HRD_card2").text();
+    var korean = $("#LRN_HRD_card3").text();
+    var check = $("#LRN_HRD_dknowlist > tr:last-child > td:first-child").text();
+    if (kanji!==check) {
     var dknowlist = document.getElementById('LRN_HRD_dknowlist');
     var add = dknowlist.insertRow( dknowlist.rows.length );
     var kanjicell = add.insertCell(0);
@@ -55,6 +57,7 @@ function dknowlistoutput() {
     yomiganacell.innerHTML = yomigana;
     koreancell.innerHTML = korean;
     examcell.innerHTML = new Date().toLocaleTimeString();
+    }
 }
 
 
