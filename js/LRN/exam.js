@@ -39,6 +39,9 @@ $(function(){
 
         //왼쪽 오른쪽 화살표 클릭시
         btnClick();
+
+        //체점 하기 버튼 표시
+        $(".finishExam").css("display", "block");
     }
 
     //셋팅된 문제 보이게
