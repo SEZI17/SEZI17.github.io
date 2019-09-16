@@ -9,11 +9,12 @@ div.container{
 .clfx{
     clear: both;
 }
-#articleTitle{
+
+.articleEditor>#articleTitle{
     border: 1px solid #777;
 }
 
-#articleInner{
+.articleEditor>#articleInner{
     border:1px solid #777;
 }
 

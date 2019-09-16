@@ -13,15 +13,20 @@
     <link rel="stylesheet" href="../../css/pc960/cat_common.css">
     <link rel="stylesheet" href="../../css/pc960/COM/COM_common.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/pc960/COM/board.css">
-    
+    <link rel="stylesheet" href="../../css/pc960/COM/write.css">
+    <link rel="stylesheet" href="../../css/pc960/COM/write_sub.css">
+    <script src="../../js/ckeditor/ckeditor.js"></script>
+
 </head>
+
 <body>
     <!-- haru header -->
     <header>
         <div id="haru_header_upper">
             <div id="haru_header_upper_wrap">
-                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
+                <a href="../../index.html">
+                    <title id="haru_title">하루, 단어</title>
+                </a>
             </div>
         </div>
         <div id="haru_header_bottom">
@@ -34,18 +39,18 @@
                         <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
                         <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
                     </ul>
-                </nav>                
+                </nav>
                 <!-- //GNB -->
-                <!-- Signinupdiv class="btn" -->
+                <!-- Signinupbutton -->
                 <div id="haru_signup">
                     <ul>
                         <li class="sign"><a href="#">로그인</a></li>
                         <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
                     </ul>
                 </div>
-                <!-- //Signinupdiv class="btn" -->
-            </div>            
-        </div>           
+                <!-- //Signinupbutton -->
+            </div>
+        </div>
     </header>
     <!-- Dropdown Menu -->
     <div id="haru_LRN_dropdown" class="dropdown">
@@ -114,106 +119,54 @@
                 <div id="haru_cat">
                     <p>HOME > 커뮤니티 > TIP 게시판</p>
                 </div>
-            </header>                    
+            </header>
             <!-- SubContents Here -->
-            <!-- 커뮤니티 헤더 -->
-            <!-- <div class="container">
-                    <div class="comm_header">
-                        <h3>TIP 게시판</h3>
-                        <span>Home > 커뮤니티 > TIP 게시판</span>
-                        <div class="clfx"></div>
-                    </div> -->
-                    <!-- //커뮤니티 헤더 -->
-
-                <!-- 검색기능 -->
-                <div class="search">
-                    <!-- 카테고리 -->
-                    <div class="category">
-                        <a href="#"><img src="./img/page.png" alt="board_view_icon"></a>
-                        <a href="#" class="cate">TIP</a>
-                        <a href="#" class="cate">합격수기</a>
-                    </div>
-                    <!-- //카테고리 -->
-                    <form @prevent.action="submit">
-                        <select name="search_type" id="search_type">
-                            <option value="article">제목</option>
-                            <option value="contents">글</option>
-                            <option value="art_con">글+제목</option>
-                        </select>
-                        <input type="search" name="search_input" id="search_input">
-                        <div class="btn" type="submit">검색</div>
-                    </form>
+            <div class="container">
+                <!-- 커뮤니티 헤더
+                <div class="comm_header">
+                    <h3>공지 사항</h3>
+                    <span>Home>커뮤니티>공지사항</span>
                     <div class="clfx"></div>
                 </div>
-                <!-- //검색기능 -->
-                <div class="board_section">
-                    <table>
-                        <!-- 게시판 항목 -->
-                        <thead>
-                            <th>번호</th>
-                            <th class="board_article">글 제목</th>
-                            <th>글쓴이</th>
-                            <th>조회수</th>
-                            <th>작성일</th>
-                        </thead>
-                        <!-- //게시판 항목 -->
-
-                        <!-- 게시판 글 -->
-                        <tbody>
-                            <tr>
-                                <td><a href="#">3</a></td>
-                                <td class="board_article"><a href="#">홈페이지 일시 중단 안내</a></td>
-                                <td><a href="#">관리자</a></td>
-                                <td><a href="#">16</a></td>
-                                <td><a href="#">2019-09-03</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">3</a></td>
-                                <td class="board_article"><a href="#">홈페이지 일시 중단 안내</a></td>
-                                <td><a href="#">관리자</a></td>
-                                <td><a href="#">16</a></td>
-                                <td><a href="#">2019-09-03</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">3</a></td>
-                                <td class="board_article"><a href="#">홈페이지 일시 중단 안내</a></td>
-                                <td><a href="#">관리자</a></td>
-                                <td><a href="#">16</a></td>
-                                <td><a href="#">2019-09-03</a></td>
-                            </tr>
-                        </tbody>
-                        <!-- //게시판 글 -->
-                    </table>
-                    <!-- 페이지네이션 -->
-                    <!-- <div class = "pagination">
-                        <a href="#" >{{p+1}}</a>
-                    </div> -->
-                    <div class="pagination">
-                        <div class="btn" id="left_pagination">&laquo;</div>
-                        <ul class="pagination_number">
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                        </ul>
-                        <div class="btn" id="right_pagination">&raquo;</div>
-                        
-                    </div>
-                    <!-- //페이지네이션 -->
-                    <div class="btn" id="write_btn" onclick="summit()">글쓰기</div>
-                    
+                //커뮤니티 헤더 -->
+                <!-- 글쓰기 모듈 -->
+                <div class="articleEditor">
+                    <select name="category" id="category">
+                        <option value="tip">TIP</option>
+                        <option value="review">합격수기</option>
+                    </select>
+                    <input type=" text" name="article_title" id="articleTitle" placeholder="글 제목" />
                     <div class="clfx"></div>
-                    <!-- //게시판 본체 -->
+                    <div id="articleInner">
+
+                        <textarea name="article_content" id="articleContent" cols="30" rows="10">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab provident facilis a quidem perferendis pariatur assumenda mollitia architecto unde accusamus quae, quas ipsa voluptatem dolores maxime temporibus repellendus in. Accusantium!
+                        </textarea>
+                    </div>
+                    <div id="articleCancel" class="btn" onclick="cancel()">취소</div>
+                    <div id="articleSend" class="btn" onclick="summit()">글쓰기</div>
+                    <div class="clfx"></div>
+
                 </div>
-                <!-- 게시판 본체 -->
-                
+                <!-- //글쓰기 모듈 -->
             </div>
             <script>
-                function summit(){
-                    confirm("글을 작성 합니다.")
+                function cancel() {
+                    let conf = confirm("작성을 취소하고 이전 페이지로 돌아갑니다.")
+                    if (conf) {
+                        history.back();
+                    }
                 }
-
+                function summit() {
+                    let conf = confirm("글을 수정하시겠습니까?")
+                    if (conf) {
+                        // 백엔드 호출, 서버사이드로 글을 보냄.
+                        // 가능하면 이때 내용 검증 후 String 타입 그대로 HTML 코드를 담을 것.
+                        let articleData = CKEDITOR.instances.articleContent.getData();
+                        let titleData = document.getElementById("articleTitle").value
+                    }
+                }
+                CKEDITOR.replace('articleContent');
             </script>
             <!-- //SubContents Here -->
         </section>
@@ -234,12 +187,14 @@
             </nav>
             <!-- //FNB -->
             <div id="haru_contactus">
-                <p class="address">울산광역시 중구 종가로 345(교동) 한국산업인력공단 월드잡플러스 | 1577-9997 | FAX : 052-714-8635 | e-mail : job1@hrdkorea.or.kr</p>
+                <p class="address">울산광역시 중구 종가로 345(교동) 한국산업인력공단 월드잡플러스 | 1577-9997 | FAX : 052-714-8635 | e-mail :
+                    job1@hrdkorea.or.kr</p>
                 <p class="copyright">Copyright 2014 WORLDJOBPLUS. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <!-- //haru footer -->
-    
+
 </body>
+
 </html>
