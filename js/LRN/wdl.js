@@ -224,6 +224,34 @@ $(function(){
     });
 });
 
+// function cat_control() {
+//     var cat_box = document.getElementsByName('cat_select');
+//     var cat_chk = false;
+//     for(var i=0 ; i<cat_box.length ; i++) {
+//         if(cat_box[i].checked) {
+//             cat_chk = true;
+//         } else {
+//             cat_chk = false;
+//         }
+//     }
+//     if(cat_chk) {
+//         $('.WDL_table_list').hide();
+//         return false;
+//     } else {
+//         $('.WDL_table_list').show();
+//     }
+// }
+
+
+// function cat_control() {
+//     $('.cat_chk').change(function(){
+//         if(this.checked)
+//         $('.WDL_table_list').hide();
+//         else
+//         $('.WDL_table_list').show();
+//     });
+// }
+
 $(document).ready(function(){
     wordlistoutput_a();
     wordlistoutput_ka();
@@ -236,3 +264,4 @@ $(document).ready(function(){
     wordlistoutput_ra();
     wordlistoutput_wa();
 });
+
