@@ -1,57 +1,71 @@
-.article>.article_head{
+
+
+.article>.article_head {
     background-color: #666;
     padding: 0 15px;
 }
-.article>hr{
+
+.article>hr {
     display: none;
 }
-.article>.article_head>h4{
-    float: left;
 
+.article>.article_head>.article_title {
+    float: left;
+    display: block;
+    font-size: 1em !important;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
-.article>.article_head>span{
+
+.article>.article_head>span {
     float: right;
     margin-top: 21px;
 }
 
-.article>.article_info{
-    padding:15px;
-    border-bottom: 1px solid gray; 
-}
-
-.article>.article_info>span:nth-child(1){
-    float: left;
-}
-.article_info>span:nth-child(2){
-    float: right;
-}
-
-.article>.article_contents{
-    border-bottom: 1px solid gray;
-    padding: 20px 0;
-}
-
-.article>.article_editor{
-    padding: 20px 0;
+.article>.article_info {
+    padding: 15px;
     border-bottom: 1px solid gray;
 }
 
-.article>.article_editor>span{
+.article>.article_info>span:nth-child(1) {
     float: left;
 }
 
-.article>.article_editor>button{
+.article_info>span:nth-child(2) {
     float: right;
 }
 
-.article>.article_footer{
-    padding:20px 0;
-    border-bottom: 1px solid gray; 
+.article>.article_contents {
+    border-bottom: 1px solid gray;
+    padding: 20px 10px;
 }
 
-.article>.article_footer>.footer_list{
+.article>.article_editor {
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+}
+
+.article>.article_editor>span {
+    float: left;
+    line-height: 31px;
+}
+
+.article>.article_editor>.btn {
+    float: right;
+}
+
+.article>.article_footer {
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+}
+
+.article>.article_footer>.footer_list {
     float: left;
 }
-.article_footer>button{
+
+.article_footer>.btn {
     float: right;
 }
