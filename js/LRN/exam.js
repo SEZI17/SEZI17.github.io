@@ -52,6 +52,9 @@ $(function(){
 
     //채점하기 버튼 클릭 시
     clickFinishBtn();
+
+    //키보드 연결
+    keyEvent();
 });
 
 function resultExam()
@@ -115,21 +118,58 @@ function clickFinishBtn()
 function btnClick()
 {
     $("#leftBtn").on("click", function(){
-        if(0 < nowQuestion)
-        {
-            nowQuestion--;
-            showQuestion();
-        }
+        leftMove();
     });
 
     $("#rightBtn").click(function(){
-        if(nowQuestion + 1 != questionCount)
-        {
-            nowQuestion++;
-            showQuestion();
-        }
+        rightMove();
     });
 }
+
+function leftMove()
+{
+    //연습검정일 경우
+    if(1 == examMode || 3 == examMode)
+        return;
+
+    if(0 < nowQuestion)
+    {
+        nowQuestion--;
+        showQuestion();
+    }
+}
+
+function rightMove()
+{
+    //연습검정일 경우
+    if(1 == examMode || 3 == examMode)
+        return;
+
+    if(nowQuestion + 1 != questionCount && nowQuestion < questionCount)
+    {
+        nowQuestion++;
+        showQuestion();
+    }
+}
+
+function keyEvent(){
+    $(document).keydown(function(event) {
+        if (event.keyCode == '37')  // 방향키 왼쪽
+            leftMove();
+        else if (event.keyCode == '39') // 방향키 오른쪽
+            rightMove();
+        else if (event.keyCode == '97') //1
+            clickNum(0);
+        else if (event.keyCode == '98') //2
+            clickNum(1);
+        else if (event.keyCode == '99') //3
+            clickNum(2);
+        else if (event.keyCode == '100') //4
+            clickNum(3);
+      });
+}
+
+
 
 function setLanMode()
 {
@@ -165,67 +205,70 @@ function startTimer()
     }, 1000)
 }
 
+function clickNum(index)
+{
+    if(questionCount == nowQuestion)
+    {
+        endTimer();
+        return;
+    }
+
+    //작업 중 클릭시 리턴
+    if("block" == $("#ox").css("display"))
+        return;
+
+    //클릭 시 이미 체크되어 있는거 없애버림
+    $("#checkDisplay").remove();
+
+    let answer = questionList[nowQuestion].answer;
+    let num = index;
+    questionList[nowQuestion].click = num;
+
+    $(".exampleBox").eq(index).append(strClass);
+
+    //일반검정일 경우
+    if(2 == examMode || 4 == examMode)
+    {
+        if(answer != num)
+            questionList[nowQuestion].ox = false;
+    }
+    //연습 검정일 경우
+    else if(1 == examMode || 3 == examMode)
+    {
+        $("#ox").css("display","block");
+        if(answer == num)
+        {
+            $("#ox").removeClass("redText");
+            $("#ox").addClass("greenText");
+            $("#ox").html("O");
+            $("#ox").fadeOut(timeDelay);
+        }
+        else
+        {
+            $(".example > .exampleBox").eq(answer).addClass("redBorder");
+
+            $("#ox").removeClass("greenText");
+            $("#ox").addClass("redText");
+            $("#ox").html("X");
+            $("#ox").fadeOut(timeDelay);
+
+            questionList[nowQuestion].ox = false;
+        }
+
+        setTimeout(function()
+        {    
+            nowQuestion++;
+            showQuestion();
+
+        }, timeDelay);
+    }
+}
+
 function selectExample()
 {
     $(".example > .exampleBox").on("click",function()
     {
-
-        if(questionCount == nowQuestion)
-        {
-            endTimer();
-            return;
-        }
-
-        //작업 중 클릭시 리턴
-        if("block" == $("#ox").css("display"))
-            return;
-
-        //클릭 시 이미 체크되어 있는거 없애버림
-        $("#checkDisplay").remove();
-
-        let answer = questionList[nowQuestion].answer;
-        let num = $(this).index();
-        questionList[nowQuestion].click = num;
-
-        $(this).append(strClass);
-
-        //일반검정일 경우
-        if(2 == examMode || 4 == examMode)
-        {
-            if(answer != num)
-                questionList[nowQuestion].ox = false;
-        }
-        //연습 검정일 경우
-        else if(1 == examMode || 3 == examMode)
-        {
-            $("#ox").css("display","block");
-            if(answer == num)
-            {
-                $("#ox").removeClass("redText");
-                $("#ox").addClass("greenText");
-                $("#ox").html("O");
-                $("#ox").fadeOut(timeDelay);
-            }
-            else
-            {
-                $(".example > .exampleBox").eq(answer).addClass("redBorder");
-    
-                $("#ox").removeClass("greenText");
-                $("#ox").addClass("redText");
-                $("#ox").html("X");
-                $("#ox").fadeOut(timeDelay);
-    
-                questionList[nowQuestion].ox = false;
-            }
-
-            setTimeout(function()
-            {    
-                nowQuestion++;
-                showQuestion();
-    
-            }, timeDelay);
-        }
-
+        clickNum($(this).index());
     });
 }
 
@@ -484,3 +527,4 @@ function changeFontSize(){
             $(this).addClass("largeText1");
     });
 }
+
