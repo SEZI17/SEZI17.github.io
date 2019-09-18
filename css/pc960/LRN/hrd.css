@@ -1,3 +1,12 @@
+object {
+    width: 100%;
+    height: 150px;
+}
+
+object[data="./cat_footer.html"] {
+    width: 100%;
+    height: 150px;
+}
 /* 기능 부분 */
 #LRN_HRD_wrap {
     margin: 0 auto;
@@ -170,13 +179,20 @@
     background: #FFF8E1;
 }
 .table_kanji {
-    width: 200px;
+    width: 190px;
 }
 .table_yomigana {
-    width: 200px;
+    width: 190px;
 }
 .table_korean {
-    width: 200px;
+    width: 180px;
+}
+.table_delete {
+    width: 40px;
+}
+
+#LRN_HRD_dknowlist td:last-child:hover {
+    color: red;
 }
 
 .delete_list {
@@ -204,4 +220,10 @@
     border: 1px solid white;
     background: #A74E36;
     color: white;
+}
+
+.delete_chkbox {
+    height: 5px;
+    width: 5px;
+    background-color: red;
 }
