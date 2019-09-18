@@ -1,3 +1,4 @@
+// 오늘의 단어 D-day 이용
 function TWD() {
     var now=new Date();
     var startup=new Date();

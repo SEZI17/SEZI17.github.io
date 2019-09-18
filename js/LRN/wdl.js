@@ -1,3 +1,4 @@
+// 아행부터 행별로 표시
 function wordlistoutput_a() {
     for(let i=0; i<form_a.length; i++) {
     var form = form_a[i];
@@ -218,6 +219,7 @@ function wordlistoutput_wa() {
     }
 }
 
+// 행별 표 보이기 숨기기
 $(function(){
     $('.WDL_col_title').click(this, function(){
         $(this).next(".WDL_col_table_wrap").stop().slideToggle();
