@@ -1,0 +1,33 @@
+hr {
+    margin : 0;
+    /* border : 2px solid olive; */
+}
+.wrap {
+    text-align : center;
+    width : 800px;  
+    border : 1px solid black;
+    box-sizing: border-box;
+    
+}
+div {
+    font-size : 20px;
+}
+.faq { 
+    cursor : pointer;
+    margin : 10px;
+    background : rgb(189, 120, 120);
+    border-top : 1.5px solid black;
+    border-bottom : 1.5px solid black;
+
+}
+p {
+    cursor: text;
+    width : 798px;
+}
+.cost {
+    margin : 10px;
+    padding : 10px;
+    font-size : 15px;
+
+    display: none;
+}
