@@ -39,35 +39,32 @@ function wordoutput() {
 
 
 // 모르는단어 list에 추가
-var c=0;
+var c=1;
 function dknowlistoutput() {
-    // var prevword = $('#LRN_HRD_dknowlist tr:eq(0)');
-    // var addword = $('#LRN_HRD_dknowlist tr:eq(1)');
-    // var dknow = document.getElementById("dknowlist");
-    // dknow.innerHTML ="<td>"+kanji+"</td><td>"+yomigana+"</td><td>"+korean+"</td><td>&nbsp;</td><td>&nbsp;</td>";
-    // addword.attr('id','dknowlist');
-    // prevword.attr('id','');
     var kanji = $("#LRN_HRD_card1").text();
     var yomigana = $("#LRN_HRD_card2").text();
     var korean = $("#LRN_HRD_card3").text();
-    var check = $("#LRN_HRD_dknowlist > tr:last-child > td:first-child").text();
+    var check = $("#LRN_HRD_dknowlist > tr:last-child > td:nth-child(2)").text();
     if (kanji!==check) {
     var dknowlist = document.getElementById('LRN_HRD_dknowlist');
     var add = dknowlist.insertRow( dknowlist.rows.length );
-    var kanjicell = add.insertCell(0);
-    var yomiganacell = add.insertCell(1);
-    var koreancell = add.insertCell(2);
-    var examcell = add.insertCell(3);
-    var chkboxcell = add.insertCell(4);
+    var countercell = add.insertCell(0);
+    var kanjicell = add.insertCell(1);
+    var yomiganacell = add.insertCell(2);
+    var koreancell = add.insertCell(3);
+    var examcell = add.insertCell(4);
+    var chkboxcell = add.insertCell(5);
+    countercell.innerHTML = c;
     kanjicell.innerHTML = kanji;
     yomiganacell.innerHTML = yomigana;
     koreancell.innerHTML = korean;
     examcell.innerHTML = new Date().toLocaleTimeString();
     chkboxcell.innerHTML = "삭제";    
-    // chkboxcell.className = "td";
+    chkboxcell.className = "delete_tr";
     chkboxcell.id="td"+c;
     add.id = "tr"+c;    
     c++;
+    delWordKJH();
     }
     if (kanji==check) { alert("이미 추가되었습니다."); }
 }
@@ -86,43 +83,28 @@ function dknowlistdelete() {
 }
 
 // 모르는단어 선택삭제
-$(document).ready(function(){
-    $('#td1').click(function(){
-        alert("클릭")
-        $('#LRN_HRD_dknowlist tr').remove();
-    });
-});
+function delWordKJH(){    
+    $('.delete_tr').unbind();
+    $('.delete_tr').bind("click", function(){
+        var cfdelete = confirm("해당 단어를 삭제하시겠습니까?")
+        if (cfdelete) {      
+        var listline = $(this).closest('tr');
+        listline.css("background-color","#E7C9A7");
+        listline.fadeOut(400, function(){
+            listline.remove();
+        });
+        return false;
+        }
+        else { return false; }
+    });   
+}
 
-// 모르는단어 숨기기보이기
-$(function(){
-    $('#LRN_HRD_dknow_title').click(function(){
-        $('#LRN_HRD_dknow_table_wrap').slideToggle();
-    });
-});
 
 $(document).ready(function(){
     HRDtimer();
     wordoutput();
-    // object로 html 불러오기
-    // document.getElementById("upper_here").innerHTML='<object type="text/html" data="./indexLRN.html"></object>';
-    // document.getElementById("footer_here").innerHTML='<object type="text/html" data="../cat_footer.html"></object>';
+    // 모르는단어 숨기기보이기
+    $('#LRN_HRD_dknow_title').click(function(){
+        $('#LRN_HRD_dknow_table_wrap').slideToggle();
+    });
 });
-
-// ajax로 html 불러오기
-// $.ajax({
-//     crossOrigin : true,
-//     dataType : "html",
-//     url : "./indexLRN.html",
-//     success : function() {        
-//         $("#upper_here").html("./indexLRN.html");        
-//     }
-// });
-
-// $.ajax({
-//     crossOrigin : true,
-//     dataType : "html",
-//     url : "./cat_footer.html",
-//     success : function() {        
-//         $("#footer_here").html("../cat_footer.html");        
-//     }
-// });
