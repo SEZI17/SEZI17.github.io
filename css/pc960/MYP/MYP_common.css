@@ -33,7 +33,7 @@
     float: left;
     width: 768px;
     margin: 0 auto;
-    margin-left: 10px;
+    position: relative;
 }
 
 #haru_aside {
@@ -41,7 +41,6 @@
     position: relative;
     width: 160px;
 }
-
 /* 외우자 카테고리 GNB 구성 */
 #haru_aside > #haru_snb {
     width: 130px;
