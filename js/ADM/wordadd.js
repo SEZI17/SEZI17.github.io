@@ -1,5 +1,24 @@
+let wordlist = [];
+loadJSON();
 
-function saveForm() {
+function loadJSON() {
+
+    let xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', '../../js/ADM/wordlist.json', true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            let data = JSON.parse(this.responseText);
+            
+            for(let i = 0; i<data.length;i++)
+                wordlist.push(data[i])
+        }
+    }
+    xobj.send(null);
+}
+
+
+async function saveForm() {
     event.preventDefault();
     let select = document.getElementById("dan").value;
     let test = document.getElementById("test").value;
@@ -16,15 +35,14 @@ function saveForm() {
         yomi: yomi,
         korean: korean
     };
-    let obj ={
-        body : word,
-        headers:{"Access-Control-Allow-Origin":"*"},
-        method:"POST"
-    }
-    // fetch("./wordlist.json", obj)
-    //     .then(res => res.json())
-    //     .then(json => console.log(json))
-    //     .catch(err => console.error(err));
 
-
+    wordlist.push(word);
+    let data = await saveJSON(wordlist);
+    document.getElementById("list").reset();
 };
+
+function saveJSON(obj) {
+    let strObj = JSON.stringify(obj, "\t");
+    let dataUri = "data:application/json;charset=utf-8, " + encodeURIComponent(strObj)
+    let link = document.getElementById("down").setAttribute('href', dataUri)
+}

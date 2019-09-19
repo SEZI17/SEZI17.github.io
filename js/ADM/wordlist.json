@@ -1,10 +1,1 @@
-[
-    {
-        "select": "a",
-        "test": "JLPT N1",
-        "form": "형용사",
-        "kanji": "遊ぶ",
-        "yomi": "あそぶ",
-        "korean": "놀다"
-    }
-]
+[{"select":"a","test":"ㅁㄴㅇ","form":"ㅁㅇㄴ","kanji":"ㅁㄴㅇ","yomi":"ㅁㄴㅇ","korean":"ㄴㅁㅇ"}]
