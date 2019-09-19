@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- <script src="../../js/ADM/wordlist.json"></script> -->
     <script src="../../js/ADM/wordadd.js"></script>
 
 </head>
 
 <body>
-    <form action="submit">
+    <form id="list" action="submit">
         <select name="dan" id="dan">
             <option value="a">아행</option>
             <option value="ka">카행</option>
@@ -41,6 +40,7 @@
         <button type="submit" onclick="saveForm()">저장</button>
     </form>
 
+    <a id="down" href="#" download="wordlist.json">down</a>
 </body>
 
 </html>
