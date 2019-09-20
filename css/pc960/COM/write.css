@@ -2,6 +2,7 @@
 div.container{
     /* width:800px; */
     /* background-color: #ccc; */
+    min-height:500px;
     padding:6px;
     box-sizing: border-box;
 }

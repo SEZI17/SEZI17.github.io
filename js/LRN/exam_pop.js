@@ -89,7 +89,7 @@ function resultExam()
     localStorage.setItem("timer", timer);
 
     localStorage.setItem("resultList", JSON.stringify(resultList));
-    window.open("./examResult.html", "_self");
+    window.open("./examResult_pop.html", "_self");
 }
 
 function clickFinishBtn()

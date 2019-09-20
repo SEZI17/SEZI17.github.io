@@ -11,7 +11,7 @@
     <script src="../../js/gnb_dropdown.js"></script>
     <link rel="stylesheet" href="../../css/pc960/cat_common.css">
     <link rel="stylesheet" href="../../css/pc960/MYP/MYP_common.css">
-    <link rel="stylesheet" href="../../css/pc960/MYP/editInfo_pwCheck.css">
+    <link rel="stylesheet" href="../../css/pc960/MYP/editInfo_pwChange.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
 </head>
 <body>
@@ -91,9 +91,9 @@
     </div>
     <!-- //Dropdown Menu -->
     <!-- Contents Here -->
-    <div id="haru_LRN_header">
-        <h1>외우자</h1>
-        <p>하루, 단어는 외우자의 카테고리 안에서 여러분들에게<br> 스마트한 학습방법을 제공하고자 합니다.</p>
+    <div id="haru_MYP_header">
+        <h1>My 페이지</h1>
+        <p>학습하면서 틀린 단어, 어려웠던 단어 등을 조회합니다.</p>
     </div>
     <div id="haru_contents_wrap">
         <aside id="haru_aside">
@@ -114,17 +114,37 @@
                 </div>
             </header>                    
             <!-- SubContents Here -->
-            <div id="pwCheck">
-                <h3>비밀번호 재확인</h3>
-                <p>안전한 사이트 사용을 위해 비밀번호를 다시 한번 입력해주세요.</p>
-                <div id="password">
-                    <span>비밀번호 <input type="password" placeholder="비밀번호"><span>
-                    
-                </div>
-                <div id="bottomBtn">
-                    <button id="confirmBtn">확인</button>
-                </div>
+            <div id="editPW">
+                <hr>
+                    <div id="password"> 
+                        <h3>현재 비밀번호</h3>
+                        <div>
+                            <input type="password" placeholder="비밀번호">
+                        </div>
+                    </div>
+                    <br>
+                    <div id="newPW">
+                        <h3>새 비밀번호</h3>
+                        <div>
+                            <input type="password" placeholder="비밀번호">
+                        </div>
+                    </div>
+                    <div id="newPWCheck">
+                        <h3>새 비밀번호 확인</h3>
+                        <div>
+                            <input type="password" placeholder="비밀번호 확인">
+                            <p>*한글로 5글자 이내로 입력해주세요</p>
+                        </div>
+                    </div>
+                    </div>
+                    <br>
+                    <hr>
             </div>
+            <!-- bottom button -->
+            <div id="bottomBtn">
+                    <button id="confirmBtn">변경</button>
+                    <button id="cancelBtn">취소</button>
+                </div>
             <!-- //SubContents Here -->
         </section>
     </div>

@@ -21,7 +21,7 @@
 
 <body>
     <!-- haru header -->
-    <header>
+    <!-- <header>
         <div id="haru_header_upper">
             <div id="haru_header_upper_wrap">
                 <a href="../../index.html">
@@ -30,30 +30,30 @@
             </div>
         </div>
         <div id="haru_header_bottom">
-            <div id="haru_header_bottom_wrap">
-                <!-- GNB -->
-                <nav id="haru_gnb">
+            <div id="haru_header_bottom_wrap"> -->
+    <!-- GNB -->
+    <!-- <nav id="haru_gnb">
                     <ul>
                         <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
                         <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
                         <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
                         <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
                     </ul>
-                </nav>
-                <!-- //GNB -->
-                <!-- Signinupbutton -->
-                <div id="haru_signup">
+                </nav> -->
+    <!-- //GNB -->
+    <!-- Signinupbutton -->
+    <!-- <div id="haru_signup">
                     <ul>
                         <li class="sign"><a href="#">로그인</a></li>
                         <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
                     </ul>
-                </div>
-                <!-- //Signinupbutton -->
-            </div>
+                </div> -->
+    <!-- //Signinupbutton -->
+    <!-- </div>
         </div>
-    </header>
+    </header> -->
     <!-- Dropdown Menu -->
-    <div id="haru_LRN_dropdown" class="dropdown">
+    <!-- <div id="haru_LRN_dropdown" class="dropdown">
         <ul class="dropLRN">
             <li><a href="../LRN/hrd.html">하루단어</a></li>
             <li><a href="#">단어검정</a></li>
@@ -95,10 +95,10 @@
             <p class="menu_description_subject">페이지 정보</p>
             <p class="menu_description_contents">제작자 및 관리자를 소개합니다.</p>
         </div>
-    </div>
+    </div> -->
     <!-- //Dropdown Menu -->
     <!-- Contents Here -->
-    <div id="haru_COM_header">
+    <!-- <div id="haru_COM_header">
         <h1>커뮤니티</h1>
         <p>공지사항 및 회원 간 단어 암기 방법을<br> 공유할 수 있습니다.</p>
     </div>
@@ -119,64 +119,64 @@
                 <div id="haru_cat">
                     <p>HOME > 커뮤니티 > TIP 게시판</p>
                 </div>
-            </header>
-            <!-- SubContents Here -->
-            <div class="container">
-                <!-- 커뮤니티 헤더
+            </header> -->
+    <!-- SubContents Here -->
+    <div class="container">
+        <!-- 커뮤니티 헤더
                 <div class="comm_header">
                     <h3>공지 사항</h3>
                     <span>Home>커뮤니티>공지사항</span>
                     <div class="clfx"></div>
                 </div>
                 //커뮤니티 헤더 -->
-                <!-- 글쓰기 모듈 -->
-                <div class="articleEditor">
-                    <select name="category" id="category">
-                        <option value="tip">TIP</option>
-                        <option value="review">합격수기</option>
-                    </select>
-                    <input type=" text" name="article_title" id="articleTitle" placeholder="글 제목" />
-                    <div class="clfx"></div>
-                    <div id="articleInner">
+        <!-- 글쓰기 모듈 -->
+        <div class="articleEditor">
+            <select name="category" id="category">
+                <option value="tip">TIP</option>
+                <option value="review">합격수기</option>
+            </select>
+            <input type=" text" name="article_title" id="articleTitle" placeholder="글 제목" />
+            <div class="clfx"></div>
+            <div id="articleInner">
 
-                        <textarea name="article_content" id="articleContent" cols="30" rows="10">
+                <textarea name="article_content" id="articleContent" cols="30" rows="10">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab provident facilis a quidem perferendis pariatur assumenda mollitia architecto unde accusamus quae, quas ipsa voluptatem dolores maxime temporibus repellendus in. Accusantium!
                         </textarea>
-                    </div>
-                    <div id="articleCancel" class="btn" onclick="cancel()">취소</div>
-                    <div id="articleSend" class="btn" onclick="summit()">글쓰기</div>
-                    <div class="clfx"></div>
-
-                </div>
-                <!-- //글쓰기 모듈 -->
             </div>
-            <script>
-                function cancel() {
-                    let conf = confirm("작성을 취소하고 이전 페이지로 돌아갑니다.")
-                    if (conf) {
-                        history.back();
-                    }
-                }
-                function summit() {
-                    let conf = confirm("글을 수정하시겠습니까?")
-                    if (conf) {
-                        // 백엔드 호출, 서버사이드로 글을 보냄.
-                        // 가능하면 이때 내용 검증 후 String 타입 그대로 HTML 코드를 담을 것.
-                        let articleData = CKEDITOR.instances.articleContent.getData();
-                        let titleData = document.getElementById("articleTitle").value
-                    }
-                }
-                CKEDITOR.replace('articleContent');
-            </script>
-            <!-- //SubContents Here -->
-        </section>
+            <div id="articleCancel" class="btn" onclick="cancel()">취소</div>
+            <div id="articleSend" class="btn" onclick="summit()">글쓰기</div>
+            <div class="clfx"></div>
+
+        </div>
+        <!-- //글쓰기 모듈 -->
     </div>
+    <script>
+        function cancel() {
+            let conf = confirm("작성을 취소하고 이전 페이지로 돌아갑니다.")
+            if (conf) {
+                history.back();
+            }
+        }
+        function summit() {
+            let conf = confirm("글을 수정하시겠습니까?")
+            if (conf) {
+                // 백엔드 호출, 서버사이드로 글을 보냄.
+                // 가능하면 이때 내용 검증 후 String 타입 그대로 HTML 코드를 담을 것.
+                let articleData = CKEDITOR.instances.articleContent.getData();
+                let titleData = document.getElementById("articleTitle").value
+            }
+        }
+        CKEDITOR.replace('articleContent');
+    </script>
+    <!-- //SubContents Here -->
+    <!-- </section>
+    </div> -->
     <!-- //Contents Here -->
     <!-- haru footer -->
-    <footer>
-        <div id="haru_footer_wrap">
-            <!-- FNB -->
-            <nav id="haru_fnb">
+    <!-- <footer>
+        <div id="haru_footer_wrap"> -->
+    <!-- FNB -->
+    <!-- <nav id="haru_fnb">
                 <ul>
                     <li><a href="#">페이지소개</a></li>
                     <li><a href="#">FAQ</a></li>
@@ -184,15 +184,15 @@
                     <li><a href="./html/MEM/forgotID_PW.html">ID/PW 찾기</a></li>
                     <li><a href="#">회원탈퇴</a></li>
                 </ul>
-            </nav>
-            <!-- //FNB -->
-            <div id="haru_contactus">
+            </nav> -->
+    <!-- //FNB -->
+    <!-- <div id="haru_contactus">
                 <p class="address">울산광역시 중구 종가로 345(교동) 한국산업인력공단 월드잡플러스 | 1577-9997 | FAX : 052-714-8635 | e-mail :
                     job1@hrdkorea.or.kr</p>
                 <p class="copyright">Copyright 2014 WORLDJOBPLUS. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- //haru footer -->
 
 </body>
