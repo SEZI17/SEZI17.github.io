@@ -3,7 +3,7 @@ hr {
 }
 .wrap {
     text-align : center;
-    width : 800px;  
+    width : 768px;  
     border : 1px solid black;
     box-sizing: border-box;
 }
@@ -11,22 +11,29 @@ div {
     font-size : 20px;
 }
 .faq { 
-    cursor : pointer;
-    margin : 10px;
+    font-family: 'Poor Story',sans-serif;
+    cursor : pointer;    
+    padding: 20px;
+    margin : 20px;
+    font-weight: bold;
     border-top : 1.5px solid black;
     border-bottom : 1.5px solid black;
 
 }
 p {
     cursor: text;
-    width : 798px;
+    width : 750px;
 }
 .cost {
-    margin : 10px;
-    padding : 10px;
+    font-weight: 100;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
     font-size : 15px;
     display: none;
 }
 .faq:hover {
-    background : green;
+    background : #AF8672;
+    color: white;
+    transition-duration: 0.3s;
 }
