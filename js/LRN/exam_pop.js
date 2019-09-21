@@ -169,8 +169,6 @@ function keyEvent(){
       });
 }
 
-
-
 function setLanMode()
 {
     if(3 == examMode || 4 == examMode)
@@ -274,7 +272,6 @@ function selectExample()
 
 function showQuestion()
 {
-
     //일반검정일 경우 
     if(2 == examMode || 4 == examMode)
     {
