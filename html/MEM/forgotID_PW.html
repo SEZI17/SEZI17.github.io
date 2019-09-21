@@ -8,21 +8,113 @@
     <script src="../../js/jquery-2.1.1.min.js"></script>
     <script src="../../js/jquery-ui.min.js"></script>
     <script src="../../js/editInfo.js"></script>
-    <link rel="stylesheet" href="../../css/pc960/MEM/editInfo.css">
+    <link rel="stylesheet" href="../../css/pc960/cat_common.css">
+    <link rel="stylesheet" href="../../css/pc960/MEM/forgotID_PW.css">
 </head>
 <body>
-    <!-- edit personal information -->
-   <h1>회원 정보 변경</h1>
-   <div id="editInfo">
-       <hr>
-       
-        <br>
-        <hr>
+    <!-- haru header -->
+    <header>
+            <div id="haru_header_upper">
+                <div id="haru_header_upper_wrap">
+                    <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
+                </div>
+            </div>
+            <div id="haru_header_bottom">
+                <div id="haru_header_bottom_wrap">
+                    <!-- GNB -->
+                    <nav id="haru_gnb">
+                        <ul>
+                            <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
+                            <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
+                            <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
+                            <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
+                        </ul>
+                    </nav>                
+                    <!-- //GNB -->
+                    <!-- Signinupbutton -->
+                    <div id="haru_signup">
+                        <ul>
+                            <li class="sign"><a href="#">로그인</a></li>
+                            <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
+                        </ul>
+                    </div>
+                    <!-- //Signinupbutton -->
+                </div>            
+            </div>           
+        </header>
+    <!-- find ID / PW -->
+   <h1>ID / PW 찾기 </h1> <hr><br><br>
+   <div id="forgotID">
+        <h1>아이디 찾기</h1>
+        <div id="name">
+            <h3>이름*</h3>
+            <div>
+                <input type="text" placeholder="이름">
+                <p>*한글로 5글자 이내로 입력해주세요</p>
+            </div>
+        </div>
+        <div id="email">
+            <h3>E-mail*</h3>
+            <div>
+                <input type="email" placeholder="이메일 주소">
+                <p>*한글로 5글자 이내로 입력해주세요</p>
+            </div>
+        </div>
+        <div class="Btn">
+            <button id="findIDBtn">확인</button>
+        </div>
+   </div>
+   <div id="forgotPW">
+        <h1>비밀번호 찾기</h1>
+        <div id="name">
+            <h3>이름*</h3>
+            <div>
+                <input type="text" placeholder="이름">
+                <p>*한글로 5글자 이내로 입력해주세요</p>
+            </div>
+        </div>
+        <div id="name">
+            <h3>이름*</h3>
+            <div>
+                <input type="text" placeholder="이름">
+                <p>*한글로 5글자 이내로 입력해주세요</p>
+            </div>
+        </div>
+        <div id="email">
+            <h3>E-mail*</h3>
+            <div>
+                <input type="email" placeholder="이메일 주소">
+                <p>*한글로 5글자 이내로 입력해주세요</p>
+            </div>
+        </div>
+        <div class="Btn">
+            <button id="findIDBtn">확인</button>
+        </div>
    </div>
    <!-- bottom button -->
    <div id="bottomBtn">
-        <button id="confirmBtn">수정</button>
-        <button id="cancelBtn">취소</button>
+        <button id="GoToHomeBtn">홈페이지로 이동</button>
     </div>
+    <!-- haru footer -->
+    <footer>
+            <div id="haru_footer_wrap">
+                <!-- FNB -->
+                <nav id="haru_fnb">
+                    <ul>
+                        <li><a href="#">페이지소개</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#" class="laws">개인정보처리방침</a></li>
+                        <li><a href="./html/MEM/forgotID_PW.html">ID/PW 찾기</a></li>
+                        <li><a href="#">회원탈퇴</a></li>
+                    </ul>
+                </nav>
+                <!-- //FNB -->
+                <div id="haru_contactus">
+                    <p class="address">울산광역시 중구 종가로 345(교동) 한국산업인력공단 월드잡플러스 | 1577-9997 | FAX : 052-714-8635 | e-mail : job1@hrdkorea.or.kr</p>
+                    <p class="copyright">Copyright 2014 WORLDJOBPLUS. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- //haru footer -->
 </body>
 </html>
