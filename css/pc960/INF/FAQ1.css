@@ -1,13 +1,11 @@
-hr {
-    margin : 0;
-}
-.wrap {
+#FAQ_wrap {
     text-align : center;
     width : 768px;  
-    border : 1px solid black;
+    /* border : 1px solid black; */
     box-sizing: border-box;
+    margin-bottom: 50px;
 }
-div {
+#FAQ_wrap div {
     font-size : 20px;
 }
 .faq { 
@@ -18,19 +16,23 @@ div {
     font-weight: bold;
     border-top : 1.5px solid black;
     border-bottom : 1.5px solid black;
+    background: #E6CDBf
 
 }
-p {
+/* #FAQ_wrap p {
     cursor: text;
     width : 750px;
-}
+} */
 .cost {
     font-weight: 100;
     width: 600px;
     margin: 0 auto;
     margin-top: 20px;
-    font-size : 15px;
-    display: none;
+    font-size : 17px;
+    font-family: 'Poor story'
+}
+.long {
+    font-size: 14px;
 }
 .faq:hover {
     background : #AF8672;
