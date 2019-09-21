@@ -44,18 +44,24 @@ header p{
   width: 70%;
   position: relative;
 }
-#terms> div{
+#terms>div{
+  margin-bottom: 25px;
+}
+#terms> div> div{
   border: 1px solid #888;
   padding: 15px;
+  margin-top: 10px;
   margin-bottom: 10px;
   overflow: scroll;
   height: 120px;
   overflow-x: hidden;
+  background-color: white;
 }
-#terms>span{
+#terms> div> span{
   position: absolute;
   right: 0;
 }
+
 
 /* registration status side bar */
 #side_status{
@@ -106,6 +112,15 @@ i{
 #bottomBtn button{
   width: 100px; height: 40px;
   margin: 20px;
+  font-size: 14px;
+}
+#nextBtn{
+  background-color: #AF8672;
+  color: white;
+}
+#cancelBtn{
+  background-color: #5D5753;
+  color: white;
 }
 /* footer */
 footer {
