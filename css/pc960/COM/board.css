@@ -146,18 +146,32 @@ table>tbody>tr {
 }
 
 @media (max-width:414px) {
+    #haru_contents_wrap{
+        width:100%;
+    }
+    #haru_subcontents{
+        width:100%;
+        margin-left: 0;
+    }
+    #haru_subheader{
+        height: 100px;
+        margin-bottom:0;
+    }
     div.container{
         padding:0;
     }
     .category{
         width:414px;
         height: 30px;
+        margin-bottom:10px;
     }
     .category>.cate{
         padding-top:5px;
     }
 
-    
+    .board_section{
+        height:100%;
+    }
 
     table {
         width: 414px;

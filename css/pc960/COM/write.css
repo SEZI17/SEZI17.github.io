@@ -52,3 +52,16 @@ div.container{
     padding: 5px;  
     background-color: #fff;
 }
+@media (max-width:414px) {
+    #haru_contents_wrap{
+        width:100%;
+    }
+    #haru_subcontents{
+        width:100%;
+        margin-left: 0;
+    }
+    #haru_subheader{
+        height: 100px;
+        margin-bottom:0;
+    }
+}
