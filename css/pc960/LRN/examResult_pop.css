@@ -147,6 +147,7 @@
     background-color: skyblue;
 
     border-radius: 10%;
+    cursor: pointer;
 }
 
 #footer > .saveBtn:hover{

@@ -25,6 +25,8 @@
     overflow: hidden;
     
     margin-top: 100px;
+
+    cursor: pointer;
 }
 
 .selectButton > .selectMode{

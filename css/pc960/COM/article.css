@@ -1,4 +1,6 @@
-
+.article{
+    min-height: 500px;
+}
 
 .article>.article_head {
     background-color: #666;
@@ -44,7 +46,7 @@
 }
 
 .article>.article_editor {
-    padding: 20px 0;
+    padding: 20px 10px;
     border-bottom: 1px solid gray;
 }
 
@@ -58,7 +60,7 @@
 }
 
 .article>.article_footer {
-    padding: 20px 0;
+    padding: 20px 10px;
     border-bottom: 1px solid gray;
 }
 
@@ -68,4 +70,8 @@
 
 .article_footer>.btn {
     float: right;
+}
+
+@media (max-width:414px) {
+    
 }

@@ -1,0 +1,55 @@
+
+#wrongNotes{
+  width: 800px; height: 400px;
+  margin-bottom: 50px;
+}
+
+.noteIsNone{
+  width: 700px; height: 250px;
+  line-height: 250px;
+  text-align: center;
+
+  font-size: 26px;
+  color: #AF8672;
+
+}
+
+#wrongNotes > div.note{
+  position: relative;
+  width: 150px; height: 150px;
+  line-height: 150px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: #AF8672;
+
+  border: 3px solid #AF8672;
+  margin: 18px;
+  margin-left: 10px;
+
+  float: left;
+}
+
+#wrongNotes > div.note:hover{
+  background-color: RGB(93, 87, 83);
+  border: 3px solid RGB(93, 87, 83);
+  color: white;
+}
+
+.btnDelete{
+  position: absolute;
+  top: 0; right: 0;
+
+  width: 15px; height: 15px;
+  line-height: 10px;
+
+  font-size: 20px;
+
+  float: right;
+  cursor: pointer;
+}
+
+.btnDelete:hover{
+  background-color: RGB(222, 225, 230);
+  color: black;
+}

@@ -1,144 +1,234 @@
-
-
-div.container{
-    width:800px;
-    background-color: #ccc;
-    padding:24px;
+div.container {
+    /* width:800px; */
+    /* background-color: #ccc; */
+    padding: 24px;
     box-sizing: border-box;
 }
 
-.clfx{
+.clfx {
     clear: both;
 }
 
-.btn{
+.btn {
     border: 1px solid #ccc;
     cursor: pointer;
-    padding: 5px;  
+    padding: 5px;
     background-color: #fff;
     box-sizing: border-box;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #3493ff;
 }
 
-
-.search>.category>.cate{
-    margin-left: 20px;
+.search>.category>.cate {
+    margin-left: 15px;
 }
 
-.comm_header h3{
+.comm_header h3 {
     float: left;
 }
 
-.comm_header span{
+.comm_header span {
     float: right;
 }
 
-.search{
-    padding-bottom:5px;
+.search {
+    padding-bottom: 5px;
 }
 
-.search a{
+.search img {
+    width: 25px;
+    height: 25px;
+}
+
+.search a {
     float: left;
 }
 
-.search form{
+.search form {
     float: right;
 }
 
-.search>form>#search_type{
+.search>form>#search_type {
     float: left;
-    padding:5px;
+    padding: 5px;
 }
 
-.search>form>#search_input{
-    padding:5px;
+.search>form>#search_input {
+    padding: 5px;
 }
 
-.search>form>.btn{
-    height:32px;
-    padding:3px;
+.search>form>.btn {
+    height: 32px;
+    padding: 3px;
     border: 1px solid #aaa;
     float: right;
     background: #ccc;
 }
 
-
-.board_section{
+.board_section {
     width: 100%;
-    height:600px;
+    height: 600px;
     box-sizing: border-box;
 }
 
-table{
-    width:100%;
+table {
+    width: 100%;
     border-collapse: collapse;
     margin: 0px auto;
 }
 
-table>thead{
-    background-color:#aaa;
-    
+table>thead {
+    background-color: #aaa;
 }
 
-table>thead>tr{
+table>thead>tr {
     height: 50px;
 }
 
-table>tbody{
+table>tbody {
     padding: 10px;
-    font-size:14px;
-    font-weight:900;
-    text-align:center;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
 }
 
-
-table>tbody>tr{
-    height:33px;
-    border-bottom:1px solid  #ccc;
+table>tbody>tr {
+    height: 33px;
+    border-bottom: 1px solid #ccc;
 }
 
-.board_article{
-    width:400px;
+.board_article {
+    width: 400px;
 }
 
-.board_section>.pagination{
-    width:210px;
+.board_section>.pagination {
+    width: 300px;
+    height:30px;
     margin: 0 auto;
     margin-top: 10px;
-
 }
 
-.pagination>.btn{
+.pagination>.btn {
     border-radius: 100%;
     margin: 0 auto;
-    width:30px;
+    width: 30px;
     float: left;
     text-align: center;
-    height:25px;
+    height: 25px;
     line-height: 10px;
 }
 
-.pagination>button{
+.pagination>button {
     margin: 0 auto;
-    width:50px;
+    width: 50px;
     float: left;
     text-align: center;
 }
 
-.pagination>ul li{
+.pagination>ul{
+    text-align: center;
+}
+
+.pagination>ul li {
     list-style: none;
     float: left;
     text-align: center;
     margin-left: 10px;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
-#write_btn{
-    width:100px;
+#write_btn {
+    width: 100px;
     text-align: center;
     float: right;
 }
 
+@media (max-width:414px) {
+    div.container{
+        padding:0;
+    }
+    .category{
+        width:414px;
+        height: 30px;
+    }
+    .category>.cate{
+        padding-top:5px;
+    }
+
+    
+
+    table {
+        width: 414px;
+        border-collapse: collapse;
+        margin: 0px auto;
+    }
+
+    table>thead {
+        background-color: #aaa;
+    }
+
+    table>thead>tr {
+        height: 50px;
+    }
+
+    table>tbody {
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 900;
+        text-align: center;
+    }
+    table>thead>tr>th:nth-child(1){
+        display: none;
+    }
+    table>thead>tr>th:nth-child(4){
+        display: none;
+    }
+    table>tbody>tr>td:nth-child(1){
+        display: none;
+    }
+    table>tbody>tr>td:nth-child(4){
+        display: none;
+    }
+
+    table>tbody>tr {
+        height: 33px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .board_article {
+        width: 250px;
+    }
+
+    .board_section>.pagination {
+        width: 210px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    .pagination>.btn {
+        border-radius: 100%;
+        margin: 0 auto;
+        width: 30px;
+        float: left;
+        text-align: center;
+        height: 25px;
+        line-height: 10px;
+    }
+
+    .pagination>button {
+        margin: 0 auto;
+        width: 50px;
+        float: left;
+        text-align: center;
+    }
+
+    .pagination>ul li {
+        list-style: none;
+        float: left;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
