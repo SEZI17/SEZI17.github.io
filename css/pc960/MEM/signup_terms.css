@@ -122,8 +122,7 @@ footer p{
 }
 /* FNB */
 #haru_footer_wrap > #haru_fnb {
-  position: absolute;
-  top: 15px;
+ top: 15px;
 }
 #haru_fnb > ul { overflow: hidden; }
 #haru_fnb > ul > li { float: left; }
