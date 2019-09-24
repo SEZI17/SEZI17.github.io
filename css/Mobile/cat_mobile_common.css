@@ -92,6 +92,10 @@ body { width: 360px; }
 }
 
 /* FNB */
+footer {
+    width: 360px;
+    height: 120px;
+}
 .fnb_FAQ {
     display: none;
 }

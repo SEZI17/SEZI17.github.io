@@ -66,4 +66,10 @@ $(function(){
         $('.sidemenuon').css({"display":"block"});
         $("#haru_sidemenu").hide("slide", { direction: "right" }, 400);
     });
+
+    $(window).resize(function() {
+        if($(window).width() > 360) {
+            $("#haru_sidemenu").hide();
+        }
+    });
 });

@@ -26,8 +26,7 @@ footer a { color: white; }
 #haru_header_bottom_wrap { margin: 0 auto; width: 960px; height: 100%; 
     position: relative; }
 #haru_footer_wrap { margin: 0 auto; width: 960px; height: 100%; 
-    position: relative; 
-    background-color: #AF8672;}
+    position: relative; }
 
 /* 헤더 */
 #haru_header_upper {
@@ -158,7 +157,8 @@ footer a { color: white; }
 footer {
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 100px;    
+    background-color: #AF8672;
 }
 
 /* FNB */
