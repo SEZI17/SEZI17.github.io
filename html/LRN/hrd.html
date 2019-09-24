@@ -13,6 +13,7 @@
     <script src="../../js/wordlist.js"></script>
     <link rel="stylesheet" href="../../css/pc960/cat_common.css">
     <link rel="stylesheet" href="../../css/pc960/LRN/LRN_common.css">
+    <link rel="stylesheet" href="../../css/Mobile/cat_mobile_common.css">
     <link rel="stylesheet" href="../../css/pc960/LRN/hrd.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poor+Story:400" rel="stylesheet">
@@ -23,9 +24,10 @@
         <div id="haru_header_upper">
             <div id="haru_header_upper_wrap">
                 <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
+                <div id="haru_mobile_sidemenu_toggle" class="haru_mobile"><img class="sidemenuon" src="../../img/sidemenuon.png"><img class="sidemenuoff" src="../../img/sidemenuoff.png"></div>
             </div>
         </div>
-        <div id="haru_header_bottom">
+        <div id="haru_header_bottom" class="haru_pc">
             <div id="haru_header_bottom_wrap">
                 <!-- GNB -->
                 <nav id="haru_gnb">
@@ -49,7 +51,7 @@
         </div>           
     </header>
     <!-- Dropdown Menu -->
-    <div id="haru_LRN_dropdown" class="dropdown">
+    <div id="haru_LRN_dropdown" class="haru_pc dropdown">
         <ul class="dropLRN">
             <li><a href="../LRN/hrd.html">하루단어</a></li>
             <li><a href="./exam.html">단어검정</a></li>
@@ -60,7 +62,7 @@
             <p class="menu_description_contents">하루, 단어는 외우자의 카테고리 안에서 여러분들에게 스마트한 학습방법을 제공하고자 합니다.</p>
         </div>
     </div>
-    <div id="haru_COM_dropdown" class="dropdown">
+    <div id="haru_COM_dropdown" class="haru_pc dropdown">
         <ul class="dropCOM">
             <li><a href="../COM/notice.html">공지사항</a></li>
             <li><a href="../COM/tip.html">TIP 게시판</a></li>
@@ -71,7 +73,7 @@
             <p class="menu_description_contents">공지사항 및 회원 간 단어 암기 방법을 공유할 수 있습니다.</p>
         </div>
     </div>
-    <div id="haru_MYP_dropdown" class="dropdown">
+    <div id="haru_MYP_dropdown" class="haru_pc dropdown">
         <ul class="dropMYP">
             <li><a href="../MYP/wrongAnswerNotes.html" class="wan">오답노트</a></li>
             <li><a href="#">내 단어장</a></li>
@@ -82,7 +84,7 @@
             <p class="menu_description_contents">학습하면서 틀린 단어, 어려웠던 단어 등을 조회합니다.</p>
         </div>
     </div>
-    <div id="haru_INF_dropdown" class="dropdown">
+    <div id="haru_INF_dropdown" class="haru_pc dropdown">
         <ul class="dropINF">
             <li><a href="../INF/indexINF.html" class="aboutus">소개</a></li>
             <li><a href="../INF/FAQ.html">FAQ</a></li>
@@ -93,13 +95,42 @@
         </div>
     </div>
     <!-- //Dropdown Menu -->
+    <!-- Mobile side Menu -->
+    <div id="haru_sidemenu" class="sidemenu haru_mobile">
+        <!-- <div id="haru_sidemenu_list"> -->
+            <ul class="sideLRN">
+                <li><a href="#" class="sidelist_subject">외우자</a></li>
+                <li><a href="../LRN/hrd.html" class="sidelist_list">하루단어</a></li>
+                <li><a href="./exam.html" class="sidelist_list">단어검정</a></li>
+                <li><a href="#" class="sidelist_list">단어 List</a></li>
+            </ul>
+            <ul class="sideCOM">
+                <li><a href="#" class="sidelist_subject">커뮤니티</a></li>
+                <li><a href="#" class="sidelist_list">공지사항</a></li>
+                <li><a href="#" class="sidelist_list">TIP 게시판</a></li>
+                <li><a href="#" class="sidelist_list">단어통계</a></li>
+            </ul>
+            <ul class="sideMYP">
+                <li><a href="#" class="sidelist_subject">My 페이지</a></li>
+                <li><a href="#" class="sidelist_list">오답노트</a></li>
+                <li><a href="#" class="sidelist_list">내 단어장</a></li>
+                <li><a href="#" class="sidelist_list">회원정보변경</a></li>
+            </ul>
+            <ul class="sideINF">
+                <li><a href="#" class="sidelist_subject">페이지 소개</a></li>
+                <li><a href="#" class="sidelist_list">소개</a></li>
+                <li><a href="#" class="sidelist_list">FAQ</a></li>
+            </ul>
+        <!-- </div> -->
+    </div>
+    <!-- //Mobile side Menu -->
     <!-- Contents Here -->
     <div id="haru_LRN_header">
         <h1>외우자</h1>
         <p>하루, 단어는 외우자의 카테고리 안에서 여러분들에게<br> 스마트한 학습방법을 제공하고자 합니다.</p>
     </div>
     <div id="haru_contents_wrap">
-        <aside id="haru_aside">
+        <aside id="haru_aside" class="haru_pc">
             <nav id="haru_snb">
                 <ul>
                     <li><a href="#">외우자</a></li>

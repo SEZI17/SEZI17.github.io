@@ -85,17 +85,17 @@
     line-height: 40px;
     position: absolute;
     z-index: 1;
-    font-size: 12px;
     color: white;
     font-family: 'Poor Story',sans-serif;
     font-weight: bold;
 }
 #HRD_timer {
     position: absolute;
-    text-align: center;    
+    text-align: center;
+    cursor: default;   
     line-height: 40px;
     width: 175px;
-    font-size: 12px;
+    font-size: 18px;
     color: white;
     font-family: 'Poor Story',sans-serif;
     font-weight: bold;
