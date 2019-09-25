@@ -101,7 +101,9 @@ footer {
 }
 #haru_footer_wrap > #haru_fnb {
     position: absolute;
-    left: 0;
+    width: 350px;
+    margin-left: -175px;
+    left: 50%;
     top: 15px;
 }
 #haru_fnb > ul { overflow: hidden; }
