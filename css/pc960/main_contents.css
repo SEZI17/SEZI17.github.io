@@ -239,8 +239,6 @@ body {
 
 @media (max-width: 360px) {
     body {
-        width: 360px;
-        background-attachment: fixed;
         background-image: url(../../img/main_con_m.jpg);
     }
     /* 모바일용 폰트 크기 */
@@ -446,4 +444,4 @@ body {
         font-size: 12px;
     }
     .smap_hd { font-size: 13px; }
-    
+}
