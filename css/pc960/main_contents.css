@@ -239,6 +239,7 @@ body {
 
 @media (max-width: 360px) {
     body {
+        background-repeat: repeat;
         background-image: url(../../img/main_con_m.jpg);
     }
     /* 모바일용 폰트 크기 */
