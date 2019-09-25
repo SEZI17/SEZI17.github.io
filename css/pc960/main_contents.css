@@ -238,6 +238,10 @@ body {
 .smap_hd { color: white; font-size: 17px; font-weight: bold; }
 
 @media (max-width: 360px) {
+    body {
+        background-attachment: fixed;
+        background-image: url(../../img/main_con_m.jpg);
+    }
     /* 모바일용 폰트 크기 */
     #MAI_content h2 { font-size: 50px; }
      #MAI_content p { font-size: 17px; }
