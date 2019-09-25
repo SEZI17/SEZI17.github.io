@@ -21,6 +21,11 @@
 <body>
     <!-- haru header -->
     <div id="header_com"></div>
+    
+    <div id="haru_COM_header">
+        <h1>커뮤니티</h1>
+        <p>공지사항 및 회원 간 단어 암기 방법을<br> 공유할 수 있습니다.</p>
+    </div>
     <!-- //haru header -->
 
     <div id="haru_contents_wrap">
@@ -93,9 +98,9 @@
     <!-- //haru footer -->
     <script>
         $(() => {
-            $('#header_com').load("./indexCOM.html");
+            $('#header_com').load("../cat_header.html");
             $('#aside_com').load("./navCOM.html");
-            $('#footer_com').load('./footerCOM.html')
+            $('#footer_com').load('../cat_footer.html')
         })
         function deleteArticle() {
             let con = confirm("삭제 하시겠습니까?")
