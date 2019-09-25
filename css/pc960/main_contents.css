@@ -239,6 +239,7 @@ body {
 
 @media (max-width: 360px) {
     body {
+        width: 100%;
         background-attachment: fixed;
         background-image: url(../../img/main_con_m.jpg);
     }
