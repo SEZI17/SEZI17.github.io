@@ -242,8 +242,6 @@ body {
         width: 360px;
         background-attachment: fixed;
         background-image: url(../../img/main_con_m.jpg);
-        max-width: 360px;
-        min-width: 320px;
     }
     /* 모바일용 폰트 크기 */
     #MAI_content h2 { font-size: 50px; }
