@@ -316,10 +316,14 @@ body {
     
     /* 간단한 소개 */
     #MAI_content1 {
-        height: 600px;
+        height: 400px;
     }
     #MAI_content1_inf {
+        margin-top: -100px;
+        top: 50%;
         margin-left: -180px; 
+        left:50%;
+        height: 200px;
         width: 360px;
         max-width:100%;
         color: white;
@@ -362,11 +366,12 @@ body {
         transition-duration: 0.4s;
     }
     #MAI_content2_mobile_inf > h2 {
-        margin-top: 100px;
+        margin-top: 60px;
         
     }
-    #MAI_content2_inf > h1 > a {
+    #MAI_content2_mobile_inf > h1 > a {
         color: white;
+        font-size: 30px;
     }
     
     /* 패밀리사이트 */
