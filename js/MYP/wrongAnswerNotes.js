@@ -1,12 +1,104 @@
+var dragFlag = false;
+var noteIndex;
+var dropX;
+var dropY;
+
 $(function(){
 
   addWrongNotes();
   clickNote();
   clickDeleteBtn();
-
+  dragDropSub();
 });
 
-// _회차 클릭시
+function dragDropSub()
+{
+  $(".note").mousedown(function(){
+    dragFlag = true;
+    noteIndex = $(this).index();
+  });
+
+  $(".note").mouseup(function(){
+    dragFlag = false;
+  });
+}
+
+// Drag
+function drag(event) 
+{
+}
+
+function drop(event)
+{
+  if(true == dragFlag)
+  {
+    dropX = event.clientX;
+    dropY = event.clientY;
+
+    let list = [];    
+    let len = $(".note").length;
+    for(let i = 0; i < len; i++)
+    {
+      let tmp = {};
+      tmp.clientX = $(".note").eq(i).offset().left;
+      tmp.clientY = $(".note").eq(i).offset().top;
+      list.push(tmp);
+    }
+
+    let height = $(".note").eq(0).height();
+
+    let imsi = -2;
+    for(let i = 0; i < len - 1; i++)
+    {
+      if(list[i].clientY <= dropY && dropY <= list[i].clientY + height)
+      {
+        //드랍을 객체와 객체 사이에 할때
+        if(list[i].clientX <= dropX && dropX <= list[i + 1].clientX)
+        {
+          imsi = i;
+          break;
+        }
+        //드랍을 줄의 맨 처음에 할때
+        else if(dropX < list[i].clientX && list[i].clientX == list[0].clientX)
+        {
+          imsi = i - 1;
+          break;
+        }
+        //드랍을 줄의 마지막에 할때
+        else if(list[i].clientX <= dropX && list[i + 1].clientX == list[0].clientX)
+        {
+          imsi = i;
+          break;
+        }
+        //드랍을 객체의 맨 마지막에 할때
+        else if(list[i + 1].clientX <= dropX && (i + 1) == (len - 1))
+        {
+          imsi = len - 1;
+          break;
+        }
+      }
+      //드랍을 마지막에 할때 마지막 객체가 다음줄의 첫 번째일때 예외처리
+      else if(list[i + 1].clientX <= dropX && (i + 1) == (len - 1))
+        {
+          imsi = len - 1;
+          break;
+        }
+    }
+
+    if(-1 == imsi)
+      $(".note").eq(0).before($(".note").eq(noteIndex));  
+    else if(-2 != imsi)
+      $(".note").eq(imsi).after($(".note").eq(noteIndex));
+  }
+
+  dragFlag = false;
+}
+
+function allowDrop(event)
+{
+  event.preventDefault(); 
+}
+
 function clickNote()
 {
   $(".note").click(function(){
@@ -21,9 +113,11 @@ function clickDeleteBtn()
 {
   $(".btnDelete").click(function(e){
     e.stopPropagation();
-    $(this).parent().remove();
-
-    if (!$('.note').length) 
+    $(this).parent().fadeOut(400, function(){
+      $(this).remove();
+    });
+    
+    if (1 == $('.note').length) 
     {
       strHtml = "<div class='noteIsNone'>오답노트가 존재하지 않습니다.</div>"
       $("#wrongNotes").html(strHtml);
@@ -40,7 +134,7 @@ function addWrongNotes()
   let strHtml = "";
   for(let i = 0; i < len; i++)
   {
-    let str = "<div class='note'>" + (i + 1) + "회차<div class='btnDelete' title='삭제'>x</div></div>"
+    let str = "<div class='note' draggable='true' ondragstart='drag(event)'>" + (i + 1) + "회차<div class='btnDelete' title='삭제'>x</div></div>";
     strHtml += str;
   }
 
