@@ -177,6 +177,6 @@ footer {
 #haru_fnb > ul > li > a:hover {
     font-weight: bold;
 }
-#haru_contactus { position: absolute; top: 45px; }
+#haru_contactus { margin-left: 10px; position: absolute; top: 45px; }
 #haru_contactus > p { font-size: 14px; }
 .laws { color: orange; }

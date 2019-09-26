@@ -227,7 +227,7 @@
     color: white;
 }
 
-@media (max-width: 360px) {
+@media screen and (max-width: 540px) {
     #LRN_HRD_wrap {
         width: 350px;
         height: 500px;
