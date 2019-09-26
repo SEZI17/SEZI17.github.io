@@ -52,7 +52,7 @@
         position: fixed;
         top: 60;
         width: 100%;
-        height: 580px;
+        height: 90%;
         background-image: url(../../img/sidemenu.png);
         background-size: 100%;
         overflow-y: scroll;
@@ -81,6 +81,12 @@
     #haru_sidemenu ul {
         text-align: center;
     }
+    #haru_sidemenu ul:first-child {
+        margin-top: 20px;
+    }
+    #haru_sidemenu ul:last-child{
+        margin-bottom: 20px;
+    } 
     #haru_sidemenu li {
         margin-bottom: 10px;
     }
@@ -101,8 +107,8 @@
     }
     #haru_footer_wrap > #haru_fnb {
         position: absolute;
-        width: 100%;
-        margin-left: -175px;
+        width: 360px;
+        margin-left: -180px;
         left: 50%;
         top: 15px;
     }
