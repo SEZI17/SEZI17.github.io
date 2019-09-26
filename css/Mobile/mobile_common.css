@@ -1,133 +1,7 @@
-@media screen and (max-width: 360px) {
-
-    body { width: 360px; }
-    /* 360 코드 */
+@media screen and (max-width: 540px) {
+    /* 540 코드 */
+    html { width: 100%; }
     #haru_header_upper_wrap { margin: 0 auto; width: 100%; height: 60px; 
-        position: relative; }
-    #haru_footer_wrap { margin: 0 auto; width: 360px; height: 120px; 
-        position: relative; }
-    .haru_pc { display: none; }
-    .haru_mobile { display: block;}
-
-    /* 헤더 */
-    #haru_header_upper {
-        width: 100%;
-        height: 60px;
-        top: 0;
-        /* background-color: #EBE4DD; */
-        position: relative;
-    }
-
-    #haru_title {
-        position: absolute;
-        line-height: 60px;
-        top: 50%;
-        margin-top:-30px;
-        left: 0;
-        margin-left:0px;
-        width: 140px; height: 60px;
-        display: block;
-        /* color: #AF8672; */
-        font-size: 30px;
-        font-family: 'Stylish', sans-serif;
-    }
-
-
-    #haru_mobile_sidemenu_toggle {
-        float: right;
-        margin-top: 7px;
-        width: 45px;
-        height: 45px;
-    }
-
-    .sidemenuoff {
-        display: none;
-    }
-
-    #haru_sidemenu::-webkit-scrollbar { display:none; }
-
-    #haru_sidemenu {
-        display: none;
-        z-index: 99;
-        position: fixed;
-        top: 60;
-        width: 100%;
-        height: 100%;
-        background-image: url(../../img/sidemenu.png);
-        background-size: 100%;
-        overflow-y: scroll;
-        -ms-overflow-style: none;
-    }
-
-    /* #haru_sidemenu_list {
-        position: absolute;
-        margin-left: -100px;
-        top: 20%;
-        left: 50%;
-        width: 200px;
-        height: 200px;  
-    } */
-
-    .sidelist_subject {
-        color: orange;
-        font-size: 30px;
-    }
-
-    .sidelist_list {
-        color: white;
-        font-size: 20px;
-    }
-
-    #haru_sidemenu ul {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    #haru_sidemenu li {
-        margin-bottom: 10px;
-    }
-    #haru_sidemenu li:first-child {
-        margin-bottom: 20px;
-    }
-    #haru_sidemenu li:last-child {
-        margin-bottom: 30px;
-    }
-
-    /* FNB */
-    footer {
-        width: 360px;
-        height: 120px;
-    }
-    .fnb_FAQ {
-        display: none;
-    }
-    #haru_footer_wrap > #haru_fnb {
-        position: absolute;
-        width: 350px;
-        margin-left: -175px;
-        left: 50%;
-        top: 15px;
-    }
-    #haru_fnb > ul { overflow: hidden; }
-    #haru_fnb > ul > li { float: left; }
-    #haru_fnb > ul > li > a {
-        font-size: 12px;
-        display: block;
-        padding: 0 10px;
-    }
-    #haru_fnb > ul > li > a:hover {
-        font-weight: 100;
-    }
-    #haru_contactus {margin: 0 auto; text-align: center; position: absolute; top: 45px; }
-    #haru_contactus > p { width: 360px; font-size: 12px; }
-    .laws { color: orange; }
-    .address { margin-bottom: 10px; }
-    /* .copyright { margin-bottom: 10px;} */
-}
-
-@media screen and (min-width: 361px) and (max-width: 540px) {
-    /* 360 코드 */
-    #haru_header_upper_wrap { margin: 0 auto; width: 540px; height: 60px; 
         position: relative; }
     #haru_footer_wrap { margin: 0 auto; width: 100%; height: 120px; 
         position: relative; }
@@ -136,7 +10,7 @@
 
     /* 헤더 */
     #haru_header_upper {
-        width: 540px;
+        width: 100%;
         height: 60px;
         top: 0;
         /* background-color: #EBE4DD; */
@@ -163,6 +37,7 @@
         margin-top: 7px;
         width: 45px;
         height: 45px;
+        margin-right: 10px;
     }
 
     .sidemenuoff {
@@ -177,7 +52,7 @@
         position: fixed;
         top: 60;
         width: 100%;
-        height: 100%;
+        height: 580px;
         background-image: url(../../img/sidemenu.png);
         background-size: 100%;
         overflow-y: scroll;
@@ -218,7 +93,7 @@
 
     /* FNB */
     footer {
-        width: 540px;
+        width: 100%;
         height: 120px;
     }
     .fnb_FAQ {
