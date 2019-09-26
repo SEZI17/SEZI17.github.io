@@ -68,8 +68,22 @@ $(function(){
     });
 
     $(window).resize(function() {
-        if($(window).width() > 360) {
+        if($(window).width() > 768) {
             $("#haru_sidemenu").hide();
         }
     });
+    $('header').on('scroll touchmove mousewheel', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    });
 });
+
+// 사이드바 표시시 헤더 스크롤막기
+// function preventscroll() {
+//     $('header').on('scroll touchmove mousewheel', function(event) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//         return false;
+//       });
+// }

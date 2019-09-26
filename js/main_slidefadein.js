@@ -12,7 +12,7 @@ function slidefadein() {
 }
 
 $(document).ready(function(){
-    if($(window).width() > 361) {
+    if($(window).width() > 768) {
         slidefadein();
     }
 });
