@@ -68,7 +68,7 @@ $(function(){
     });
 
     $(window).resize(function() {
-        if($(window).width() > 768) {
+        if($(window).width() > 767) {
             $("#haru_sidemenu").hide();
         }
     });

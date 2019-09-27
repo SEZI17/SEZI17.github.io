@@ -1,4 +1,4 @@
-@media(max-width: 540px) {
+@media screen and (max-width: 540px) {
 /* 외우자 카테고리 헤더 */
 #haru_LRN_header {
     width: 100%; height: 110px;
@@ -25,6 +25,34 @@
     width: 100%;
 }
 }
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    /* 외우자 카테고리 헤더 */
+    #haru_LRN_header {
+        width: 100%; height: 110px;
+        margin: 0 auto;
+        color: white;
+        background-image: url('../../../img/LRN.jpg');
+        position: relative;
+    }
+    
+    #haru_LRN_header > h1 {
+        position: absolute;
+        top: 30px;
+        right: 80px;
+    }
+    
+    /* 컨텐츠 360 */
+    #haru_contents_wrap {
+        width: 100%;
+    }
+    
+    /* 서브컨텐츠 */
+    #haru_subcontents {
+        float: left;
+        width: 100%;
+    }
+    }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
         /* 외우자 카테고리 헤더 */
@@ -54,7 +82,7 @@
     }
     /* 외우자 카테고리 GNB 구성 */
     #haru_aside > #haru_snb {
-        width: 330px;
+        width: 334px;
         position: relative;
         margin: 0 auto;
         z-index: 1;
@@ -64,7 +92,6 @@
     #haru_snb > ul > li > a {
         border-bottom: 0px;
         border-right: 1px solid black;
-        font-weight: 100;
         margin:0;
     }
     

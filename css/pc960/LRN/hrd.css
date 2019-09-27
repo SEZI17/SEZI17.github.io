@@ -301,3 +301,105 @@
         display:none;
     }
 }
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+    #LRN_HRD_wrap {
+        width: 530px;
+        height: 500px;
+    }
+    
+    #LRN_HRD_card {
+        position: relative;
+        width: 530px;
+        height: 250px;
+        float: left;
+    }
+    #LRN_HRD_card1 {
+        position: absolute;
+        width: 530px;
+        height: 250px;
+        background-size: 530px 250px;
+    }
+    #LRN_HRD_card2 {
+        position: absolute;
+        width: 530px;
+        height: 250px;
+        background-size: 530px 250px;
+    }
+    #LRN_HRD_card3 {
+        position: absolute;
+        width: 530px;
+        height: 250px;
+        background-size: 530px 250px;
+    }
+    
+    #LRN_HRD_card h2 {
+        font-size: 90px;
+    }
+    #LRN_HRD_next {
+        width: 180px;
+    }
+    #HRD_timer {
+        line-height: 85px;
+        height: 85px;
+        width: 265px;
+        font-size: 25px;
+    }
+    #LRN_HRD_dknow {
+        text-align: center;
+        line-height: 125px;
+        width: 350px;
+        height: 125px;
+        background: #A74E36;
+        float: left;
+    }
+    #LRN_HRD_mynote {
+        width: 265px;
+    }
+    #LRN_HRD_timer {
+        width: 265px;
+        height: 85px;
+    }
+    #LRN_HRD_dknow_title {
+        height: 55px;
+        width: 350px;
+    }
+    #LRN_HRD_dknow_UD {
+        display: none;
+    }
+    #LRN_HRD_dknow_table_wrap {
+        width: 350px;
+    }
+    #LRN_HRD_dknow_table {    
+        width: 350px;
+    }
+    #LRN_HRD_dknow_table td {
+        height: 30px;
+        text-align: center;
+    }
+    .table_counter {
+        width: 70px;
+        display: none;
+    }
+    .counter_tr {
+        display: none;
+    }
+    .time_tr {
+        display: none;
+    }
+    .table_kanji {
+        width: 80px;
+    }
+    .table_yomigana {
+        width: 80px;
+    }
+    .table_korean {
+        width: 80px;
+    }
+    .table_delete {
+        width: 40px;
+    }
+    .table_time {
+        display:none;
+    }
+}
