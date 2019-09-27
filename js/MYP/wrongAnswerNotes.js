@@ -35,17 +35,18 @@ function drop(event)
     dropX = event.clientX;
     dropY = event.clientY;
 
+    let width = $(".note").eq(0).width();
+    let height = $(".note").eq(0).height();
+
     let list = [];    
     let len = $(".note").length;
     for(let i = 0; i < len; i++)
     {
       let tmp = {};
-      tmp.clientX = $(".note").eq(i).offset().left;
+      tmp.clientX = $(".note").eq(i).offset().left + width / 2;
       tmp.clientY = $(".note").eq(i).offset().top;
       list.push(tmp);
     }
-
-    let height = $(".note").eq(0).height();
 
     let imsi = -2;
     for(let i = 0; i < len - 1; i++)
@@ -86,9 +87,21 @@ function drop(event)
     }
 
     if(-1 == imsi)
-      $(".note").eq(0).before($(".note").eq(noteIndex));  
+    {
+      $(".note").eq(0).before($(".note").eq(noteIndex));
+
+      let margin = $(".note").eq(0).css('margin-right').replace(/[^-\d\.]/g, '');
+      $(".note").eq(0).css('margin-right', 0 + "px");
+      $(".note").eq(0).animate({'margin-right': margin + "px"}, 500);
+    }
     else if(-2 != imsi)
+    {
       $(".note").eq(imsi).after($(".note").eq(noteIndex));
+
+      let margin = $(".note").eq(imsi).css('margin-right').replace(/[^-\d\.]/g, '');
+      $(".note").eq(imsi).css('margin-right', 0 + "px");
+      $(".note").eq(imsi).animate({'margin-right': margin + "px"}, 500);
+    }
   }
 
   dragFlag = false;
