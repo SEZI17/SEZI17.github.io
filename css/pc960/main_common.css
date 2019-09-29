@@ -3,6 +3,7 @@
 ol, ul { list-style: none; }
 a { outline: 0; text-decoration: none; color: black;}
 img { border: 0; }
+
 /* //초기화 */
 header a { color: white; }
 footer { color: white; }
@@ -165,7 +166,12 @@ footer {
     font-weight: bold;
 }
 #haru_contactus { position: absolute; top: 45px; }
-#haru_contactus > p { font-size: 14px; }
+#haru_contactus > p.haru_pc { font-size: 14px; margin-left: 10px;}
 .laws { color: orange; }
 
 #contents { height: 400px; margin: 0 auto; width: 960px; line-height: 200px;}
+
+/* 사이드 메뉴 글꼴 */
+#haru_sidemenu .sidelist_subject {
+    font-family: 'Stylish', sans-serif;
+}

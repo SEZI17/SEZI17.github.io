@@ -57,14 +57,14 @@ $(function(){
         // $('#haru_title').css({"color":"white","transition-duration":"0.4s"});
         $('.sidemenuon').css({"display":"none"});
         $('.sidemenuoff').css({"display":"block"});
-        $("#haru_sidemenu").stop().show("slide", { direction: "right" }, 400);
+        $("#haru_sidemenu").show("slide", { direction: "right" }, 200);
     });
     $(".sidemenuoff").click(function () {
         // $('#haru_header_upper').css({"background":"#EBE4DD","transition-duration":"0.4s"});
         // $('#haru_title').css({"color":"#AF8672","transition-duration":"0.4s"});
         $('.sidemenuoff').css({"display":"none"});
         $('.sidemenuon').css({"display":"block"});
-        $("#haru_sidemenu").stop().hide("slide", { direction: "right" }, 400);
+        $("#haru_sidemenu").hide("slide", { direction: "right" }, 200);
     });
 
     $(window).resize(function() {
@@ -78,7 +78,6 @@ $(function(){
         return false;
     });
 });
-
 // 사이드바 표시시 헤더 스크롤막기
 // function preventscroll() {
 //     $('header').on('scroll touchmove mousewheel', function(event) {

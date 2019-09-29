@@ -107,8 +107,8 @@
     }
     #haru_footer_wrap > #haru_fnb {
         position: absolute;
-        width: 360px;
-        margin-left: -180px;
+        width: 350px;
+        margin-left: -175px;
         left: 50%;
         top: 15px;
     }
@@ -184,7 +184,7 @@
         position: fixed;
         top: 80;
         width: 100%;
-        height: 80%;
+        height: 90%;
         background-image: url(../../img/sidemenu.png);
         background-size: 100%;
         overflow-y: scroll;
@@ -263,7 +263,8 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-        /* 768 코드 */
+        /* 768 코드 */        
+    html { width: 100%; }
     #haru_header_upper_wrap { margin: 0 auto; width: 100%; height: 100%; 
         position: relative; }
     #haru_header_bottom_wrap { margin: 0 auto; width: 100%; height: 100%; 
@@ -289,21 +290,10 @@
     }
     /* GNB Dropdown 구성 */
     .dropdown {
-        position: absolute;
-        top: 150px;
-        width: 768px;
-        height: 90px;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        background-color: #333;
-        opacity: 0.9;
-        display: none;
-        z-index: 99;
+        width: 100%;
     }
     .menu_description {
-        font-size: 15px;
+        font-size: 14px;
         height: 40px;
         background-image: url('../../img/menu_description.jpg');
         overflow: hidden;

@@ -191,6 +191,9 @@
 .table_delete {
     width: 40px;
 }
+.delete_tr {        
+    cursor: default;
+}
 
 #LRN_HRD_dknowlist td:last-child:hover {
     background-color: red;
@@ -219,6 +222,7 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 
 .delete_list:hover {
@@ -368,10 +372,10 @@
         display: none;
     }
     #LRN_HRD_dknow_table_wrap {
-        width: 350px;
+        width: 530px;
     }
     #LRN_HRD_dknow_table {    
-        width: 350px;
+        width: 530px;
     }
     #LRN_HRD_dknow_table td {
         height: 30px;
@@ -388,13 +392,13 @@
         display: none;
     }
     .table_kanji {
-        width: 80px;
+        width: 160px;
     }
     .table_yomigana {
-        width: 80px;
+        width: 160px;
     }
     .table_korean {
-        width: 80px;
+        width: 170px;
     }
     .table_delete {
         width: 40px;
