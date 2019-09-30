@@ -1,0 +1,36 @@
+@media screen and (max-width:540px) {
+    #haru_aside {
+        display: none;
+    }
+    #haru_COM_header {
+        width: 100% !important;
+        height: 110px;
+        margin: 0 auto;
+        color: white;
+        background-image: url('../../../img/COM.jpg');
+        position: relative;
+    }
+    #haru_COM_header>h1 {
+        position: absolute;
+        top: 30px;
+        right: 80px;
+    }
+    #haru_COM_header>p {
+        display: none;
+    }
+    /* 컨텐츠 360 */
+    #haru_contents_wrap {
+        width: 100% !important;
+    }
+    /* 서브컨텐츠 768 */
+    #haru_subcontents {
+        float: left;
+        width: 100% !important;
+        padding: 0 10px;
+        margin-left: 0 !important;
+        box-sizing: border-box;
+    }
+    #haru_subheader{
+        overflow: unset !important;
+    }
+}
