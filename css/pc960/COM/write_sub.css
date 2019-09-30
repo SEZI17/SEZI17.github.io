@@ -10,10 +10,3 @@
     width:650px;
     float: right;
 }
-
-@media (max-width:414px) {
-
-    #articleTitle{
-        width:100%;
-    }
-}
