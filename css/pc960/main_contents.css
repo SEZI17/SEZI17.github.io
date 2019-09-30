@@ -248,7 +248,6 @@ body {
     }
     /* 모바일용 폰트 크기 */
     #MAI_content h2 { font-size: 50px; }
-    #MAI_content p { font-size: 17px; }
     /* 모바일용 숨기기 */
     .haru_pc { display: none; }
     .haru_mobile { display: block;}
