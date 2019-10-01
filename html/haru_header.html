@@ -23,6 +23,8 @@
                 <div id="haru_signup">
                     <ul>
                         <li class="sign"><a href="#" class="openModal" id="loginBtn0" onclick="openModal()">로그인</a></li>
+                        <li class="sign"><a href="#" class="openModal" id="forgotIDBtn0" onclick="openModal()" style="display: none;">아이디찾기</a></li>
+                        <li class="sign"><a href="#" class="openModal" id="forgotPWBtn0" onclick="openModal()" style="display: none;">비밀번호찾기</a></li>
                         <li class="sign"><a href="#" class="bar openModal" id="termsBtn0" onclick="openModal()">회원가입</a></li>
                     </ul>
                 </div>
@@ -160,7 +162,7 @@
         function checkboxCheck(id){
             elem=document.getElementById(id);
         
-            if($("input:not(:checked)").length == 0){
+            if($(".checkbox:not(:checked)").length == 0){
                 alert(document.getElementById("modalHeader").innerHTML+" 완료");
                 $('#popup_content').load(elem.getAttribute("href"));
                 modal.style.display = "block";
@@ -175,7 +177,7 @@
             elem=document.getElementById(id);
         
             var allFilled=true;
-            $("input").each(function () {
+            $(".inputBox").each(function () {
                 if ($(this).val()=="") {
                     allFilled=false;
                 }
