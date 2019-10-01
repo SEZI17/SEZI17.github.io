@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
     <link rel="stylesheet" href="../../css/pc960/MEM/MEM_common.css">
     <style>
-        #editInfo{
+        #deleteAccount{
             padding-left: 20px;
         }
     </style>
@@ -113,41 +113,21 @@
         </aside>
         <section id="haru_subcontents">
             <header id="haru_subheader">
-                <div id="haru_subtitle">회원정보변경</div>
+                <div id="haru_subtitle">회원탈퇴</div>
                 <div id="haru_cat">
                     <p>HOME > My 페이지 > 회원정보변경</p>
                 </div>
-            </header>                    
-            <!-- SubContents Here -->
-            <div id="editInfo">
-                <div id="name">
-                    <input type="text" placeholder="이름" class="inputBox"onfocusout="inputCheck(this.id)" id="nameInput">
-                    <button class="btn">수정</button>
-                    <p></p>
-                </div>
-                <div id="id">
-                    <input type="text" placeholder="아이디" class="inputBox"onfocusout="inputCheck(this.id)" id="idInput">
-                    <button class="btn">수정</button>
-                    <p></p>
-                </div>
-                <div id="nickname">
-                    <input type="text" placeholder="별명" class="inputBox"onfocusout="inputCheck(this.id)" id="nicknameInput">
-                    <button class="btn">수정</button>
-                    <p></p>
-                </div>
-                <div id="email">
-                    <input type="email" placeholder="이메일 주소" class="inputBox"onfocusout="inputCheck(this.id)" id="emailInput">
-                    <button class="btn">수정</button>
-                    <p></p>
+            </header> 
+            <div id="deleteAccount">
+                <p>지금까지 하루, 단어를 이용해주셔서 감사합니다.<br>보다 나은 사이트를 향해 발전하겠습니다.</p><br><br>
                 <div id="password">
-                    <a href="#"><button id="pwChange" class="btn">비밀번호 변경 페이지로 이동</button></a>
+                    <input type="password" placeholder="비밀번호" class="inputBox"onfocusout="inputCheck(this.id)" id="passwordInput">
+                    <p></p>
                 </div>
-                    <br>
-                    <hr>
-            </div>
-            <!-- bottom button -->
-            <button class="cancelBtn" onclick="">취소</button>
-            <button class="confirmBtn" onclick="textInputCheck()">수정</button>
+                <!-- bottom button -->
+                <button class="cancelBtn" onclick="">취소</button>
+                <button class="confirmBtn" onclick="textInputCheck()">탈퇴</button>
+            </div>                   
             <!-- //SubContents Here -->
         </section>
     </div>
