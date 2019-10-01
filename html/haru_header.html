@@ -22,8 +22,8 @@
                 <!-- Signinupbutton -->
                 <div id="haru_signup">
                     <ul>
-                        <li class="sign"><a href="#">로그인</a></li>
-                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
+                        <li class="sign"><a href="#" class="openModal" id="loginBtn0" onclick="openModal()">로그인</a></li>
+                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar openModal" id="termsBtn0" onclick="openModal()">회원가입</a></li>
                     </ul>
                 </div>
                 <!-- //Signinupbutton -->
@@ -104,7 +104,10 @@
         <!-- </div> -->
     </div>
     <!-- //Mobile side Menu -->
+    <!-- modal -->
     <div id="modal" class="modal">
         <div class="modal-content" id="popup_content"></div>
     </div>
+    <script src="../js/modal.js"></script>
+
     <script src="../../js/gnb_dropdown.js"></script>
