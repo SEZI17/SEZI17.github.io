@@ -2,9 +2,22 @@
 #stats{
   width: 800px; height: 400px;
   margin-bottom: 50px;
-  padding-left: 30px;
+  padding-left: 80px;
   padding-top: 20px;
+}
 
+#graph_content
+{
+  float: left;
+  text-align: right;
+  margin-left: -60px;
+}
+
+.content
+{
+  height: 60px;
+  line-height: 20px;
+  margin: 5px;
 }
 
 #graph{
@@ -16,34 +29,30 @@
 }
 
 .bar{
-  width: 5px; height: 50px;
-  line-height: 25px;
+  width: 5px; height: 60px;
   background-color: RGB(175, 134, 114);
   margin: 5px;
 
   transition-duration: 2s;
   transition-timing-function: linear;
-
-  overflow: hidden;
-  text-align: right;
 }
 
-#graph:hover > .bar:nth-child(1){
+#stats:hover > #graph > .bar:nth-child(1){
   width: 500px;
 }
 
-#graph:hover > .bar:nth-child(2){
+#stats:hover > #graph > .bar:nth-child(2){
   width: 400px;
 }
 
-#graph:hover > .bar:nth-child(3){
+#stats:hover > #graph > .bar:nth-child(3){
   width: 200px;
 }
 
-#graph:hover > .bar:nth-child(4){
+#stats:hover > #graph > .bar:nth-child(4){
   width: 150px;
 }
 
-#graph:hover > .bar:nth-child(5){
+#stats:hover > #graph > .bar:nth-child(5){
   width: 80px;
 }
