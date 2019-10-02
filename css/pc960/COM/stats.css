@@ -1,10 +1,22 @@
 
+#article_wrap{
+  
+}
+
 #stats{
   width: 800px; height: 400px;
   margin-bottom: 50px;
-  padding-left: 80px;
+  
   padding-top: 20px;
+  padding-left: 70px;
 }
+
+.exam_detail
+{
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
 
 #graph_content
 {
@@ -37,22 +49,22 @@
   transition-timing-function: linear;
 }
 
-#stats:hover > #graph > .bar:nth-child(1){
+#article_wrap:hover > #stats > #graph > .bar:nth-child(1){
   width: 500px;
 }
 
-#stats:hover > #graph > .bar:nth-child(2){
+#article_wrap:hover > #stats > #graph > .bar:nth-child(2){
   width: 400px;
 }
 
-#stats:hover > #graph > .bar:nth-child(3){
-  width: 200px;
+#article_wrap:hover > #stats > #graph > .bar:nth-child(3){
+  width: 200px
 }
 
-#stats:hover > #graph > .bar:nth-child(4){
+#article_wrap:hover > #stats > #graph > .bar:nth-child(4){
   width: 150px;
 }
 
-#stats:hover > #graph > .bar:nth-child(5){
+#article_wrap:hover > #stats > #graph > .bar:nth-child(5){
   width: 80px;
 }
