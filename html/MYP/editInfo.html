@@ -21,58 +21,8 @@
 </head>
 <body>
     <!-- haru header -->
-    <header>
-        <div id="haru_header_upper">
-            <div id="haru_header_upper_wrap">
-                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
-            </div>
-        </div>
-        <div id="haru_header_bottom">
-            <div id="haru_header_bottom_wrap">
-                <!-- GNB -->
-                <nav id="haru_gnb">
-                    <ul>
-                        <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
-                        <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
-                        <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
-                        <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
-                    </ul>
-                </nav>                
-                <!-- //GNB -->
-                <!-- Signinupbutton -->
-                <div id="haru_signup">
-                    <ul>
-                        <li class="sign"><a href="#">로그인</a></li>
-                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
-                    </ul>
-                </div>
-                <!-- //Signinupbutton -->
-            </div>            
-        </div>           
-    </header>
-    <!-- Dropdown Menu -->
-    <div id="haru_LRN_dropdown" class="dropdown">
-        <ul class="dropLRN">
-            <li><a href="../LRN/indexLRN.html">하루단어</a></li>
-            <li><a href="#">단어검정</a></li>
-            <li><a href="#">단어 List</a></li>
-        </ul>
-        <div class="menu_description">
-            <p class="menu_description_subject">외우자</p>
-            <p class="menu_description_contents">하루, 단어는 외우자의 카테고리 안에서 여러분들에게 스마트한 학습방법을 제공하고자 합니다.</p>
-        </div>
-    </div>
-    <div id="haru_COM_dropdown" class="dropdown">
-        <ul class="dropCOM">
-            <li><a href="../COM/indexCOM.html">공지사항</a></li>
-            <li><a href="#">TIP 게시판</a></li>
-            <li><a href="#">단어통계</a></li>
-        </ul>
-        <div class="menu_description">
-            <p class="menu_description_subject">커뮤니티</p>
-            <p class="menu_description_contents">공지사항 및 회원 간 단어 암기 방법을 공유할 수 있습니다.</p>
-        </div>
-    </div>
+    <div id="header_com"></div>
+    <!-- Dropdown Men -->
     <div id="haru_MYP_dropdown" class="dropdown">
         <ul class="dropMYP">
             <li><a href="../MYP/indexMYP.html" class="wan">오답노트</a></li>
@@ -121,33 +71,33 @@
             <!-- SubContents Here -->
             <div id="editInfo">
                 <div id="name">
-                    <input type="text" placeholder="이름" class="inputBox"onfocusout="inputCheck(this.id)" id="nameInput">
-                    <button class="btn">수정</button>
+                    <input type="text" placeholder="이름" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="nameInput">
+                    <button class="MEM_btn">수정</button>
                     <p></p>
                 </div>
                 <div id="id">
-                    <input type="text" placeholder="아이디" class="inputBox"onfocusout="inputCheck(this.id)" id="idInput">
-                    <button class="btn">수정</button>
+                    <input type="text" placeholder="아이디" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="idInput">
+                    <button class="MEM_btn">수정</button>
                     <p></p>
                 </div>
                 <div id="nickname">
-                    <input type="text" placeholder="별명" class="inputBox"onfocusout="inputCheck(this.id)" id="nicknameInput">
-                    <button class="btn">수정</button>
+                    <input type="text" placeholder="별명" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="nicknameInput">
+                    <button class="MEM_btn">수정</button>
                     <p></p>
                 </div>
                 <div id="email">
-                    <input type="email" placeholder="이메일 주소" class="inputBox"onfocusout="inputCheck(this.id)" id="emailInput">
-                    <button class="btn">수정</button>
+                    <input type="email" placeholder="이메일 주소" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="emailInput">
+                    <button class="MEM_btn">수정</button>
                     <p></p>
                 <div id="password">
-                    <a href="#"><button id="pwChange" class="btn">비밀번호 변경 페이지로 이동</button></a>
+                    <a href="#"><button id="pwChange" class="MEM_btn">비밀번호 변경 페이지로 이동</button></a>
                 </div>
                     <br>
                     <hr>
             </div>
             <!-- bottom button -->
-            <button class="cancelBtn" onclick="">취소</button>
-            <button class="confirmBtn" onclick="textInputCheck()">수정</button>
+            <button class="MEM_cancelBtn" onclick="">취소</button>
+            <button class="MEM_confirmBtn" onclick="textInputCheck()">수정</button>
             <!-- //SubContents Here -->
         </section>
     </div>
@@ -173,6 +123,12 @@
         </div>
     </footer>
     <!-- //haru footer -->
+
+    <script>
+        $(() => {
+            $('#header_com').load("../haru_header.html");
+        })
+    </script>
     
 </body>
 </html>

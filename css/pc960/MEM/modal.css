@@ -1,6 +1,6 @@
 /* ----modal related---- */
  /* input box */
- .inputBox{
+ .modal_inputBox{
   width: 100%;
   padding: 12px 20px;
   margin: 10px 0;
@@ -10,13 +10,13 @@
   box-sizing: border-box;
 }
 /* input box error */
-.inputBox + p{
+.modal_inputBox + p{
     margin: 0;
     margin-bottom: 5px;
     color:darkred;
 }
 /* input button */
-.confirmBtn{
+.modal_confirmBtn{
     width: 100%;
     background-color: #512B37;
     color: white;
@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 /* scroll box for terms and conditions */
-.scroll_box{
+.modal_scroll_box{
     padding: 15px;
     height: 100px;
     overflow: scroll;
@@ -61,14 +61,14 @@
 }
 
 /* The Close Button */
-.close {
+.modal_close {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-.close:hover,
-.close:focus {
+.modal_close:hover,
+.modal_close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;

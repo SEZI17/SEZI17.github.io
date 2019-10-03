@@ -1,6 +1,6 @@
 
 /* input box */
-.inputBox{
+.MEM_inputBox{
   width: 50%;
   padding: 12px 20px;
   margin: 10px 0;
@@ -11,13 +11,13 @@
   box-sizing: border-box;
 }
 /* input box error */
-.inputBox + p{
+.MEM_inputBox + p{
     margin: 0;
     margin-bottom: 5px;
     color:darkred;
 }
 /* input button */
-.confirmBtn{
+.MEM_confirmBtn{
     width: 35%;
     background-color: #512B37;
     color: white;
@@ -28,7 +28,7 @@
     cursor: pointer;
     
 }
-.cancelBtn{
+.MEM_cancelBtn{
   width: 35%;
   background-color: gray;
   color: white;
@@ -40,7 +40,7 @@
   cursor: pointer;
   float: left;
 }
-.btn{
+.MEM_btn{
   background-color: #AF8672;
   color: white;
   padding: 12px 20px;
@@ -51,7 +51,7 @@
   size: 10px;
 }
 /* scroll box for terms and conditions */
-.scroll_box{
+.MEM_scroll_box{
     padding: 15px;
     height: 100px;
     overflow: scroll;

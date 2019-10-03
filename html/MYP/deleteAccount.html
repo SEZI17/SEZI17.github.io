@@ -21,36 +21,8 @@
 </head>
 <body>
     <!-- haru header -->
-    <header>
-        <div id="haru_header_upper">
-            <div id="haru_header_upper_wrap">
-                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
-            </div>
-        </div>
-        <div id="haru_header_bottom">
-            <div id="haru_header_bottom_wrap">
-                <!-- GNB -->
-                <nav id="haru_gnb">
-                    <ul>
-                        <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
-                        <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
-                        <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
-                        <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
-                    </ul>
-                </nav>                
-                <!-- //GNB -->
-                <!-- Signinupbutton -->
-                <div id="haru_signup">
-                    <ul>
-                        <li class="sign"><a href="#">로그인</a></li>
-                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
-                    </ul>
-                </div>
-                <!-- //Signinupbutton -->
-            </div>            
-        </div>           
-    </header>
-    <!-- Dropdown Menu -->
+    <div id="header_com"></div>
+    <!-- Dropdown Men -->
     <div id="haru_LRN_dropdown" class="dropdown">
         <ul class="dropLRN">
             <li><a href="../LRN/indexLRN.html">하루단어</a></li>
@@ -121,12 +93,12 @@
             <div id="deleteAccount">
                 <p>지금까지 하루, 단어를 이용해주셔서 감사합니다.<br>보다 나은 사이트를 향해 발전하겠습니다.</p><br><br>
                 <div id="password">
-                    <input type="password" placeholder="비밀번호" class="inputBox"onfocusout="inputCheck(this.id)" id="passwordInput">
+                    <input type="password" placeholder="비밀번호" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="passwordInput">
                     <p></p>
                 </div>
                 <!-- bottom button -->
-                <button class="cancelBtn" onclick="">취소</button>
-                <button class="confirmBtn" onclick="textInputCheck()">탈퇴</button>
+                <button class="MEM_ancelBtn" onclick="">취소</button>
+                <button class="MEM_confirmBtn" onclick="textInputCheck()">탈퇴</button>
             </div>                   
             <!-- //SubContents Here -->
         </section>
@@ -153,6 +125,10 @@
         </div>
     </footer>
     <!-- //haru footer -->
-    
+    <script>
+        $(() => {
+            $('#header_com').load("../haru_header.html");
+        })
+    </script>
 </body>
 </html>
