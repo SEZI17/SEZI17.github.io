@@ -100,11 +100,11 @@ table>tbody>tr {
 }
 
 .board_article {
-    width: 400px;
+    width: 68%;
 }
 
 .board_section>.pagination {
-    width: 300px;
+    width: 210px;
     height:30px;
     margin: 0 auto;
     margin-top: 10px;
