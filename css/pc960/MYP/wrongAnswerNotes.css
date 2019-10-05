@@ -11,7 +11,6 @@
 
   font-size: 26px;
   color: #AF8672;
-
 }
 
 #wrongNotes > div.note{
@@ -52,4 +51,28 @@
 .btnDelete:hover{
   background-color: RGB(222, 225, 230);
   color: black;
+}
+
+
+@media screen and (max-width: 540px) {
+
+  #wrongNotes{
+    width: 380px;
+    margin-bottom: 37px;
+
+    margin: 0 auto;
+  }
+
+  #wrongNotes > div.note{
+    width: 100px; height: 100px;
+    line-height: 100px;
+  
+    font-size: 26px;
+    margin: 10px;
+  }
+
+  .noteIsNone{
+    width: 370px; height: 200px;
+    line-height: 200px;
+  }
 }

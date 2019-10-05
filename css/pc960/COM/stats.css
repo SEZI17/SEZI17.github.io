@@ -1,8 +1,4 @@
 
-#article_wrap{
-  
-}
-
 #stats{
   width: 800px; height: 400px;
   margin-bottom: 50px;
@@ -23,6 +19,7 @@
   float: left;
   text-align: right;
   margin-left: -60px;
+  margin-top: -325px;
 }
 
 .content
@@ -67,4 +64,90 @@
 
 #article_wrap:hover > #stats > #graph > .bar:nth-child(5){
   width: 80px;
+}
+
+
+@media screen and (max-width: 540px) {
+
+  #haru_subcontents{
+    min-height: 400px;
+  }
+
+  #article_wrap{
+    height: 200px;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+
+  #stats{
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  #graph_content
+  {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  
+  .content
+  {
+    width: 55px;
+    margin: 5px;
+
+    font-size: 14px;
+
+    text-align: center;
+    float: left;
+  }
+  
+  #graph{
+
+    width: 340px;
+    height: 300px;
+    border-bottom: 3px solid black;
+    border-left: none;
+  }
+  
+  .bar{
+    width: 55px; height: 5px;
+    background-color: RGB(175, 134, 114);
+    margin: 5px;
+    margin-top: 290px;
+
+    float: left;
+
+    transition-duration: 2s;
+    transition-timing-function: linear;
+  }
+
+  #article_wrap:hover > #stats > #graph > .bar:nth-child(1){
+    margin-top: 0px;
+    height: 295px;
+    width: 55px;
+  }
+  
+  #article_wrap:hover > #stats > #graph > .bar:nth-child(2){
+    margin-top: 95px;
+    height: 200px;
+    width: 55px;
+  }
+  
+  #article_wrap:hover > #stats > #graph > .bar:nth-child(3){
+    margin-top: 145px;
+    height: 150px;
+    width: 55px;
+  }
+  
+  #article_wrap:hover > #stats > #graph > .bar:nth-child(4){
+    margin-top: 195px;
+    height: 100px;
+    width: 55px;
+  }
+  
+  #article_wrap:hover > #stats > #graph > .bar:nth-child(5){
+    margin-top: 245px;
+    height: 50px;
+    width: 55px;
+  }
 }
