@@ -40,6 +40,11 @@
   cursor: pointer;
   float: left;
 }
+@media only screen and (max-width:540px) {
+  .MEM_confirmBtn, .MEM_cancelBtn {
+    width: 48%;
+  }
+}
 .MEM_btn{
   background-color: #AF8672;
   color: white;

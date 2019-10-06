@@ -16,39 +16,15 @@
     <link rel="stylesheet" href="../../css/pc960/MEM/MEM_common.css">
     <link rel="stylesheet" href="../../css/Mobile/MYP/MYP_mobile_common.css">
     <link rel="stylesheet" href="../../css/Mobile/mobile_common.css">
+    <style>
+        #deleteAccount{
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- haru header -->
-    <header>
-        <div id="haru_header_upper">
-            <div id="haru_header_upper_wrap">
-                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
-                <div id="haru_mobile_sidemenu_toggle" class="haru_mobile"><img class="sidemenuon" src="../../img/sidemenuon.png"><img class="sidemenuoff" src="../../img/sidemenuoff.png"></div>
-            </div>
-        </div>
-        <div id="haru_header_bottom" class="haru_pc">
-            <div id="haru_header_bottom_wrap">
-                <!-- GNB -->
-                <nav id="haru_gnb">
-                    <ul>
-                        <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
-                        <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
-                        <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
-                        <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
-                    </ul>
-                </nav>                
-                <!-- //GNB -->
-                <!-- Signinupbutton -->
-                <div id="haru_signup">
-                    <ul>
-                        <li class="sign"><a href="#">로그인</a></li>
-                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
-                    </ul>
-                </div>
-                <!-- //Signinupbutton -->
-            </div>            
-        </div>           
-    </header>
+    <div id="header_com"></div>
     <!-- Dropdown Menu -->
     <div id="haru_LRN_dropdown" class="haru_pc dropdown">
         <ul class="dropLRN">
@@ -187,6 +163,10 @@
         </div>
     </footer>
     <!-- //haru footer -->
-    
+    <script>
+        $(() => {
+            $('#header_com').load("../haru_header.html");
+        })
+    </script>
 </body>
 </html>
