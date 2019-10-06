@@ -4,29 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>하루, 단어 > 외우자</title>
+    <title>하루, 단어 > My 페이지</title>
     <script src="../../js/jquery-2.1.1.min.js"></script>
     <script src="../../js/jquery-ui.min.js"></script>
     <script src="../../js/jquery.easing.1.3.js"></script>
     <script src="../../js/gnb_dropdown.js"></script>
+    <script src="../../js/user.js"></script>
     <link rel="stylesheet" href="../../css/pc960/cat_common.css">
     <link rel="stylesheet" href="../../css/pc960/MYP/MYP_common.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
     <link rel="stylesheet" href="../../css/pc960/MEM/MEM_common.css">
-    <style>
-        #deleteAccount{
-            padding-left: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/Mobile/MYP/MYP_mobile_common.css">
+    <link rel="stylesheet" href="../../css/Mobile/mobile_common.css">
 </head>
 <body>
     <!-- haru header -->
-    <div id="header_com"></div>
-    <!-- Dropdown Men -->
-    <div id="haru_LRN_dropdown" class="dropdown">
+    <header>
+        <div id="haru_header_upper">
+            <div id="haru_header_upper_wrap">
+                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
+                <div id="haru_mobile_sidemenu_toggle" class="haru_mobile"><img class="sidemenuon" src="../../img/sidemenuon.png"><img class="sidemenuoff" src="../../img/sidemenuoff.png"></div>
+            </div>
+        </div>
+        <div id="haru_header_bottom" class="haru_pc">
+            <div id="haru_header_bottom_wrap">
+                <!-- GNB -->
+                <nav id="haru_gnb">
+                    <ul>
+                        <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
+                        <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
+                        <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
+                        <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
+                    </ul>
+                </nav>                
+                <!-- //GNB -->
+                <!-- Signinupbutton -->
+                <div id="haru_signup">
+                    <ul>
+                        <li class="sign"><a href="#">로그인</a></li>
+                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
+                    </ul>
+                </div>
+                <!-- //Signinupbutton -->
+            </div>            
+        </div>           
+    </header>
+    <!-- Dropdown Menu -->
+    <div id="haru_LRN_dropdown" class="haru_pc dropdown">
         <ul class="dropLRN">
-            <li><a href="../LRN/indexLRN.html">하루단어</a></li>
-            <li><a href="#">단어검정</a></li>
+            <li><a href="../LRN/hrd.html">하루단어</a></li>
+            <li><a href="../LRN/exam.html">단어검정</a></li>
             <li><a href="#">단어 List</a></li>
         </ul>
         <div class="menu_description">
@@ -34,32 +61,32 @@
             <p class="menu_description_contents">하루, 단어는 외우자의 카테고리 안에서 여러분들에게 스마트한 학습방법을 제공하고자 합니다.</p>
         </div>
     </div>
-    <div id="haru_COM_dropdown" class="dropdown">
+    <div id="haru_COM_dropdown" class="haru_pc dropdown">
         <ul class="dropCOM">
-            <li><a href="../COM/indexCOM.html">공지사항</a></li>
-            <li><a href="#">TIP 게시판</a></li>
-            <li><a href="#">단어통계</a></li>
+            <li><a href="../COM/notice.html">공지사항</a></li>
+            <li><a href="../COM/tip.html">TIP 게시판</a></li>
+            <li><a href="../COM/stats.html">단어통계</a></li>
         </ul>
         <div class="menu_description">
             <p class="menu_description_subject">커뮤니티</p>
             <p class="menu_description_contents">공지사항 및 회원 간 단어 암기 방법을 공유할 수 있습니다.</p>
         </div>
     </div>
-    <div id="haru_MYP_dropdown" class="dropdown">
+    <div id="haru_MYP_dropdown" class="haru_pc dropdown">
         <ul class="dropMYP">
-            <li><a href="../MYP/indexMYP.html" class="wan">오답노트</a></li>
+            <li><a href="../MYP/wrongAnswerNotes.html" class="wan">오답노트</a></li>
             <li><a href="#">내 단어장</a></li>
-            <li><a href="./html/MEM/editInfo_pwCheck.html">회원정보변경</a></li>
+            <li><a href="#">회원정보변경</a></li>
         </ul>
         <div class="menu_description">
             <p class="menu_description_subject">My 페이지</p>
             <p class="menu_description_contents">학습하면서 틀린 단어, 어려웠던 단어 등을 조회합니다.</p>
         </div>
     </div>
-    <div id="haru_INF_dropdown" class="dropdown">
+    <div id="haru_INF_dropdown" class="haru_pc dropdown">
         <ul class="dropINF">
-            <li><a href="../INF/indexINF.html" class="aboutus">소개</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="../INF/aboutus.html" class="aboutus">소개</a></li>
+            <li><a href="../INF/FAQ.html">FAQ</a></li>
         </ul>
         <div class="menu_description">
             <p class="menu_description_subject">페이지 정보</p>
@@ -67,13 +94,44 @@
         </div>
     </div>
     <!-- //Dropdown Menu -->
+    <!-- Mobile side Menu -->
+    <div id="haru_sidemenu" class="sidemenu haru_mobile">
+        <!-- <div id="haru_sidemenu_list"> -->
+            <ul class="sideLRN">
+                <li><a href="#" class="sidelist_subject">외우자</a></li>
+                <li><a href="../LRN/hrd.html" class="sidelist_list">하루단어</a></li>
+                <li><a href="../LRN/exam.html" class="sidelist_list">단어검정</a></li>
+                <li><a href="#" class="sidelist_list">단어 List</a></li>
+            </ul>
+            <ul class="sideCOM">
+                <li><a href="#" class="sidelist_subject">커뮤니티</a></li>
+                <li><a href="../COM/notice.html" class="sidelist_list">공지사항</a></li>
+                <li><a href="../COM/tip.html" class="sidelist_list">TIP 게시판</a></li>
+                <li><a href="../COM/stats.html" class="sidelist_list">단어통계</a></li>
+            </ul>
+            <ul class="sideMYP">
+                <li><a href="#" class="sidelist_subject">My 페이지</a></li>
+                <li><a href="../MYP/wrongAnswerNotes.html" class="sidelist_list">오답노트</a></li>
+                <li><a href="#" class="sidelist_list">내 단어장</a></li>
+                <li><a href="#" class="sidelist_list">회원정보변경</a></li>
+            </ul>
+            <ul class="sideINF">
+                <li><a href="#" class="sidelist_subject">페이지 소개</a></li>
+                <li><a href="../INF/aboutus.html" class="sidelist_list">소개</a></li>
+                <li><a href="../INF/FAQ.html" class="sidelist_list">FAQ</a></li>
+            </ul>
+        <!-- </div> -->
+    </div>
+    <!-- //Mobile side Menu -->
+    <!-- //Dropdown Menu -->
     <!-- Contents Here -->
     <div id="haru_MYP_header">
-        <h1>My 페이지</h1>
-        <p>학습하면서 틀린 단어, 어려웠던 단어 등을 조회합니다.</p>
+        <h1 class="haru_pc">My 페이지</h1>
+        <h1 class="haru_mobile">회원탈퇴</h1>
+        <p class="haru_pc">학습하면서 틀린 단어, 어려웠던 단어 등을 조회합니다.</p>
     </div>
     <div id="haru_contents_wrap">
-        <aside id="haru_aside">
+        <aside id="haru_aside" class="haru_pc">
             <nav id="haru_snb">
                 <ul>
                     <li><a href="#">My 페이지</a></li>
@@ -84,12 +142,13 @@
             </nav>
         </aside>
         <section id="haru_subcontents">
-            <header id="haru_subheader">
+            <header id="haru_subheader" class="haru_pc">
                 <div id="haru_subtitle">회원탈퇴</div>
                 <div id="haru_cat">
-                    <p>HOME > My 페이지 > 회원정보변경</p>
+                    <p>HOME > My 페이지 > 회원탈퇴</p>
                 </div>
-            </header> 
+            </header>                    
+            <!-- SubContents Here -->
             <div id="deleteAccount">
                 <p>지금까지 하루, 단어를 이용해주셔서 감사합니다.<br>보다 나은 사이트를 향해 발전하겠습니다.</p><br><br>
                 <div id="password">
@@ -97,10 +156,13 @@
                     <p></p>
                 </div>
                 <!-- bottom button -->
-                <button class="MEM_ancelBtn" onclick="">취소</button>
+                <button class="MEM_cancelBtn" onclick="">취소</button>
                 <button class="MEM_confirmBtn" onclick="textInputCheck()">탈퇴</button>
             </div>                   
             <!-- //SubContents Here -->
+        </section>
+    </div>
+    <!-- //Contents Here -->
         </section>
     </div>
     <!-- //Contents Here -->
@@ -125,10 +187,6 @@
         </div>
     </footer>
     <!-- //haru footer -->
-    <script>
-        $(() => {
-            $('#header_com').load("../haru_header.html");
-        })
-    </script>
+    
 </body>
 </html>

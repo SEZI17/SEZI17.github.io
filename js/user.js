@@ -16,7 +16,7 @@ function inputCheck(id){
     else if(id.indexOf("asswordInput")>-1 && elem.value.length<8){
         elem.nextElementSibling.innerHTML=" 비밀번호는 8자리 이상으로 입력해주세요.";
     }
-    //password check restriction
+    //password check
     else if(id.indexOf("asswordCheckInput")>-1 && elem.value!=document.getElementById(id.substring(0,id.length-10)+"Input").value){
         elem.nextElementSibling.innerHTML=" 비밀번호가 일치하지 않습니다.";
     }
@@ -29,7 +29,7 @@ function inputCheck(id){
 function checkboxCheck(id){
     elem=document.getElementById(id);
 
-    if($("input:not(:checked)").length == 0){
+    if($(".modal_checkbox:not(:checked)").length == 0){
         alert(document.getElementById("modalHeader").innerHTML+" 완료");
         $('#popup_content').load(elem.getAttribute("href"));
         modal.style.display = "block";
@@ -44,14 +44,14 @@ function textInputCheck(id){
     elem=document.getElementById(id);
 
     var allFilled=true;
-    $("input").each(function () {
+    $("modal_inputBox").each(function () {
         if ($(this).val()=="") {
             allFilled=false;
         }
     });
 
     var validCheck=true;
-    $("input + p").each(function () {
+    $("modal_inputBox + p").each(function () {
         if ($(this).html()!="") {
             validCheck=false;
         }
