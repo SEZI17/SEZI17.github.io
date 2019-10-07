@@ -202,14 +202,14 @@
 
     .questionBox{
         width: 80%;
-        height: 150px;
-        line-height: 150px;
+        height: 160px;
+        line-height: 160px;
         margin-bottom: 10px;
     }
    
     .example{
         width: 100%;
-        height: 230px;
+        height: 250px;
         margin-left: 1%;
         margin-top: 6px;
     }
@@ -229,6 +229,10 @@
     .example > .exampleBox:nth-child(2n){
         margin-left: 2%;
         margin-right: 2%;
+    }
+
+    #checkDisplay{
+        left: -10px; top: -50px;
     }
 
     .largeText-3{font-size: 15px; font-weight: bold;}
