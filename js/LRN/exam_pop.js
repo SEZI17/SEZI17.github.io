@@ -13,15 +13,6 @@ var lanMode = 0;            //0이면 문제가 일본어 1이면 한국어
 
 var strClass = "<div id='checkDisplay'>v</div>"
 
-//Swiper관렴 변수
-var minRange = 100;
-var bflag = 0;
-var downX = 0;
-var upX = 0;
-/////////////////////////////////////////////////
-
-
-
 $(function(){
 
     examMode = getMode();
@@ -64,33 +55,7 @@ $(function(){
 
     //키보드 연결
     keyEvent();
-
-    //마우스 이벤트
-    mouseDownMove();
 });
-
-function mouseDownMove()
-{
-    $(document).mousedown(function(event){
-        bflag = 1;
-        downX = event.pageX;
-    });
-
-    $(document).mouseup(function(event){
-        if(1 == bflag)
-        {
-            upX = event.pageX;
-            let X = downX - upX;
-
-            if(minRange < X)
-                rightMove();
-            else if(X < -minRange)
-                leftMove();
-        }
-
-        bflag = 0;
-    });
-}
 
 function resultExam()
 {
