@@ -13,6 +13,9 @@ var lanMode = 0;            //0이면 문제가 일본어 1이면 한국어
 
 var strClass = "<div id='checkDisplay'>v</div>"
 
+//Swiper관련 변수
+var minRange = 60;
+
 $(function(){
 
     examMode = getMode();
@@ -55,7 +58,34 @@ $(function(){
 
     //키보드 연결
     keyEvent();
+
+    //마우스 이벤트
+    touchEvent();
 });
+
+//모바일용 터치이용 함수
+function touchEvent()
+{
+    let startCoords = {}, endCoords = {};
+    $(document.body).bind("touchstart", function(event) 
+    {
+        startCoords = endCoords = event.originalEvent.targetTouches[0];
+    });
+
+    $(document.body).bind("touchmove", function(event) 
+    {
+        endCoords = event.originalEvent.targetTouches[0];
+    });
+
+    $(document.body).bind("touchend", function(event) 
+    {
+        let X = startCoords.pageX - endCoords.pageX;
+        if(minRange < X)
+            rightMove();
+        else if(X < -minRange)
+            leftMove();
+    });
+}
 
 function resultExam()
 {
