@@ -1,71 +1,131 @@
 //functions
-function inputCheck(id){
-    elem=document.getElementById(id);
-    //when password check input was outfocused first
-    if(id=="passwordCheckInput" && document.getElementById("passwordInput").value=="" && elem.value==""){
-        //do nothing
+function isNumber(input) {
+    var pattern = /[0-9]/;
+    if (pattern.test(input)) {
+        return true;
     }
-    //when value is empty
-    else if(elem.value==""){
-        elem.nextElementSibling.innerHTML=" '"+elem.getAttribute("placeholder")+ "' 을(를) 입력해 주세요.";
+    else {
+        return false;
     }
-    //name restriction
-    //userID restriction
+}
+function isEnglish(input) {
+    var pattern = /[a-zA-Z]/;
+    if (pattern.test(input)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function isSpecial(input) {
+    var pattern = /[~!@#$%^&*()_+|<>?:{}]/;
+    if (pattern.test(input)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function isKorean(input) {
+    var pattern = /[가-힣]/;
+    if (pattern.test(input)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function isEmail(input){
+    var pattern=/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]/;
+    if (pattern.test(input)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function lengthBetween(value, min, max) {
+    if (min <= value.length && value.length <= max) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function clearError(id) {
+    document.getElementById(id + "Error").innerHTML = "";
+}
 
-    //password restriction
-    else if(id.indexOf("asswordInput")>-1 && elem.value.length<8){
-        elem.nextElementSibling.innerHTML=" 비밀번호는 8자리 이상으로 입력해주세요.";
+//edit info
+function editInfoCheck() {
+    //check name
+    var name = document.getElementById("nameInput");
+    var nameError = document.getElementById("nameInputError");
+    var nameValid = !(isEnglish(name.value)) && !(isSpecial(name.value)) && lengthBetween(name.value, 2, 5);
+    if (name.length == 0) {
+        nameError.innerHTML = "이름을 입력해 주셋요."
+        name.focus();
+        return;
     }
-    //password check
-    else if(id.indexOf("asswordCheckInput")>-1 && elem.value!=document.getElementById(id.substring(0,id.length-10)+"Input").value){
-        elem.nextElementSibling.innerHTML=" 비밀번호가 일치하지 않습니다.";
+    if (!nameValid) {
+        nameError.innerHTML = "이름은 2~5글자 한글로 입력해주세요.";
+        name.focus();
+        return;
     }
-    //reset the error message
-    else{
-        elem.nextElementSibling.innerHTML="";
+    //check id
+    var id = document.getElementById("idInput");
+    var idError = document.getElementById("idInputError");
+    var idValid = !(isKorean(id.value)) && !(isSpecial(id.value)) && lengthBetween(id.value, 4, 10);
+    if (id.length == 0) {
+        idError.innerHTML = "아이디를 입력해 주세요";
+        id.focus();
+        return;
     }
-};
-//check the input: checkbox
-function checkboxCheck(id){
-    elem=document.getElementById(id);
+    if (!idValid) {
+        idError.innerHTML = "아이디는 4~10글자 영어 또는 숫자만 혼합하여 주세요.";
+        id.focus();
+        return;
+    }
+    //check nickname
+    var nickname = document.getElementById("nicknameInput");
+    var nicknameError = document.getElementById("nicknameInputError");
+    var nicknameValid = !(isEnglish(nickname.value)) && !(isSpecial(nickname.value)) && lengthBetween(nickname.value, 2, 10);
+    if (nickname.length == 0) {
+        nicknameError.innerHTML = "닉네임을 입력해 주세요";
+        nickname.focus();
+        return;
+    }
+    if (!nicknameValid) {
+        nicknameError.innerHTML = "닉네임은 2~10글자 한글로 입력해주세요.";
+        nickname.focus();
+        return;
+    }
+    //check email
+    var email = document.getElementById("emailInput");
+    var emailError = document.getElementById("emailInputError");
+    var emailValid = isEmail(email.value);
+    if (email.length == 0) {
+        emailError.innerHTML = "이메일을 입력해 주세요";
+        email.focus();
+        return;
+    }
+    if (!emailValid) {
+        emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
+        email.focus();
+        return;
+    }
+}
 
-    if($(".modal_checkbox:not(:checked)").length == 0){
-        alert(document.getElementById("modalHeader").innerHTML+" 완료");
+//terms button
+function checkboxCheck(id) {
+    elem = document.getElementById(id);
+
+    if ($(".modal_checkbox:not(:checked)").length == 0) {
+        alert(document.getElementById("modalHeader").innerHTML + " 완료");
         $('#popup_content').load(elem.getAttribute("href"));
         modal.style.display = "block";
     }
-    else{
+    else {
         alert("약관에 모두 동의해주세요");
     };
-};
-
-//check the input: textbox
-function textInputCheck(id){
-    elem=document.getElementById(id);
-
-    var allFilled=true;
-    $("modal_inputBox").each(function () {
-        if ($(this).val()=="") {
-            allFilled=false;
-        }
-    });
-
-    var validCheck=true;
-    $("modal_inputBox + p").each(function () {
-        if ($(this).html()!="") {
-            validCheck=false;
-        }
-    });
-
-    if(allFilled && validCheck){
-        alert(" '"+document.getElementById("modalHeader").innerHTML+"' 을(를) 완료하였습니다.");
-        $('#popup_content').load(elem.getAttribute("href"));
-        modal.style.display = "block";
-    }
-    else if(!allFilled){
-        alert("빈칸 없이 입력해주세요.");
-    }
-    else if(!validCheck){
-        alert("다시 한번 확인해주세요")
-    }
 };

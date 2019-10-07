@@ -10,7 +10,6 @@
     <script src="../../js/jquery.easing.1.3.js"></script>
     <script src="../../js/gnb_dropdown.js"></script>
     <script src="../../js/MYP/wrongAnswerNotes.js"></script>
-    <script src="../../js/user.js"></script>
     <link rel="stylesheet" href="../../css/pc960/cat_common.css">
     <link rel="stylesheet" href="../../css/pc960/MYP/MYP_common.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
@@ -129,33 +128,33 @@
             <!-- SubContents Here -->
             <div id="editInfo">
                 <div id="name">
-                    <input type="text" placeholder="이름" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="nameInput">
+                    <input type="text" placeholder="이름" class="MEM_inputBox" onkeydown="clearError(this.id)" id="nameInput">
                     <!-- <button class="MEM_btn">수정</button> -->
-                    <p></p>
+                    <p id="nameInputError"></p>
                 </div>
                 <div id="id">
-                    <input type="text" placeholder="아이디" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="idInput">
+                    <input type="text" placeholder="아이디" class="MEM_inputBox"onkeydown="clearError(this.id)" id="idInput">
                     <!-- <button class="MEM_btn">수정</button> -->
-                    <p></p>
+                    <p id="idInputError"></p>
                 </div>
                 <div id="nickname">
-                    <input type="text" placeholder="별명" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="nicknameInput">
+                    <input type="text" placeholder="별명" class="MEM_inputBox"onkeydown="clearError(this.id)"id="nicknameInput">
                     <button class="MEM_btn">수정</button>
-                    <p></p>
+                    <p id="nicknameInputError"></p>
                 </div>
                 <div id="email">
-                    <input type="email" placeholder="이메일 주소" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="emailInput">
+                    <input type="email" placeholder="이메일 주소" class="MEM_inputBox"onkeydown="clearError(this.id)" id="emailInput">
                     <button class="MEM_btn">수정</button>
-                    <p></p>
+                    <p id="emailInputError"></p>
                 <div id="password">
-                    <a href="#"><button id="pwChange" class="MEM_btn">비밀번호 변경 페이지로 이동</button></a>
+                    <button class="MEM_btn openModal" id="changePWBtn0">비밀번호 변경 페이지로 이동</button>
                 </div>
                     <br>
                     <hr>
             </div>
             <!-- bottom button -->
             <button class="MEM_cancelBtn" onclick="">취소</button>
-            <button class="MEM_confirmBtn" onclick="textInputCheck()">수정</button>
+            <button class="MEM_confirmBtn" onclick="editInfoCheck()">수정</button>
             <!-- //SubContents Here -->
         </section>
     </div>
