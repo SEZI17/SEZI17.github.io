@@ -16,4 +16,7 @@
     .article{
         min-height: 600px;
     }
+    #aside_com{
+        height:82px;
+    }
 }
