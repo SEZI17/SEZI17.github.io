@@ -42,8 +42,8 @@
                 <!-- Signinupbutton -->
                 <div id="haru_signup">
                     <ul>
-                        <li class="sign"><a href="#">로그인</a></li>
-                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
+                        <li class="sign"><a href="#" class="openModal" id="loginBtn0">로그인</a></li>
+                        <li class="sign"><a href="#"class="bar openModal" id="termsBtn0">회원가입</a></li>
                     </ul>
                 </div>
                 <!-- //Signinupbutton -->
@@ -77,7 +77,7 @@
         <ul class="dropMYP">
             <li><a href="./html/MYP/wrongAnswerNotes.html" class="wan">오답노트</a></li>
             <li><a href="#">내 단어장</a></li>
-            <li><a href="#">회원정보변경</a></li>
+            <li><a href="./html/MYP/editInfo.html">회원정보변경</a></li>
         </ul>
         <div class="menu_description">
             <p class="menu_description_subject">My 페이지</p>
@@ -179,7 +179,7 @@
                 <div id="MAI_content2_inf" class="haru_pc">
                     <h2>지금, 회원으로<br> 가입해보세요!</h2>
                     <p>단어검정을 통한 오답체크, 학습 중 어려운<br>단어를 저장하여 선택적 암기가 가능합니다.</p>
-                    <h1><a href=#>하루, 단어에 가입하기 >></a></h1>
+                    <h1><a href=# class="bar openModal" id="termsBtn1">하루, 단어에 가입하기 >></a></h1>
                 </div>
                 <div id="MAI_content2_mobile_inf" class="haru_mobile">
                     <h2>지금,<br>회원으로<br>가입해보세요!</h2>
@@ -273,6 +273,13 @@
         </div>
     </footer>
     <!-- //haru footer -->
-    
+
+    <!-- modal related -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="popup_content"></div>
+    </div>
+    <script src="/js/modal.js"></script>
+    <script src="/js/user.js"></script>
+    <!-- /modal related -->
 </body>
 </html>

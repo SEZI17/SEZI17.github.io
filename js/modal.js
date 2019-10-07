@@ -5,7 +5,7 @@ var modal = document.getElementById("modal");
 $(".openModal").click(function(){
     var idName=$(this).attr("id");
     idName=idName.substring(0,idName.length-4);
-    $('#popup_content').load("../MEM/"+idName+".html");
+    $('#popup_content').load("/html/MEM/"+idName+".html");
     modal.style.display = "block";
 });
 

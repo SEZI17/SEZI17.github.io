@@ -62,7 +62,7 @@ function editInfoCheck() {
     var name = document.getElementById("nameInput");
     var nameError = document.getElementById("nameInputError");
     var nameValid = !(isEnglish(name.value)) && !(isSpecial(name.value)) && lengthBetween(name.value, 2, 5);
-    if (name.length == 0) {
+    if (name.value.length == 0) {
         nameError.innerHTML = "이름을 입력해 주셋요."
         name.focus();
         return;
@@ -76,7 +76,7 @@ function editInfoCheck() {
     var id = document.getElementById("idInput");
     var idError = document.getElementById("idInputError");
     var idValid = !(isKorean(id.value)) && !(isSpecial(id.value)) && lengthBetween(id.value, 4, 10);
-    if (id.length == 0) {
+    if (id.value.length == 0) {
         idError.innerHTML = "아이디를 입력해 주세요";
         id.focus();
         return;
@@ -90,7 +90,7 @@ function editInfoCheck() {
     var nickname = document.getElementById("nicknameInput");
     var nicknameError = document.getElementById("nicknameInputError");
     var nicknameValid = !(isEnglish(nickname.value)) && !(isSpecial(nickname.value)) && lengthBetween(nickname.value, 2, 10);
-    if (nickname.length == 0) {
+    if (nickname.value.length == 0) {
         nicknameError.innerHTML = "닉네임을 입력해 주세요";
         nickname.focus();
         return;
@@ -104,7 +104,7 @@ function editInfoCheck() {
     var email = document.getElementById("emailInput");
     var emailError = document.getElementById("emailInputError");
     var emailValid = isEmail(email.value);
-    if (email.length == 0) {
+    if (email.value.length == 0) {
         emailError.innerHTML = "이메일을 입력해 주세요";
         email.focus();
         return;
