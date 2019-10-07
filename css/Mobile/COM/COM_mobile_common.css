@@ -80,6 +80,7 @@
     #haru_subheader{
         display: none;
     }
+    
 }
 
 
@@ -135,5 +136,8 @@
     }
     #haru_subheader{
         display: none;
+    }
+    #aside_com{
+        height:82px;
     }
 }

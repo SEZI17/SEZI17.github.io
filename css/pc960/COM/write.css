@@ -30,9 +30,13 @@ div.container{
 
 #articleTitle{
     box-sizing: border-box;
-    width:100%;
+    width:88.9%;
     padding:5px;
     margin-bottom: 10px;
+}
+
+#category{
+    height: 30px;
 }
 
 #articleSend{
