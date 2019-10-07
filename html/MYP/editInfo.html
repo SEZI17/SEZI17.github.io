@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="../../css/Mobile/mobile_common.css">
     <style>
         #editInfo{
-            padding-left: 20px;
-            /* text-align: center; */
+            padding-left: 15%;
         }
     </style>
 </head>
@@ -128,12 +127,12 @@
             <!-- SubContents Here -->
             <div id="editInfo">
                 <div id="name">
-                    <input type="text" placeholder="이름" class="MEM_inputBox" onkeydown="clearError(this.id)" id="nameInput">
+                    <input type="text" placeholder="이름: 관리자" class="MEM_inputBox" onkeydown="clearError(this.id)" id="nameInput" disabled>
                     <!-- <button class="MEM_btn">수정</button> -->
                     <p id="nameInputError"></p>
                 </div>
                 <div id="id">
-                    <input type="text" placeholder="아이디" class="MEM_inputBox"onkeydown="clearError(this.id)" id="idInput">
+                    <input type="text" placeholder="아이디: admin" class="MEM_inputBox"onkeydown="clearError(this.id)" id="idInput" disabled>
                     <!-- <button class="MEM_btn">수정</button> -->
                     <p id="idInputError"></p>
                 </div>
@@ -154,7 +153,7 @@
             </div>
             <!-- bottom button -->
             <button class="MEM_cancelBtn" onclick="">취소</button>
-            <button class="MEM_confirmBtn" onclick="editInfoCheck()">수정</button>
+            <button class="MEM_confirmBtn" onclick="editInfoConfirm()">수정</button>
             <!-- //SubContents Here -->
         </section>
     </div>

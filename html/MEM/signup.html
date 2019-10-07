@@ -1,27 +1,27 @@
 <span class="modal_close" onclick="closeModal()">&times;</span>
 <h1 id="modalHeader">회원 정보 입력</h1>
 <div id="modal_name">
-    <input type="text" placeholder="이름" class="modal_inputBox"onkeydown="clearError(this.id)" id="nameInput">
+    <input type="text" placeholder="이름" class="modal_inputBox" onkeydown="clearError(this.id)" id="nameInput">
     <p id="nameInputError"></p>
 </div>
 <div id="modal_id">
-    <input type="text" placeholder="아이디" class="modal_inputBox"onkeydown="clearError(this.id)" id="idInput">
+    <input type="text" placeholder="아이디" class="modal_inputBox" onkeydown="clearError(this.id)" id="idInput">
     <p id="idInputError"></p>
 </div>
 <div id="modal_nickname">
-    <input type="text" placeholder="별명" class="modal_inputBox"onkeydown="clearError(this.id)" id="nicknameInput">
+    <input type="text" placeholder="별명" class="modal_inputBox" onkeydown="clearError(this.id)" id="nicknameInput">
     <p id="nicknameInputError"></p>
 </div>
 <div id="modal_email">
-    <input type="email" placeholder="이메일 주소" class="modal_inputBox"onkeydown="clearError(this.id)" id="emailInput">
+    <input type="email" placeholder="이메일 주소" class="modal_inputBox" onkeydown="clearError(this.id)" id="emailInput">
     <p id="emailInputError"></p>
 </div>
 <div id="modal_password">
-    <input type="password" placeholder="비밀번호" class="modal_inputBox"onkeydown="clearError(this.id)"id="passwordInput">
+    <input type="password" placeholder="비밀번호" class="modal_inputBox" onkeydown="clearError(this.id)" id="passwordInput">
     <p id="passwordInputError"></p>
 </div>
 <div id="modal_passwordCheck">
-    <input type="password" placeholder="비밀번호 확인" class="modal_inputBox"onkeydown="clearError(this.id)" id="passwordCheckInput">
+    <input type="password" placeholder="비밀번호 확인" class="modal_inputBox" onkeydown="clearError(this.id)" id="passwordCheckInput">
     <p id="passwordCheckInputError"></p>
 </div>
-<button class="modal_confirmBtn" onclick="inputCheck()">회원가입</button>
+<button class="modal_confirmBtn" onclick="signupConfirm()">회원가입</button>
