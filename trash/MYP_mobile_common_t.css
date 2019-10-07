@@ -1,5 +1,5 @@
 @media screen and (max-width: 540px) {
-/* My 페이지 카테고리 헤더 */
+/* My페이지 카테고리 헤더 */
 #haru_MYP_header {
     width: 100%; height: 110px;
     margin: 0 auto;
@@ -27,7 +27,7 @@
 }
 
 @media screen and (min-width: 541px) and (max-width: 767px) {
-    /* My 페이지 카테고리 헤더 */
+    /* My페이지 카테고리 헤더 */
     #haru_MYP_header {
         width: 100%; height: 110px;
         margin: 0 auto;
@@ -55,7 +55,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-        /* My 페이지 카테고리 헤더 */
+        /* My페이지 카테고리 헤더 */
     #haru_MYP_header {
         width: 100%;
     }
@@ -80,9 +80,9 @@
         width: 100%;        
         margin-bottom: 40px;
     }
-    /* My 페이지 카테고리 SNB 구성 */
+    /* My페이지 카테고리 GNB 구성 */
     #haru_aside > #haru_snb {
-        width: 334px;
+        width: 392px;
         position: relative;
         margin: 0 auto;
         z-index: 1;
