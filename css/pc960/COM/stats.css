@@ -46,23 +46,23 @@
   transition-timing-function: linear;
 }
 
-#article_wrap:hover > #stats > #graph > .bar:nth-child(1){
+#stats > #graph > .bar:nth-child(1){
   width: 500px;
 }
 
-#article_wrap:hover > #stats > #graph > .bar:nth-child(2){
+#stats > #graph > .bar:nth-child(2){
   width: 400px;
 }
 
-#article_wrap:hover > #stats > #graph > .bar:nth-child(3){
+#stats > #graph > .bar:nth-child(3){
   width: 200px
 }
 
-#article_wrap:hover > #stats > #graph > .bar:nth-child(4){
+#stats > #graph > .bar:nth-child(4){
   width: 150px;
 }
 
-#article_wrap:hover > #stats > #graph > .bar:nth-child(5){
+#stats > #graph > .bar:nth-child(5){
   width: 80px;
 }
 
