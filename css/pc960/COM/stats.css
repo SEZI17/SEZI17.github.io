@@ -121,31 +121,31 @@
     transition-timing-function: linear;
   }
 
-  #article_wrap:hover > #stats > #graph > .bar:nth-child(1){
+  #stats > #graph > .bar:nth-child(1){
     margin-top: 0px;
     height: 295px;
     width: 55px;
   }
   
-  #article_wrap:hover > #stats > #graph > .bar:nth-child(2){
+  #stats > #graph > .bar:nth-child(2){
     margin-top: 95px;
     height: 200px;
     width: 55px;
   }
   
-  #article_wrap:hover > #stats > #graph > .bar:nth-child(3){
+  #stats > #graph > .bar:nth-child(3){
     margin-top: 145px;
     height: 150px;
     width: 55px;
   }
   
-  #article_wrap:hover > #stats > #graph > .bar:nth-child(4){
+  #stats > #graph > .bar:nth-child(4){
     margin-top: 195px;
     height: 100px;
     width: 55px;
   }
   
-  #article_wrap:hover > #stats > #graph > .bar:nth-child(5){
+  #stats > #graph > .bar:nth-child(5){
     margin-top: 245px;
     height: 50px;
     width: 55px;
