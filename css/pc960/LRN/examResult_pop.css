@@ -105,6 +105,9 @@
 .largeText2{font-size: 50px;}
 .largeText3{font-size: 65px;}
 .largeText4{font-size: 80px;}
+
+.text2{font-size: 23px; font-weight: bold;}
+
 .greenText{color: green;}
 .redText{color: red;}
 
@@ -158,43 +161,83 @@
 /* 모바일~~~~~~~~~ */
 @media screen and (max-width: 414px){
 
-    .description{
-        font-size: 36px;
-        margin-bottom: 40px;
+    body{
+        background-color: rgb(230, 230, 230);
+    }
+
+    .wrap{
+        width: 100%;
     }
 
     .content{
-        width: 700px; height: 740px;
-    }
-
-    .correctPercent{
-        font-size: 36px;
+        background-color: white;
+        width: 100%;
+        height: 70%;
+        margin-left: -3px;
     }
 
     .timer{
+        font-size: 17px;
+        margin-right: 0px;
+    }
+
+    .description{
+        margin-left: 2px;
+        margin-bottom: 14px;
+    
+        color:blue;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #questionNumber{
         font-size: 36px;
-        margin-bottom: 5px;
+
+        margin-top: 10px;
+    }
+
+    .correctPercent{
+        margin-right: 3px;
     }
 
     .questionBox{
-        margin-top: 30px;
-        margin-bottom: 50px;
+        width: 80%;
+        height: 170px;
+        line-height: 170px;
+        margin-bottom: 30px;
     }
-    
+   
+    .example{
+        width: 100%;
+        height: 280px;
+        margin-left: 1%;
+        margin-top: 10px;
+    }
+
     .exampleBox{
-        margin: 20px;
-    
-        height: 110px;
-        line-height: 110px;
+        width: 37%;
+        height: 30%;
+        margin: 6px;
     }
 
-    #footer > .saveBtn{
-
-        margin-top: 20px;
-        
-        width: 300px; height: 120px;
-        line-height: 120px;
-    
-        font-size: 46px;
+    .example > .exampleBox:nth-child(2n + 1){
+        margin-left: 2%;
+        margin-right: 2%;
     }
+    
+    .example > .exampleBox:nth-child(2n){
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .largeText-3{font-size: 15px; font-weight: bold;}
+    .largeText-2{font-size: 17px; font-weight: bold;}
+    .largeText-1{font-size: 12px; font-weight: bold;}
+    .largeText{font-size: 16px; font-weight: bold;}
+    .largeText1{font-size: 26px; font-weight: bold;}
+    .largeText2{font-size: 38px;}
+    .largeText3{font-size: 50px;}
+    .largeText4{font-size: 65px;}
+
+    .text2{font-size: 20px; font-weight: bold;}
 }

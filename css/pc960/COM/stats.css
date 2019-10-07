@@ -41,9 +41,6 @@
   width: 5px; height: 60px;
   background-color: RGB(175, 134, 114);
   margin: 5px;
-
-  transition-duration: 2s;
-  transition-timing-function: linear;
 }
 
 #stats > #graph > .bar:nth-child(1){
@@ -116,9 +113,6 @@
     margin-top: 290px;
 
     float: left;
-
-    transition-duration: 2s;
-    transition-timing-function: linear;
   }
 
   #stats > #graph > .bar:nth-child(1){

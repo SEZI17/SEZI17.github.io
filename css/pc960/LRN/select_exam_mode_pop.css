@@ -66,34 +66,49 @@
         background-color: rgb(230, 230, 230);
     }
 
+    .wrap{
+        margin-top: 30%;
+    }
+
     .bodyborder{
         background-color: white;
 
-        margin-top: 100px;
-        margin-left: -8px;
-        width: 600px; height: 890px;
+        margin-top: 20%;
+        margin-left: -3px;
+        width: 100%; height: 80%;
     }
 
     #languageMode{
-        height: 80px;
+        width: 90%;
+
+        height: 50%;
         font-size: 26px;
-    
-        width: 490px;
+
+        /* margin-top: -10px; */
     }
 
     .selectButton{
-        margin-top: 120px;
+        margin-top: 80px;
     }
 
     .selectButton > .selectMode{
-        width: 500px; height: 170px;
-        line-height: 170px;
+        width: 86%; height: 140px;
+        line-height: 140px;
     
-        font-size: 70px;
+        font-size: 50px;
 
         border-radius: 3%;
 
-        margin: 15px 35px;
-        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+
+    .selectButton > .selectMode:first-child{
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .selectButton > .selectMode:last-child{
+        margin-left: 7%;
+        margin-right: 7%;
     }
 }
