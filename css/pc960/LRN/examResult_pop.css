@@ -232,7 +232,7 @@
     }
 
     #checkDisplay{
-        left: -10px; top: -50px;
+        top: -50px;
     }
 
     .largeText-3{font-size: 15px; font-weight: bold;}
