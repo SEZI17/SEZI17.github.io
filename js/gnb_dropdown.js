@@ -72,8 +72,13 @@ $(function(){
     $(window).resize(function() {
         if($(window).width() > 767) {
             $("#haru_sidemenu").hide();
+            $('.header_upper_index').css({"background-image":"none","transition-duration":"0.5s"});
+            $('.sidemenuoff').css({"display":"none"});
+            $('.sidemenuon').css({"display":"block"});
+            // $("#haru_sidemenu").hide("slide", { direction: "right" }, 200);
         }
     });
+
     $('header').on('scroll touchmove mousewheel', function(event) {
         event.preventDefault();
         event.stopPropagation();
