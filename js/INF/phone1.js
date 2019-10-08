@@ -1,5 +1,19 @@
 $(function() {
-    if($(window).width() < 767) {
+    if($(window).width() < 768) {
+        $('.front').click(function(){
+            $(this).css('display','none');
+            $(this).next().css('display','block');
+        });
+    
+        $('.back').click(function(){
+            $(this).css('display','none');
+            $(this).prev().css('display','block');
+        });  
+    }
+});
+
+$(window).resize(function() {
+    if($(window).width() < 768) {
         $('.front').click(function(){
             $(this).css('display','none');
             $(this).next().css('display','block');
