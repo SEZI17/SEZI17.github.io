@@ -59,7 +59,7 @@ function getContent()
         let str = '\
         \
         <div class="content"> \
-            <div class="largeText correctPercent ' + PersentColor(percentage) + '">(정답률 : ' + percentage + '%)</div> \
+            <div class="text2 correctPercent ' + PersentColor(percentage) + '">(정답률 : ' + percentage + '%)</div> \
             <div class="questionBox"> \
                 <div id="Furagana" class="' + getFuraganaFontSize(hilagana) + '">' + getFuragana(furagana, hilagana) + '</div> \
                 <div id="hilagana" class="' + getHilaganaFontSize(hilagana) + '">' + hilagana + '</div> \
