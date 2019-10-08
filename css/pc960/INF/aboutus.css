@@ -2,7 +2,6 @@
     width : 768px;
     overflow : hidden;
     position: relative;
-    margin-bottom: 30px;
     -webkit-perspective: 1000;
     -moz-perspective: 1000;
     -ms-perspective: 1000;
@@ -56,8 +55,90 @@
       height : 300px;
       border-radius: 50%;
   }
-  .wrap p {
+  p {
     text-align: center;
     font-size : 20px;
     padding-top: 100px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .wrap {
+      width : 250px;
+      height : 1700px;
+      overflow : hidden;
+      position: relative;
+      margin : 0 auto;
+    }
+    .size {
+        width : 250px;
+        float : left;
+        margin-top : 15px;
+        margin-bottom : 15px;
+        margin-left : 0;
+        margin-right : 0;
+      }
+    .pic { 
+        width: 250px; 
+        height: 250px;
+        position: relative;
+    }
+    .photo {position: absolute; backface-visibility: 
+      hidden; width: 100%; height: 100%; color: white; text-align: center;
+      border-radius: 50%;
+      /* margin-left : 55px; */
+      margin-top : 20px;
+     }
+    .front {z-index: 10;}
+    .back {background: chocolate;
+    }
+    .fp {
+        width : 250px;
+        height : 250px;
+        border-radius: 50%;
+    }
+    p {
+      text-align: center;
+      font-size : 20px;
+      padding-top : 80px;
+    }
+    .wrap {
+      -webkit-perspective: none;
+      -moz-perspective: none;
+      -ms-perspective: none;
+      -o-perspective: none;
+    }
+    .pic { 
+      -webkit-transform-style: none;
+      -webkit-transition: 0.5s;
+      -moz-transform-style: none;
+      -moz-transition: 0.5s;
+      -ms-transform-style: none;
+      -ms-transition: 0.5s;
+      -o-transform-style: none;
+      -o-transition: 0.5s;
+      transform-style: none;
+      transition: 0.5s;
+    }
+    .photo {backface-visibility: 
+      none;
+      -webkit-backface-visibility: none;
+      -moz-backface-visibility: none;
+      -ms-backface-visibility: none;
+      -o-backface-visibility: none;
+     }
+    .back {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+    }
+    .size:hover .pic {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+    }
+    .size:hover .front {z-index: 10;}
   }
