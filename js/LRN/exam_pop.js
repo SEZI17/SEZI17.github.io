@@ -61,7 +61,35 @@ $(function(){
 
     //마우스 이벤트
     touchEvent();
+
+    //TTS(음성출력) 이벤트
+    clickSpeaker()
 });
+
+function clickSpeaker()
+{
+    $(".speaker").on("click", function()
+    {
+        let text = $("#Furagana").text();
+        if("" == text)
+            text = $("#hilagana").text();
+
+        startTTS(text);
+    });
+}
+
+//TTS(음성출력) 함수
+function startTTS(text)
+{
+    let message = new SpeechSynthesisUtterance(text);
+    let voices = speechSynthesis.getVoices();
+
+    message["volume"] = "1";        //사운드 크기
+    message["rate"] = "1";          //말 속도
+    message["pitch"] = "1";
+    message.voice = voices["13"];
+    speechSynthesis.speak(message);
+}
 
 //모바일용 터치이용 함수
 function touchEvent()

@@ -42,6 +42,27 @@
     margin: 10px;
 }
 
+.speaker_a{
+    width: 40px; height: 40px;
+    position: absolute;
+
+    top: 310px;
+    left: 517px;
+}
+
+.speaker{
+    width: 100%; height: 100%;
+}
+
+.speaker_a:hover{
+    top: 315px;
+    left: 518px;
+}
+
+.speaker:hover{
+    width: 90%; height:90%;
+}
+
 .example{
     margin: 0 auto;
     width: 600px; height: 300px;
@@ -256,6 +277,20 @@
         margin-bottom: 10px;
     }
    
+
+    .speaker_a, .speaker_a:hover{
+        top: 250px;
+        left: 280px;
+    }
+
+    .speaker{
+        margin-bottom: 50px;
+    }
+
+    .speaker:hover{
+        width: 100%; height: 100%;
+    }
+    
     .example{
         width: 100%;
         height: 250px;
