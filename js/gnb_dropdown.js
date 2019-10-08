@@ -55,6 +55,7 @@ $(function(){
     $(".sidemenuon").click(function () {
         // $('#haru_header_upper').css({"background-image":"url(../../img/sidemenu.png)","transition-duration":"1s"});
         // $('#haru_title').css({"color":"white","transition-duration":"0.4s"});
+        $('.header_upper_index').css({"background-image":"url(../../img/sidemenu.png)","transition-duration":"0.5s"});
         $('.sidemenuon').css({"display":"none"});
         $('.sidemenuoff').css({"display":"block"});
         $("#haru_sidemenu").show("slide", { direction: "right" }, 200);
@@ -62,6 +63,7 @@ $(function(){
     $(".sidemenuoff").click(function () {
         // $('#haru_header_upper').css({"background":"#EBE4DD","transition-duration":"0.4s"});
         // $('#haru_title').css({"color":"#AF8672","transition-duration":"0.4s"});
+        $('.header_upper_index').css({"background-image":"none","transition-duration":"0.5s"});
         $('.sidemenuoff').css({"display":"none"});
         $('.sidemenuon').css({"display":"block"});
         $("#haru_sidemenu").hide("slide", { direction: "right" }, 200);
