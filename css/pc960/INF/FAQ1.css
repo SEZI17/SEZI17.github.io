@@ -42,7 +42,8 @@
 @media screen and (max-width: 767px) {
     #FAQ_wrap {
         /* text-align : center; */
-        width : 360px;  
+        width : 360px;
+        margin : 0 auto;  
         /* border : 1px solid black; */
         /* box-sizing: border-box;
         margin-bottom: 50px; */
@@ -70,11 +71,11 @@
         width: 280px;
         /* margin: 0 auto;
         margin-top: 20px; */
-        font-size : 12px;
+        font-size : 14px;
         /* font-family: 'Poor story' */
     }
     .long {
-        font-size: 12px;
+        font-size: 13px;
     }
     /* .faq:hover {
         background : #AF8672;
@@ -82,3 +83,20 @@
         transition-duration: 0.3s;
     } */
 }
+@media screen and (min-width: 541px) and (max-width: 766px){
+    #FAQ_wrap {
+        width : 541px;
+        margin : 0 auto;  
+    }
+    #FAQ_wrap div {
+        font-size : 18px;
+    }
+    .cost {
+        width: 350px;
+        font-size : 16px;
+    }
+    .long {
+        font-size: 15px;
+    }
+}
+
