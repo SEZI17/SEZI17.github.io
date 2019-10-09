@@ -1,5 +1,4 @@
 //functions
-function isNumber(input) {
 function isNumber(c) {
     var pattern = /[0-9]/;
     if (pattern.test(c)) {
