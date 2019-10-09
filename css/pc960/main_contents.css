@@ -71,6 +71,11 @@ body {
 #MAI_TWD_wrap > li:hover .coin_flip {
     transform: rotateY(180deg);
 }
+
+/* #MAI_TWD_wrap > li:hover #MAI_TWD_coin_back {
+    transform: rotateY(180deg);
+} */
+
 .coin_flip {
     position:relative;
     transform-style: preserve-3d;
