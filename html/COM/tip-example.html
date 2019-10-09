@@ -30,7 +30,7 @@
 <body>
     <!-- haru header -->
     <div id="header_com"></div>
-    
+
     <div id="haru_COM_header">
         <h1>커뮤니티</h1>
         <p>공지사항 및 회원 간 단어 암기 방법을<br> 공유할 수 있습니다.</p>
@@ -57,30 +57,26 @@
                 <!-- 게시글 헤더 -->
                 <div class="article_head">
                     <h4 class="article_title">{글 제목}</h4>
-                    <span>작성일 : {작성날짜}</span>
+                    <span>작성일 : <span class="article_date">{작성일}</span></span>
                     <div class="clfx"></div>
                 </div>
 
                 <div class="article_info">
-                    <span>작성자 : {작성자}</span>
-                    <span>글주소 :<a href="#">{글 주소}</a></span>
+                    <span class="article_author">작성자 : {작성자}</span>
+                    <span class="article_href">글주소 :<a href="#">{글 주소}</a></span>
                     <div class="clfx"></div>
                 </div>
                 <hr>
                 <!-- //게시글 헤더 -->
                 <!-- 게시글 내용 -->
                 <div class="article_contents">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam doloribus et impedit molestiae!
-                    Amet
-                    error distinctio rerum, quaerat cumque ad inventore, debitis omnis itaque adipisci velit placeat
-                    quas
-                    esse facilis.
+
                 </div>
                 <!-- //게시글 내용 -->
                 <hr>
                 <!-- 게시글 조작 -->
                 <div class="article_editor">
-                    <span>조회수 : {조회수}</span>
+                    <span>조회수 : <span class="article_viewer">{조회수}</span> 회</span>
                     <div class="btn" id="delete" onclick="deleteArticle()">삭제</div>
                     <div class="btn" id="edit" onclick="editArticle()">수정</div>
                     <div class="clfx"></div>
@@ -90,8 +86,8 @@
                 <div class="article_footer">
                     <div class="footer_list">
 
-                        <span>다음글 : {다음 글제목}</span><br>
-                        <span>이전글 : {이전 글제목}</span>
+                        <span>다음글 : <span class="article_next">{다음 글제목}</span></span><br>
+                        <span>이전글 : <span class="article_before">{이전 글제목}</span></span>
                     </div>
                     <div class="btn" onclick="moveList()">목록</div>
                     <div class="clfx"></div>
@@ -106,10 +102,44 @@
     <div id="footer_com"></div>
     <!-- //haru footer -->
     <script>
+        $.urlParam = (name) => {
+            let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            if (results == null) {
+                return null;
+            }
+            else {
+                return results[1] || 0;
+            }
+        }
+        async function loadArticle(url) {
+            try {
+                let queryUrl = "notice_article/" + url + ".json";
+                let data = await fetch(queryUrl);
+                let articleData = await data.json();
+                let articleUrl = "{{도메인}}/"+"html/COM/tip-example.html?id=" + url;
+                
+                $('.article_title').text(articleData.title);
+                $('.article_date').text(articleData.date);
+                $('.article_href').children('a').attr('href', articleUrl).text(" " + articleUrl);
+                $('.article_contents').html(articleData.content);
+                $('.article_author').text(articleData.author);
+                $('.article_viewer').text(articleData.viewer);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        }
+
         $(() => {
+
+            let url = $.urlParam('id');
+
+            let article = loadArticle(url);
+
             $('#header_com').load("../haru_header.html");
             $('#aside_com').load("./navCOM.html");
             $('#footer_com').load('../haru_footer.html');
+            // $('.article_contents').text(articleData.content)
         })
         function deleteArticle() {
             let con = confirm("삭제 하시겠습니까?")

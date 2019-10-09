@@ -82,25 +82,25 @@
                         <!-- 게시판 글 -->
                         <tbody>
                             <tr>
-                                <td><a href="./notice-example.html">3</a></td>
-                                <td class="board_article"><a href="./notice-example.html">홈페이지 일시 중단 안내</a></td>
-                                <td><a href="./notice-example.html">관리자</a></td>
-                                <td><a href="./notice-example.html">16</a></td>
-                                <td><a href="./notice-example.html">2019-09-03</a></td>
+                                <td><a href="./notice-example.html?id=1">1</a></td>
+                                <td class="board_article"><a href="./notice-example.html?id=1">홈페이지 일시 중단 안내</a></td>
+                                <td><a href="./notice-example.html?id=1">관리자</a></td>
+                                <td><a href="./notice-example.html?id=1">16</a></td>
+                                <td><a href="./notice-example.html?id=1">2019-09-03</a></td>
                             </tr>
                             <tr>
-                                <td><a href="./notice-example.html">3</a></td>
-                                <td class="board_article"><a href="./notice-example.html">홈페이지 일시 중단 안내</a></td>
-                                <td><a href="./notice-example.html">관리자</a></td>
-                                <td><a href="./notice-example.html">16</a></td>
-                                <td><a href="./notice-example.html">2019-09-03</a></td>
+                                <td><a href="./notice-example.html?id=2">2</a></td>
+                                <td class="board_article"><a href="./notice-example.html?id=2">홈페이지 일시 중단 안내</a></td>
+                                <td><a href="./notice-example.html?id=2">관리자</a></td>
+                                <td><a href="./notice-example.html?id=2">16</a></td>
+                                <td><a href="./notice-example.html?id=2">2019-09-03</a></td>
                             </tr>
                             <tr>
-                                <td><a href="./notice-example.html">3</a></td>
-                                <td class="board_article"><a href="./notice-example.html">홈페이지 일시 중단 안내</a></td>
-                                <td><a href="./notice-example.html">관리자</a></td>
-                                <td><a href="./notice-example.html">16</a></td>
-                                <td><a href="./notice-example.html">2019-09-03</a></td>
+                                <td><a href="./notice-example.html?id=3">3</a></td>
+                                <td class="board_article"><a href="./notice-example.html?id=3">홈페이지 일시 중단 안내</a></td>
+                                <td><a href="./notice-example.html?id=3">관리자</a></td>
+                                <td><a href="./notice-example.html?id=3">16</a></td>
+                                <td><a href="./notice-example.html?id=3">2019-09-03</a></td>
                             </tr>
                         </tbody>
                         <!-- //게시판 글 -->
@@ -112,11 +112,11 @@
                     <div class="pagination">
                         <div class="btn" id="left_pagination">&laquo;</div>
                         <ul class="pagination_number">
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
+                            <li><a href="?page=1">1</a></li>
+                            <li><a href="?page=2">2</a></li>
+                            <li><a href="?page=3">3</a></li>
+                            <li><a href="?page=4">4</a></li>
+                            <li><a href="?page=5">5</a></li>
                         </ul>
                         <div class="btn" id="right_pagination">&raquo;</div>
 
@@ -136,10 +136,22 @@
     <div id="footer_com"></div>
     <!-- //haru footer -->
     <script>
+        $.urlParam = (name) => {
+            let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            if (results == null) {
+                return 1;
+            }
+            else {
+                return results[1] || 0;
+            }
+        }
         $(() => {
+            let page = $.urlParam('page')-1;
+            
             $('#header_com').load("../haru_header.html");
             $('#aside_com').load("./navCOM.html");
             $('#footer_com').load('../haru_footer.html');
+            $('.pagination_number').children('li').eq(page).css('font-weight','bold');
         })
         function summit() {
             let con = confirm("글을 작성 합니다.");
