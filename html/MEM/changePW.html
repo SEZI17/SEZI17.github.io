@@ -1,16 +1,17 @@
 <span class="modal_close" onclick="closeModal()">&times;</span>
 <h1 id="modalHeader"> 비밀번호 변경</h1>
-<div id="oldPassword"> 
-    <input type="password" placeholder="현재 비밀번호" class="modal_inputBox"onfocusout="inputCheck(this.id)" id="oldPasswordInput">
-    <p></p>
+<div id="modal_oldPassword">
+    <input type="password" placeholder="현재 비밀번호" class="modal_inputBox" onkeydown="clearError(this.id)" id="oldPasswordInput">
+    <p id="oldPasswordInputError"></p>
 </div>
-<br>
-<div id="newPassword">
-    <input type="password" placeholder="새 비밀번호"class="modal_inputBox"onfocusout="inputCheck(this.id)" id="newPasswordInput">
-    <p></p>
+<br><div id="modal_newPassword">
+    <input type="password" placeholder="새 비밀번호" class="modal_inputBox" onkeydown="clearError(this.id)"
+        id="newPasswordInput">
+    <p id="newPasswordInputError"></p>
 </div>
-<div id="newPasswordCheck">
-    <input type="password" placeholder="새 비밀번호 확인"class="modal_inputBox"onfocusout="inputCheck(this.id)" id="newPasswordCheckInput">
-    <p></p>
+<div id="modal_newPasswordCheck">
+    <input type="password" placeholder="새 비밀번호 확인" class="modal_inputBox" onkeydown="clearError(this.id)"
+        id="newPasswordCheckInput">
+    <p id="newPasswordCheckInputError"></p>
 </div>
-<button class="modal_confirmBtn" onclick="textInputCheck()">비밀번호 변경</button>
+<button class="modal_confirmBtn" onclick="changePwConfirm()">비밀번호 변경</button>

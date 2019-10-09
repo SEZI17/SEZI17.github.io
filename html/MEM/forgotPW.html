@@ -1,15 +1,15 @@
 <span class="modal_close" onclick="closeModal()">&times;</span>
 <h1 id="modalHeader">비밀번호 찾기</h1>
-<div id="name">
-    <input type="text" placeholder="이름" class="modal_inputBox"onfocusout="inputCheck(this.id)" id="nameInput">
-    <p></p>
+<div id="modal_name">
+    <input type="text" placeholder="이름" class="modal_inputBox" onkeydown="clearError(this.id)" id="nameInput">
+    <p id="nameInputError"></p>
 </div>
-<div id="userID">
-    <input type="text" placeholder="아이디" class="modal_inputBox"onfocusout="inputCheck(this.id)" id="userIDInput">
-    <p></p>
+<div id="modal_id">
+    <input type="text" placeholder="아이디" class="modal_inputBox" onkeydown="clearError(this.id)" id="idInput">
+    <p id="idInputError"></p>
 </div>
-<div id="email">
-    <input type="email" placeholder="이메일 주소" class="modal_inputBox"onfocusout="inputCheck(this.id)" id="emailInput">
-    <p></p>
+<div id="modal_email">
+    <input type="email" placeholder="이메일 주소" class="modal_inputBox" onkeydown="clearError(this.id)" id="emailInput">
+    <p id="emailInputError"></p>
 </div>
-<button id="findIDBtn"class="modal_confirmBtn" onclick="textInputCheck()">확인</button>
+<button id="findPWBtn" class="modal_confirmBtn" onclick="forgotPwConfirm()">확인</button>
