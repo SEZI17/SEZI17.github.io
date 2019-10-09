@@ -132,15 +132,15 @@ function editInfoConfirm() {
     var nickname = document.getElementById("nicknameInput");
     var nicknameError = document.getElementById("nicknameInputError");
     var nicknameValid = isValid(nickname.value, false, false, false, false, true, false) && lengthBetween(nickname.value, 2, 10);
-    if (nickname.value.length == 0) {
-        nicknameError.innerHTML = "닉네임을 입력해 주세요";
+    if (!nicknameValid) {
+        nicknameError.innerHTML = "닉네임은 2~10글자 한글로 입력해주세요.";
         if (firstError) {
             nickname.focus();
             firstError = false;
         }
     }
-    if (!nicknameValid) {
-        nicknameError.innerHTML = "닉네임은 2~10글자 한글로 입력해주세요.";
+    if (nickname.value.length == 0) {
+        nicknameError.innerHTML = "닉네임을 입력해 주세요";
         if (firstError) {
             nickname.focus();
             firstError = false;
@@ -150,15 +150,15 @@ function editInfoConfirm() {
     var email = document.getElementById("emailInput");
     var emailError = document.getElementById("emailInputError");
     var emailValid = isEmail(email.value);
-    if (email.value.length == 0) {
-        emailError.innerHTML = "이메일을 입력해 주세요";
+    if (!emailValid) {
+        emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
         if (firstError) {
             email.focus();
             firstError = false;
         }
     }
-    if (!emailValid) {
-        emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
+    if (email.value.length == 0) {
+        emailError.innerHTML = "이메일을 입력해 주세요";
         if (firstError) {
             email.focus();
             firstError = false;
