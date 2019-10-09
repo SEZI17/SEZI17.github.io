@@ -53,13 +53,13 @@
             <!-- SubContents Here -->
             <div id="deleteAccount">
                 <p>지금까지 하루, 단어를 이용해주셔서 감사합니다.<br>보다 나은 사이트를 향해 발전하겠습니다.</p><br><br>
-                <div id="password">
-                    <input type="password" placeholder="비밀번호" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="passwordInput">
-                    <p></p>
+                <div id="MEM_password">
+                    <input type="password" placeholder="비밀번호" class="MEM_inputBox" onkeydown="clearError(this.id)" id="passwordInput">
+                    <p id="passwordInputError"></p>
                 </div>
                 <!-- bottom button -->
-                <button class="MEM_cancelBtn" onclick="">취소</button>
-                <button class="MEM_confirmBtn" onclick="textInputCheck()">탈퇴</button>
+                <a href="/index.html"><button class="MEM_cancelBtn">취소</button></a>
+                <button class="MEM_confirmBtn" onclick="deleteAccountConfirm()">탈퇴</button>
             </div>                   
             <!-- //SubContents Here -->
         </section>
