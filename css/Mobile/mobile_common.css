@@ -28,7 +28,6 @@
         display: block;
         /* color: #AF8672; */
         font-size: 30px;
-        font-family: 'Stylish', sans-serif;
     }
 
 
@@ -70,7 +69,9 @@
 
     .sidelist_subject {
         color: orange;
-        font-size: 30px;
+        font-size: 40px;
+        font-family: 'Amsterdam';
+        font-weight: bold;
     }
 
     .sidelist_list {
@@ -188,7 +189,6 @@
         display: block;
         /* color: #AF8672; */
         font-size: 40px;
-        font-family: 'Stylish', sans-serif;
     }
 
 
@@ -230,7 +230,8 @@
 
     .sidelist_subject {
         color: orange;
-        font-size: 40px;
+        font-size: 60px;
+        font-weight: bold;
     }
 
     .sidelist_list {

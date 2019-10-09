@@ -1,3 +1,9 @@
+/* 폰트 */
+@font-face {
+    font-family: "Amsterdam";
+    src:url("/font/Amsterdam.ttf") format("truetype");
+}
+
 /* 초기화 */
 body { background: #EBE4DD }
 * { font-family: 'Malgun Gothic', sans-serif; margin: 0; padding: 0; }
@@ -50,7 +56,7 @@ footer a { color: white; }
     margin-top:-20px;
     left: 50%;
     margin-left:-100px;
-    width: 200px; height: 40px;
+    width: 300px; height: 40px;
     text-align: center;    
     display: block;
     color: white;

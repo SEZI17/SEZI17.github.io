@@ -29,7 +29,7 @@
     margin: 0 auto;
     margin-top: 20px;
     font-size : 17px;
-    font-family: 'Poor story'
+    font-family: 'Poor story',sans-serif
 }
 .long {
     font-size: 14px;
@@ -39,7 +39,7 @@
     color: white;
     transition-duration: 0.3s;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 540px) {
     #FAQ_wrap {
         /* text-align : center; */
         width : 360px;
@@ -83,7 +83,7 @@
         transition-duration: 0.3s;
     } */
 }
-@media screen and (min-width: 541px) and (max-width: 766px){
+@media screen and (min-width: 541px) and (max-width: 767px){
     #FAQ_wrap {
         width : 541px;
         margin : 0 auto;  
