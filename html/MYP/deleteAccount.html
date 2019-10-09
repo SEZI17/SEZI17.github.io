@@ -127,13 +127,13 @@
             <!-- SubContents Here -->
             <div id="deleteAccount">
                 <p>지금까지 하루, 단어를 이용해주셔서 감사합니다.<br>보다 나은 사이트를 향해 발전하겠습니다.</p><br><br>
-                <div id="password">
-                    <input type="password" placeholder="비밀번호" class="MEM_inputBox"onfocusout="inputCheck(this.id)" id="passwordInput">
-                    <p></p>
+                <div id="MEM_password">
+                    <input type="password" placeholder="비밀번호" class="MEM_inputBox" onkeydown="clearError(this.id)" id="passwordInput">
+                    <p id="passwordInputError"></p>
                 </div>
                 <!-- bottom button -->
-                <button class="MEM_cancelBtn" onclick="">취소</button>
-                <button class="MEM_confirmBtn" onclick="textInputCheck()">탈퇴</button>
+                <a href="/index.html"><button class="MEM_cancelBtn">취소</button></a>
+                <button class="MEM_confirmBtn" onclick="deleteAccountConfirm()">탈퇴</button>
             </div>                   
             <!-- //SubContents Here -->
         </section>
@@ -142,30 +142,13 @@
         </section>
     </div>
     <!-- //Contents Here -->
-    <!-- haru footer -->
-    <footer>
-        <div id="haru_footer_wrap">
-            <!-- FNB -->
-            <nav id="haru_fnb">
-                <ul>
-                    <li><a href="#">페이지소개</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#" class="laws">개인정보처리방침</a></li>
-                    <li><a href="./html/MEM/forgotID_PW.html">ID/PW 찾기</a></li>
-                    <li><a href="#">회원탈퇴</a></li>
-                </ul>
-            </nav>
-            <!-- //FNB -->
-            <div id="haru_contactus">
-                <p class="address">울산광역시 중구 종가로 345(교동) 한국산업인력공단 월드잡플러스 | 1577-9997 | FAX : 052-714-8635 | e-mail : job1@hrdkorea.or.kr</p>
-                <p class="copyright">Copyright 2014 WORLDJOBPLUS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- //haru footer -->
+     <!-- haru footer -->
+     <div id="haru_footer"></div>
+     <!-- //haru footer -->
     <script>
         $(() => {
             $('#header_com').load("../haru_header.html");
+            $('#haru_footer').load('../haru_footer.html');
         })
     </script>
 </body>

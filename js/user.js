@@ -250,7 +250,7 @@ function signupConfirm() {
     var passwordError = document.getElementById("passwordInputError");
     var passwordValid = isValid(password.value, true, true, true, true, false, false) && lengthBetween(password.value, 8, "");
     if (!passwordValid) {
-        passwordError.innerHTML = "비밀번호는 8자리 이상으로 입력해 주세요.";
+        passwordError.innerHTML = "비밀번호는 공백 없이 8자리 이상으로 입력해 주세요.";
         if (firstError) {
             password.focus();
             firstError = false;
@@ -284,6 +284,8 @@ function signupConfirm() {
     //confirm
     if (firstError == true) {
         alert("회원가입을 축하합니다.");
+        $('#popup_content').load("/html/MEM/login.html");
+        modal.style.display = "block";
     }
 }
 
@@ -500,5 +502,25 @@ function changePwConfirm(){
     if (firstError == true) {
         alert("비밀번호 변경이 완료되었습니다.");
         window.location.href = "/html/MYP/editInfo.html";
+    }
+}
+
+//delete account button
+function deleteAccountConfirm(){
+    var firstError = true;
+    //check password
+    var password = document.getElementById("passwordInput");
+    var passwordError = document.getElementById("passwordInputError");
+    if (password.value.length == 0) {
+        passwordError.innerHTML = "비밀번호를 입력해 주세요";
+        if (firstError) {
+            password.focus();
+            firstError = false;
+        }
+    }
+    //confirm
+    if (firstError == true) {
+        alert("회원탈퇴가 완료되었습니다.");
+        window.location.href = "/index.html";
     }
 }
