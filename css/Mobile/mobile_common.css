@@ -80,7 +80,7 @@
     }
 
     #haru_signup_mobile {
-        width: 300px;
+        width: 298px;
         height: 80px;
         position: relative;
         margin: 0 auto;
@@ -241,7 +241,7 @@
     }
 
     #haru_signup_mobile {
-        width: 300px;
+        width: 298px;
         height: 80px;
         position: relative;
         margin: 0 auto;
@@ -256,6 +256,7 @@
         margin-top: 0 !important;
         overflow: hidden;
     }
+    
     #haru_signup_mobile > ul > li {
         line-height: 80px;
         float: left; }
