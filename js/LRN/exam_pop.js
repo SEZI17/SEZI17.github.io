@@ -87,7 +87,12 @@ function startTTS(text)
     message["volume"] = "1";        //사운드 크기
     message["rate"] = "1";          //말 속도
     message["pitch"] = "1";
-    message.voice = voices["13"];
+
+    if(0 == lanMode)
+        message.voice = voices["13"];
+    else
+        message.voice = voices["0"];
+
     speechSynthesis.speak(message);
 }
 
