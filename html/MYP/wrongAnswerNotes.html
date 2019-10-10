@@ -29,14 +29,9 @@
     </div>
     <div id="haru_contents_wrap">
         <aside id="haru_aside" class="haru_pc">
-            <nav id="haru_snb">
-                <ul>
-                    <li><a href="#">My 페이지</a></li>
-                    <li><a href="#" class="snb_link">오답노트</a></li>
-                    <li><a href="#" class="snb_link">내 단어장</a></li>
-                    <li><a href="#" class="snb_link">회원정보변경</a></li>
-                </ul>
-            </nav>
+            <!-- SNB -->
+            <nav id="haru_snb"></nav>
+            <!-- //SNB -->
         </aside>
         <section id="haru_subcontents">
             <header id="haru_subheader" class="haru_pc">
@@ -60,6 +55,7 @@
     <script>
             $('#haru_header').load("../haru_header.html");
             $('#haru_footer').load('../haru_footer.html');
+            $('#haru_snb').load('./MYP_SNB.html');
     </script>    
 </body>
 </html>
