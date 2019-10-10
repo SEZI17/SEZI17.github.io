@@ -70,7 +70,7 @@
     .sidelist_subject {
         color: orange;
         font-size: 40px;
-        font-family: 'Amsterdam';
+        font-family: 'Amsterdam',sans-serif;
         font-weight: bold;
     }
 
@@ -232,7 +232,7 @@
         color: orange;
         font-size: 60px;
         font-weight: bold;
-        font-family: 'Amsterdam';
+        font-family: 'Amsterdam', sans-serif;
     }
 
     .sidelist_list {
