@@ -10,7 +10,7 @@ div.container {
 }
 
 .btn {
-    border: 1px solid #ccc;
+    border: 1px solid black;
     cursor: pointer;
     padding: 5px;
     background-color: #fff;
@@ -18,7 +18,8 @@ div.container {
 }
 
 .btn:hover {
-    background-color: #3493ff;
+    background-color: #512B37;
+    color: white;
 }
 
 .search>.category>.cate {
@@ -62,9 +63,10 @@ div.container {
 .search>form>.btn {
     height: 32px;
     padding: 3px;
-    border: 1px solid #aaa;
+    border: 1px solid black;
     float: right;
-    background: #ccc;
+    /* edit by SEZI */
+    background: #AF8672;
 }
 
 .board_section {
@@ -77,26 +79,43 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 0px auto;
+    /* edit by SEZI */
+    margin-bottom: 50px;
 }
 
+/* edit by SEZI */
 table>thead {
-    background-color: #aaa;
+    background-color: #AF8672;
+    color: white;
+    font-weight: 900;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+table>tbody>tr:hover {
+    background: #E0AC80;
+}
+
+.search {
+    margin-bottom: 20px;
+}
+table>tbody>tr>td {
+    min-width: 90px;
 }
 
 table>thead>tr {
-    height: 50px;
+    height: 40px;
 }
 
 table>tbody {
     padding: 10px;
     font-size: 14px;
-    font-weight: 900;
     text-align: center;
 }
 
 table>tbody>tr {
-    height: 33px;
-    border-bottom: 1px solid #ccc;
+    /* edit by SEZI */
+    height: 45px;
+    border-bottom: 1px solid #AAA;
 }
 
 .board_article {
@@ -104,14 +123,15 @@ table>tbody>tr {
 }
 
 .board_section>.pagination {
-    width: 210px;
+    /* edit by SEZI */
+    width: 310px;
     height:30px;
     margin: 0 auto;
     margin-top: 10px;
 }
 
 .pagination>.btn {
-    border-radius: 100%;
+    /* border-radius: 100%; */
     margin: 0 auto;
     width: 30px;
     float: left;
@@ -135,8 +155,8 @@ table>tbody>tr {
     list-style: none;
     float: left;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #write_btn {
