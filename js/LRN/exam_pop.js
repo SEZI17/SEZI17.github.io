@@ -89,9 +89,9 @@ function startTTS(text)
     message["pitch"] = "1";
 
     if(0 == lanMode)
-        message.voice = voices["13"];
+        message.voice = voices["13"];       //일어
     else
-        message.voice = voices["0"];
+        message.voice = voices["0"];        //한국어
 
     speechSynthesis.speak(message);
 }
@@ -138,19 +138,25 @@ function resultExam()
         resultList.splice(value, 1);
     });
 
+    //일반검정일때
+    if(2 == examMode || 4 == examMode)
+    {
+        endTimer();
+
+        let tempMin = min;
+        let tempSec = sec;
+        if(min < 10)
+            tempMin = "0" + tempMin;
+        if(sec < 10)
+            tempSec = "0" + tempSec;
+    
+        let timer = tempMin + ":" + tempSec;
+        localStorage.setItem("timer", timer);
+    }
+
+    localStorage.setItem("mode", examMode);    
+
     //문제리스트를 examResult.html로 넘긴다.
-    localStorage.setItem("language", lanMode);    
-
-    let tempMin = min;
-    let tempSec = sec;
-    if(min < 10)
-        tempMin = "0" + tempMin;
-    if(sec < 10)
-        tempSec = "0" + tempSec;
-
-    let timer = tempMin + ":" + tempSec;
-    localStorage.setItem("timer", timer);
-
     localStorage.setItem("resultList", JSON.stringify(resultList));
     window.open("./examResult_pop.html", "_self");
 }
@@ -268,12 +274,6 @@ function startTimer()
 
 function clickNum(index)
 {
-    if(questionCount == nowQuestion)
-    {
-        endTimer();
-        return;
-    }
-
     //작업 중 클릭시 리턴
     if("block" == $("#ox").css("display"))
         return;
@@ -287,14 +287,12 @@ function clickNum(index)
 
     $(".exampleBox").eq(index).append(strClass);
 
-    //일반검정일 경우
-    if(2 == examMode || 4 == examMode)
-    {
-        if(answer != num)
-            questionList[nowQuestion].ox = false;
-    }
+    //정답여부 저장
+    if(answer != num)
+        questionList[nowQuestion].ox = false;
+
     //연습 검정일 경우
-    else if(1 == examMode || 3 == examMode)
+    if(1 == examMode || 3 == examMode)
     {
         $("#ox").css("display","block");
         if(answer == num)
@@ -312,12 +310,16 @@ function clickNum(index)
             $("#ox").addClass("redText");
             $("#ox").html("X");
             $("#ox").fadeOut(timeDelay);
-
-            questionList[nowQuestion].ox = false;
         }
 
         setTimeout(function()
-        {    
+        {   
+            if(nowQuestion + 1 == questionCount)
+            {
+                resultExam();
+                return;
+            }
+            
             nowQuestion++;
             showQuestion();
 

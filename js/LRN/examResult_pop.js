@@ -1,5 +1,6 @@
 var timer;
-var lanMode;
+var examMode;
+var lanMode;        //0이면 문제가 일본어 1이면 한국어
 var resultList;
 
 $(function(){
@@ -20,8 +21,23 @@ $(function(){
 function getResult()
 {
     //검정결과를 exam.html에서 넘겨받음
-    lanMode = localStorage.getItem("language");
-    timer = localStorage.getItem("timer");
+    examMode = localStorage.getItem("mode");
+
+    if(3 == examMode || 4 == examMode)
+        lanMode = 1;
+    else
+        lanMode = 0;
+
+    //일반검정이면
+    if(2 == examMode || 4 == examMode)
+        timer = localStorage.getItem("timer");
+    else
+    {
+        //시간 및 저장하기 버튼 숨기기
+        $('.timer').hide();
+        $('.saveBtn').hide();
+    }
+
     let output = localStorage.getItem("resultList");		
     resultList = JSON.parse(output);
 }
