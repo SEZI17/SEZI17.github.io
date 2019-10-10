@@ -28,16 +28,9 @@
         <p class="haru_pc">공지사항 및 회원 간 단어 암기 방법을<br> 공유할 수 있습니다.</p>
     </div>
     <div id="haru_contents_wrap">
-        <aside id="haru_aside" class="haru_pc">
-            <nav id="haru_snb">
-                <ul>
-                    <li><a href="#">커뮤니티</a></li>
-                    <li><a href="#" class="snb_link">공지사항</a></li>
-                    <li><a href="./exam.html" class="snb_link">TIP 게시판</a></li>
-                    <li><a href="#" class="snb_link">단어통계</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <!-- haru aside -->
+        <div id="aside_com"></div>
+        <!-- //haru aside -->
         <section id="haru_subcontents">
             <header id="haru_subheader" class="haru_pc">
                 <div id="haru_subtitle">단어통계</div>
@@ -79,7 +72,8 @@
     <!-- //haru footer -->
     <script>        
         $('#haru_header').load("../haru_header.html");
-        $('#haru_footer').load('../haru_footer.html');        
+        $('#haru_footer').load('../haru_footer.html'); 
+        $('#aside_com').load('./navCOM.html');       
     </script>
 </body>
 </html>
