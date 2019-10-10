@@ -196,7 +196,7 @@ function signupConfirm() {
     var idError = document.getElementById("idInputError");
     var idValid = isValid(id.value, true, true, true, false, false, false) && lengthBetween(id.value, 4, 10);
     if (!idValid) {
-        idError.innerHTML = "아이디는 글4~10자 영어 또는 숫자만 혼합하여 주세요.";
+        idError.innerHTML = "아이디는 영어와 숫자만을 혼용하여 공백없이 4~10자로 입력해주세요.";
         if (firstError) {
             id.focus();
             firstError = false;
@@ -214,7 +214,7 @@ function signupConfirm() {
     var nicknameError = document.getElementById("nicknameInputError");
     var nicknameValid = isValid(nickname.value, false, false, false, false, true, false) && lengthBetween(nickname.value, 2, 10);
     if (!nicknameValid) {
-        nicknameError.innerHTML = "닉네임은 2~10글자 한글로 입력해주세요.";
+        nicknameError.innerHTML = "닉네임은 특수문자와 공백을 제외한 2~10글자로 입력해주세요.";
         if (firstError) {
             nickname.focus();
             firstError = false;
@@ -248,7 +248,7 @@ function signupConfirm() {
     //check password
     var password = document.getElementById("passwordInput");
     var passwordError = document.getElementById("passwordInputError");
-    var passwordValid = isValid(password.value, true, true, true, true, false, false) && lengthBetween(password.value, 8, "");
+    var passwordValid = isValid(password.value, true, true) && lengthBetween(password.value, 8, "");
     if (!passwordValid) {
         passwordError.innerHTML = "비밀번호는 공백 없이 8자리 이상으로 입력해 주세요.";
         if (firstError) {
@@ -275,7 +275,7 @@ function signupConfirm() {
         }
     }
     if (passwordCheck.value.length == 0) {
-        passwordCheckError.innerHTML = "비밀번호 확인을 입력해 주세요";
+        passwordCheckError.innerHTML = "비밀번호를 한번 더 입력해 주세요";
         if (firstError) {
             passwordCheck.focus();
             firstError = false;
