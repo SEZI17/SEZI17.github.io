@@ -10,6 +10,9 @@
     <script src="../../js/jquery-ui.min.js"></script>
     <script src="../../js/jquery.easing.1.3.js"></script>
 
+    <script src="../../js/COM/js_common.js"></script>
+    <script src="../../js/COM/article.js"></script>
+
     <!-- PC버전 -->
     <link rel="stylesheet" href="../../css/pc960/cat_common.css">
     <link rel="stylesheet" href="../../css/pc960/COM/COM_common.css">
@@ -102,45 +105,7 @@
     <div id="footer_com"></div>
     <!-- //haru footer -->
     <script>
-        $.urlParam = (name) => {
-            let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-            if (results == null) {
-                return null;
-            }
-            else {
-                return results[1] || 0;
-            }
-        }
-        async function loadArticle(url) {
-            try {
-                let queryUrl = "notice_article/" + url + ".json";
-                let data = await fetch(queryUrl);
-                let articleData = await data.json();
-                let articleUrl = "{{도메인}}/"+"html/COM/tip-example.html?id=" + url;
-                
-                $('.article_title').text(articleData.title);
-                $('.article_date').text(articleData.date);
-                $('.article_href').children('a').attr('href', articleUrl).text(" " + articleUrl);
-                $('.article_contents').html(articleData.content);
-                $('.article_author').text(articleData.author);
-                $('.article_viewer').text(articleData.viewer);
-            }
-            catch (err) {
-                console.error(err);
-            }
-        }
-
-        $(() => {
-
-            let url = $.urlParam('id');
-
-            let article = loadArticle(url);
-
-            $('#header_com').load("../haru_header.html");
-            $('#aside_com').load("./navCOM.html");
-            $('#footer_com').load('../haru_footer.html');
-            // $('.article_contents').text(articleData.content)
-        })
+        
         function deleteArticle() {
             let con = confirm("삭제 하시겠습니까?")
             if (con) {
