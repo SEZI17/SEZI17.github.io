@@ -66,10 +66,6 @@
 
 @media screen and (max-width: 540px) {
 
-  #haru_subcontents{
-    min-height: 400px;
-  }
-
   #article_wrap{
     height: 200px;
     margin-left: 10px;
@@ -144,4 +140,48 @@
     height: 50px;
     width: 55px;
   }
+}
+
+@media screen and (min-width: 541px) and (max-width: 767px) {
+ 
+  #haru_subcontents
+  {
+    margin: 30px;
+  }
+
+  #article_wrap{
+    width: 480px;
+    margin: 0 auto;
+  }
+
+  #graph{
+    width: 460px;
+  }
+
+  #stats{
+    width: 460px;
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  #stats > #graph > .bar:nth-child(1){
+    width: 400px;
+  }
+  
+  #stats > #graph > .bar:nth-child(2){
+    width: 300px;
+  }
+  
+  #stats > #graph > .bar:nth-child(3){
+    width: 100px
+  }
+  
+  #stats > #graph > .bar:nth-child(4){
+    width: 50px;
+  }
+  
+  #stats > #graph > .bar:nth-child(5){
+    width: 8px;
+  }
+
 }
