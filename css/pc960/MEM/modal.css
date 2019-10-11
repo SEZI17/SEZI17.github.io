@@ -58,19 +58,21 @@
   padding: 20px;
   /* border: 1px solid #888; */
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   max-height: 640px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-@media only screen and (min-width:541px) and (max-width:720px) {
+/* @media only screen and (min-width:541px) and (max-width:767px) {
   .modal-content {
-    max-width: 400px;
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
   }
-}
-@media only screen and (max-width:540px) {
+} */
+
+@media only screen and (max-width:767px) {
   .modal{
     padding-top: 0;
   }
@@ -80,6 +82,7 @@
     height: 100%;
     max-height: none;
     padding: 20px;
+    max-width: none;
   }
 }
 
