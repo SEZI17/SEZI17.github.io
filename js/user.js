@@ -131,9 +131,9 @@ function editInfoConfirm() {
     //check nickname
     var nickname = document.getElementById("nicknameInput");
     var nicknameError = document.getElementById("nicknameInputError");
-    var nicknameValid = isValid(nickname.value, false, false, false, false, true, false) && lengthBetween(nickname.value, 2, 10);
+    var nicknameValid = isValid(nickname.value, true, true, true, false, true, false) && lengthBetween(nickname.value, 2, 10);
     if (!nicknameValid) {
-        nicknameError.innerHTML = "닉네임은 2~10글자 한글로 입력해주세요.";
+        nicknameError.innerHTML = "닉네임은 특수문자와 공백을 제외한 2~10글자로 입력해주세요.";
         if (firstError) {
             nickname.focus();
             firstError = false;
@@ -163,6 +163,11 @@ function editInfoConfirm() {
             email.focus();
             firstError = false;
         }
+    }
+    //no information has changed
+    if(nickname.value=="admin123" && email.value=="admin@email.com"){
+        alert("변경된 내용이 없습니다.");
+        return;
     }
     //confirm
     if (firstError == true) {
@@ -212,7 +217,7 @@ function signupConfirm() {
     //check nickname
     var nickname = document.getElementById("nicknameInput");
     var nicknameError = document.getElementById("nicknameInputError");
-    var nicknameValid = isValid(nickname.value, false, false, false, false, true, false) && lengthBetween(nickname.value, 2, 10);
+    var nicknameValid = isValid(nickname.value, true, true, true, false, true, false) && lengthBetween(nickname.value, 2, 10);
     if (!nicknameValid) {
         nicknameError.innerHTML = "닉네임은 특수문자와 공백을 제외한 2~10글자로 입력해주세요.";
         if (firstError) {

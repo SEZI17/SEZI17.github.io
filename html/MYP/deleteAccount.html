@@ -20,6 +20,18 @@
         #deleteAccount{
             padding-left: 20px;
         }
+        #deleteAccount>div>span {
+            display: inline-block;
+            width: 85px; 
+        }
+        @media only screen and (max-width:767px){
+            #deleteAccount{
+                padding-left: 3%;
+            }
+            #deleteAccount>div>span {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -49,6 +61,7 @@
             <div id="deleteAccount">
                 <p>지금까지 하루, 단어를 이용해주셔서 감사합니다.<br>보다 나은 사이트를 향해 발전하겠습니다.</p><br><br>
                 <div id="MEM_password">
+                    <span>비밀번호</span>
                     <input type="password" placeholder="비밀번호" class="MEM_inputBox" onkeydown="clearError(this.id)" id="passwordInput">
                     <p id="passwordInputError"></p>
                 </div>
