@@ -19,7 +19,5 @@ async function loadArticle(url) {
 
 $(function () {
     let url = $.urlParam('id');
-
-    let article = loadArticle(url);
-
+    loadArticle(url);
 })

@@ -20,6 +20,7 @@
 
     table {
         width: 90%;
+        
         border-collapse: collapse;
         margin: 0px auto;
         /* edit by SEZI */
@@ -34,6 +35,12 @@
 
     table>thead>tr {
         height: 40px;
+    }
+    table>thead>tr>th{
+        width:10%;
+    }
+    table>tbody>tr>td{
+        width:10%;
     }
 
     table>tbody {
@@ -60,7 +67,9 @@
     }
 
     .board_article {
-        width: 60%;
+        width: 20%;
+        /* display: inline-block; */
+        text-overflow:ellipsis;overflow: hidden;white-space: nowrap;word-wrap: normal !important;
     }
 
     .board_section>.pagination {
@@ -96,11 +105,22 @@
 }
 
 @media screen and (min-width: 541px) and (max-width: 767px) {
+    .board_article {
+        width: 40%;
+        /* display: inline-block; */
+        text-overflow:ellipsis;overflow: hidden;white-space: nowrap;word-wrap: normal !important;
+    }
 
     
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
+    .board_article {
+        width: 50%;
+        /* display: inline-block; */
+        text-overflow:ellipsis;overflow: hidden;white-space: nowrap;word-wrap: normal !important;
+    }
+
     #haru_subtitle {
         width:200px;
         margin-left: 10px;
