@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="../../js/jquery-2.1.1.min.js"></script>
-    <script src="../../js/jquery-ui.min.js"></script>
-    <script src="../../js/jquery.easing.1.3.js"></script>
+    <link rel="stylesheet" href="../css/pc960/LRN/Check_menu.css">
+    <link rel="stylesheet" href="../../haruword/css/pc960/LRN/Tab_menu.css">
 
-    <script src="../../js/LRN/Check_menu.js"></script>
-    <script src="../../js/LRN/Tab_menu.js"></script>
+    <script src="../../haruword/js/jquery-2.1.1.min.js"></script>
+    <script src="../../haruword/js/jquery-ui.min.js"></script>
+    <script src="../../haruword/js/jquery.easing.1.3.js"></script>
 
-    <link rel="stylesheet" href="../../css/pc960/LRN/Check_menu.css">
-    <link rel="stylesheet" href="../../css/pc960/LRN/Tab_menu.css">
+    <script src="../../haruword/js/LRN/Check_menu.js"></script>
+    <script src="../../haruword/js/LRN/Tab_menu.js"></script>
 
     <title>외우자</title>
 </head>
@@ -37,7 +37,7 @@
                     
                 </td>
                 <td>
-                    <a href="#">
+                    <a href="#" id="N2">
                         <input type="checkbox" id="2">
                         N2
                     </a>
@@ -90,21 +90,17 @@
     <div class="gyou" id="A"></div>
     <div class="tab" id="A_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
-            <div class="1">
-
-                <div id="meishi">
-                    <tr>
+                    <tr class="meishi_n1">
                         <td>명사</td>
                         <td>JLPT N1</td>
                         <td>愛想</td>
                         <td>あいそう</td>
                         <td>붙임성, 정나미, 애정</td>
                     </tr>
-                </div>
 
-                <div id="daimeishi">
+                <div class="daimeishi_n1">
                     <tr>
                         <td>대명사</td>
                         <td>JLPT N1</td>
@@ -114,7 +110,7 @@
                     </tr>
                 </div>
 
-                <div id="doushi">
+                <div class="doushi n1">
                     <tr>
                         <td>동사</td>
                         <td>JLPT N1</td>
@@ -124,7 +120,7 @@
                     </tr>
                 </div>
 
-                <div id="keiyoushi">
+                <div class="keiyoushi_n1">
                     <tr>
                         <td>형용사</td>
                         <td>JLPT N1</td>
@@ -134,11 +130,9 @@
                     </tr>
                 </div>
 
-            </div>
 
-            <div class="2">
 
-                <div id="meishi">
+                <div class="meishi_n2">
                     <tr>
                         <td>명사</td>
                         <td>JLPT N2</td>
@@ -148,7 +142,7 @@
                     </tr>
                 </div>
 
-                <div id="daimeishi">
+                <div class="daimeishi_n2">
                     <tr>
                         <td>대명사</td>
                         <td>JLPT N2</td>
@@ -158,7 +152,7 @@
                     </tr>
                 </div>
 
-                <div id="doushi">
+                <div class="doushi_n2">
                     <tr>
                         <td>동사</td>
                         <td>JLPT N2</td>
@@ -168,7 +162,7 @@
                     </tr>
                 </div>
 
-                <div id="keiyoushi">
+                <div class="keiyoushi_n2">
                     <tr>
                         <td>형용사</td>
                         <td>JLPT N2</td>
@@ -178,11 +172,7 @@
                     </tr>
                 </div>
 
-            </div>
-
-            <div class="3">
-
-                <div id="meishi">
+                <div id="meishi_n3">
                     <tr>
                         <td>명사</td>
                         <td>JLPT N3</td>
@@ -192,7 +182,9 @@
                     </tr>
                 </div>
 
-                <div id="doushi">
+
+
+                <div id="doushi_n3">
                     <tr>
                         <td>동사</td>
                         <td>JLPT N3</td>
@@ -202,11 +194,7 @@
                     </tr>
                 </div>
 
-            </div>
-
-            <div class="4">
-
-                <div id="meishi">
+                <div id="meishi_4">
                     <tr>
                         <td>명사</td>
                         <td>JLPT N4</td>
@@ -216,7 +204,7 @@
                     </tr>
                 </div>
 
-                <div id="daimeishi">
+                <div id="daimeishi_4">
                     <tr>
                         <td>대명사</td>
                         <td>JLPT N4</td>
@@ -226,7 +214,7 @@
                     </tr>
                 </div>
 
-                <div id="doushi">
+                <div id="doushi_4">
                     <tr>
                         <td>동사</td>
                         <td>JLPT N4</td>
@@ -236,7 +224,7 @@
                     </tr>
                 </div>
 
-                <div id="keiyoushi">
+                <div id="keiyoushi_4">
                     <tr>
                         <td>형용사</td>
                         <td>JLPT N4</td>
@@ -246,11 +234,9 @@
                     </tr>
                 </div>
 
-            </div>
 
-            <div class="5">
 
-                <div id="meishi">
+                <div id="meishi_n5">
                     <tr>
                         <td>명사</td>
                         <td>JLPT N5</td>
@@ -260,7 +246,7 @@
                     </tr>
                 </div>
 
-                <div id="daimeishi">
+                <div id="daimeishi_n5">
                     <tr>
                         <td>대명사</td>
                         <td>JLPT N5</td>
@@ -270,7 +256,7 @@
                     </tr>
                 </div>
 
-                <div id="doushi">
+                <div id="doushi_n5">
                     <tr>
                         <td>동사</td>
                         <td>JLPT N5</td>
@@ -280,8 +266,6 @@
                     </tr>
                 </div>
 
-            </div>
-
         </table>
 
     </div>
@@ -290,7 +274,7 @@
     <div class="gyou" id="K"></div>
     <div class="tab" id="K_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="1">
 
@@ -551,7 +535,7 @@
     <div class="gyou" id="S"></div>
     <div class="tab" id="S_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
@@ -832,7 +816,7 @@
     <div class="gyou" id="T"></div>
     <div class="tab" id="T_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
@@ -1112,7 +1096,7 @@
     <div class="gyou" id="N"></div>
     <div class="tab" id="N_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
@@ -1392,7 +1376,7 @@
     <div class="gyou" id="H"></div>
     <div class="tab" id="H_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
@@ -1672,7 +1656,7 @@
     <div class="gyou" id="M"></div>
     <div class="tab" id="M_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
@@ -1952,7 +1936,7 @@
     <div class="gyou" id="Y"></div>
     <div class="tab" id="Y_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
@@ -2232,7 +2216,7 @@
     <div class="gyou" id="R"></div>
     <div class="tab" id="R_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
@@ -2512,7 +2496,7 @@
     <div class="gyou" id="W"></div>
     <div class="tab" id="W_tab">
 
-        <table id="danlist">
+        <table class="danlist">
 
             <div class="aa">
 
