@@ -1,5 +1,8 @@
 var percentArr = {};
 var double;
+var mobileHeight = 60;
+var pcWidth = 55;
+
 
 $(function(){
 
@@ -72,14 +75,14 @@ function changeGraphSize(heightWidth)
         if("width" == heightWidth)
         {
             $(".bar").eq(i).css("width", value + "px");
-            $(".bar").eq(i).css("height", 60 + "px");
+            $(".bar").eq(i).css("height", mobileHeight + "px");
             $(".bar").eq(i).css("margin-top", 0 + "px");
         }
         else
         {
             let margin = wid - 5 - value;
 
-            $(".bar").eq(i).css("width", 55 + "px");
+            $(".bar").eq(i).css("width", pcWidth + "px");
             $(".bar").eq(i).css("height", value + "px");
             $(".bar").eq(i).css("margin-top", margin + "px");
         }
