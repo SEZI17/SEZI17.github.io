@@ -2,7 +2,6 @@ $(document).ready(function(){
 
     // 체크리스트 작성
     checkList();
-
     // 급수별
     $('#check1').click(function(){
         checkList();
@@ -53,7 +52,25 @@ $(document).ready(function(){
         }
         checkList();
     });
-
+    function checkBtnAll(){
+        checkButton($('#check1'));
+        checkButton($('#check2'));
+        checkButton($('#check3'));
+        checkButton($('#check4'));
+        checkButton($('#check5'));
+        checkButton($('#meishi'));
+        checkButton($('#daimeishi'));
+        checkButton($('#doushi'));
+        checkButton($('#jyoshi'));
+        checkButton($('#keiyoushi'));
+    }
+    function checkButton($var){
+        if($var.is(':checked'))
+            $var.parent().css({'background-color':'#AF8672;',});
+        else
+            $var.parent().css({'background-color':'#512B37;'});
+            $('#all').css({'background-color':'#AF8672;'});
+    }
     function allCheck(){
         var returnVal = true;
         if(!$('#check1').is(':checked'))
@@ -82,6 +99,7 @@ $(document).ready(function(){
     // 체크리스트 구동
     function checkList(){
 
+        checkBtnAll();
         // 1급 버튼
         if($('#check1').is(':checked')) {
             if($('#meishi').is(':checked')){
