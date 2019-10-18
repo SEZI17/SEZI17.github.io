@@ -21,6 +21,9 @@ $(document).ready(function(){
     })
 
     // 품사별
+    $('#all').click(function(){
+        checkList();
+    })
     $('#meishi').click(function(){
         checkList();
     })
@@ -37,6 +40,44 @@ $(document).ready(function(){
         checkList();
     })
 
+    // 전체 버튼
+    $('#all').click(function() {
+        if(allCheck()){
+            $('#meishi, #daimeishi, #doushi, #jyoshi, #keiyoushi').prop('checked',false);
+            for(var i = 1; i < 6; i++)
+                $('#check' + i).prop('checked',false);
+        }else{
+            $('#meishi, #daimeishi, #doushi, #jyoshi, #keiyoushi').prop('checked',true);
+            for(var i = 1; i < 6; i++)
+                $('#check' + i).prop('checked',true);
+        }
+        checkList();
+    });
+
+    function allCheck(){
+        var returnVal = true;
+        if(!$('#check1').is(':checked'))
+            returnVal = false;
+        if(!$('#check2').is(':checked'))
+            returnVal = false;
+        if(!$('#check3').is(':checked'))
+            returnVal = false;
+        if(!$('#check4').is(':checked'))
+            returnVal = false;
+        if(!$('#check5').is(':checked'))
+            returnVal = false;
+        if(!$('#meishi').is(':checked'))
+            returnVal = false;
+        if(!$('#daimeishi').is(':checked'))
+            returnVal = false;
+        if(!$('#doushi').is(':checked'))
+            returnVal = false;
+        if(!$('#jyoshi').is(':checked'))
+            returnVal = false;
+        if(!$('#keiyoushi').is(':checked'))
+            returnVal = false;
+        return returnVal;
+    }
 
     // 체크리스트 구동
     function checkList(){
@@ -195,6 +236,7 @@ $(document).ready(function(){
         } else {
             $('.n5').stop().hide(500);
         }
+
 
     }
 
