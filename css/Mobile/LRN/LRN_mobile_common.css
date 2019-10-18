@@ -8,6 +8,10 @@
     position: relative;
 }
 
+#haru_LRN_header_subject {
+    border: none;
+}
+
 #haru_LRN_header > h1 {
     position: absolute;
     top: 30px;
@@ -34,6 +38,10 @@
         color: white;
         background-image: url('../../../img/LRN.jpg');
         position: relative;
+    }
+
+    #haru_LRN_header_subject {
+        border: none;
     }
     
     #haru_LRN_header > h1 {

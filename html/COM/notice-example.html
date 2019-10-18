@@ -36,9 +36,12 @@
     <div id="header_com"></div>
 
     <div id="haru_COM_header">
-        <h1>커뮤니티</h1>
-        <p>공지사항 및 회원 간 단어 암기 방법을<br> 공유할 수 있습니다.</p>
-    </div>
+            <div id = "haru_COM_header_subject">
+            <h1 class="haru_pc">커뮤니티</h1>
+            <p class="haru_pc">공지사항 및 회원 간 단어 암기 방법을<br> 공유할 수 있습니다.</p>
+            </div>
+            <h1 class="haru_mobile">공지사항</h1>
+        </div>
     <!-- //haru header -->
 
     <div id="haru_contents_wrap">
@@ -80,7 +83,7 @@
                 <hr>
                 <!-- 게시글 조작 -->
                 <div class="article_editor">
-                    <span>조회수 : <span class="article_viewer">{조회수}</span> 회</span>
+                    <span class="read">조회수 : <span class="article_viewer">{조회수}</span> 회</span>
                     <div class="btn" id="delete" onclick="deleteArticle()">삭제</div>
                     <div class="btn" id="edit" onclick="editArticle()">수정</div>
                     <div class="clfx"></div>
@@ -89,9 +92,8 @@
 
                 <div class="article_footer">
                     <div class="footer_list">
-
-                        <span>다음글 : <span class="article_next">{다음 글제목}</span></span><br>
-                        <span>이전글 : <span class="article_before">{이전 글제목}</span></span>
+                        <div class="other_subject_wrap"><span class="other_subject">다음글</span><span class="other_subject_sw article_next">{다음 글제목}</span></div>                        
+                        <div class="other_subject_wrap"><span class="other_subject">이전글</span><span class="other_subject_sw article_before">{이전 글제목}</span></div>
                     </div>
                     <div class="btn" onclick="moveList()">목록</div>
                     <div class="clfx"></div>

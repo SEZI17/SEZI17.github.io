@@ -170,7 +170,9 @@ body {
     margin: 0 auto;
     width: 100%; height: 600px;
     position: relative;
-    background: white;
+    background: url("../../img/fam_site.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #MAI_familysite_wrap {
@@ -182,16 +184,22 @@ body {
     margin-left: -400px;
     left: 50%;
     top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-#MAI_familysite_title {
+#MAI_familysite_title {    
     margin-bottom: 80px;
     width: 750px;
     text-align: center;
+    color: white;
+}
+#MAI_familysite_title h2 {
+    margin-top: 30px;
+    width: 800px;
 }
 #MAI_familysite_logo_wrap {    
     position: relative;
     width: 760px;
-    height: 400px;
+    height: 300px;
     margin: 0 auto;
 }
 #MAI_familysite_FO_wrap {    
@@ -208,10 +216,12 @@ body {
 }
 .familysite_logo {
     margin: 0 auto;
+    width: 271px;
 }
 #MAI_familysite img {
     width: 300px;
     margin: 0 auto;
+    vertical-align: center;
 }
 /* .familysite_description h3{
     padding-left: 10px;
@@ -384,7 +394,6 @@ body {
         margin: 0 auto;
         width: 100%; height: 800px;
         position: relative;
-        background: white;
     }
     
     #MAI_familysite_wrap {
@@ -400,6 +409,9 @@ body {
         width: 360px;
         text-align: center;
         margin: 40px auto;
+    }
+    #MAI_familysite_title h2 {
+        width: 360px;
     }
     #MAI_familysite_logo_wrap {
         width: 300px;
@@ -600,11 +612,10 @@ body {
     }
 
     /* 패밀리사이트 */
-    #MAI_familysite {
+    /* #MAI_familysite {
         margin: 0 auto;
         width: 100%; height: 600px;
         position: relative;
-        background: white;
     }
 
     #MAI_familysite_wrap {
@@ -647,7 +658,7 @@ body {
     #MAI_familysite img {
         width: 250px;
         margin: 0 auto;
-    }
+    } */
     /* .familysite_description h3{
         padding-left: 10px;
     } */

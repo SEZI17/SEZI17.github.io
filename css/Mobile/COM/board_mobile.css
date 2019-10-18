@@ -63,7 +63,7 @@
 
     table>tbody>tr {
         height: 33px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #ccc; 
     }
 
     .board_article {

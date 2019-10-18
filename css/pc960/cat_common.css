@@ -5,7 +5,12 @@
 }
 
 /* 초기화 */
-body { background: #EBE4DD }
+body { 
+    background: #EBE4DD;
+    /* background: url("../../img/cat_background.jpg"); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 * { font-family: 'Malgun Gothic', sans-serif; margin: 0; padding: 0; }
 ol, ul { list-style: none; }
 a { outline: 0; text-decoration: none; color: black;}
