@@ -1,0 +1,42 @@
+#MYP_MYN_table_wrap {
+    width: 752px;
+    height: 100%;
+    margin-bottom: 50px;
+    margin: 0 auto;
+}
+
+#MYP_MYN_table {    
+    width: 750px;
+    border: 1px solid black;
+}
+#MYP_MYN_table th {
+    height: 30px;
+    background: #AF8672;
+    color: white;   
+}
+#MYP_MYN_table td {
+    height: 30px;
+    text-align: center;
+}
+#MYP_MYN_notelist {
+    background: #FFF8E1;
+    margin-bottom: 100px;
+}
+.table_form {
+    width: 70px;
+}
+.table_kanji {
+    width: 160px;
+}
+.table_yomigana {
+    width: 170px;
+}
+.table_korean {
+    width: 160px;
+}
+.table_delete {
+    width: 40px;
+}
+.delete_tr {        
+    cursor: default;
+}
