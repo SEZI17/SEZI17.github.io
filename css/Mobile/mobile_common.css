@@ -296,8 +296,8 @@
     }
     #haru_footer_wrap > #haru_fnb {
         position: absolute;
-        width: 400px;
-        margin-left: -200px;
+        width: 300px;
+        margin-left: -150px;
         left: 50%;
         top: 15px;
     }
