@@ -22,7 +22,8 @@
     padding: 14px 20px;
     margin-top: 20px;
     border: none;
-    border-radius: 4px;
+    /* border-radius: 4px; */
+    font-size: 16px;
     cursor: pointer;
 }
 /* scroll box for terms and conditions */
@@ -71,6 +72,23 @@
     box-sizing: border-box;
   }
 } */
+
+
+.modal_checkbox {
+  display: none;
+}
+
+.modal_checkbox + label > span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url('../../../img/unchecked.png') no-repeat;
+  background-size: 100%;
+  margin-right: 10px;
+}
+
+.modal_checkbox:checked + label > span { background-image: url('../../../img/checked.png'); }
 
 @media only screen and (max-width:767px) {
   .modal{

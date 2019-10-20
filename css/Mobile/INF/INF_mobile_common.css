@@ -8,10 +8,6 @@
     position: relative;
 }
 
-#haru_INF_header_subject {
-    border: none;
-}
-
 #haru_INF_header > h1 {
     position: absolute;
     top: 30px;
@@ -40,10 +36,6 @@
         position: relative;
     }
 
-    #haru_INF_header_subject {
-        border: none;
-    }
-    
     #haru_INF_header > h1 {
         position: absolute;
         top: 30px;

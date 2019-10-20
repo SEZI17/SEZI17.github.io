@@ -43,6 +43,8 @@
   float: left;
   font-size: 13px;
 }
+
+
 @media only screen and (max-width:767px) {
   .MEM_confirmBtn, .MEM_cancelBtn {
     width: 47.5%;
