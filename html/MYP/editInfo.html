@@ -51,6 +51,11 @@
     </style>
     <script>
         $("document").ready(function () {
+
+                $("#nameInput").attr("value", "관리자");
+
+                $("#idInput").attr("value", "admin");
+
                 $("#nicknameInput").attr("value", "admin123");
                 $("#nicknameInput").attr('readOnly','readOnly');
 
@@ -99,14 +104,14 @@
                 <div>
                     <div id="name">
                         <span>이름</span>
-                        <input type="text" placeholder="관리자" class="MEM_inputBox" onkeydown="clearError(this.id)"
+                        <input type="text" placeholder="이름" class="MEM_inputBox" onkeydown="clearError(this.id)"
                             id="nameInput" disabled>
                         <!-- <button class="MEM_btn">수정</button> -->
                         <p id="nameInputError"></p>
                     </div>
                     <div id="id">
                         <span>아이디</span>
-                        <input type="text" placeholder="admin" class="MEM_inputBox" onkeydown="clearError(this.id)"
+                        <input type="text" placeholder="아이디" class="MEM_inputBox" onkeydown="clearError(this.id)"
                             id="idInput" disabled>
                         <!-- <button class="MEM_btn">수정</button> -->
                         <p id="idInputError"></p>
