@@ -24,6 +24,12 @@ div.container {
 
 .search>.category>.cate {
     margin-left: 15px;
+    line-height: 37px;
+}
+.catselect {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 37px;
 }
 
 .comm_header h3 {

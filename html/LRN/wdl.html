@@ -13,105 +13,33 @@
     <script src="../../js/LRN/wdl.js"></script>
     <link rel="stylesheet" href="../../css/pc960/cat_common.css">
     <link rel="stylesheet" href="../../css/pc960/LRN/LRN_common.css">
+    <link rel="stylesheet" href="../../css/Mobile/LRN/LRN_mobile_common.css">
+    <link rel="stylesheet" href="../../css/Mobile/mobile_common.css">
     <link rel="stylesheet" href="../../css/pc960/LRN/wdl.css">
     <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poor+Story:400" rel="stylesheet">
 </head>
 <body>
     <!-- haru header -->
-    <header>
-        <div id="haru_header_upper">
-            <div id="haru_header_upper_wrap">
-                <a href="../../index.html"><title id="haru_title">하루, 단어</title></a>
-            </div>
-        </div>
-        <div id="haru_header_bottom">
-            <div id="haru_header_bottom_wrap">
-                <!-- GNB -->
-                <nav id="haru_gnb">
-                    <ul>
-                        <li id="haru_LRN" class="dropLRN"><a href="#">외우자</a></li>
-                        <li id="haru_COM" class="dropCOM"><a href="#">커뮤니티</a></li>
-                        <li id="haru_MYP" class="dropMYP"><a href="#">My 페이지</a></li>
-                        <li id="haru_INF" class="dropINF"><a href="#">페이지 정보</a></li>
-                    </ul>
-                </nav>                
-                <!-- //GNB -->
-                <!-- Signinupbutton -->
-                <div id="haru_signup">
-                    <ul>
-                        <li class="sign"><a href="#">로그인</a></li>
-                        <li class="sign"><a href="./html/MEM/signup_terms.html" class="bar">회원가입</a></li>
-                    </ul>
-                </div>
-                <!-- //Signinupbutton -->
-            </div>            
-        </div>           
-    </header>
-    <!-- Dropdown Menu -->
-    <div id="haru_LRN_dropdown" class="dropdown">
-        <ul class="dropLRN">
-            <li><a href="../LRN/hrd.html">하루단어</a></li>
-            <li><a href="#">단어검정</a></li>
-            <li><a href="#">단어 List</a></li>
-        </ul>
-        <div class="menu_description">
-            <p class="menu_description_subject">외우자</p>
-            <p class="menu_description_contents">하루, 단어는 외우자의 카테고리 안에서 여러분들에게 스마트한 학습방법을 제공하고자 합니다.</p>
-        </div>
-    </div>
-    <div id="haru_COM_dropdown" class="dropdown">
-        <ul class="dropCOM">
-            <li><a href="../COM/notice.html">공지사항</a></li>
-            <li><a href="../COM/tip.html">TIP 게시판</a></li>
-            <li><a href="#">단어통계</a></li>
-        </ul>
-        <div class="menu_description">
-            <p class="menu_description_subject">커뮤니티</p>
-            <p class="menu_description_contents">공지사항 및 회원 간 단어 암기 방법을 공유할 수 있습니다.</p>
-        </div>
-    </div>
-    <div id="haru_MYP_dropdown" class="dropdown">
-        <ul class="dropMYP">
-            <li><a href="../MYP/indexMYP.html" class="wan">오답노트</a></li>
-            <li><a href="#">내 단어장</a></li>
-            <li><a href="./html/MEM/editInfo_pwCheck.html">회원정보변경</a></li>
-        </ul>
-        <div class="menu_description">
-            <p class="menu_description_subject">My 페이지</p>
-            <p class="menu_description_contents">학습하면서 틀린 단어, 어려웠던 단어 등을 조회합니다.</p>
-        </div>
-    </div>
-    <div id="haru_INF_dropdown" class="dropdown">
-        <ul class="dropINF">
-            <li><a href="../INF/indexINF.html" class="aboutus">소개</a></li>
-            <li><a href="#">FAQ</a></li>
-        </ul>
-        <div class="menu_description">
-            <p class="menu_description_subject">페이지 정보</p>
-            <p class="menu_description_contents">제작자 및 관리자를 소개합니다.</p>
-        </div>
-    </div>
-    <!-- //Dropdown Menu -->
+    <div id="haru_header"></div>
+    <!-- //haru header -->
     <!-- Contents Here -->
     <div id="haru_LRN_header">
-        <h1>외우자</h1>
-        <p>하루, 단어는 외우자의 카테고리 안에서 여러분들에게<br> 스마트한 학습방법을 제공하고자 합니다.</p>
-    </div>
-    <div id="haru_contents_wrap">
-        <aside id="haru_aside">
-            <nav id="haru_snb">
-                <ul>
-                    <li><a href="#">외우자</a></li>
-                    <li><a href="#" class="snb_link">하루단어</a></li>
-                    <li><a href="#" class="snb_link">단어검정</a></li>
-                    <li><a href="#" class="snb_link">단어 List</a></li>
-                </ul>
-            </nav>
-        </aside>
+            <div id = "haru_LRN_header_subject" class="haru_pc">
+                <h1 class="haru_pc">외우자</h1>            
+                <p class="haru_pc">하루, 단어는 외우자의 카테고리 안에서 여러분들에게<br> 스마트한 학습방법을 제공하고자 합니다.</p>
+            </div>
+            <h1 class="haru_mobile">단어 List</h1>
+        </div>
+        <div id="haru_contents_wrap">
+            <aside id="haru_aside" class="haru_pc">
+                <!-- SNB -->
+                <nav id="haru_snb"></nav>
+                <!-- //SNB -->
+            </aside>
         <section id="haru_subcontents">
-            <header id="haru_subheader">
-                <div id="haru_subtitle">단어 List (일본어)</div>
+            <header id="haru_subheader" class="haru_pc">
+                <div id="haru_subtitle">단어 List</div>
                 <div id="haru_cat">
                     <p>HOME > 외우자 > 단어 List</p>
                 </div>
@@ -123,11 +51,11 @@
                     <div id="LRN_WDL_cat_test_JLPT"  class="WDL_cat_list">
                         <ul>
                             <li class="JLPT_title">JLPT</li>
-                            <li><input id="test_JLPT_n1" type="checkbox" name="cat_select" class="cat_chk">N1</li>
-                            <li><input id="test_JLPT_n2" type="checkbox" name="cat_select" class="cat_chk">N2</li>
-                            <li><input id="test_JLPT_n3" type="checkbox" name="cat_select" class="cat_chk">N3</li>
-                            <li><input id="test_JLPT_n4" type="checkbox" name="cat_select" class="cat_chk">N4</li>
-                            <li><input id="test_JLPT_n5" type="checkbox" name="cat_select" class="cat_chk">N5</li>
+                            <li><input id="check1" type="checkbox" name="cat_select" class="cat_chk">N1</li>
+                            <li><input id="check2" type="checkbox" name="cat_select" class="cat_chk">N2</li>
+                            <li><input id="check3" type="checkbox" name="cat_select" class="cat_chk">N3</li>
+                            <li><input id="check4" type="checkbox" name="cat_select" class="cat_chk">N4</li>
+                            <li><input id="check5" type="checkbox" name="cat_select" class="cat_chk">N5</li>
                         </ul>
                     </div>
                     <div id="LRN_WDL_cat_test_other" class="WDL_cat_list">
@@ -140,9 +68,12 @@
                     <div id="LRN_WDL_cat_form_title" class="WDL_cat_title">품사별</div>
                     <div id="LRN_WDL_cat_form_list"  class="WDL_cat_list">
                         <ul>
-                            <li><input id="form_adjective" type="checkbox" name="cat_select" class="cat_chk">형용사</li>
-                            <li><input id="form_noun" type="checkbox" name="cat_select" class="cat_chk">명사</li>
-                            <li><input id="form_verb" type="checkbox" name="cat_select" class="cat_chk">동사</li>
+                            <li><input id="keiyoushi" type="checkbox" name="cat_select" class="cat_chk">형용사</li>
+                            <li><input id="meishi" type="checkbox" name="cat_select" class="cat_chk">명사</li>
+                            <li><input id="doushi" type="checkbox" name="cat_select" class="cat_chk">동사</li>
+                            <li><input id="daimeishi" type="checkbox" name="cat_select" class="cat_chk">대명사</li>
+                            <li><input id="jyoshi" type="checkbox" name="cat_select" class="cat_chk">조사</li>
+                            <li><input id="all" type="checkbox" name="cat_select" class="cat_chk">전체선택</li>
                         </ul>
                     </div>                   
                 </div>
@@ -165,202 +96,18 @@
                     </table>
                 </div>
             </article>
-            <article id="LRN_WDL_list_ka_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_ka_title" class="WDL_col_title"><h5>か행</h5></div>
-                <div id="LRN_WDL_list_col_ka_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_a_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_ka" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_sa_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_sa_title" class="WDL_col_title"><h5>さ행</h5></div>
-                <div id="LRN_WDL_list_col_sa_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_sa_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_sa" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_ta_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_ta_title" class="WDL_col_title"><h5>た행</h5></div>
-                <div id="LRN_WDL_list_col_ta_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_ta_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_ta" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_na_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_na_title" class="WDL_col_title"><h5>な행</h5></div>
-                <div id="LRN_WDL_list_col_na_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_na_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_na" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_ha_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_ha_title" class="WDL_col_title"><h5>は행</h5></div>
-                <div id="LRN_WDL_list_col_ha_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_ha_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_ha" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_ma_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_ma_title" class="WDL_col_title"><h5>ま행</h5></div>
-                <div id="LRN_WDL_list_col_ma_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_ma_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_ma" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_ya_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_ya_title" class="WDL_col_title"><h5>や행</h5></div>
-                <div id="LRN_WDL_list_col_ya_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_ya_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_ya" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_ra_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_ra_title" class="WDL_col_title"><h5>ら행</h5></div>
-                <div id="LRN_WDL_list_col_ra_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_ra_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_ra" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
-            <article id="LRN_WDL_list_wa_wrap" class="WDL_list_wrap">
-                <div id="LRN_WDL_list_col_wa_title" class="WDL_col_title"><h5>わ행</h5></div>
-                <div id="LRN_WDL_list_col_wa_list_wrap" class="WDL_col_table_wrap">
-                    <table id="LRN_WDL_list_col_wa_list" class="WDL_col_table">
-                        <thead>
-                            <tr>
-                                <th class="WDL_table_form">품사</th>
-                                <th class="WDL_table_test">출제시험</th>
-                                <th class="WDL_table_kanji">한자</th>
-                                <th class="WDL_table_yomigana">요미가나</th>
-                                <th class="WDL_table_korean">뜻</th>
-                            </tr>
-                        </thead>
-                        <tbody id="LRN_WDL_table_list_wa" class="WDL_table_list">
-                        </tbody>
-                    </table>
-                    </table>
-                </div>
-            </article>
             <!-- //SubContents Here -->
         </section>
     </div>
     <!-- //Contents Here -->
     <!-- haru footer -->
-    <footer>
-        <div id="haru_footer_wrap">
-            <!-- FNB -->
-            <nav id="haru_fnb">
-                <ul>
-                    <li><a href="#">페이지소개</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#" class="laws">개인정보처리방침</a></li>
-                    <li><a href="./html/MEM/forgotID_PW.html">ID/PW 찾기</a></li>
-                    <li><a href="#">회원탈퇴</a></li>
-                </ul>
-            </nav>
-            <!-- //FNB -->
-            <div id="haru_contactus">
-                <p class="address">울산광역시 중구 종가로 345(교동) 한국산업인력공단 월드잡플러스 | 1577-9997 | FAX : 052-714-8635 | e-mail : job1@hrdkorea.or.kr</p>
-                <p class="copyright">Copyright 2014 WORLDJOBPLUS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="haru_footer"></div>
     <!-- //haru footer -->
+    <script>
+            $('#haru_header').load("../haru_header.html");
+            $('#haru_footer').load('../haru_footer.html');
+            $('#haru_snb').load('./LRN_SNB.html');
+    </script>
     
 </body>
 </html>

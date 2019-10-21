@@ -1,265 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <title>하루, 단어 > 외우자</title>
     <script src="../../js/jquery-2.1.1.min.js"></script>
     <script src="../../js/jquery-ui.min.js"></script>
     <script src="../../js/jquery.easing.1.3.js"></script>
-
+    <script src="../../js/gnb_dropdown.js"></script>
+    <script src="../../js/wordlist.js"></script>
     <script src="../../js/LRN/oboeru4.js"></script>
-
+    <link rel="stylesheet" href="../../css/pc960/cat_common.css">
+    <link rel="stylesheet" href="../../css/pc960/LRN/LRN_common.css">
+    <link rel="stylesheet" href="../../css/Mobile/LRN/LRN_mobile_common.css">
+    <link rel="stylesheet" href="../../css/Mobile/mobile_common.css">
     <link rel="stylesheet" href="../../css/pc960/LRN/oboeru4.css">
-
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Stylish:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poor+Story:400" rel="stylesheet">
 </head>
 <body>
-
-    <!-- 체크박스 시작부분 -->
-
-        <!-- 급수별 체크박스 -->
-        <label for="check1"><b><div class="th1"><input type="checkbox" name="checkbox" id="check1" checked>N1</div></b></label>
-        <label for="check2"><b><div class="th1"><input type="checkbox" name="checkbox" id="check2" checked>N2</div></b></label>
-        <label for="check3"><b><div class="th1"><input type="checkbox" name="checkbox" id="check3" checked>N3</div></b></label>
-        <label for="check4"><b><div class="th1"><input type="checkbox" name="checkbox" id="check4" checked>N4</div></b></label>
-        <label for="check5"><b><div class="th1"><input type="checkbox" name="checkbox" id="check5" checked>N5</div></b></label>
-
-    <!-- 품사별 체크박스 -->
-        <div class="th2" id="all"><b>전체</b></div>
-        <label for="meishi"><b><div class="th2"><input type="checkbox" name="checkbox" id="meishi" checked>명사</div></b></label>
-        <label for="daimeishi"><b><div class="th2"><input type="checkbox" name="checkbox" id="daimeishi" checked>대명사</div></b></label>
-        <label for="doushi"><b><div class="th2"> <input type="checkbox" name="checkbox" id="doushi" checked>동사</div></b></label>
-        <label for="jyoshi"><b><div class="th2"><input type="checkbox" name="checkbox" id="jyoshi" checked>조사</div></b></label>
-        <label for="keiyoushi"><b><div class="th2"><input type="checkbox" name="checkbox" id="keiyoushi" checked>형용사</div></b></label>
-
-    <!-- 체크박스 마지막 부분 -->
-
-        <!-- 품사 구분 -->
-        <div class="th3">품사</div>
-        <div class="th3">시험</div>
-        <div class="th3">한자</div>
-        <div class="th3">발음</div>
-        <div class="th3">의미</div>
-
-    <!-- 단어 분류 시작 부분 -->
-        <!-- 1급 단어 -->
-    <div class="n1 meishi">
-            <div class="td">명사</div>
-            <div class="td">JLPT N1</div >
-            <div class="td">愛想</div>
-            <div class="td">あいそう</div>
-            <div class="td">붙임성, 정나미, 애정</div>
+    <!-- haru header -->
+    <div id="haru_header"></div>
+    <!-- //haru header -->
+    <!-- Contents Here -->
+    <div id="haru_LRN_header">
+            <div id = "haru_LRN_header_subject" class="haru_pc">
+                <h1 class="haru_pc">외우자</h1>            
+                <p class="haru_pc">하루, 단어는 외우자의 카테고리 안에서 여러분들에게<br> 스마트한 학습방법을 제공하고자 합니다.</p>
+            </div>
+            <h1 class="haru_mobile">단어 List</h1>
+        </div>
+        <div id="haru_contents_wrap">
+            <aside id="haru_aside" class="haru_pc">
+                <!-- SNB -->
+                <nav id="haru_snb"></nav>
+                <!-- //SNB -->
+            </aside>
+        <section id="haru_subcontents">
+            <header id="haru_subheader" class="haru_pc">
+                <div id="haru_subtitle">단어 List</div>
+                <div id="haru_cat">
+                    <p>HOME > 외우자 > 단어 List</p>
+                </div>
+            </header>                    
+            <!-- SubContents Here -->
+            <article id="LRN_WDL_cat_wrap">
+                    <input id="all" type="checkbox" name="cat_select" class="cat_chk">
+                    <section>
+                        <label class="all_check_label" for="all">전체선택</label>
+                        <div class="wordselect">단어분류 선택</div>
+                    </section>
+                <div id="LRN_WDL_cat_test">
+                    <div id="LRN_WDL_cat_test_title" class="haru_mobile WDL_cat_title">시험별</div>
+                    <div id="LRN_WDL_cat_test_title" class="haru_pc WDL_cat_title">출제 시험별</div>
+                    <div id="LRN_WDL_cat_test_JLPT"  class="WDL_cat_list">
+                        <ul>
+                            <li class="JLPT_title">JLPT</li>
+                            <li><input id="check1" type="checkbox" name="cat_select" class="cat_chk" checked><label for="check1">N1</label></li>
+                            <li><input id="check2" type="checkbox" name="cat_select" class="cat_chk" checked><label for="check2">N2</label></li>
+                            <li><input id="check3" type="checkbox" name="cat_select" class="cat_chk" checked><label for="check3">N3</label></li>
+                            <li><input id="check4" type="checkbox" name="cat_select" class="cat_chk" checked><label for="check4">N4</label></li>
+                            <li><input id="check5" type="checkbox" name="cat_select" class="cat_chk" checked><label for="check5">N5</label></li>
+                        </ul>
+                    </div>
+                    <div id="LRN_WDL_cat_test_other" class="WDL_cat_list">
+                        <ul>
+                            <li><input id="test_JPT" type="checkbox" name="cat_select" class="cat_chk">JPT</li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div id="LRN_WDL_cat_form">
+                    <div id="LRN_WDL_cat_form_title" class="WDL_cat_title">품사별</div>
+                    <div id="LRN_WDL_cat_form_list"  class="WDL_cat_list">
+                        <ul>
+                            <li><input id="keiyoushi" type="checkbox" name="cat_select" class="cat_chk" checked><label for="keiyoushi">형용사</label></li>
+                            <li><input id="meishi" type="checkbox" name="cat_select" class="cat_chk" checked><label for="meishi">명사</label></li>
+                            <li><input id="doushi" type="checkbox" name="cat_select" class="cat_chk" checked><label for="doushi">동사</label></li>
+                            <li><input id="daimeishi" type="checkbox" name="cat_select" class="cat_chk" checked><label for="daimeishi">대명사</label></li>
+                            <li><input id="jyoshi" type="checkbox" name="cat_select" class="cat_chk" checked><label for="jyoshi">조사</label></li>
+                        </ul>
+                    </div>                   
+                </div>
+            </article>
+            <article id="LRN_WDL_list_a_wrap" class="WDL_list_wrap">
+                <!-- <div id="LRN_WDL_list_col_a_title" class="WDL_col_title"><h5>あ행</h5></div> -->
+                <div id="LRN_WDL_list_col_a_list_wrap" class="WDL_col_table_wrap">
+                    <table id="LRN_WDL_list_col_a_list" class="WDL_col_table">
+                        <thead>
+                            <tr>
+                                <th class="WDL_table_form">품사</th>
+                                <th class="WDL_table_test">출제시험</th>
+                                <th class="WDL_table_kanji">한자</th>
+                                <th class="WDL_table_yomigana">요미가나</th>
+                                <th class="WDL_table_korean">뜻</th>
+                            </tr>
+                        </thead>
+                        <tbody id="LRN_WDL_table_list_a" class="WDL_table_list">
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            <!-- //SubContents Here -->
+        </section>
     </div>
-    <div class="n1 daimeishi">
-            <div class="td">대명사</div>
-            <div class="td">JLPT N1</div>
-            <div class="td">己·俺</div>
-            <div class="td">おれ</div>
-            <div class="td">나, 내</div>
-    </div>
-    <div class="n1 doushi">
-            <div class="td">동사</div>
-            <div class="td">JLPT N1</div>
-            <div class="td">仰ぐ</div>
-            <div class="td">あおぐ</div>
-            <div class="td">우러러보다, 치켜들다, 위를 보다</div>
-    </div>
-    <div class="n1 jyoshi">
-            <div class="td">조사</div>
-            <div class="td">JLPT N1</div>
-            <div class="td">-</div>
-            <div class="td">きり</div>
-            <div class="td">만, 밖에</div>
-    </div>
-    <div class="n1 keiyoushi">
-            <div class="td">형용사</div>
-            <div class="td">JLPT N1</div>
-            <div class="td">悪どい</div>
-            <div class="td">あくどい</div>
-            <div class="td">칙칙하다, 야하다, 악랄하다, 악착같다</div>
-    </div>
-
-        <!-- 2급 단어 -->
-    <div class="n2 meishi">
-        <div class="td">명사</div>
-        <div class="td">JLPT N2</div>
-        <div class="td">愛情</div>
-        <div class="td">あいじょう</div>
-        <div class="td">애정, 사랑</div>
-    </div>
-    <div class="n2 daimeishi">
-        <div class="td">대명사</div>
-        <div class="td">JLPT N2</div>
-        <div class="td">彼方</div>
-        <div class="td">あっち</div>
-        <div class="td">저기, 저쪽, 저리</div>
-    </div>
-    <div class="n2 doushi">
-        <div class="td">동사</div>
-        <div class="td">JLPT N2</div>
-        <div class="td">合図</div>
-        <div class="td">あいず</div>
-        <div class="td">신호</div>
-    </div>
-    <div class="n2 jyoshi">
-        <div class="td">조사</div>
-        <div class="td">JLPT N2</div>
-        <div class="td">-</div>
-        <div class="td">しき</div>
-        <div class="td">기껏해야~정도, 겨우~만큼</div>
-    </div>
-    <div class="n2 keiyoushi">
-        <div class="td">형용사</div>
-        <div class="td">JLPT N2</div>
-        <div class="td">厚かましい</div>
-        <div class="td">あつかましい</div>
-        <div class="td">뻔뻔스럽다, 철면피하다</div>
-    </div>
-
-        <!-- 3급 단어 -->
-    <div class="n3 meishi">
-        <div class="td">명사</div>
-        <div class="td">JLPT N3</div>
-        <div class="td">愛</div>
-        <div class="td">あい</div>
-        <div class="td">사랑, 애정</div>
-    </div>
-    <div class="n3 daimeishi">
-        <div class="td">대명사</div>
-        <div class="td">JLPT N3</div>
-        <div class="td">彼方</div>
-        <div class="td">あっち</div>
-        <div class="td">저기, 저쪽, 저리</div>
-    </div>
-    <div class="n3 doushi">
-        <div class="td">동사</div>
-        <div class="td">JLPT N3</div>
-        <div class="td">愛する</div>
-        <div class="td">あいする</div>
-        <div class="td">사랑하다, 몹시 좋아하다, 즐기다</div>
-    </div>
-    <div class="n3 jyoshi">
-        <div class="td">조사</div>
-        <div class="td">JLPT N3</div>
-        <div class="td">-</div>
-        <div class="td">け</div>
-        <div class="td">~었지, ~었던가</div>
-    </div>
-    <div class="n3 keiyoushi">
-        <div class="td">형용사</div>
-        <div class="td">JLPT N3</div>
-        <div class="td">厚かましい</div>
-        <div class="td">あつかましい</div>
-        <div class="td">뻔뻔스럽다, 철면피하다</div>
-    </div>
-
-        <!-- 4급 단어 -->
-    <div class="n4 meishi">
-        <div class="td">명사</div>
-        <div class="td">JLPT N4</div>
-        <div class="td">挨拶</div>
-        <div class="td">あいさつ</div>
-        <div class="td">인사, 서로 만났을 때 주고받는 의례</div>
-    </div>
-    <div class="n4 daimeishi">
-        <div class="td">대명사</div>
-        <div class="td">JLPT N4</div>
-        <div class="td">彼</div>
-        <div class="td">あれ</div>
-        <div class="td">먼 것을 가리키는 말, 저것, 저기</div>
-    </div>
-    <div class="n4 doushi">
-        <div class="td">동사</div>
-        <div class="td">JLPT N4</div>
-        <div class="td">挨拶</div>
-        <div class="td">あいさつ</div>
-        <div class="td">인사, 서로 만났을 때 주고받는 의례</div>
-    </div>
-    <div class="n4 jyoshi">
-        <div class="td">조사</div>
-        <div class="td">JLPT N4</div>
-        <div class="td">-</div>
-        <div class="td">けれども</div>
-        <div class="td">~지만, 그러나, ~하나, ~텐데</div>
-    </div>
-    <div class="n4 keiyoushi">
-        <div class="td">형용사</div>
-        <div class="td">JLPT N4</div>
-        <div class="td">浅い</div>
-        <div class="td">あさい</div>
-        <div class="td">얕다, 깊지 않다, 덜하다</div>
-    </div>
-
-        <!-- 5급 단어 -->
-    <div class="n5 meishi">
-        <div class="td">명사</div>
-        <div class="td">JLPT N5</div>
-        <div class="td">秋</div>
-        <div class="td">あき</div>
-        <div class="td">가을</div>
-    </div>
-    <div class="n5 daimeishi">
-        <div class="td">대명사</div>
-        <div class="td">JLPT N5</div>
-        <div class="td">彼処·彼所</div>
-        <div class="td">あそこ</div>
-        <div class="td">저기, 거기, 저쪽</div>
-    </div>
-    <div class="n5 doushi">
-        <div class="td">동사</div>
-        <div class="td">JLPT N5</div>
-        <div class="td">会う</div>
-        <div class="td">あう</div>
-        <div class="td">만나다, 대면하다, 면회하다, 우연히</div>
-    </div>
-    <div class="n5 jyoshi">
-        <div class="td">조사</div>
-        <div class="td">JLPT N5</div>
-        <div class="td">位</div>
-        <div class="td">くらい</div>
-        <div class="td">지위, 계급, 품격, 품위, 정도, 만큼</div>
-    </div>
-    <div class="n5 keiyoushi">
-        <div class="td">형용사</div>
-        <div class="td">JLPT N5</div>
-        <div class="td">辛い</div>
-        <div class="td">からい</div>
-        <div class="td">맵다, 얼얼하다, 짜다, 가혹하다, 괴롭다</div>
-    </div>
+    <!-- //Contents Here -->
+    <!-- haru footer -->
+    <div id="haru_footer"></div>
+    <!-- //haru footer -->
+    <script>
+            $('#haru_header').load("../haru_header.html");
+            $('#haru_footer').load('../haru_footer.html');
+            $('#haru_snb').load('./LRN_SNB.html');
+    </script>
     
-    <!-- 단어분류 마지막 부분 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <!-- Special Thanks for -->
-    김 정 호
-
 </body>
 </html>
