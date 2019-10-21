@@ -15,6 +15,7 @@
         top: 0;
         /* background-color: #EBE4DD; */
         position: relative;
+        z-index: 100;
     }
 
     #haru_title {
@@ -49,9 +50,9 @@
         display: none;
         z-index: 99;
         position: fixed;
-        top: 60;
+        top: 0;
         width: 100%;
-        height: 90%;
+        height: 100%;
         background-image: url(../../img/sidemenu.png);
         background-size: 100%;
         overflow-y: scroll;
@@ -124,7 +125,33 @@
         margin-bottom: 30px;
     }
 
-    
+    #haru_header_upper_wrap_sdm {
+        width: 100%;
+        height: 60px;
+        top: 0;
+        position: relative;
+    }
+
+    #haru_title_sdm {
+        position: absolute;
+        line-height: 60px;
+        top: 50%;
+        margin-top:-30px;
+        left: 0;
+        margin-left:15px;
+        width: 140px; height: 60px;
+        display: block;
+        font-size: 30px;
+    }
+
+
+    #haru_mobile_sidemenu_toggle_sdm {
+        float: right;
+        margin-top: 7px;
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+    }
 
     /* FNB */
     footer {
@@ -176,6 +203,7 @@
         top: 0;
         /* background-color: #EBE4DD; */
         position: relative;
+        z-index: 100;
     }
 
     #haru_title {
@@ -210,9 +238,9 @@
         display: none;
         z-index: 99;
         position: fixed;
-        top: 80;
+        top: 0;
         width: 100%;
-        height: 90%;
+        height: 100%;
         background-image: url(../../img/sidemenu.png);
         background-size: 100%;
         overflow-y: scroll;
@@ -284,6 +312,37 @@
     }
     #haru_sidemenu li:last-child {
         margin-bottom: 30px;
+    }
+    #header_margin {
+        height: 80px;
+    }
+
+    #haru_header_upper_wrap_sdm {
+        width: 100%;
+        height: 80px;
+        top: 0;
+        position: relative;
+    }
+
+    #haru_title_sdm {
+        position: absolute;
+        line-height: 80px;
+        top: 50%;
+        margin-top:-40px;
+        left: 0;
+        margin-left:15px;
+        width: 180px; height: 80px;
+        display: block;
+        font-size: 40px;
+    }
+
+
+    #haru_mobile_sidemenu_toggle_sdm {
+        float: right;
+        margin-top: 14px;
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
     }
 
     /* FNB */
