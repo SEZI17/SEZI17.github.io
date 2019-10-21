@@ -74,17 +74,17 @@ function changeGraphSize(heightWidth)
 
         if("width" == heightWidth)
         {
-            $(".bar").eq(i).css("width", value + "px");
-            $(".bar").eq(i).css("height", mobileHeight + "px");
-            $(".bar").eq(i).css("margin-top", 0 + "px");
+            $(".graph_bar").eq(i).css("width", value + "px");
+            $(".graph_bar").eq(i).css("height", mobileHeight + "px");
+            $(".graph_bar").eq(i).css("margin-top", 0 + "px");
         }
         else
         {
             let margin = wid - 5 - value;
 
-            $(".bar").eq(i).css("width", pcWidth + "px");
-            $(".bar").eq(i).css("height", value + "px");
-            $(".bar").eq(i).css("margin-top", margin + "px");
+            $(".graph_bar").eq(i).css("width", pcWidth + "px");
+            $(".graph_bar").eq(i).css("height", value + "px");
+            $(".graph_bar").eq(i).css("margin-top", margin + "px");
         }
     }
 }
