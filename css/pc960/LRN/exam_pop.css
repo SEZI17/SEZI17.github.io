@@ -46,7 +46,7 @@
     width: 40px; height: 40px;
     position: absolute;
 
-    top: 310px;
+    top: 150px;
     left: 517px;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .speaker_a:hover{
-    top: 315px;
+    top: 155px;
     left: 518px;
 }
 
@@ -279,8 +279,8 @@
    
 
     .speaker_a, .speaker_a:hover{
-        top: 250px;
-        left: 280px;
+        top: 130px;
+        left: 285px;
     }
 
     .speaker{
