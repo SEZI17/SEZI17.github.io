@@ -1,4 +1,11 @@
+/*width 768부터의 크기*/
 @media screen and (min-width: 768px) {
+/*
+-webkit- 구글, 사파리 호환
+-moz- 파이어폭스 호환
+-ms- 익스플로어 호환
+-o- 오페라 호환 
+*/
 .wrap {
     width : 660px;
     margin: 0 auto;
