@@ -7,6 +7,11 @@
   padding-left: 70px;
 }
 
+#haru_subcontents
+{
+  margin-left: 30px;
+}
+
 .exam_detail
 {
   margin-bottom: 20px;
@@ -37,7 +42,7 @@
   border-right: none;
 }
 
-#graph > .bar
+#graph > .graph_bar
 {
   background-color: RGB(175, 134, 114);
   margin: 5px;
@@ -84,7 +89,7 @@
     border-left: none;
   }
   
-  #graph > .bar{
+  #graph > .graph_bar{
     margin: 5px;
     float: left;
   }

@@ -4,11 +4,11 @@ let yomiganaCollection = ["たべる", "のむ", "あそぶ", "のる", "いく"
 let membername = ["장세진","최원준","윤의태","변성호","정현우","천세문"]
 // 단어LIST 용
 // あ행
-let test_a = ["JLPT N1", "JLPT N2", "JLPT N3", "JLPT N4", "JLPT N5"]
-let form_a = ["동사", "동사", "형용사", "동사", "명사"]
-let kanji_a = ["食べる", "飲む", "遊ぶ", "乗る", "行く"]
-let yomigana_a = ["たべる", "のむ", "あそぶ", "のる", "いく"]
-let korean_a = ["먹다", "마시다", "놀다", "타다", "가다"]
+let test_a = ["JLPT N1", "JLPT N2", "JLPT N3", "JLPT N4", "JLPT N5","JLPT N1", "JLPT N2", "JLPT N3", "JLPT N4", "JLPT N5"]
+let form_a = ["동사", "조사", "형용사", "명사", "대명사","동사", "동사", "형용사", "동사", "명사"]
+let kanji_a = ["食べる", "飲む", "遊ぶ", "乗る", "行く","する", "会う", "話す", "買う", "売る"]
+let yomigana_a = ["たべる", "のむ", "あそぶ", "のる", "いく","する", "あう", "はなす", "かう", "うる"]
+let korean_a = ["먹다", "마시다", "놀다", "타다", "가다","하다", "만나다", "이야기하다", "사다", "팔다"]
 // か행
 let test_ka = ["JLPT N1", "JLPT N2", "JLPT N3", "JLPT N4", "JLPT N5"]
 let form_ka = ["동사", "동사", "형용사", "동사", "명사"]

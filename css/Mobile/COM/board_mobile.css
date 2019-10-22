@@ -5,13 +5,28 @@
         padding:0;
         
     }
+    .search {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
     .category{
-        width:414px;
+        float: left;
+        width: 280px;
         height: 30px;
-        margin-bottom:10px;
+        /* margin-bottom:10px; */
+        margin-left: auto;
+        margin-right: auto;
     }
     .category>.cate{
         padding-top:5px;
+    }
+
+    .search>.category>.cate {
+        line-height: unset;
+    }
+    .catselect {
+        line-height: unset;
     }
 
     .board_section{

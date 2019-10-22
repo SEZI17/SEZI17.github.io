@@ -18,11 +18,15 @@
     <link rel="stylesheet" href="../../css/Mobile/MYP/MYP_mobile_common.css">
     <link rel="stylesheet" href="../../css/Mobile/mobile_common.css">
     <style>
+        .MEM_inputBox{
+            width: 68%
+        }
         #editInfo>div {
             padding: 5%;
             border-top: 1px solid gray;
             border-bottom: 1px solid gray;
             margin-bottom: 20px;
+            width: 70%;
         }
     
         #editInfo>div>div>span {
@@ -30,16 +34,28 @@
             width: 85px; 
         }
         @media only screen and (max-width:767px){
+            #editInfo>div{
+                width:87%;
+            }
             #editInfo{
                 padding-left: 3%;
             }
             #editInfo>div>div>span {
                 display: block;
             }
+            .MEM_inputBox{
+                width: 80%;
+                margin-right: 1%;
+            }
         }
     </style>
     <script>
         $("document").ready(function () {
+
+                $("#nameInput").attr("value", "관리자");
+
+                $("#idInput").attr("value", "admin");
+
                 $("#nicknameInput").attr("value", "admin123");
                 $("#nicknameInput").attr('readOnly','readOnly');
 
@@ -64,7 +80,7 @@
     <!-- //haru header -->
     <!-- Contents Here -->
     <div id="haru_MYP_header">
-        <div id = "haru_LRN_header_subject">
+        <div id = "haru_MYP_header_subject" class="haru_pc">
         <h1 class="haru_pc">My 페이지</h1>       
         <p class="haru_pc">학습하면서 틀린 단어, 어려웠던 단어 등을 조회하고,<br>회원정보를 변경하실 수 있습니다.</p>
         </div>
@@ -88,14 +104,14 @@
                 <div>
                     <div id="name">
                         <span>이름</span>
-                        <input type="text" placeholder="관리자" class="MEM_inputBox" onkeydown="clearError(this.id)"
+                        <input type="text" placeholder="이름" class="MEM_inputBox" onkeydown="clearError(this.id)"
                             id="nameInput" disabled>
                         <!-- <button class="MEM_btn">수정</button> -->
                         <p id="nameInputError"></p>
                     </div>
                     <div id="id">
                         <span>아이디</span>
-                        <input type="text" placeholder="admin" class="MEM_inputBox" onkeydown="clearError(this.id)"
+                        <input type="text" placeholder="아이디" class="MEM_inputBox" onkeydown="clearError(this.id)"
                             id="idInput" disabled>
                         <!-- <button class="MEM_btn">수정</button> -->
                         <p id="idInputError"></p>
@@ -122,6 +138,7 @@
                 <!-- bottom button -->
                 <button class="MEM_cancelBtn" onclick="">취소</button>
                 <button class="MEM_confirmBtn" onclick="editInfoConfirm()">수정</button>
+                <br><br>
             </div>
             <!-- //SubContents Here -->
         </section>
