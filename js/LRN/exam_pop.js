@@ -11,10 +11,18 @@ var sec = 0;
 var timerID;                //일반검정일 경우 타이머의 ID
 var lanMode = 0;            //0이면 문제가 일본어 1이면 한국어
 
-var strClass = "<div id='checkDisplay'>v</div>"
+var strClass = "<div class='checkDisplay'>v</div>"
 
 //Swiper관련 변수
-var minRange = 60;
+var animateSpeed = 400;
+var bodyBorderWidth = 740;
+var bodyBorderHeight = 690;
+var bodyBorderGap = 10;
+var minRange = 150;
+
+// 0: pc, 1: Moblie
+var version = 0;
+
 
 $(function(){
 
@@ -22,6 +30,9 @@ $(function(){
 
     //언어 설정
     setLanMode();
+
+    //모바일인지 PC인지 체크
+    moblieVerCheck();
 
     //문제 만들기
     makeQuestion();
@@ -37,8 +48,8 @@ $(function(){
         $(".timer").css("visibility", "visible");
 
         //왼쪽 오른쪽 화살표 보이도록 변경
-        $("#leftBtn ").css("display","block");
-        $("#rightBtn").css("display","block");
+        $(".leftBtn ").css("display","block");
+        $(".rightBtn").css("display","block");
 
         //왼쪽 오른쪽 화살표 클릭시
         btnClick();
@@ -46,9 +57,6 @@ $(function(){
         //체점 하기 버튼 표시
         $(".finishExam").css("display", "block");
     }
-
-    //셋팅된 문제 보이게
-    showQuestion();
 
     //보기중 하나를 선택했을 경우
     selectExample();
@@ -64,15 +72,185 @@ $(function(){
 
     //TTS(음성출력) 이벤트
     clickSpeaker()
+
+    mobileVer();
 });
+
+function moblieVerCheck()
+{
+    let width = $(window).width();
+    let height = $(window).height();
+    if(0 <= width && width <= 414)
+        version = 1;
+}
+
+function mobileVer()
+{
+    let width = $(window).width();
+    let height = $(window).height();
+    let widthPersent = width * 0.01;
+    let heightPersent = height * 0.01;
+
+    //모바일이면
+    if(1 == version)
+    {
+        bodyBorderWidth = width;
+        bodyBorderGap = 0;
+
+        $("#cover").css({"width": width + "px", "height": height + "px"});
+        $("#cover > .wrap").css({"width": (width * questionCount) + "px", "height": height + "px"});
+        $("#cover > .wrap > .bodyborder").css({"width": (width - 26) + "px", "height": (heightPersent * 85) + "px"});
+
+        $(".questionBox").css({"width": (widthPersent * 75) + "px", "height": (heightPersent * 20) + "px"});
+        $(".speaker").css({"top": (heightPersent * 1) + "px", "left": (widthPersent * 68) + "px"});
+
+        $(".example").css({"width": (widthPersent * 96) + "px", "height": (heightPersent * 45) + "px"});
+        $(".exampleBox").css({"width": (widthPersent * 35) + "px", "height": (heightPersent * 12) + "px"});
+    }
+}
+
+function setHtmlCode()
+{
+    $(".wrap").html("");
+    $("#cover").css({"width": bodyBorderWidth + "px", "height": bodyBorderHeight + "px"});
+    $("#cover > .wrap").css({"width": (bodyBorderWidth * questionCount) + "px", "height": bodyBorderHeight + "px"});
+    $("#cover > .wrap > .bodyborder").css({"width": bodyBorderWidth + "px", "height": bodyBorderHeight + "px"});
+
+    let nowCount = 0;
+    $.each(questionList, function(index, value)
+    {
+        let percentage = value.percentage;
+        let furagana = value.example2[lanMode];
+        let hilagana = value.example[lanMode];
+        let select1 = value.select1[lanMode];
+        let select2 = value.select2[lanMode];
+        let select3 = value.select3[lanMode];
+        let select4 = value.select4[lanMode];
+
+        let str = '\
+        <div class="bodyborder left"> \
+            <div class="finishExam">채점 하기</div> \
+            <div class="text2 correctPercent ' + PersentColor(percentage) + '">(정답률 : ' + percentage + '%)</div> \
+            <div class="text3 timer">경과 시간 : <span class="min">00</span> : <span class="sec">00</span></div> \
+            <div class="largeText1 questionNumber"> <span class="nowQuestion">' + ++nowCount + '</span> / <span class="allQuestion">' + questionCount + '</span></div> \
+            <div class="questionBox"> \
+                <div class="Furagana ' + getFuraganaFontSize(hilagana) + '">' + getFuragana(furagana, hilagana) + '</div> \
+                <div class="hilagana ' + getHilaganaFontSize(hilagana) + '">' + hilagana + '</div> \
+                \
+                    <img src="../../img/speaker.png" alt="음성출력" class="speaker" title="음성출력"> \
+                \
+            </div> \
+            <div class="moveBtn">\
+                ' + showLeftBtn(nowCount - 1) + '\
+                ' + showRightBtn(nowCount - 1) + '\
+            </div>\
+            <div class="example"> \
+                <div class="exampleBox ' + getExamFontSize(select1) + '">' + select1 + '</div> \
+                <div class="exampleBox ' + getExamFontSize(select2) + '">' + select2 + '</div> \
+                <div class="exampleBox ' + getExamFontSize(select3) + '">' + select3 + '</div> \
+                <div class="exampleBox ' + getExamFontSize(select4) + '">' + select4 + '</div> \
+            </div> \
+        </div>';
+
+        $(".wrap").append(str);
+    });
+}
+
+function showLeftBtn(index)
+{
+    //Moblie이면 화살표 표시안함
+    if(1 == version)
+        return "";
+
+    if(0 != index)
+        return '<div class="leftBtn">◀</div>';
+    else
+        return "";
+}
+
+function showRightBtn(index)
+{
+    //Moblie이면 화살표 표시안함
+    if(1 == version)
+        return "";
+
+    if(index < questionCount)
+        return '<div class="rightBtn">▶</div>';
+    else
+        return "";
+}
+
+function PersentColor(persent)
+{
+    if(50 <= persent)
+        return "greenText";
+    else
+        return "redText";
+}
+
+function getFuraganaFontSize(hilagana)
+{
+    let hilaganaLen = hilagana.length;
+
+    if(10 < hilaganaLen)
+        return "largeText-2";
+    else if(7 < hilaganaLen)
+        return "largeText-1";
+    else if(5 < hilaganaLen)
+        return "largeText";
+    else if(4 < hilaganaLen)
+        return "largeText1";
+    else
+        return "largeText1";
+}
+
+function getFuragana(Furagana, hilagana)
+{
+    if(Furagana == hilagana)    
+        return "";
+    else
+        return Furagana;
+}
+
+function getHilaganaFontSize(hilagana)
+{
+    let hilaganaLen = hilagana.length;
+
+    if(10 < hilaganaLen)
+        return "largeText";
+    else if(7 < hilaganaLen)
+        return "largeText1";
+    else if(5 < hilaganaLen)
+        return "largeText2";
+    else if(4 < hilaganaLen)
+        return "largeText3";
+    else
+        return "largeText4";
+}
+
+function getExamFontSize(exampleNum)
+{
+    exampleLen = exampleNum.length;
+
+    if(8 < exampleLen)
+        return "largeText-3";
+    else if(5 < exampleLen)
+        return "largeText";
+    else
+        return "largeText1";
+}
 
 function clickSpeaker()
 {
     $(".speaker").on("click", function()
     {
-        let text = $("#Furagana").text();
+        //작업 중 클릭시 리턴
+        if("block" == $(".ox").css("display"))
+            return;
+
+        let text = $(this).siblings(".Furagana").text();
         if("" == text)
-            text = $("#hilagana").text();
+            text = $(this).siblings(".hilagana").text();
 
         startTTS(text);
     });
@@ -108,6 +286,11 @@ function touchEvent()
     $(document.body).bind("touchmove", function(event) 
     {
         endCoords = event.originalEvent.targetTouches[0];
+       
+        let X = startCoords.pageX - endCoords.pageX;
+        let Marginleft = (nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap) + X;
+        if(0 < Marginleft)
+            $("#cover > .wrap").css("margin-left", -Marginleft);
     });
 
     $(document.body).bind("touchend", function(event) 
@@ -117,6 +300,11 @@ function touchEvent()
             rightMove();
         else if(X < -minRange)
             leftMove();
+        else
+        {
+            let Marginleft = nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap;
+            $("#cover > .wrap").stop().animate({marginLeft : -Marginleft}, animateSpeed - 100);
+        }
     });
 }
 
@@ -183,46 +371,49 @@ function clickFinishBtn()
     });
 }
 
-
 function btnClick()
 {
-    $("#leftBtn").on("click", function(){
+    $(".leftBtn").on("click", function(){
         leftMove();
     });
 
-    $("#rightBtn").click(function(){
+    $(".rightBtn").click(function(){
         rightMove();
     });
 }
 
 function leftMove()
 {
-    //연습검정일 경우
-    if(1 == examMode || 3 == examMode)
-        return;
-
     if(0 < nowQuestion)
     {
         nowQuestion--;
-        showQuestion();
+
+        let leftMargin = nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap;
+        $("#cover > .wrap").stop().animate({marginLeft : -leftMargin}, animateSpeed);
     }
 }
 
 function rightMove()
 {
-    //연습검정일 경우
-    if(1 == examMode || 3 == examMode)
-        return;
-
     if(nowQuestion + 1 != questionCount && nowQuestion < questionCount)
     {
         nowQuestion++;
-        showQuestion();
+
+        let leftMargin = nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap;
+        $("#cover > .wrap").stop().animate({marginLeft : -leftMargin}, animateSpeed);
     }
 }
 
 function keyEvent(){
     $(document).keydown(function(event) {
+
+        //연습모드일때 방향키 누르면 무시
+        if(1 == examMode || 3 == examMode)
+        {
+            if(event.keyCode == '37' || event.keyCode == '39')
+                return;
+        }
+
         if (event.keyCode == '37')  // 방향키 왼쪽
             leftMove();
         else if (event.keyCode == '39') // 방향키 오른쪽
@@ -266,8 +457,8 @@ function startTimer()
         if(sec < 10)
             tempSec = "0" + tempSec;
 
-        $("#min").text(tempMin);    
-        $("#sec").text(tempSec);
+        $(".min").text(tempMin);    
+        $(".sec").text(tempSec);
         
     }, 1000)
 }
@@ -275,17 +466,15 @@ function startTimer()
 function clickNum(index)
 {
     //작업 중 클릭시 리턴
-    if("block" == $("#ox").css("display"))
+    if("block" == $(".ox").css("display"))
         return;
 
-    //클릭 시 이미 체크되어 있는거 없애버림
-    $("#checkDisplay").remove();
+    $(".wrap > .bodyborder").eq(nowQuestion).children(".example").children(".exampleBox").children().remove(".checkDisplay");
+    $(".wrap > .bodyborder").eq(nowQuestion).children(".example").children(".exampleBox").eq(index).append(strClass);
 
     let answer = questionList[nowQuestion].answer;
     let num = index;
     questionList[nowQuestion].click = num;
-
-    $(".exampleBox").eq(index).append(strClass);
 
     //정답여부 저장
     if(answer != num)
@@ -294,22 +483,21 @@ function clickNum(index)
     //연습 검정일 경우
     if(1 == examMode || 3 == examMode)
     {
-        $("#ox").css("display","block");
+        $(".ox").css("display","block");
         if(answer == num)
         {
-            $("#ox").removeClass("redText");
-            $("#ox").addClass("greenText");
-            $("#ox").html("O");
-            $("#ox").fadeOut(timeDelay);
+            $(".ox").removeClass("redText");
+            $(".ox").addClass("greenText");
+            $(".ox").html("O");
+            $(".ox").fadeOut(timeDelay);
         }
         else
         {
-            $(".example > .exampleBox").eq(answer).addClass("redBorder");
-
-            $("#ox").removeClass("greenText");
-            $("#ox").addClass("redText");
-            $("#ox").html("X");
-            $("#ox").fadeOut(timeDelay);
+            $(".wrap > .bodyborder").eq(nowQuestion).children(".example").children(".exampleBox").eq(answer).addClass("redBorder");
+            $(".ox").removeClass("greenText");
+            $(".ox").addClass("redText");
+            $(".ox").html("X");
+            $(".ox").fadeOut(timeDelay);
         }
 
         setTimeout(function()
@@ -320,8 +508,7 @@ function clickNum(index)
                 return;
             }
             
-            nowQuestion++;
-            showQuestion();
+            rightMove();
 
         }, timeDelay);
     }
@@ -333,48 +520,6 @@ function selectExample()
     {
         clickNum($(this).index());
     });
-}
-
-function showQuestion()
-{
-    //일반검정일 경우 
-    if(2 == examMode || 4 == examMode)
-    {
-        //첫 문제일시 이전 화살표 제거
-        if(0 == nowQuestion)
-            $("#leftBtn").css("display", "none");
-        else
-            $("#leftBtn").css("display", "block");
-
-        //마지막 문제일시 다음 화살표 제거
-        if(nowQuestion + 1 == questionCount)
-            $("#rightBtn").css("display", "none");
-        else
-            $("#rightBtn").css("display", "block");
-    }
-
-    $("#persentText").html(questionList[nowQuestion].percentage);
-    $("#allQuestion").html(questionCount);
-    $("#nowQuestion").html(nowQuestion + 1);
-
-    $("#hilagana").html(questionList[nowQuestion].example[lanMode]);
-    $("#Furagana").html(questionList[nowQuestion].example2[lanMode]);
-
-    if(questionList[nowQuestion].example[lanMode] == questionList[nowQuestion].example2[lanMode])
-        $("#Furagana").css("visibility", "hidden");
-    else
-        $("#Furagana").css("visibility", "visible");
-
-    $(".example > .exampleBox").eq(0).html(questionList[nowQuestion].select1[lanMode]);
-    $(".example > .exampleBox").eq(1).html(questionList[nowQuestion].select2[lanMode]);
-    $(".example > .exampleBox").eq(2).html(questionList[nowQuestion].select3[lanMode]);
-    $(".example > .exampleBox").eq(3).html(questionList[nowQuestion].select4[lanMode]);
-
-    if(-1 != questionList[nowQuestion].click)
-        $(".example > .exampleBox").eq(questionList[nowQuestion].click).append(strClass);
-
-    changePersentColor();
-    changeFontSize();
 }
 
 function overlapCheck(tempList, RandVal)
@@ -477,6 +622,8 @@ function makeQuestion()
         question.percentage = Math.floor(Math.random() * 101);
         questionList.push(question);
     }
+
+    setHtmlCode();
 }
 
 function getMode(){
@@ -518,75 +665,3 @@ function getQuerystring(paramName){
             return _keyValuePair[1];
     }
 }
-
-function changePersentColor(){
-
-    $(".correctPercent").removeClass("greenText");
-    $(".correctPercent").removeClass("redText");
-    $(".exampleBox").removeClass("redBorder");
-
-    let persent = $("#persentText").text();
-    if(50 <= persent)
-        $(".correctPercent").addClass("greenText");
-    else
-        $(".correctPercent").addClass("redText");
-}
-
-function changeFontSize(){
-    let hilaganaLen = $(".questionBox #hilagana").text().length;
-    
-    $("#Furagana").removeClass("largeText-2");
-    $("#Furagana").removeClass("largeText-1");
-    $("#Furagana").removeClass("largeText0");
-    $("#Furagana").removeClass("largeText1");
-
-    $("#hilagana").removeClass("largeText");
-    $("#hilagana").removeClass("largeText1");
-    $("#hilagana").removeClass("largeText2");
-    $("#hilagana").removeClass("largeText3");
-    $("#hilagana").removeClass("largeText4");
-
-    if(10 < hilaganaLen)
-    {
-        $("#Furagana").addClass("largeText-2");
-        $("#hilagana").addClass("largeText");
-    }
-    else if(7 < hilaganaLen)
-    {
-        $("#Furagana").addClass("largeText-1");
-        $("#hilagana").addClass("largeText1");
-    }
-    else if(5 < hilaganaLen)
-    {
-        $("#Furagana").addClass("largeText");
-        $("#hilagana").addClass("largeText2");
-    }
-    else if(4 < hilaganaLen)
-    {
-        $("#Furagana").addClass("largeText1");
-        $("#hilagana").addClass("largeText3");
-    }
-    else
-    {
-        $("#Furagana").addClass("largeText1");
-        $("#hilagana").addClass("largeText4");
-    }
-
-    $(".example > .exampleBox").each(function(){
-        let exampleLen = $(this).text().length;
-
-        $(this).removeClass("largeText-3");
-        $(this).removeClass("largeText-2");
-        $(this).removeClass("largeText-1");
-        $(this).removeClass("largeText");
-        $(this).removeClass("largeText1");
-
-        if(8 < exampleLen)
-            $(this).addClass("largeText-3");
-        else if(5 < exampleLen)
-            $(this).addClass("largeText");
-        else
-            $(this).addClass("largeText1");
-    });
-}
-

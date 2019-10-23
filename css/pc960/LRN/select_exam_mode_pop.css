@@ -1,7 +1,7 @@
 .bodyborder{
     border: 3px solid skyblue;
     margin: 15px;
-    width: 700px; height: 670px;
+    width: 780px; height: 755px;
 }
 
 #languageMode{
@@ -46,7 +46,7 @@
 .selectButton > .selectMode:nth-child(1){
     background-color: rgb(94, 94, 94);   
 
-    margin-left: 50px;
+    margin-left: 90px;
 }
 
 .selectButton > .selectMode:nth-child(2){

@@ -85,10 +85,7 @@ function getContent()
                 <div class="exampleBox ' + getExamFontSize(select3) + " " + getAnswerWhether(2, answer) + '">' + select3 + getCheckWhether(2, click) + '</div> \
                 <div class="exampleBox ' + getExamFontSize(select4) + " " + getAnswerWhether(3, answer) + '">' + select4 + getCheckWhether(3, click) + '</div> \
             </div> \
-        </div> \
-    </div> \
-    \
-    ';
+        </div>';
 
         $("#section").append(str);
     });

@@ -1,11 +1,21 @@
+*{margin: 0;}
+
+#cover{
+    overflow: hidden;
+}
+
 .wrap{
     position: relative;
+}
+
+.left{
+    float: left;
 }
 
 .bodyborder{
     border: 3px solid skyblue;
     margin: 15px;
-    width: 700px; height: 670px;
+    width: 714px; height: 670px;
 }
 
 .redBorder{
@@ -17,14 +27,15 @@
     margin: 15px auto;
     padding: 10px;
 
-    width: 370px;; height: 200px;
+    width: 370px; height: 200px;
 
     border-radius: 8%;
     box-shadow: 3px 3px 3px black;
+
+    position: relative;
 }
 
-
-.questionBox #Furagana{
+.questionBox .Furagana{
     height: 20%;
 
     line-height: 20%;
@@ -33,7 +44,7 @@
     margin-top: 50px;
 }
 
-.questionBox #hilagana{
+.questionBox .hilagana{
     height: 80%;
 
     line-height: 20%;
@@ -42,25 +53,17 @@
     margin: 10px;
 }
 
-.speaker_a{
+
+.speaker{
     width: 40px; height: 40px;
     position: absolute;
 
-    top: 150px;
-    left: 517px;
-}
-
-.speaker{
-    width: 100%; height: 100%;
-}
-
-.speaker_a:hover{
-    top: 155px;
-    left: 518px;
+    top: 10px;
+    left: 345px;
 }
 
 .speaker:hover{
-    width: 90%; height:90%;
+    width: 35px; height: 35px;
 }
 
 .example{
@@ -151,11 +154,11 @@
     visibility: hidden;
 }
 
-#questionNumber{
+.questionNumber{
     text-align: center;
 }
 
-#ox{
+.ox{
     display: none;
     position: absolute;
 
@@ -168,7 +171,7 @@
     z-index: 999;
 }
 
-#checkDisplay{
+.checkDisplay{
     position: absolute;
     left: -10px; top: -70px;
 
@@ -181,7 +184,7 @@
     position: relative;
 }
 
-#leftBtn, #rightBtn{
+.leftBtn, .rightBtn{
     font-size: 70px;
     color: rgb(94,94,94);
 
@@ -190,15 +193,15 @@
     cursor: pointer;
 }
 
-#leftBtn:hover, #rightBtn:hover{
+.leftBtn:hover, .rightBtn:hover{
     color: rgb(190,190,190);
 }
 
-#leftBtn{
+.leftBtn{
     position: absolute;
 }
 
-#rightBtn{
+.rightBtn{
     position: absolute;
     right: 0px;
 }
@@ -218,91 +221,21 @@
 /* 모바일~~~~~~~~~ */
 @media screen and (max-width: 414px){
 
-    #ox{
-        width: 100%; height: 100%;
-        font-size: 480px;
-    }
-
     body{
         background-color: rgb(230, 230, 230);
     }
 
     .bodyborder{
+        margin: 10px;
+        margin-top: 15px;
+        margin-bottom: 100px;
+
         background-color: white;
-
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: -1px;
-        width: 99%; height: 60%;
-    }
-
-    .finishExam{
-        width: 22%; height: 60px;
-        line-height: 60px;
-    
-        font-size: 16px;
-    }
-
-    #leftBtn, #rightBtn{
-        font-size: 60px;
-    }
-
-    #leftBtn{
-        margin-left: -10px;
-    }
-    
-    #rightBtn{
-        margin-right: -10px;
-    }
-
-    #questionNumber{
-        font-size: 36px;
-
-        margin-top: 0;
-    }
-
-    .correctPercent{
-        font-size: 26px;
-    }
-
-    .timer{
-        font-size: 18px;
-    }
-
-    .questionBox{
-        width: 80%;
-        height: 160px;
-        line-height: 160px;
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
-   
-
-    .speaker_a, .speaker_a:hover{
-        top: 130px;
-        left: 285px;
-    }
-
-    .speaker{
-        margin-bottom: 50px;
-    }
-
-    .speaker:hover{
-        width: 100%; height: 100%;
-    }
-    
-    .example{
-        width: 100%;
-        height: 250px;
-        margin-left: 1%;
-        margin-top: 6px;
     }
 
     .exampleBox{
-        width: 37%;
-        height: 28%;
-        line-height: 280%;
-        margin: 4px;
+        margin: 6px;
+        line-height: 90px;
     }
 
     .example > .exampleBox:nth-child(2n + 1){
@@ -315,8 +248,21 @@
         margin-right: 2%;
     }
 
-    #checkDisplay{
-        top: -50px;
+    .persentText{
+        font-size: 24px;
+    }
+
+    .questionNumber{
+        margin-top: 5%;
+    }
+
+    .questionBox > .Furagana{
+        margin-top: 35px;
+    }
+    
+    .ox{
+        width: 100%; height: 100%;
+        font-size: 460px;
     }
 
     .largeText-3{font-size: 15px; font-weight: bold;}
