@@ -88,6 +88,8 @@ function mobileVer()
 {
     let width = $(window).width();
     let height = $(window).height();
+
+    height -= 15;
     let widthPersent = width * 0.01;
     let heightPersent = height * 0.01;
 
@@ -99,7 +101,7 @@ function mobileVer()
 
         $("#cover").css({"width": width + "px", "height": height + "px"});
         $("#cover > .wrap").css({"width": (width * questionCount) + "px", "height": height + "px"});
-        $("#cover > .wrap > .bodyborder").css({"width": (width - 26) + "px", "height": (heightPersent * 97) + "px"});
+        $("#cover > .wrap > .bodyborder").css({"width": (width - 26) + "px", "height": (heightPersent * 96) + "px"});
 
         $(".questionBox").css({"width": (widthPersent * 75) + "px", "height": (heightPersent * 25) + "px"});
         $(".speaker").css({"top": (heightPersent * 1) + "px", "left": (widthPersent * 68) + "px"});
@@ -288,8 +290,9 @@ function touchEvent()
         endCoords = event.originalEvent.targetTouches[0];
        
         let X = startCoords.pageX - endCoords.pageX;
-        let Marginleft = (nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap) + X;
-        if(0 < Marginleft)
+        let Marginleft = (bodyBorderWidth + bodyBorderGap) * nowQuestion + X;
+
+        if(0 < Marginleft && Marginleft < ((bodyBorderWidth + bodyBorderGap) * (questionCount - 1)))
             $("#cover > .wrap").css("margin-left", -Marginleft);
     });
 
@@ -302,7 +305,7 @@ function touchEvent()
             leftMove();
         else
         {
-            let Marginleft = nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap;
+            let Marginleft = (bodyBorderWidth + bodyBorderGap) * nowQuestion;
             $("#cover > .wrap").stop().animate({marginLeft : -Marginleft}, animateSpeed - 100);
         }
     });
@@ -388,7 +391,7 @@ function leftMove()
     {
         nowQuestion--;
 
-        let leftMargin = nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap;
+        let leftMargin = (bodyBorderWidth + bodyBorderGap) * nowQuestion;
         $("#cover > .wrap").stop().animate({marginLeft : -leftMargin}, animateSpeed);
     }
 }
@@ -399,7 +402,7 @@ function rightMove()
     {
         nowQuestion++;
 
-        let leftMargin = nowQuestion * bodyBorderWidth + nowQuestion * bodyBorderGap;
+        let leftMargin = (bodyBorderWidth + bodyBorderGap) * nowQuestion;
         $("#cover > .wrap").stop().animate({marginLeft : -leftMargin}, animateSpeed);
     }
 }
