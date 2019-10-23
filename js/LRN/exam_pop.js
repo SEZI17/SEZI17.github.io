@@ -101,7 +101,7 @@ function mobileVer()
 
         $("#cover").css({"width": width + "px", "height": height + "px"});
         $("#cover > .wrap").css({"width": (width * questionCount) + "px", "height": height + "px"});
-        $("#cover > .wrap > .bodyborder").css({"width": (width - 26) + "px", "height": (heightPersent * 96) + "px"});
+        $("#cover > .wrap > .bodyborder").css({"width": (width - 26) + "px", "height": (heightPersent * 95) + "px"});
 
         $(".questionBox").css({"width": (widthPersent * 75) + "px", "height": (heightPersent * 25) + "px"});
         $(".speaker").css({"top": (heightPersent * 1) + "px", "left": (widthPersent * 68) + "px"});

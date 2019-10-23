@@ -264,6 +264,10 @@
         margin-top: 5%;
     }
 
+    .questionBox{
+        margin-top: 10px;
+    }
+
     .questionBox > .Furagana{
         margin-top: 45px;
     }
