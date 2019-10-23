@@ -238,6 +238,14 @@
         line-height: 90px;
     }
 
+    .exampleBox:hover{
+        background-color: white;
+    }
+
+    .checkDisplay{
+        top: -50px;
+    }
+
     .example > .exampleBox:nth-child(2n + 1){
         margin-left: 2%;
         margin-right: 2%;
