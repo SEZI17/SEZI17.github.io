@@ -1,7 +1,6 @@
 #FAQ_wrap {
     text-align : center;
-    width : 768px;  
-    /* border : 1px solid black; */
+    width : 768px;
     box-sizing: border-box;
     margin-bottom: 50px;
 }
@@ -19,10 +18,6 @@
     background: #E6CDBf
 
 }
-/* #FAQ_wrap p {
-    cursor: text;
-    width : 750px;
-} */
 .cost {
     font-weight: 100;
     width: 600px;
@@ -41,47 +36,19 @@
 }
 @media screen and (max-width: 540px) {
     #FAQ_wrap {
-        /* text-align : center; */
         width : 360px;
-        margin : 0 auto;  
-        /* border : 1px solid black; */
-        /* box-sizing: border-box;
-        margin-bottom: 50px; */
+        margin : 0 auto;
     }
     #FAQ_wrap div {
         font-size : 14px;
     }
-    /* .faq { 
-        font-family: 'Poor Story',sans-serif;
-        cursor : pointer;    
-        padding: 20px;
-        margin : 20px;
-        font-weight: bold;
-        border-top : 1.5px solid black;
-        border-bottom : 1.5px solid black;
-        background: #E6CDBf
-    
-    } */
-    /* #FAQ_wrap p {
-        cursor: text;
-        width : 750px;
-    } */
     .cost {
-        /* font-weight: 100; */
         width: 280px;
-        /* margin: 0 auto;
-        margin-top: 20px; */
         font-size : 14px;
-        /* font-family: 'Poor story' */
     }
     .long {
         font-size: 13px;
     }
-    /* .faq:hover {
-        background : #AF8672;
-        color: white;
-        transition-duration: 0.3s;
-    } */
 }
 @media screen and (min-width: 541px) and (max-width: 767px){
     #FAQ_wrap {
