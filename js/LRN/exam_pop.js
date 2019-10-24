@@ -3,7 +3,7 @@
 var examMode;           
 var questionList = [];      //문제 보관 변수
 var wordList = [];          //단어 모음
-var questionCount = 20;     //전체 문제 수
+var questionCount = 10;     //전체 문제 수
 var nowQuestion = 0;        //현재 문제 번호
 var timeDelay = 1200;       
 var min = 0;

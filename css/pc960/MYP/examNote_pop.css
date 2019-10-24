@@ -50,7 +50,7 @@
 }
 
 
-.questionBox #Furagana{
+.questionBox .Furagana{
     height: 20%;
 
     line-height: 20%;
@@ -59,7 +59,7 @@
     margin-top: 50px;
 }
 
-.questionBox #hilagana{
+.questionBox .hilagana{
     height: 80%;
 
     line-height: 20%;
@@ -117,7 +117,7 @@
     text-align: right;
 }
 
-#checkDisplay{
+.checkDisplay{
     position: absolute;
     left: -10px; top: -70px;
 
@@ -167,12 +167,6 @@
         font-weight: bold;
     }
 
-    #questionNumber{
-        font-size: 36px;
-
-        margin-top: 10px;
-    }
-
     .correctPercent{
         margin-right: 3px;
     }
@@ -208,7 +202,7 @@
         margin-right: 2%;
     }
 
-    #checkDisplay{
+    .checkDisplay{
         top: -50px;
     }
 
