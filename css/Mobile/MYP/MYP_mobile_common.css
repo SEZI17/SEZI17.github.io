@@ -11,7 +11,7 @@
 #haru_MYP_header > h1 {
     position: absolute;
     top: 30px;
-    right: 80px;
+    right: 40px;
 }
 
 /* 컨텐츠 360 */
@@ -39,8 +39,8 @@
     #haru_MYP_header > h1 {
         position: absolute;
         top: 30px;
-        right: 80px;
-    }
+        right: 40px;
+    }    
     
     /* 컨텐츠 360 */
     #haru_contents_wrap {

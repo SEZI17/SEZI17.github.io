@@ -1,7 +1,9 @@
+* { margin: 0;}
+
 .bodyborder{
     border: 3px solid skyblue;
     margin: 15px;
-    width: 780px; height: 755px;
+    width: 714px; height: 670px;
 }
 
 #languageMode{
@@ -46,13 +48,11 @@
 .selectButton > .selectMode:nth-child(1){
     background-color: rgb(94, 94, 94);   
 
-    margin-left: 90px;
+    margin-left: 57px;
 }
 
 .selectButton > .selectMode:nth-child(2){
     background-color: rgb(190, 190, 190);
-
-    margin-right: 50px;
 }
 
 .selectButton > .selectMode:hover{

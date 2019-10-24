@@ -11,7 +11,7 @@
 #haru_INF_header > h1 {
     position: absolute;
     top: 30px;
-    right: 80px;
+    right: 40px;
 }
 
 /* 컨텐츠 360 */
@@ -39,7 +39,7 @@
     #haru_INF_header > h1 {
         position: absolute;
         top: 30px;
-        right: 80px;
+        right: 40px;
     }
     
     /* 컨텐츠 360 */
@@ -102,9 +102,6 @@
     }
     #haru_snb > ul > li:last-child > a {
         border-right: 0px;
-    }
-    #haru_subtitle {
-        margin-left: 10px;
     }
     #haru_cat {
         margin-right: 10px;

@@ -40,13 +40,17 @@
   background: url('../../../img/banner-1557820_960_720.jpg');
   border-top: none;
   border-right: none;
+
+  padding-top: 7px;
 }
 
 #graph > .graph_bar
 {
   background-color: RGB(175, 134, 114);
-  margin: 5px;
+  margin: 7px;
+  margin-left: 0;
 }
+
 
 /* .graph_bar_wrap {
   height: 60px;
@@ -105,15 +109,14 @@
     margin: 5px;
     float: left;
   }
+
+  #graph > .graph_bar:first-child{
+    margin-left: 13px;
+  }
 }
 
 @media screen and (min-width: 541px) and (max-width: 767px) {
  
-  #haru_subcontents
-  {
-    margin: 30px;
-  }
-
   #article_wrap{
     width: 480px;
     margin: 0 auto;

@@ -75,8 +75,8 @@ function getContent()
         <div class="content"> \
             <div class="text2 correctPercent ' + PersentColor(percentage) + '">(정답률 : ' + percentage + '%)</div> \
             <div class="questionBox"> \
-                <div id="Furagana" class="' + getFuraganaFontSize(hilagana) + '">' + getFuragana(furagana, hilagana) + '</div> \
-                <div id="hilagana" class="' + getHilaganaFontSize(hilagana) + '">' + hilagana + '</div> \
+                <div class="Furagana ' + getFuraganaFontSize(hilagana) + '">' + getFuragana(furagana, hilagana) + '</div> \
+                <div class="hilagana ' + getHilaganaFontSize(hilagana) + '">' + hilagana + '</div> \
             </div> \
             \
             <div class="example"> \
@@ -150,7 +150,7 @@ function getHilaganaFontSize(hilagana)
 
 function getCheckWhether(showNum, clickNum)
 {
-    let checkImage = "<div id='checkDisplay'>v</div>"
+    let checkImage = "<div class='checkDisplay'>v</div>"
     if(showNum == clickNum)
         return checkImage;
     else

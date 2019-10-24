@@ -57,17 +57,17 @@
                 $("#idInput").attr("value", "admin");
 
                 $("#nicknameInput").attr("value", "admin123");
-                $("#nicknameInput").attr('readOnly','readOnly');
+                $("#nicknameInput").attr('disabled','disabled');
 
                 $("#emailInput").attr("value", "admin@email.com");
-                $("#emailInput").attr('readOnly','readOnly');
+                $("#emailInput").attr('disabled','disabled');
 
                 $("#nicknameEditBtn").click(function () {
-                    $("#nicknameInput").removeAttr('readOnly');
+                    $("#nicknameInput").removeAttr('disabled');
                 });
 
                 $("#emailEditBtn").click(function () {
-                    $("#emailInput").removeAttr('readOnly');
+                    $("#emailInput").removeAttr('disabled');
                 });
             });
         
@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <!-- bottom button -->
-                <button class="MEM_cancelBtn" onclick="">취소</button>
+                <a href="/index.html"><button class="MEM_cancelBtn">취소</button></a> 
                 <button class="MEM_confirmBtn" onclick="editInfoConfirm()">수정</button>
                 <br><br>
             </div>

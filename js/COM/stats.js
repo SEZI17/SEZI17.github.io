@@ -9,10 +9,6 @@ $(function(){
     init();
     
     setGraph();
-
-    $(window).resize(function(){
-        setGraph();
-    });
 });
 
 
@@ -80,8 +76,16 @@ function changeGraphSize(heightWidth)
         }
         else
         {
-            let margin = wid - 5 - value;
+            let width = $(window).width();
+            let graphWidth = $("div#graph").css("width");
+            index = graphWidth.indexOf("px");
+            graphWidth = graphWidth.substring(0, index);
 
+            let marginLeft = (width - graphWidth) / 2;
+            $("#article_wrap").css("margin-left", 0 + "px");
+            $("#haru_subcontents").css("margin-left", marginLeft + "px");
+
+            let margin = wid - value;
             $(".graph_bar").eq(i).css("width", pcWidth + "px");
             $(".graph_bar").eq(i).css("height", value + "px");
             $(".graph_bar").eq(i).css("margin-top", margin + "px");
