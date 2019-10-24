@@ -115,7 +115,7 @@ function setHtmlCode()
 {
     $(".wrap").html("");
     $("#cover").css({"width": bodyBorderWidth + "px", "height": bodyBorderHeight + "px"});
-    $("#cover > .wrap").css({"width": (bodyBorderWidth * questionCount) + "px", "height": bodyBorderHeight + "px"});
+    $("#cover > .wrap").css({"width": ((bodyBorderWidth + bodyBorderGap) * questionCount) + "px", "height": bodyBorderHeight + "px"});
     $("#cover > .wrap > .bodyborder").css({"width": bodyBorderWidth + "px", "height": bodyBorderHeight + "px"});
 
     let nowCount = 0;
@@ -176,7 +176,7 @@ function showRightBtn(index)
     if(1 == version)
         return "";
 
-    if(index < questionCount)
+    if(index < questionCount - 1)
         return '<div class="rightBtn">▶</div>';
     else
         return "";
@@ -279,36 +279,40 @@ function startTTS(text)
 //모바일용 터치이용 함수
 function touchEvent()
 {
-    let startCoords = {}, endCoords = {};
-    $(document.body).bind("touchstart", function(event) 
+    //일반검정일때
+    if(2 == examMode || 4 == examMode)
     {
-        startCoords = endCoords = event.originalEvent.targetTouches[0];
-    });
-
-    $(document.body).bind("touchmove", function(event) 
-    {
-        endCoords = event.originalEvent.targetTouches[0];
-       
-        let X = startCoords.pageX - endCoords.pageX;
-        let Marginleft = (bodyBorderWidth + bodyBorderGap) * nowQuestion + X;
-
-        if(0 < Marginleft && Marginleft < ((bodyBorderWidth + bodyBorderGap) * (questionCount - 1)))
-            $("#cover > .wrap").css("margin-left", -Marginleft);
-    });
-
-    $(document.body).bind("touchend", function(event) 
-    {
-        let X = startCoords.pageX - endCoords.pageX;
-        if(minRange < X)
-            rightMove();
-        else if(X < -minRange)
-            leftMove();
-        else
+        let startCoords = {}, endCoords = {};
+        $(document.body).bind("touchstart", function(event) 
         {
-            let Marginleft = (bodyBorderWidth + bodyBorderGap) * nowQuestion;
-            $("#cover > .wrap").stop().animate({marginLeft : -Marginleft}, animateSpeed - 100);
-        }
-    });
+            startCoords = endCoords = event.originalEvent.targetTouches[0];
+        });
+    
+        $(document.body).bind("touchmove", function(event) 
+        {
+            endCoords = event.originalEvent.targetTouches[0];
+           
+            let X = startCoords.pageX - endCoords.pageX;
+            let Marginleft = (bodyBorderWidth + bodyBorderGap) * nowQuestion + X;
+    
+            if(0 < Marginleft && Marginleft < ((bodyBorderWidth + bodyBorderGap) * (questionCount - 1)))
+                $("#cover > .wrap").css("margin-left", -Marginleft);
+        });
+    
+        $(document.body).bind("touchend", function(event) 
+        {
+            let X = startCoords.pageX - endCoords.pageX;
+            if(minRange < X)
+                rightMove();
+            else if(X < -minRange)
+                leftMove();
+            else
+            {
+                let Marginleft = (bodyBorderWidth + bodyBorderGap) * nowQuestion;
+                $("#cover > .wrap").stop().animate({marginLeft : -Marginleft}, animateSpeed - 100);
+            }
+        });
+    }
 }
 
 function resultExam()
@@ -320,6 +324,10 @@ function resultExam()
     {
         if(-1 == value.click)
             removeList.push(index);
+
+        //정답여부 저장
+        if(questionList[index].answer != questionList[index].click)
+            questionList[index].ox = false;
     });
 
     //리스트에서 안 푼문제는 삭제
@@ -479,13 +487,13 @@ function clickNum(index)
     let num = index;
     questionList[nowQuestion].click = num;
 
-    //정답여부 저장
-    if(answer != num)
-        questionList[nowQuestion].ox = false;
-
     //연습 검정일 경우
     if(1 == examMode || 3 == examMode)
     {
+        //정답여부 저장
+        if(answer != num)
+            questionList[nowQuestion].ox = false;
+
         $(".ox").css("display","block");
         if(answer == num)
         {
