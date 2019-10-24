@@ -5,7 +5,7 @@ function Mynotelistoutput() {
     var kanji = kanji_a[i];
     var yomigana = yomigana_a[i];
     var korean = korean_a[i];
-    var checkbox = "<input id='wordChk"+ i +"' class='wordChkbox' type='checkbox' name='delete' value='apply' /><label for='wordChk"+ i +"' />";
+    var checkbox = "<form name='delete_chkbox' method='get'/><input id='wordChk"+ i +"' class='wordChkbox' type='checkbox' name='delete' value='apply' /><label for='wordChk"+ i +"'>.</label>";
     var WDLlist = document.getElementById('MYP_MYN_notelist');
     var add = WDLlist.insertRow( WDLlist.rows.length );
     var MYN_formcell = add.insertCell(0);

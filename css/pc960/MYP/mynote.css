@@ -99,6 +99,7 @@
     cursor: pointer;
     background: url('../../../img/unchecked.png') no-repeat;
     background-size: 100%;
+    color: white;
 }
 
 .wordChkbox:checked + label { background-image: url('../../../img/checked.png'); }
