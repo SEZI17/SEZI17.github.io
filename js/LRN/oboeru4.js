@@ -1,11 +1,11 @@
 // 아행부터 행별로 표시
 function wordlistoutput() {
-    for(let i=0; i<form_a.length; i++) {
-    var form = form_a[i];
-    var test = test_a[i];   
-    var kanji = kanji_a[i];
-    var yomigana = yomigana_a[i];
-    var korean = korean_a[i];
+    for(let i=0; i<oboeru_form.length; i++) {
+    var form = oboeru_form[i];
+    var test = oboeru_test[i];   
+    var kanji = oboeru_kanji[i];
+    var yomigana = oboeru_yomigana[i];
+    var korean = oboeru_korean[i];
     var WDLlist = document.getElementById('LRN_WDL_table_list_a');
     var add = WDLlist.insertRow( WDLlist.rows.length );
     var WDL_formcell = add.insertCell(0);
