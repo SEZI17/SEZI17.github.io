@@ -1,3 +1,21 @@
+#INF_ABO_Posts {
+  width: 90%;
+  margin: 0 auto;
+  background: url('../../../img/hellotp.png');
+  background-position:right top;
+  background-repeat: no-repeat
+  
+}
+
+.ABO_Posts_subject {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.ABO_Posts_contents {
+  margin-bottom: 50px;  
+}
+
 @media screen and (min-width: 768px) {/*width 768부터의 크기*/
 /*
 -webkit- 구글, 사파리 호환
