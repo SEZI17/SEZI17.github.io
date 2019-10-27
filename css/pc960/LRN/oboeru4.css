@@ -1,3 +1,22 @@
+#LRN_WDL_cat_information {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+#list_none {
+    display: table-cell;
+    vertical-align: middle;
+    width: 764px;
+    height: 100px;
+    background: #FFF8E1;
+    font-size: 25px;
+    text-align: center;
+    color: #AF8672;
+    border: 1px solid black;
+    border-top: none;
+}
+
 /* 카테고리 선택부분 */
 #LRN_WDL_cat_wrap {
     margin: 0 auto;

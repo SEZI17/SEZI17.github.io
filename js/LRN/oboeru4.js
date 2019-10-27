@@ -22,6 +22,14 @@ function wordlistoutput() {
     }
 }
 
+function listNone(){
+    if($('#LRN_WDL_list_col_a_list tr').css('display','table-row').length==1){
+        $('#list_none').show(); 
+    } else { 
+        $('#list_none').hide();
+    }
+}
+
 // 행별 표 보이기 숨기기
 // $(function(){
 //     $('.WDL_col_title').click(this, function(){
@@ -59,6 +67,7 @@ function wordlistoutput() {
 
 $(document).ready(function(){
     wordlistoutput();
+    listNone();
 
         // 체크리스트 작성
         checkList();
@@ -76,7 +85,7 @@ $(document).ready(function(){
             checkList();
         })
         $('#check5').click(function(){
-            checkList();
+            checkList(); 
         })
     
         // 품사별
@@ -158,7 +167,6 @@ $(document).ready(function(){
     
         // 체크리스트 구동
         function checkList(){
-    
             checkBtnAll();
             // 1급 버튼
             if($('#check1').is(':checked')) {
@@ -424,8 +432,10 @@ $(document).ready(function(){
                     return $(this).text() === "JLPT N5";
                 }).parent().stop().slideUp();
             }
-    
-        }    
+            
+            
+        listNone(); 
+        }   
 
 });
 

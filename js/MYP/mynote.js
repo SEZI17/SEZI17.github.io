@@ -5,7 +5,7 @@ function Mynotelistoutput() {
     var kanji = kanji_a[i];
     var yomigana = yomigana_a[i];
     var korean = korean_a[i];
-    var checkbox = "<form name='delete_chkbox' method='get'/><input id='wordChk"+ i +"' class='wordChkbox' type='checkbox' name='delete' value='apply' /><label for='wordChk"+ i +"'>.</label>";
+    var checkbox = "<form name='delete_chkbox' method='get'/><input id='wordChk"+ i +"' class='wordChkbox' type='checkbox' name='delete' value='apply' /><label for='wordChk"+ i +"'>&nbsp;</label>";
     var WDLlist = document.getElementById('MYP_MYN_notelist');
     var add = WDLlist.insertRow( WDLlist.rows.length );
     var MYN_formcell = add.insertCell(0);
@@ -49,16 +49,23 @@ function deleteWord(){
         var cfdelete = confirm("해당 단어를 삭제하시겠습니까?")
         if (cfdelete) {
         $('#MYP_MYN_notelist input:checked').each(function(index){  
-            var checkedWord = $(this).parent().parent();                
+            var checkedWord = $(this).parent().parent().parent();                
             checkedWord.remove();      
-            });            
+            });
+            listNone();           
             return false;   
         } else { return false; } 
     } 
 }
 
+function listNone(){
+    if($('#MYP_MYN_table tr').length==1){
+        $('#list_none').show();
+    } else { $('#list_none').hide(); }
+}
 
 $(document).ready(function(){
     membernameOutput();
     Mynotelistoutput();
+    listNone();
 });

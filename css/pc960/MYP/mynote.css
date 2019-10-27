@@ -1,3 +1,16 @@
+#list_none {
+    display: table-cell;
+    vertical-align: middle;
+    width: 764px;
+    height: 100px;
+    background: #FFF8E1;
+    font-size: 25px;
+    text-align: center;
+    color: #AF8672;
+    border: 1px solid black;
+    border-top: none;
+}
+
 #MYP_MYN_table_wrap {
     width: 764px;
     height: 100%;    
