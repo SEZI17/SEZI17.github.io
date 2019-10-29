@@ -24,9 +24,11 @@ function wordlistoutput() {
 
 function listNone(){
     if($('#LRN_WDL_list_col_a_list tr').css('display','table-row').length==1){
-        $('#list_none').show(); 
+        $('#list_none').stop().slideDown();
+        return;
     } else { 
-        $('#list_none').hide();
+        $('#list_none').stop().slideUp();
+        return;
     }
 }
 
@@ -48,10 +50,10 @@ function listNone(){
 //         }
 //     }
 //     if(cat_chk) {
-//         $('.WDL_table_list').hide();
+//         $('.WDL_table_list').stop().slideUp();
 //         return false;
 //     } else {
-//         $('.WDL_table_list').show();
+//         $('.WDL_table_list').stop().slideDown();
 //     }
 // }
 
@@ -59,9 +61,9 @@ function listNone(){
 // function cat_control() {
 //     $('.cat_chk').change(function(){
 //         if(this.checked)
-//         $('.WDL_table_list').hide();
+//         $('.WDL_table_list').stop().slideUp();
 //         else
-//         $('.WDL_table_list').show();
+//         $('.WDL_table_list').stop().slideDown();
 //     });
 // }
 
