@@ -69,7 +69,6 @@ function listNone(){
 
 $(document).ready(function(){
     wordlistoutput();
-    listNone();
 
         // 체크리스트 작성
         checkList();
@@ -434,9 +433,6 @@ $(document).ready(function(){
                     return $(this).text() === "JLPT N5";
                 }).parent().stop().slideUp();
             }
-            
-            
-        listNone(); 
         }   
 
 });
