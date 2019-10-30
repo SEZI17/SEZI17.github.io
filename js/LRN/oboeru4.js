@@ -22,15 +22,15 @@ function wordlistoutput() {
     }
 }
 
-function listNone(){
-    if($('#LRN_WDL_list_col_a_list tr').css('display','table-row').length==1){
-        $('#list_none').stop().slideDown();
-        return;
-    } else { 
-        $('#list_none').stop().slideUp();
-        return;
-    }
-}
+// function listNone(){
+//     if($('#LRN_WDL_list_col_a_list tr').css('display','table-row').length==1){
+//         $('#list_none').stop().slideDown();
+//         return;
+//     } else { 
+//         $('#list_none').stop().slideUp();
+//         return;
+//     }
+// }
 
 // 행별 표 보이기 숨기기
 // $(function(){
