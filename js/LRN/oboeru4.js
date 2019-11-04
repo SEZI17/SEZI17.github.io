@@ -1,4 +1,4 @@
-// 아행부터 행별로 표시
+// 일본어 행별로 표시
 function wordlistoutput() {
     for(let i=0; i<oboeru_form.length; i++) {
     var form = oboeru_form[i];
@@ -32,40 +32,12 @@ function wordlistoutput() {
 //     }
 // }
 
-// 행별 표 보이기 숨기기
+// 표 보이기 숨기기
 // $(function(){
 //     $('.WDL_col_title').click(this, function(){
 //         $(this).next(".WDL_col_table_wrap").stop().slideToggle();
 //     });
 // });
-
-// function cat_control() {
-//     var cat_box = document.getElementsByName('cat_select');
-//     var cat_chk = false;
-//     for(var i=0 ; i<cat_box.length ; i++) {
-//         if(cat_box[i].checked) {
-//             cat_chk = true;
-//         } else {
-//             cat_chk = false;
-//         }
-//     }
-//     if(cat_chk) {
-//         $('.WDL_table_list').stop().slideUp();
-//         return false;
-//     } else {
-//         $('.WDL_table_list').stop().slideDown();
-//     }
-// }
-
-
-// function cat_control() {
-//     $('.cat_chk').change(function(){
-//         if(this.checked)
-//         $('.WDL_table_list').stop().slideUp();
-//         else
-//         $('.WDL_table_list').stop().slideDown();
-//     });
-// }
 
 $(document).ready(function(){
     wordlistoutput();
