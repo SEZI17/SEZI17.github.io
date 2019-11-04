@@ -1,3 +1,7 @@
+.exm {
+    background: #E8D7CA;
+}
+
 .exam_detail {
     width: 90%;
     margin: 0 auto;
@@ -13,15 +17,14 @@
     margin-bottom: 50px;
 }
 
-#btn_start_exam{
+#btn_start_exam {
 
     overflow: hidden;
-
     margin: 60px;
     margin-left: 28%;
-
     width: 250px; height: 250px;
     border-radius: 50%;
+    border: 1px solid #512B37;
     background-color: #512B37;
     cursor: pointer;
     transition-duration: 0.5s;
