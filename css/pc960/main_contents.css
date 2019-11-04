@@ -178,10 +178,11 @@ body {
 #MAI_familysite_wrap {
     position: absolute;
     overflow: hidden;
-    width: 800px;
+    width: 100%;
+    max-width: 768px;
     height: 500px;
     margin-top: -250px;
-    margin-left: -400px;
+    margin-left: -384px;
     left: 50%;
     top: 50%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -194,7 +195,7 @@ body {
 }
 #MAI_familysite_title h2 {
     margin-top: 30px;
-    width: 800px;
+    width: 768px;
 }
 #MAI_familysite_logo_wrap {    
     position: relative;
@@ -204,7 +205,7 @@ body {
 }
 #MAI_familysite_FO_wrap {    
     position: relative;
-    width: 330px;
+    width: 300px;
     float: left;
     margin-right: 50px;
 }
