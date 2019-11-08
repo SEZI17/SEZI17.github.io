@@ -137,10 +137,19 @@ $(document).ready(function(){
                 returnVal = false;
             return returnVal;
         }
-    
+
+        function voidCheck(){
+            if(($('#check1').is(':checked') && $('#check2').is(':checked') && $('#check3').is(':checked') && $('#check4').is(':checked') && $('#check5').is(':checked')) || ($('#meishi').is(':checked') && $('#daimeishi').is(':checked') && $('#doushi').is(':checked') && $('#jyoshi').is(':checked') && $('#keiyoushi').is(':checked')) || ($('#check2').is(':checked') && $('#jyoshi').is(':checked'))){
+                $('#list_none').css('visibility','hide')
+            }else{
+                $('#list_none').css('visibility','visible');
+            }
+        }
+
         // 체크리스트 구동
         function checkList(){
             checkBtnAll();
+            voidCheck();
             // 1급 버튼
             if($('#check1').is(':checked')) {
                 if($('#meishi').is(':checked')){
