@@ -334,9 +334,22 @@ function loginConfirm(){
             firstError = false;
         }
     }
+    //check if id and password are valid
+    var idList = ["admin", "user"]
+    var pwList = ["adminpassword","userpassword"]
+    var loginConfirm=false;
+    
+    if(idList.includes(id.value)&&pwList.includes(password.value)){
+        if(idList.indexOf(id.value)==pwList.indexOf(password.value)){
+            loginConfirm=true;
+        };
+    };
     //confirm
-    if (firstError == true) {
+    if (firstError == true && loginConfirm) {
         window.location.href = "/index.html";
+    }
+    else if(firstError == true){
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
     }
 }
 
