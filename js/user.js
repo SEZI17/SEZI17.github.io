@@ -132,6 +132,8 @@ function editInfoConfirm() {
     var nickname = document.getElementById("nicknameInput");
     var nicknameError = document.getElementById("nicknameInputError");
     var nicknameValid = isValid(nickname.value, true, true, true, false, true, false) && lengthBetween(nickname.value, 2, 10);
+    var nicknameList = ["admin", "user"]
+    var isExist = nicknameList.includes(nickname.value);
     if (!nicknameValid) {
         nicknameError.innerHTML = "닉네임은 특수문자와 공백을 제외한 2~10글자로 입력해주세요.";
         if (firstError) {
@@ -154,6 +156,13 @@ function editInfoConfirm() {
         emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
         if (firstError) {
             email.focus();
+            firstError = false;
+        }
+    }
+    if (isExist) {
+        nicknameError.innerHTML = "중복된 닉네임 입니다.";
+        if (firstError) {
+            nickname.focus();
             firstError = false;
         }
     }
@@ -200,8 +209,17 @@ function signupConfirm() {
     var id = document.getElementById("idInput");
     var idError = document.getElementById("idInputError");
     var idValid = isValid(id.value, true, true, true, false, false, false) && lengthBetween(id.value, 4, 10);
+    var idList = ["admin", "user"]
+    var isExist = idList.includes(id.value);
     if (!idValid) {
         idError.innerHTML = "아이디는 영어와 숫자만을 혼용하여 공백없이 4~10자로 입력해주세요.";
+        if (firstError) {
+            id.focus();
+            firstError = false;
+        }
+    }
+    if (isExist) {
+        idError.innerHTML = "중복된 아이디 입니다.";
         if (firstError) {
             id.focus();
             firstError = false;
@@ -214,12 +232,22 @@ function signupConfirm() {
             firstError = false;
         }
     }
+    
     //check nickname
     var nickname = document.getElementById("nicknameInput");
     var nicknameError = document.getElementById("nicknameInputError");
     var nicknameValid = isValid(nickname.value, true, true, true, false, true, false) && lengthBetween(nickname.value, 2, 10);
+    var nicknameList = ["admin", "user"]
+    var isExist = nicknameList.includes(nickname.value);
     if (!nicknameValid) {
         nicknameError.innerHTML = "닉네임은 특수문자와 공백을 제외한 2~10글자로 입력해주세요.";
+        if (firstError) {
+            nickname.focus();
+            firstError = false;
+        }
+    }
+    if (isExist) {
+        nicknameError.innerHTML = "중복된 닉네임 입니다.";
         if (firstError) {
             nickname.focus();
             firstError = false;
