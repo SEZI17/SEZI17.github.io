@@ -41,7 +41,7 @@ function wordlistoutput() {
 
 $(document).ready(function(){
     wordlistoutput();
-
+    
         // 체크리스트 작성
         checkList();
         // 급수별
@@ -80,7 +80,7 @@ $(document).ready(function(){
         $('#keiyoushi').click(function(){
             checkList();
         })
-    
+        
         // 전체 버튼
         $('#all').click(function() {
             if(allCheck()){
@@ -139,13 +139,30 @@ $(document).ready(function(){
         }
 
         function voidCheck(){
-            if(($('#check1').is(':checked') && $('#check2').is(':checked') && $('#check3').is(':checked') && $('#check4').is(':checked') && $('#check5').is(':checked')) || ($('#meishi').is(':checked') && $('#daimeishi').is(':checked') && $('#doushi').is(':checked') && $('#jyoshi').is(':checked') && $('#keiyoushi').is(':checked')) || ($('#check2').is(':checked') && $('#jyoshi').is(':checked'))){
-                $('#list_none').css('visibility','hide')
+            let n1 = $('#check1').is(":checked");
+            let n2 = $('#check2').is(":checked");
+            let n3 = $('#check3').is(":checked");
+            let n4 = $('#check4').is(":checked");
+            let n5 = $('#check5').is(":checked");
+
+            let meishi = $("#meishi").is(":checked");
+            let daimeishi = $("#daimeishi").is(":checked");
+            let doushi = $("#doushi").is(":checked");
+            let jyoshi = $("#jyoshi").is(":checked");
+            let keiyoushi = $("#keiyoushi").is(":checked");
+            
+            if((n1||n2||n3||n4||n5)&&(meishi||daimeishi||doushi||jyoshi||keiyoushi)){
+                if(!(n1||n3||n4||n5||meishi||daimeishi||doushi||keiyoushi)&&(n2&&jyoshi)){
+                    $('#list_none').css('visibility','visible');
+                }else{
+                    $('#list_none').css('visibility','hidden')
+                    
+                }
             }else{
                 $('#list_none').css('visibility','visible');
             }
         }
-
+        
         // 체크리스트 구동
         function checkList(){
             checkBtnAll();
