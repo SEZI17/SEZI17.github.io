@@ -576,10 +576,23 @@ function deleteAccountConfirm(){
             password.focus();
             firstError = false;
         }
-    }
+    }    
+
+    //check if id and password are valid
+    var pwList = ["adminpassword","userpassword"]
+    var loginConfirm=false;
+    if(pwList.includes(password.value)){
+        //if(idList.indexOf(id.value)==pwList.indexOf(password.value)){
+            loginConfirm=true;
+        //};
+    };
+
     //confirm
-    if (firstError == true) {
+    if (firstError == true && loginConfirm) {
         alert("회원탈퇴가 완료되었습니다.");
         window.location.href = "/index.html";
+    }
+    else if(firstError == true){
+        alert("비밀번호가 일치하지 않습니다.");
     }
 }
