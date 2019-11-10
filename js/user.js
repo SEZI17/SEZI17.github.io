@@ -377,7 +377,7 @@ function loginConfirm(){
         window.location.href = "/index.html";
     }
     else if(firstError == true){
-        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+        alert("가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.");
     }
 }
 
@@ -496,7 +496,7 @@ function checkPwConfirm(){
         window.location.href = "/html/MYP/editInfo.html";
     }
     else if(firstError == true){
-        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+        alert("비밀번호가 일치하지 않습니다.");
     }
 }
 
