@@ -19,7 +19,7 @@ function TWD_mobile() {
     var now=new Date();
     var startup=new Date();
     startup.setYear(2019);
-    startup.setMonth(9-1);
+    startup.setMonth(11-1);
     startup.setDate(15);
     var gap=startup.getTime()-now.getTime();
     var index=Math.abs(Math.floor(gap/(1000*60*60*24)));
