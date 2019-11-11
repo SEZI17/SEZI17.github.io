@@ -126,9 +126,14 @@ function clickDeleteBtn()
 {
   $(".btnDelete").click(function(e){
     e.stopPropagation();
-    $(this).parent().fadeOut(400, function(){
-      $(this).remove();
-    });
+
+    var result = confirm("해당 회차의 오답노트를 삭제하시겠습니까?");
+    if(result == true)
+    {
+      $(this).parent().fadeOut(400, function(){
+        $(this).remove();
+      });
+    }      
     
     if (1 == $('.note').length) 
     {
