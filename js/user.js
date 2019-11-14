@@ -439,14 +439,19 @@ function forgotIdConfirm(){
         };
     };
 
+    //id database
+    var idList = ["admin"]
     //confirm
     if (firstError == true && findIdConfirm) {
-        alert("고객님의 아이디는 '" + "admin" + "' 입니다.");
+        alert("고객님의 아이디는 '" + idList[nameList.indexOf(name.value)] + "' 입니다.");
         $('#popup_content').load("/html/MEM/login.html");
         modal.style.display = "block";
     }
     else if (firstError == true) {
         alert("입력하신 정보를 찾을 수 없습니다.")
+    }
+    else{
+        alert(3);
     }
 }
 
