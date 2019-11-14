@@ -450,9 +450,6 @@ function forgotIdConfirm(){
     else if (firstError == true) {
         alert("입력하신 정보를 찾을 수 없습니다.")
     }
-    else{
-        alert(3);
-    }
 }
 
 //find password button
