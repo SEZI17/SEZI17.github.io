@@ -601,7 +601,7 @@ function changePwConfirm(){
         }
     }
     if (!newPasswordValid) {
-        newPasswordError.innerHTML = "비밀번호는 8자리 이상으로 입력해 주세요.";
+        newPasswordError.innerHTML = "비밀번호는 공백 없이 8자리 이상으로 입력해 주세요.";
         if (firstError) {
             newPassword.focus();
             firstError = false;
