@@ -96,13 +96,16 @@
             }
         }
         function summit() {
-            // let conf = confirm("글을 게시하시겠습니까?")
-            // if (conf) {
-            //     // 백엔드 호출, 서버사이드로 글을 보냄.
-            //     // 가능하면 이때 내용 검증 후 String 타입 그대로 HTML 코드를 담을 것.
-            //     let articleData = CKEDITOR.instances.articleContent.getData();
-            //     let titleData = document.getElementById("articleTitle").value
-            // }
+            let conf = confirm("글을 게시하시겠습니까?")
+            if (conf) {
+                // 백엔드 호출, 서버사이드로 글을 보냄.
+                // 가능하면 이때 내용 검증 후 String 타입 그대로 HTML 코드를 담을 것.
+                let articleData = CKEDITOR.instances.articleContent.getData();
+                let titleData = document.getElementById("articleTitle").value;
+                if(!articleData || !titleData){
+                    alert("제목 혹은 내용이 비어있습니다.")
+                }
+            }
         }
         CKEDITOR.replace('articleContent');
     </script>
