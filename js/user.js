@@ -387,8 +387,8 @@ function forgotIdConfirm(){
     //check name
     var name = document.getElementById("nameInput");
     var nameError = document.getElementById("nameInputError");
-    var nameList = ["장세진"]
-    var isExist = nameList.includes(name.value);
+    var nameList = ["장세진","정현우"]
+    //var isExist = nameList.includes(name.value);
     // if (!isExist) {
     //     nameError.innerHTML = "존재하지 않는 이름입니다.";
     //     if (firstError) {
@@ -407,7 +407,7 @@ function forgotIdConfirm(){
     var email = document.getElementById("emailInput");
     var emailError = document.getElementById("emailInputError");
     var emailValid = isEmail(email.value);
-    var emailList = ["sae0817@naver.com"]
+    var emailList = ["sae0817@naver.com","jhw123@naver.com"]
     var isExist = emailList.includes(email.value);
     
     // if (!isExist) {
@@ -440,7 +440,7 @@ function forgotIdConfirm(){
     };
 
     //id database
-    var idList = ["admin"]
+    var idList = ["admin", "user"]
     //confirm
     if (firstError == true && findIdConfirm) {
         alert("고객님의 아이디는 '" + idList[nameList.indexOf(name.value)] + "' 입니다.");
@@ -461,8 +461,8 @@ function forgotPwConfirm(){
     //check name
     var name = document.getElementById("nameInput");
     var nameError = document.getElementById("nameInputError");
-    var nameList = ["장세진"]
-    var isExist = nameList.includes(name.value);
+    var nameList = ["장세진","정현우"]
+    //var isExist = nameList.includes(name.value);
     // if (!isExist) {
     //     nameError.innerHTML = "존재하지 않는 이름입니다.";
     //     if (firstError) {
@@ -480,7 +480,7 @@ function forgotPwConfirm(){
     //check id
     var id = document.getElementById("idInput");
     var idError = document.getElementById("idInputError");
-    var idList = ["admin"]
+    var idList = ["admin", "user"]
     var isExist = idList.includes(id.value);
     
     // if (!isExist) {
@@ -501,7 +501,7 @@ function forgotPwConfirm(){
     var email = document.getElementById("emailInput");
     var emailError = document.getElementById("emailInputError");
     var emailValid = isEmail(email.value);
-    var emailList = ["sae0817@naver.com"]
+    var emailList = ["sae0817@naver.com","jhw123@naver.com"]
     var isExist = emailList.includes(email.value);
     
     // if (!isExist) {
