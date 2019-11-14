@@ -389,13 +389,13 @@ function forgotIdConfirm(){
     var nameError = document.getElementById("nameInputError");
     var nameList = ["장세진"]
     var isExist = nameList.includes(name.value);
-    if (!isExist) {
-        nameError.innerHTML = "존재하지 않는 이름입니다.";
-        if (firstError) {
-            name.focus();
-            firstError = false;
-        }
-    }
+    // if (!isExist) {
+    //     nameError.innerHTML = "존재하지 않는 이름입니다.";
+    //     if (firstError) {
+    //         name.focus();
+    //         firstError = false;
+    //     }
+    // }
     if (name.value.length == 0) {
         nameError.innerHTML = "이름을 입력해 주세요."
         if (firstError) {
@@ -410,13 +410,13 @@ function forgotIdConfirm(){
     var emailList = ["sae0817@naver.com"]
     var isExist = emailList.includes(email.value);
     
-    if (!isExist) {
-        emailError.innerHTML = "존재하지 않는 이메일 입니다";
-        if (firstError) {
-            email.focus();
-            firstError = false;
-        }
-    }
+    // if (!isExist) {
+    //     emailError.innerHTML = "존재하지 않는 이메일 입니다";
+    //     if (firstError) {
+    //         email.focus();
+    //         firstError = false;
+    //     }
+    // }
     if (!emailValid) {
         emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
         if (firstError) {
@@ -446,7 +446,7 @@ function forgotIdConfirm(){
         modal.style.display = "block";
     }
     else if (firstError == true) {
-        
+        alert("입력하신 정보를 찾을 수 없습니다.")
     }
 }
 
@@ -458,13 +458,13 @@ function forgotPwConfirm(){
     var nameError = document.getElementById("nameInputError");
     var nameList = ["장세진"]
     var isExist = nameList.includes(name.value);
-    if (!isExist) {
-        nameError.innerHTML = "존재하지 않는 이름입니다.";
-        if (firstError) {
-            name.focus();
-            firstError = false;
-        }
-    }
+    // if (!isExist) {
+    //     nameError.innerHTML = "존재하지 않는 이름입니다.";
+    //     if (firstError) {
+    //         name.focus();
+    //         firstError = false;
+    //     }
+    // }
     if (name.value.length == 0) {
         nameError.innerHTML = "이름을 입력해 주세요."
         if (firstError) {
@@ -478,13 +478,13 @@ function forgotPwConfirm(){
     var idList = ["admin"]
     var isExist = idList.includes(id.value);
     
-    if (!isExist) {
-        idError.innerHTML = "존재하지 않는 아이디 입니다";
-        if (firstError) {
-            id.focus();
-            firstError = false;
-        }
-    }
+    // if (!isExist) {
+    //     idError.innerHTML = "존재하지 않는 아이디 입니다";
+    //     if (firstError) {
+    //         id.focus();
+    //         firstError = false;
+    //     }
+    // }
     if (id.value.length == 0) {
         idError.innerHTML = "아이디를 입력해 주세요";
         if (firstError) {
@@ -499,13 +499,13 @@ function forgotPwConfirm(){
     var emailList = ["sae0817@naver.com"]
     var isExist = emailList.includes(email.value);
     
-    if (!isExist) {
-        emailError.innerHTML = "존재하지 않는 이메일 입니다";
-        if (firstError) {
-            email.focus();
-            firstError = false;
-        }
-    }
+    // if (!isExist) {
+    //     emailError.innerHTML = "존재하지 않는 이메일 입니다";
+    //     if (firstError) {
+    //         email.focus();
+    //         firstError = false;
+    //     }
+    // }
     if (!emailValid) {
         emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
         if (firstError) {
@@ -535,7 +535,7 @@ function forgotPwConfirm(){
         modal.style.display = "block";
     }
     else if (firstError == true) {
-
+        alert("입력하신 정보를 찾을 수 없습니다.")
     }
     else{
 
