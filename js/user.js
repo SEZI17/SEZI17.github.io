@@ -387,6 +387,15 @@ function forgotIdConfirm(){
     //check name
     var name = document.getElementById("nameInput");
     var nameError = document.getElementById("nameInputError");
+    var nameList = ["장세진"]
+    var isExist = nameList.includes(name.value);
+    if (!isExist) {
+        nameError.innerHTML = "존재하지 않는 이름입니다.";
+        if (firstError) {
+            name.focus();
+            firstError = false;
+        }
+    }
     if (name.value.length == 0) {
         nameError.innerHTML = "이름을 입력해 주세요."
         if (firstError) {
@@ -398,6 +407,16 @@ function forgotIdConfirm(){
     var email = document.getElementById("emailInput");
     var emailError = document.getElementById("emailInputError");
     var emailValid = isEmail(email.value);
+    var emailList = ["sae0817@naver.com"]
+    var isExist = emailList.includes(email.value);
+    
+    if (!isExist) {
+        emailError.innerHTML = "존재하지 않는 이메일 입니다";
+        if (firstError) {
+            email.focus();
+            firstError = false;
+        }
+    }
     if (!emailValid) {
         emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
         if (firstError) {
@@ -412,11 +431,22 @@ function forgotIdConfirm(){
             firstError = false;
         }
     }
+    //check if name and email are valid
+    var findIdConfirm=false;
+    if(nameList.includes(name.value)){
+        if(nameList.indexOf(name.value)==emailList.indexOf(email.value)){
+            findIdConfirm=true;
+        };
+    };
+
     //confirm
-    if (firstError == true) {
+    if (firstError == true && findIdConfirm) {
         alert("고객님의 아이디는 '" + "admin" + "' 입니다.");
         $('#popup_content').load("/html/MEM/login.html");
         modal.style.display = "block";
+    }
+    else if (firstError == true) {
+        
     }
 }
 
@@ -426,6 +456,15 @@ function forgotPwConfirm(){
     //check name
     var name = document.getElementById("nameInput");
     var nameError = document.getElementById("nameInputError");
+    var nameList = ["장세진"]
+    var isExist = nameList.includes(name.value);
+    if (!isExist) {
+        nameError.innerHTML = "존재하지 않는 이름입니다.";
+        if (firstError) {
+            name.focus();
+            firstError = false;
+        }
+    }
     if (name.value.length == 0) {
         nameError.innerHTML = "이름을 입력해 주세요."
         if (firstError) {
@@ -436,6 +475,16 @@ function forgotPwConfirm(){
     //check id
     var id = document.getElementById("idInput");
     var idError = document.getElementById("idInputError");
+    var idList = ["admin"]
+    var isExist = idList.includes(id.value);
+    
+    if (!isExist) {
+        idError.innerHTML = "존재하지 않는 아이디 입니다";
+        if (firstError) {
+            id.focus();
+            firstError = false;
+        }
+    }
     if (id.value.length == 0) {
         idError.innerHTML = "아이디를 입력해 주세요";
         if (firstError) {
@@ -447,6 +496,16 @@ function forgotPwConfirm(){
     var email = document.getElementById("emailInput");
     var emailError = document.getElementById("emailInputError");
     var emailValid = isEmail(email.value);
+    var emailList = ["sae0817@naver.com"]
+    var isExist = emailList.includes(email.value);
+    
+    if (!isExist) {
+        emailError.innerHTML = "존재하지 않는 이메일 입니다";
+        if (firstError) {
+            email.focus();
+            firstError = false;
+        }
+    }
     if (!emailValid) {
         emailError.innerHTML = "이메일 형식이 올바르지 않습니다.";
         if (firstError) {
@@ -461,11 +520,25 @@ function forgotPwConfirm(){
             firstError = false;
         }
     }
+    //check if name and id and email are valid
+    var findPwConfirm=false;
+    if(nameList.includes(name.value)){
+        if(nameList.indexOf(name.value)==idList.indexOf(id.value)&&idList.indexOf(id.value)==emailList.indexOf(email.value)){
+            findPwConfirm=true;
+        };
+    };
+
     //confirm
-    if (firstError == true) {
+    if (firstError == true && findPwConfirm) {
         alert("고객님의 임시 비밀번호를 이메일로 보내드렸습니다.");
         $('#popup_content').load("/html/MEM/login.html");
         modal.style.display = "block";
+    }
+    else if (firstError == true) {
+
+    }
+    else{
+
     }
 }
 
