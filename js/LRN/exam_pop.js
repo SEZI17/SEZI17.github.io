@@ -1,15 +1,16 @@
 // 1: 히라가나 연습검정 // 2: 히라가나 일반검정
 // 3: 한글 연습검정     // 4: 한글 일반검정
 var examMode;           
-var questionList = [];      //문제 보관 변수
-var wordList = [];          //단어 모음
-var questionCount = 10;     //전체 문제 수
+var questionList = [];       //문제 보관 변수
+var wordList = [];           //단어 모음
+var questionCount = 10;       //전체 문제 수
 var nowQuestion = 0;        //현재 문제 번호
 var timeDelay = 1200;       
 var min = 0;
 var sec = 0;
 var timerID;                //일반검정일 경우 타이머의 ID
 var lanMode = 0;            //0이면 문제가 일본어 1이면 한국어
+var nowCount = 0;
 
 var strClass = "<div class='checkDisplay'>v</div>"
 
@@ -34,11 +35,11 @@ $(function(){
     //모바일인지 PC인지 체크
     moblieVerCheck();
 
-    //문제 만들기
-    makeQuestion();
-    
     //드래그 방지
     $("body").addClass("no-drag");
+
+    //문제 만들기
+    makeQuestion();
 
     //일반검정일 경우
     if(2 == examMode || 4 == examMode)
@@ -54,24 +55,18 @@ $(function(){
         //왼쪽 오른쪽 화살표 클릭시
         btnClick();
 
-        //체점 하기 버튼 표시
+        //제출 하기 버튼 표시
         $(".finishExam").css("display", "block");
     }
 
-    //보기중 하나를 선택했을 경우
-    selectExample();
-
-    //채점하기 버튼 클릭 시
+    //제출하기 버튼 클릭 시
     clickFinishBtn();
 
     //키보드 연결
     keyEvent();
 
-    //마우스 이벤트
+    //모바일용 터치이용 함수
     touchEvent();
-
-    //TTS(음성출력) 이벤트
-    clickSpeaker()
 
     mobileVer();
 });
@@ -114,11 +109,11 @@ function mobileVer()
 function setHtmlCode()
 {
     $(".wrap").html("");
+
     $("#cover").css({"width": bodyBorderWidth + "px", "height": bodyBorderHeight + "px"});
     $("#cover > .wrap").css({"width": ((bodyBorderWidth + bodyBorderGap) * questionCount) + "px", "height": bodyBorderHeight + "px"});
     $("#cover > .wrap > .bodyborder").css({"width": bodyBorderWidth + "px", "height": bodyBorderHeight + "px"});
 
-    let nowCount = 0;
     $.each(questionList, function(index, value)
     {
         let percentage = value.percentage;
@@ -131,10 +126,10 @@ function setHtmlCode()
 
         let str = '\
         <div class="bodyborder left"> \
-            <div class="finishExam">채점 하기</div> \
+            <div class="finishExam">제출 하기</div> \
             <div class="text2 correctPercent ' + PersentColor(percentage) + '">(정답률 : ' + percentage + '%)</div> \
             <div class="text3 timer">경과 시간 : <span class="min">00</span> : <span class="sec">00</span></div> \
-            <div class="largeText1 questionNumber"> <span class="nowQuestion">' + ++nowCount + '</span> / <span class="allQuestion">' + questionCount + '</span></div> \
+            <div class="largeText1 questionNumber"> <span class="nowQuestion">' + ++nowCount + getShowAllCount() +'</span> </div> \
             <div class="questionBox"> \
                 <div class="Furagana ' + getFuraganaFontSize(hilagana) + '">' + getFuragana(furagana, hilagana) + '</div> \
                 <div class="hilagana ' + getHilaganaFontSize(hilagana) + '">' + hilagana + '</div> \
@@ -156,6 +151,23 @@ function setHtmlCode()
 
         $(".wrap").append(str);
     });
+
+    //보기중 하나를 선택했을 경우
+    selectExample();
+
+    //TTS(음성출력) 이벤트
+    clickSpeaker()
+
+    nowCount--;
+}
+
+function getShowAllCount()
+{
+    //일반검정일때
+    if(2 == examMode || 4 == examMode)
+        return '/ <span class="allQuestion">' + questionCount + '</span>'
+    else
+        return "";
 }
 
 function showLeftBtn(index)
@@ -364,7 +376,7 @@ function clickFinishBtn()
 {
     $(".finishExam").on("click", function()
     {
-        let result = confirm("채점하시겠습니까?");
+        let result = confirm("제출하시겠습니까?");
         if(true == result)
         {
             let listLen = questionList.length;
@@ -413,6 +425,14 @@ function rightMove()
         let leftMargin = (bodyBorderWidth + bodyBorderGap) * nowQuestion;
         $("#cover > .wrap").stop().animate({marginLeft : -leftMargin}, animateSpeed);
     }
+}
+
+function resetPosition(number)
+{
+    nowQuestion = number;
+
+    let leftMargin = (bodyBorderWidth + bodyBorderGap) * nowQuestion;
+    $("#cover > .wrap").css("margin-left", leftMargin + "px");
 }
 
 function keyEvent(){
@@ -515,10 +535,15 @@ function clickNum(index)
         {   
             if(nowQuestion + 1 == questionCount)
             {
-                resultExam();
-                return;
+                //세진이 형의 요청으로 연습검정 시 검정결과 페이지 봉인
+                // resultExam();
+                // return;
+
+                //세진이 형의 요청으로 연습검정 시 문제 무제한 생성으로 변경
+                makeQuestion();
+                resetPosition(0);
             }
-            
+
             rightMove();
 
         }, timeDelay);
@@ -570,6 +595,8 @@ function overlapCheck2(tempList, RandVal)
 
 function makeQuestion()
 {
+    questionList.splice(1, questionList.length);
+
     let koreanCollection = ["먹다", "마시다", "놀다", "타다", "가다", "하다", "만나다", "이야기하다", "사다", "팔다", "기다리다", "가리키다", "가르치다", "외우다", "비싸다", "싸다", "낮다", "맛있다", "맛없다", "크다", "작다", "어렵다", "쉽다", "새롭다", "오래되다", "길다", "짧다", "많다", "적다", "재미있다", "재미없다", "좋다", "나쁘다", "이르다", "빠르다", "가깝다", "멀다", "무겁다", "뜨겁다", "차갑다", "굵다", "가늘다", "밝다", "어둡다", "기쁘다", "슬프다", "깊다", "두껍다", "얇다", "약하다", "아프다", "바쁘다", "위험하다"];
     let hiraganaCollection = ["食べる", "飲む", "遊ぶ", "乗る", "行く", "する", "会う", "話す", "買う", "売る", "待つ", "指す", "教える", "覚える", "高い", "安い", "低い", "おいしい", "まずい", "大きい", "小さい", "難しい", "易しい", "新しい", "古い", "長い", "短い", "多い", "少ない", "おもしろい", "つまらない", "いい", "わるい", "早い", "速い", "近い", "遠い", "重い", "熱い", "冷たい" ,"太い", "細い", "明るい", "暗い", "うれしい", "かなしい", "深い", "厚い", "薄い", "弱い", "痛い", "忙しい", "危ない"];
     let furaganaCollection = ["たべる", "のむ", "あそぶ", "のる", "いく", "する", "あう", "はなす", "かう", "うる", "まつ", "さす", "おしえる", "おぼえる", "たかい", "やすい", "ひくい", "おいしい", "まずい", "おおきい", "ちいさい", "むずかしい", "やさしい", "あたらしい", "ふるい", "ながい", "みじかい", "おおい", "すくない", "おもしろい", "つまらない", "いい", "わるい", "はやい", "はやい", "ちかい", "とおい", "おもい", "あつい", "つめたい", "ふとい", "ほそい", "あかるい", "くらい", "うれしい", "かなしい", "ふかい", "あつい", "うすい", "よわい", "いたい", "いそがしい", "あぶない"];
@@ -584,7 +611,8 @@ function makeQuestion()
         wordList.push(word);
     }
 
-    for(let i = 0; i < questionCount; i++)
+    let i = questionList.length;
+    for(i; i < questionCount; i++)
     {
         let len = koreanCollection.length;
         let tempList = [];
