@@ -20,15 +20,21 @@ $(function () {
     $('.pagination_number').children('li').eq(page).css('font-weight', 'bold');
     // $('.article_contents').text(articleData.content)
 })
+
 function deleteArticle() {
+    let con = confirm("삭제 하시겠습니까?");
     let admin = false;
-    // 관리자 권한 확인
-    if (!admin) {
-        alert("삭제 권한이 없습니다.");
-    } else {
-        location.href = "./notice.html"
+    if (con) {
+        // 게시글 삭제 기능 추가
+        // //게시글 삭제
+        // 관리자 권한 확인
+        if(!admin){
+            alert("삭제 권한이 없습니다.");
+        }else{
+            location.href = "./notice.html"
+        }
+        // //관리자 권한 확인
     }
-    // //관리자 권한 확인
 }
 function editArticle() {
     let admin = false;
