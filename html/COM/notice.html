@@ -141,8 +141,16 @@
     <script>
 
         function summit() {
+            //유저정보 로드. 로그인 상태를 확인한다.
+            let user = false;   //로그인 처리 후 user 변수에 저장.
 
-            location.href = "./noticec.html";
+            if (!user) {
+                alert("글쓰기 권한이 부족합니다.");
+            } else {
+
+                location.href = "./tipc.html"
+
+            }
         }
 
     </script>
