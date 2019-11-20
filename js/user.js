@@ -557,7 +557,7 @@ function checkPwConfirm(){
             firstError = false;
         }
     }
-    //check if id and password are valid
+    //check if password is valid
     var pwList = ["adminpassword","userpassword"]
     var loginConfirm=false;
     if(pwList.includes(password.value)){
@@ -589,6 +589,14 @@ function changePwConfirm(){
             firstError = false;
         }
     }
+    //check if password is valid
+    var pwList = ["adminpassword","userpassword"]
+    var passwordConfirm=false;
+    if(pwList.includes(oldPassword.value)){
+        //if(idList.indexOf(id.value)==pwList.indexOf(password.value)){
+            passwordConfirm=true;
+        //};
+    };
     //new check password
     var newPassword = document.getElementById("newPasswordInput");
     var newPasswordError = document.getElementById("newPasswordInputError");
@@ -633,9 +641,12 @@ function changePwConfirm(){
         }
     }
     //confirm
-    if (firstError == true) {
+    if (firstError == true && passwordConfirm) {
         alert("비밀번호 변경이 완료되었습니다.");
         window.location.href = "/html/MYP/editInfo.html";
+    }
+    else if(firstError == true){
+        alert("현재 비밀번호가 일치하지 않습니다.");
     }
 }
 
