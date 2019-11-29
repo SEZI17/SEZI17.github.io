@@ -59,16 +59,11 @@ $(function(){
         $(".finishExam").css("display", "block");
     }
 
-    //제출하기 버튼 클릭 시
-    clickFinishBtn();
-
     //키보드 연결
     keyEvent();
 
     //모바일용 터치이용 함수
     touchEvent();
-
-    mobileVer();
 });
 
 function moblieVerCheck()
@@ -152,11 +147,17 @@ function setHtmlCode()
         $(".wrap").append(str);
     });
 
+    //모바일 버전이면 전체 크기 변경
+    mobileVer();
+
     //보기중 하나를 선택했을 경우
     selectExample();
 
     //TTS(음성출력) 이벤트
     clickSpeaker()
+
+    //제출하기 버튼 클릭 시
+    clickFinishBtn();
 
     nowCount--;
 }
